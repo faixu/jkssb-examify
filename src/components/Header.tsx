@@ -66,9 +66,9 @@ export const Header: React.FC<HeaderProps> = ({
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-lg text-white tracking-tight">Flash<span className="text-indigo-400">Mind</span></span>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Quiz</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">FAA 120M</span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium hidden sm:block">Learn • Recall • Master</p>
+              <p className="text-[11px] text-slate-400 font-medium hidden sm:block">Accounts Assistant (Finance) • 120 Marks Syllabus</p>
             </div>
           </div>
 

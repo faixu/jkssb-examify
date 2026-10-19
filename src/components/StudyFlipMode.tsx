@@ -192,6 +192,11 @@ export const StudyFlipMode: React.FC<StudyFlipModeProps> = ({
                 }`}
               >
                 <span>{cat.name}</span>
+                {cat.marks && (
+                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono">
+                    {cat.marks}M
+                  </span>
+                )}
                 <span className="text-[10px] opacity-75 font-mono">({count})</span>
               </button>
             );

@@ -1,12 +1,13 @@
 export type CategoryId =
   | 'accounting'
-  | 'economics'
-  | 'statistics'
+  | 'general'
   | 'grammar'
+  | 'statistics'
+  | 'math'
+  | 'economics'
   | 'science'
   | 'cs'
-  | 'history'
-  | 'general';
+  | 'history';
 
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
 
@@ -52,6 +53,8 @@ export type StudyMode = 'flip' | 'quiz' | 'speed' | 'stats' | 'decks';
 export interface CategoryMeta {
   id: CategoryId;
   name: string;
+  marks?: number;
+  syllabusRef?: string;
   description: string;
   color: string;
   borderColor: string;

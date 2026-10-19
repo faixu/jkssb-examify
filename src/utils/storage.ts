@@ -41,6 +41,7 @@ const defaultStats: UserStats = {
     cs: { reviewed: 0, correct: 0 },
     history: { reviewed: 0, correct: 0 },
     general: { reviewed: 0, correct: 0 },
+    math: { reviewed: 0, correct: 0 },
   },
 };
 
