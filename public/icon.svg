@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0e7ff" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="128" fill="url(#bg-grad)" />
+
+  <!-- Back Card (Rotated slightly) -->
+  <g transform="rotate(-8 256 256)">
+    <rect x="136" y="116" width="240" height="310" rx="24" fill="#a5b4fc" opacity="0.75" filter="url(#shadow)" />
+  </g>
+
+  <!-- Front Card -->
+  <g transform="rotate(4 256 256)">
+    <rect x="136" y="106" width="240" height="310" rx="24" fill="url(#card-grad)" filter="url(#shadow)" stroke="#c7d2fe" stroke-width="3" />
+    
+    <!-- Lightning / Spark Icon on card -->
+    <path d="M266 160 L216 260 L260 260 L246 340 L306 240 L262 240 Z" fill="#6366f1" />
+    
+    <!-- Card text simulation lines -->
+    <rect x="176" y="360" width="160" height="12" rx="6" fill="#818cf8" opacity="0.6" />
+    <rect x="206" y="382" width="100" height="8" rx="4" fill="#a5b4fc" opacity="0.5" />
+  </g>
+
+  <!-- Floating Star Badge -->
+  <circle cx="390" cy="130" r="40" fill="#fbbf24" stroke="#ffffff" stroke-width="6" filter="url(#shadow)" />
+  <path d="M390 106 L398 122 L416 124 L403 137 L406 154 L390 145 L374 154 L377 137 L364 124 L382 122 Z" fill="#ffffff" />
+</svg>
