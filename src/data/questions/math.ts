@@ -1265,7 +1265,7 @@ export const MATHEMATICS_QUESTIONS: Flashcard[] = [
     "id": "math-85",
     "categoryId": "math",
     "question": "What is the middle term in the expansion of (x + y)⁸?",
-    "answer": "T₅ = ⁷⁰x⁴y⁴",
+    "answer": "T₅ = 70x⁴y⁴",
     "options": [
       "T₅ = 70x⁴y⁴",
       "T₄ = 56x⁵y³",

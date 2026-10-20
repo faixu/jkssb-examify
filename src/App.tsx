@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { CategoryId, Flashcard, StudyMode, UserStats, CardProgress } from './types';
+import { CategoryId, Flashcard, StudyMode, UserStats, CardProgress, ActiveMockConfig } from './types';
 import { getAllCards, loadUserStats, loadCardProgress } from './utils/storage';
 import { Header } from './components/Header';
 import { StudyFlipMode } from './components/StudyFlipMode';
 import { QuizMode } from './components/QuizMode';
+import { MockTestMode } from './components/MockTestMode';
 import { SpeedRushMode } from './components/SpeedRushMode';
 import { StatsDashboard } from './components/StatsDashboard';
 import { DeckManager } from './components/DeckManager';
+import { GoogleDriveSync } from './components/GoogleDriveSync';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { CATEGORIES } from './data/initialDecks';
 import { Sparkles, ShieldCheck, Wifi } from 'lucide-react';
@@ -17,6 +19,7 @@ export default function App() {
   const [cardProgress, setCardProgress] = useState<Record<string, CardProgress>>({});
   const [currentMode, setCurrentMode] = useState<StudyMode>('flip');
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
+  const [activeMockConfig, setActiveMockConfig] = useState<ActiveMockConfig | null>(null);
 
   const refreshAllData = useCallback(() => {
     setCards(getAllCards());
@@ -33,12 +36,23 @@ export default function App() {
     setCardProgress(loadCardProgress());
   };
 
+  const handleSelectMockTest = (config: ActiveMockConfig) => {
+    setActiveMockConfig(config);
+    setCurrentMode('mock');
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white">
       {/* Sticky App Header */}
       <Header
         currentMode={currentMode}
-        onSelectMode={setCurrentMode}
+        onSelectMode={(mode) => {
+          if (mode !== 'mock') {
+            setActiveMockConfig(null);
+          }
+          setCurrentMode(mode);
+        }}
+        onSelectMockTest={handleSelectMockTest}
         streak={userStats.streak}
         xp={userStats.xp}
       />
@@ -62,6 +76,20 @@ export default function App() {
             onUpdateStats={handleUpdateStats}
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
+            onNavigateToMock={() => {
+              setActiveMockConfig(null);
+              setCurrentMode('mock');
+            }}
+          />
+        )}
+
+        {currentMode === 'mock' && (
+          <MockTestMode
+            cards={cards}
+            userStats={userStats}
+            onUpdateStats={handleUpdateStats}
+            activeMockConfig={activeMockConfig}
+            onClearActiveMockConfig={() => setActiveMockConfig(null)}
           />
         )}
 
@@ -79,6 +107,7 @@ export default function App() {
             cardProgress={cardProgress}
             totalCardsCount={cards.length}
             onRefreshData={refreshAllData}
+            onNavigateToDrive={() => setCurrentMode('drive')}
           />
         )}
 
@@ -86,6 +115,14 @@ export default function App() {
           <DeckManager
             cards={cards}
             onRefreshCards={refreshAllData}
+            onNavigateToDrive={() => setCurrentMode('drive')}
+          />
+        )}
+
+        {currentMode === 'drive' && (
+          <GoogleDriveSync
+            cards={cards}
+            onRefreshAllData={refreshAllData}
           />
         )}
       </main>

@@ -1,6 +1,12 @@
 import { Flashcard } from '../../types';
+import { FREEDOM_TIMELINE_PDF_QUESTIONS } from './freedomTimelineQuestions';
+import { HISTORY_JKSSB_PDF_QUESTIONS } from './historyJkssbPdfQuestions';
+import { FREEDOM_STRUGGLE_PDF_QUESTIONS } from './freedomStrugglePdfQuestions';
 
 export const GENERAL_QUESTIONS: Flashcard[] = [
+  ...FREEDOM_TIMELINE_PDF_QUESTIONS,
+  ...HISTORY_JKSSB_PDF_QUESTIONS,
+  ...FREEDOM_STRUGGLE_PDF_QUESTIONS,
   {
     "id": "gen-1",
     "categoryId": "general",

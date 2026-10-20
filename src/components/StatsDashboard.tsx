@@ -10,6 +10,7 @@ import {
   AlertCircle,
   Clock,
   Target,
+  Cloud,
 } from 'lucide-react';
 import { CardProgress, CategoryId, UserStats } from '../types';
 import { CATEGORIES } from '../data/initialDecks';
@@ -20,6 +21,7 @@ interface StatsDashboardProps {
   cardProgress: Record<string, CardProgress>;
   totalCardsCount: number;
   onRefreshData: () => void;
+  onNavigateToDrive?: () => void;
 }
 
 export const StatsDashboard: React.FC<StatsDashboardProps> = ({
@@ -27,6 +29,7 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
   cardProgress,
   totalCardsCount,
   onRefreshData,
+  onNavigateToDrive,
 }) => {
   // Mastery level calculation
   const masteredCount = useMemo(() => {
@@ -323,7 +326,17 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5 shrink-0">
+        <div className="flex items-center gap-2.5 shrink-0 flex-wrap">
+          {onNavigateToDrive && (
+            <button
+              onClick={onNavigateToDrive}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition cursor-pointer"
+            >
+              <Cloud className="w-3.5 h-3.5" />
+              <span>Google Drive Cloud Sync</span>
+            </button>
+          )}
+
           <button
             onClick={handleExport}
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition cursor-pointer"

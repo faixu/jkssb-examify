@@ -1,0 +1,344 @@
+ACCOUNTS & FINANCE EXAMINATION PRACTICE SERIES • JKSSB FAA & SSC CGL AAO
+Cost Accounting: 50 High-Yield Exam MCQs
+Detailed Question Bank with Formulas, Practical Numericals & Conceptual Explanations
+CORE COST SHEET ARCHITECTURE MATRIX
+Cost Component 	Constituent Elements / Formula 	Exam Treatment / Trap
+Prime Cost 	Direct Material + Direct Labour + Direct Expenses 	Directly traceable variable
+manufacturing costs.
+Works / Factory Cost 	Prime Cost + Factory Overheads + Opening WIP - Closing
+WIP
+Work-in-progress (WIP) adjusted strictly
+at factory level.
+Cost of Production 	Factory Cost + Administration / Office Overheads 	Basis for valuation of unsold finished
+goods stock.
+Cost of Sales (Total Cost) 	Cost of Goods Sold (COGS) + Selling & Distribution
+Overheads
+Exclude Income Tax, Debenture Interest,
+Dividends.
+SECTION 1: COST CLASSIFICATION & BEHAVIORAL CONCEPTS (Q1 – Q7)
+Q1. A past expenditure that has already occurred, cannot be altered by any present or future management decision, and is
+irrelevant for decision-making is termed:
+(a) Opportunity Cost 	(b) Sunk Cost
+(c) Marginal Cost 	(d) Imputed Cost
+Answer: (b) Rationale: Sunk cost represents historical, unrecoverable outlays (e.g., past market survey fees or historical book cost of
+discarded machinery) that must be ignored when evaluating future operational choices.
+Q2. The maximum potential benefit lost or forgone by selecting one operational alternative over the next best available
+alternative is defined as:
+(a) Replacement Cost 	(b) Opportunity Cost
+(c) Out-of-Pocket Cost 	(d) Standard Cost
+Answer: (b) Rationale: Opportunity cost is the measurable sacrifice of the next best forgone alternative. For instance, using owned factory
+premises rather than leasing them out entails an opportunity cost equal to the lost rental income.
+Q3. When the total production volume increases within the relevant operating range, what is the behavior of fixed cost per unit
+and variable cost per unit?
+(a) Fixed cost/unit increases; Variable cost/unit decreases 	(b) Fixed cost/unit decreases; Variable cost/unit remains constant
+(c) Both fixed and variable cost per unit remain constant 	(d) Both fixed and variable cost per unit decrease
+Answer: (b) Rationale: Total fixed cost is constant, so fixed cost per unit declines as volume rises (FC / Units). Variable cost varies in total
+proportionally with activity, maintaining a constant rate per unit.
+Q4. A telephone bill containing a fixed monthly line rental of ₹400 plus an additional usage charge of ₹1.20 per call beyond 100
+free calls is classified as a:
+(a) Purely Fixed Cost 	(b) Purely Variable Cost
+(c) Semi-Variable (Mixed) Cost 	(d) Discretionary Fixed Cost
+Answer: (c) Rationale: Semi-variable (or mixed) costs possess both a fixed component (incurred regardless of activity) and a variable
+component (fluctuating with output/usage).
+Q5. Hypothetical or notional costs that do not involve any physical cash disbursement but are recognized for managerial
+economic decision-making are called:
+(a) Imputed (Notional) Costs 	(b) Explicit Costs
+(c) Committed Costs 	(d) Conversion Costs
+Answer: (a) Rationale: Imputed costs (e.g., interest on owner's proprietary capital, salary of an unpaid entrepreneur) involve no actual cash
+outlay but reflect true economic resource usage.
+Q6. In cost accounting terminology, 'Conversion Cost' is defined mathematically as:
+(a) Direct Material + Direct Labour 	(b) Direct Labour + Direct Expenses + Factory (Works) Overheads
+(c) Factory Cost + Office Administration Overheads 	(d) Prime Cost + Selling Overheads
+Answer: (b) Rationale: Conversion cost is the total expenditure required to transform raw material into finished product: Direct Labour +
+Direct Expenses + Factory Overheads (i.e., Production Cost excluding Direct Material).
+Q7. The aggregate sum of all indirect costs (Indirect Material + Indirect Labour + Indirect Expenses) is technically known as:
+(a) Prime Cost 	(b) Overheads (Oncost)
+(c) Opportunity Cost 	(d) Sunk Cost
+Cost Accounting • 50 Exam Question Bank 	Page 1 of 7
+
+-- 1 of 7 --
+
+SECTION 2: ELEMENTS OF COST & COST SHEET ARCHITECTURE (Q8 – Q15)
+Q8. Given: Opening Stock of Raw Material = ₹40,000, Purchases = ₹1,80,000, Carriage Inwards = ₹10,000, and Closing Stock =
+₹30,000. Raw Material Consumed equals:
+(a) ₹2,00,000 	(b) ₹1,90,000
+(c) ₹2,10,000 	(d) ₹1,80,000
+Answer: (a) Rationale: Raw Material Consumed = Opening Stock (₹40,000) + Purchases (₹1,80,000) + Carriage Inward (₹10,000) - Closing Stock
+(₹30,000) = ₹2,00,000. Carriage inward is an essential direct procurement cost.
+Q9. Which of the following financial items is STRICTLY EXCLUDED from preparation of a Cost Sheet?
+(a) Carriage on purchase of raw materials 	(b) Factory power and fuel
+(c) Dividend paid to equity shareholders 	(d) Showroom sales commission
+Answer: (c) Rationale: Purely financial appropriations (dividends paid, corporate income tax, interest on debentures, loss on sale of capital
+assets, goodwill write-offs) are excluded from cost accounts.
+Q10. In a Cost Sheet, Work-in-Progress (WIP) adjustments (Opening WIP added, Closing WIP deducted) are made at which stage?
+(a) To arrive at Prime Cost 	(b) To arrive at Factory (Works) Cost
+(c) To arrive at Cost of Goods Sold 	(d) To arrive at Cost of Sales
+Answer: (b) Rationale: Work-in-Progress occurs on the factory floor; hence, Gross Factory Cost + Opening WIP - Closing WIP = Net Factory /
+Works Cost.
+Q11. Prime Cost equals ₹3,00,000; Factory Overheads are 20% on Prime Cost; Office Overheads are 10% on Factory Cost. The
+Cost of Production is:
+(a) ₹3,96,000 	(b) ₹3,60,000
+(c) ₹4,10,000 	(d) ₹4,20,000
+Answer: (a) Rationale: Factory Overheads = 20\% \times ₹3,00,000 = ₹60,000. Factory Cost = ₹3,00,000 + ₹60,000 = ₹3,60,000. Office Overheads
+= 10\% \times ₹3,60,000 = ₹36,000. Cost of Production = ₹3,60,000 + ₹36,000 = ₹3,96,000.
+Q12. Lubricating oil, cotton waste, and cleaning materials utilized on factory machinery are classified as:
+(a) Direct Material 	(b) Indirect Material
+(c) Direct Expenses 	(d) Administrative Overheads
+Answer: (b) Rationale: Consumable stores such as lubricants and rags do not form a physical part of the finished saleable product; hence,
+they constitute indirect material (factory overhead).
+Q13. Remuneration paid to an expert for a specialized engineering patent design prepared exclusively for a specific client's
+custom job is treated as:
+(a) Direct Expenses (Chargeable Expenses) 	(b) Factory Overhead
+(c) Administrative Overhead 	(d) Selling Overhead
+Answer: (a) Rationale: Direct or chargeable expenses are those outlays (other than direct material and direct labor) that are incurred
+specifically and directly for a particular job, forming part of Prime Cost.
+Q14. If Cost of Production is ₹5,00,000, Opening Finished Goods = ₹50,000, and Closing Finished Goods = ₹70,000, what is the
+Cost of Goods Sold (COGS)?
+(a) ₹5,20,000 	(b) ₹4,80,000
+(c) ₹5,50,000 	(d) ₹4,70,000
+Answer: (b) Rationale: COGS = Cost of Production (₹5,00,000) + Opening Finished Goods (₹50,000) - Closing Finished Goods (₹70,000) =
+₹4,80,000.
+Q15. Total Cost of Sales is ₹8,00,000 and profit is desired at 20% on Selling Price. The total Selling Price should be:
+(a) ₹9,60,000 	(b) ₹10,00,000
+(c) ₹10,50,000 	(d) ₹9,80,000
+Answer: (b) Rationale: If Profit = 20% on Selling Price (1/5 of Sales), then Cost = 80% of Selling Price (4/5 of Sales). Profit on Cost = 1/4 =
+25\%. Sales = ₹8,00,000 \div 0.80 = ₹10,00,000 (or ₹8,00,000 + 25% of ₹8,00,000 = ₹10,00,000).
+Cost Accounting • 50 Exam Question Bank 	Page 2 of 7
+
+-- 2 of 7 --
+
+SECTION 3: MATERIAL CONTROL, INVENTORY STOCK LEVELS & EOQ (Q16 – Q23)
+Q16. At the Economic Order Quantity (EOQ) point, which two inventory costs are exactly equal to each other?
+(a) Total Purchase Cost and Total Ordering Cost 	(b) Total Ordering Cost and Total Carrying (Holding) Cost
+(c) Total Carrying Cost and Stock-out Cost 	(d) Prime Cost and Factory Overheads
+Answer: (b) Rationale: The EOQ model minimizes total inventory holding expenditure precisely where annual ordering cost intersects and
+equals annual inventory carrying cost.
+Q17. Annual demand = 10,000 units, Cost per order = ₹50, and Carrying cost per unit per annum = ₹4. The Economic Order
+Quantity (EOQ) is:
+(a) 500 units 	(b) 1,000 units
+(c) 250 units 	(d) 400 units
+Answer: (a) Rationale: EOQ = \sqrt{(2 \times A \times O) / C} = \sqrt{(2 \times 10,000 \times 50) / 4} = \sqrt{1,000,000 / 4} = \sqrt{250,000} = 500\text{
+units}.
+Q18. Maximum consumption = 300 units/day, Minimum consumption = 100 units/day, Re-order period = 4 to 6 days. The Re-order
+Level (ROL) is:
+(a) 1,200 units 	(b) 1,800 units
+(c) 600 units 	(d) 1,500 units
+Answer: (b) Rationale: Re-order Level (ROL) = \text{Maximum Consumption} \times \text{Maximum Re-order Period} = 300\text{ units/day} \times
+6\text{ days} = 1,800\text{ units}.
+Q19. The inventory control technique based on Pareto's Principle (80/20 rule), classifying inventory by monetary value of
+consumption, is:
+(a) VED Analysis 	(b) ABC Analysis
+(c) FSN Analysis 	(d) JIT System
+Answer: (b) Rationale: ABC Analysis classifies inventory by value: 'A' items (high value, ~70% value, ~10% quantity), 'B' items (moderate
+value), and 'C' items (low value, ~10% value, ~70% quantity).
+Q20. In an inflationary period characterized by rising raw material prices, which inventory valuation method results in lower
+reported profit and lower tax?
+(a) FIFO (First-In, First-Out) 	(b) LIFO (Last-In, First-Out)
+(c) Simple Average Method 	(d) Weighted Average Method
+Answer: (b) Rationale: Under LIFO, the most recently purchased (higher priced) materials are issued to production, resulting in higher
+reported Cost of Goods Sold and reduced taxable profit.
+Q21. The stock level below which inventory should never fall, and where emergency purchase procedures are immediately
+activated, is termed:
+(a) Re-order Level 	(b) Maximum Level
+(c) Danger Level 	(d) Buffer Stock
+Answer: (c) Rationale: Danger Level = \text{Average Daily Consumption} \times \text{Max Lead Time for Emergency Purchases}. Stock reaching
+this trigger demands urgent replenishment.
+Q22. In the VED inventory classification method commonly utilized for spare parts management, the acronym 'VED' stands for:
+(a) Value, Economy, Delivery 	(b) Vital, Essential, Desirable
+(c) Variable, Estimated, Direct 	(d) Verified, Evaluated, Documented
+Answer: (b) Rationale: VED analysis categorizes engineering spares based on criticality to production: Vital (unavailability halts plant),
+Essential (serious loss), and Desirable (minor impact).
+Q23. If Annual Demand is doubled while Ordering Cost and Carrying Cost per unit remain unchanged, the Economic Order
+Quantity (EOQ) will:
+(a) Double 	(b) Increase by 41.4% (i.e., by factor of \sqrt{2} \approx 1.414)
+(c) Quadruple 	(d) Remain unchanged
+Answer: (b) Rationale: Because EOQ is proportional to \sqrt{A}, doubling demand yields \sqrt{2} \times \text{EOQ} \approx 1.414 \times
+\text{EOQ}, representing a 41.4% increase.
+Cost Accounting • 50 Exam Question Bank 	Page 3 of 7
+
+-- 3 of 7 --
+
+SECTION 4: SPECIFIC METHODS OF COSTING (JOB, PROCESS, CONTRACT & SERVICE) (Q24 – Q31)
+Q24. Which method of costing is most appropriate for a commercial printing press, automobile repair workshop, and interior
+decorator?
+(a) Process Costing 	(b) Job Costing
+(c) Operating (Service) Costing 	(d) Continuous Output Costing
+Answer: (b) Rationale: Job Costing is applied where production is non-standardized and executed strictly according to discrete customer
+specifications and individual job orders.
+Q25. In pharmaceutical drug manufacturing and readymade garment production, where output is generated in discrete
+identifiable lots, the method used is:
+(a) Batch Costing 	(b) Single Output Costing
+(c) Operating Costing 	(d) Target Costing
+Answer: (a) Rationale: Batch Costing is an extension of job costing where each cost unit is a batch/lot of identical products, optimized
+using Economic Batch Quantity (EBQ).
+Q26. In Process Costing, unavoidable material loss inherent in the production nature (e.g., evaporation, shrinkage) is classified
+as:
+(a) Abnormal Loss 	(b) Normal Loss
+(c) Abnormal Gain 	(d) Capital Loss
+Answer: (b) Rationale: Normal loss is an inevitable operational loss under normal manufacturing conditions. Its cost is absorbed by good
+units produced, inflating the per-unit cost of good output.
+Q27. When the actual loss in a manufacturing process is less than the anticipated normal loss allowance, the resulting favorable
+variance is termed:
+(a) Standard Gain 	(b) Abnormal Gain / Abnormal Effectiveness
+(c) Operating Profit 	(d) Prime Gain
+Answer: (b) Rationale: Abnormal gain occurs when actual output exceeds expected output (i.e., actual loss < normal loss). It is credited to
+the Abnormal Gain Account and transferred to Costing P&L.
+Q28. In Contract Costing for construction projects, the portion of work certified by the architect/surveyor but retained by the
+contractee as a guarantee is:
+(a) Progress Payment 	(b) Retention Money
+(c) Escrow Capital 	(d) Work-in-Progress Reserve
+Answer: (b) Rationale: Retention Money = \text{Value of Work Certified} - \text{Payment Actually Received}. It is retained until satisfactory
+defect-liability periods lapse.
+Q29. A composite cost unit (combining two distinct dimensions such as quantity and distance) is utilized in which costing
+method?
+(a) Job Costing 	(b) Contract Costing
+(c) Operating / Service Costing 	(d) Process Costing
+Answer: (c) Rationale: Operating costing utilizes composite units: Passenger-Kilometer (Passenger buses/Railways), Ton-Kilometer (Goods
+freight), Room-Day (Hotels), or Patient-Day (Hospitals).
+Q30. A transport bus operates 5 trips daily between Srinagar and Baramulla (distance 50 km) carrying an average of 40
+passengers. The daily Passenger-Kilometers total:
+(a) 10,000 Passenger-km 	(b) 20,000 Passenger-km
+(c) 5,000 Passenger-km 	(d) 8,000 Passenger-km
+Answer: (a) Rationale: \text{Daily Total Distance} = 5\text{ round trips} = 5 \times 50\text{ km} = 250\text{ km}. \text{Passenger-km} = 250\text{ km}
+\times 40\text{ passengers} = 10,000\text{ Passenger-km}.
+Q31. An escalation clause is routinely incorporated into long-term building construction contracts to protect the contractor
+against:
+(a) Worker absenteeism 	(b) Unanticipated price hikes in raw material and labor wage rates
+during contract tenure
+(c) Architect inspection delays 	(d) Liquidated damages from contractee
+Answer: (b) Rationale: An escalation clause permits upwards adjustment of the contract price if market procurement rates for steel,
+cement, or statutory wages rise beyond agreed thresholds.
+Cost Accounting • 50 Exam Question Bank 	Page 4 of 7
+
+-- 4 of 7 --
+
+SECTION 5: MARGINAL COSTING & BREAK-EVEN / CVP ANALYSIS (Q32 – Q39)
+Q32. Under Marginal Costing, the core equation governing Contribution is defined as:
+(a) Sales - Total Cost 	(b) Sales - Variable Cost (or Fixed Cost + Profit)
+(c) Prime Cost + Factory Overhead 	(d) Gross Profit - Administration Overhead
+Answer: (b) Rationale: Contribution is the excess of sales revenue over variable cost (S - VC). It contributes first toward meeting fixed costs,
+and thereafter toward generating operating profit (FC + Profit).
+Q33. If Selling Price = ₹100 per unit and Variable Cost = ₹60 per unit, the Profit-Volume (P/V) Ratio is:
+(a) 60% 	(b) 40%
+(c) 25% 	(d) 166.67%
+Answer: (b) Rationale: \text{Contribution} = ₹100 - ₹60 = ₹40. \text{P/V Ratio} = (\text{Contribution} / \text{Sales}) \times 100 = (40 / 100) \times 100
+= 40\%.
+Q34. Fixed Cost = ₹2,00,000 and P/V Ratio = 40%. The Break-Even Point in terms of monetary sales value (Rupees) is:
+(a) ₹5,00,000 	(b) ₹80,000
+(c) ₹8,00,000 	(d) ₹2,80,000
+Answer: (a) Rationale: \text{Break-Even Sales (₹)} = \text{Fixed Cost} / \text{P/V Ratio} = ₹2,00,000 / 0.40 = ₹5,00,000.
+Q35. Total Actual Sales = ₹10,00,000 and Break-Even Sales = ₹6,00,000. What is the Margin of Safety (MoS) ratio?
+(a) 60% 	(b) 40%
+(c) 25% 	(d) 16.67%
+Answer: (b) Rationale: \text{Margin of Safety} = \text{Actual Sales} - \text{BEP Sales} = ₹10,00,000 - ₹6,00,000 = ₹4,00,000. \text{MoS Ratio} =
+(₹4,00,000 / ₹10,00,000) \times 100 = 40\%.
+Q36. Operating Profit earned by a business enterprise can be calculated directly by multiplying Margin of Safety (MoS) sales
+with:
+(a) Gross Profit Ratio 	(b) P/V Ratio
+(c) Net Profit Ratio 	(d) Fixed Cost Ratio
+Answer: (b) Rationale: Because fixed costs are fully recovered at the Break-Even Point, all contribution generated beyond BEP converts
+directly into operating profit: \text{Profit} = \text{Margin of Safety} \times \text{P/V Ratio}.
+Q37. Year 1: Sales = ₹4,00,000, Profit = ₹40,000; Year 2: Sales = ₹6,00,000, Profit = ₹80,000. The P/V Ratio is:
+(a) 20% 	(b) 25%
+(c) 30% 	(d) 40%
+Answer: (a) Rationale: \text{P/V Ratio} = (\text{Change in Profit} / \text{Change in Sales}) \times 100 = (₹40,000 / ₹2,00,000) \times 100 = 20\%.
+Q38. In a conventional Break-Even Chart, the point of intersection between the Total Revenue line and Total Cost line represents:
+(a) Maximum Production Capacity 	(b) Break-Even Point (BEP)
+(c) Margin of Safety 	(d) Angle of Incidence
+Answer: (b) Rationale: The intersection point indicates Break-Even: Total Sales Revenue = Total Costs, indicating zero profit and zero
+operating loss.
+Q39. On a Break-Even graph, the 'Angle of Incidence' is the angle formed between the:
+(a) Total Sales Line and Total Cost Line at the Break-Even Point 	(b) Fixed Cost Line and Horizontal Base Line
+(c) Variable Cost Line and Vertical Axis 	(d) Total Cost Line and Base Axis
+Answer: (a) Rationale: The Angle of Incidence reflects profit-earning velocity once the break-even threshold is crossed; a wider angle
+indicates higher profitability per unit sold.
+Cost Accounting • 50 Exam Question Bank 	Page 5 of 7
+
+-- 5 of 7 --
+
+SECTION 6: STANDARD COSTING & VARIANCE ANALYSIS (Q40 – Q46)
+Q40. When Actual Cost incurred is LESS than the predetermined Standard Cost, the variance is termed:
+(a) Adverse (Unfavorable) Variance 	(b) Favorable (Credit) Variance
+(c) Null Variance 	(d) Sunk Variance
+Answer: (b) Rationale: An expenditure lower than standard or revenue higher than standard represents a Favorable (F) variance, indicating
+cost efficiency and higher profit.
+Q41. Standard Price = ₹10/kg; Actual Price = ₹12/kg; Actual Quantity = 500 kg. What is the Material Price Variance (MPV)?
+(a) ₹1,000 (Favorable) 	(b) ₹1,000 (Adverse)
+(c) ₹500 (Adverse) 	(d) ₹1,200 (Favorable)
+Answer: (b) Rationale: \text{MPV} = \text{Actual Quantity} \times (\text{Standard Price} - \text{Actual Price}) = 500 \times (10 - 12) = -₹1,000 =
+₹1,000\text{ Adverse (A)}.
+Q42. Standard Quantity = 400 kg; Actual Quantity used = 450 kg; Standard Price = ₹20/kg. What is the Material Usage (Quantity)
+Variance (MUV)?
+(a) ₹1,000 (Adverse) 	(b) ₹1,000 (Favorable)
+(c) ₹900 (Adverse) 	(d) ₹2,000 (Adverse)
+Answer: (a) Rationale: \text{MUV} = \text{Standard Price} \times (\text{Standard Quantity} - \text{Actual Quantity}) = ₹20 \times (400 - 450) = -
+₹1,000 = ₹1,000\text{ Adverse (A)}.
+Q43. The mathematical verification relationship among the primary material variances is expressed as:
+(a) Material Cost Variance = Material Price Variance + Material
+Usage Variance
+(b) Material Price Variance = Material Cost Variance + Material
+Usage Variance
+(c) Material Usage Variance = Material Cost Variance × Material
+Price Variance
+(d) Material Cost Variance = MPV - MUV
+Answer: (a) Rationale: \text{MCV} = \text{MPV} + \text{MUV}. Material Cost Variance reconciles price fluctuations (purchasing efficiency)
+and consumption volume (shop-floor efficiency).
+Q44. Which departmental manager is held primarily responsible for an unfavorable (adverse) Material Price Variance?
+(a) Production Manager 	(b) Purchase / Procurement Manager
+(c) Sales Marketing Manager 	(d) Chief Financial Officer
+Answer: (b) Rationale: The Purchase Manager oversees vendor negotiations, order timing, and shipping terms, and is held accountable for
+deviations from standard purchase prices.
+Q45. Standard wage rate = ₹50/hr, Actual wage rate paid = ₹55/hr, and Actual hours worked = 200 hours. The Labour Rate
+Variance (LRV) is:
+(a) ₹1,000 (Favorable) 	(b) ₹1,000 (Adverse)
+(c) ₹2,500 (Adverse) 	(d) ₹500 (Favorable)
+Answer: (b) Rationale: \text{LRV} = \text{Actual Hours} \times (\text{Standard Rate} - \text{Actual Rate}) = 200 \times (50 - 55) = -₹1,000 =
+₹1,000\text{ Adverse (A)}.
+Q46. Idle Time Variance (due to machinery breakdown, power cuts, or raw material stock-outs) is ALWAYS:
+(a) Favorable 	(b) Adverse
+(c) Zero 	(d) None of the above
+Answer: (b) Rationale: Idle time represents unproductive hours for which workers are compensated without generating output; hence, it is
+inherently an Adverse (cost loss) variance: \text{Idle Hours} \times \text{Std Rate}.
+Cost Accounting • 50 Exam Question Bank 	Page 6 of 7
+
+-- 6 of 7 --
+
+SECTION 6 (CONT.): MODERN COST CONCEPTS & CONTROL TECHNIQUES (Q47 – Q50)
+Q47. The product pricing and costing philosophy that determines allowed production cost by deducting desired profit from
+competitive market price is:
+(a) Cost-Plus Pricing 	(b) Target Costing
+(c) Historical Costing 	(d) Marginal Mark-up Costing
+Answer: (b) Rationale: Target Costing works backward: \text{Target Cost} = \text{Anticipated Market Selling Price} - \text{Desired Profit Margin}.
+Products are then engineered to meet this target.
+Q48. The budgeting method that demands all operational activities be justified from scratch (zero base) for each new period,
+ignoring historical budgets, is:
+(a) Incremental Budgeting 	(b) Zero-Base Budgeting (ZBB)
+(c) Flexible Budgeting 	(d) Rolling Budgeting
+Answer: (b) Rationale: Developed by Peter Pyhrr, Zero-Base Budgeting assumes a baseline of zero for every department; each expenditure
+must be freshly justified from the ground up.
+Q49. A budget designed to change and dynamically adjust across multiple levels of operational activity is designated as a:
+(a) Fixed Budget 	(b) Flexible Budget
+(c) Master Budget 	(d) Performance Budget
+Answer: (b) Rationale: A Flexible Budget recognizes the difference between fixed, semi-variable, and variable expenses, providing tailored
+cost benchmarks for different levels of capacity (e.g., 60%, 80%, 100%).
+Q50. Under the Rowan Incentive Wage Plan, the bonus payable to a worker for saving time is computed using which formula?
+(a) \text{Time Saved} \times \text{Standard Hourly Rate} 	(b) 50\% \times (\text{Time Saved} \times \text{Hourly Rate})
+(c) (\text{Time Saved} / \text{Time Allowed}) \times (\text{Time
+Taken} \times \text{Hourly Rate})
+(d) \text{Time Taken} \times \text{Piece Rate}
+Answer: (c) Rationale: Under Rowan: \text{Bonus} = (\text{Time Saved} / \text{Standard Time}) \times (\text{Actual Hours Worked} \times
+\text{Rate}). Halsey plan uses 50\% \times (\text{Time Saved} \times \text{Rate}).
+HIGH-YIELD EXAM REVISION SUMMARY: MASTER FORMULA CHECKLIST
+Essential Mathematical Formulas for JKSSB / SSC CGL AAO:
+EOQ: \sqrt{(2 \times A \times O) / C} (At EOQ: Annual Ordering Cost = Annual Carrying Cost).
+Re-order Level: \text{Max Consumption} \times \text{Max Re-order Period}.
+Contribution: \text{Sales} - \text{Variable Cost} = \text{Fixed Cost} + \text{Profit}.
+P/V Ratio: (\text{Contribution} / \text{Sales}) \times 100 = (\text{Change in Profit} / \text{Change in Sales}) \times 100.
+Break-Even Point (BEP): Units: \text{Fixed Cost} / \text{Contribution per unit}; Value (₹): \text{Fixed Cost} / \text{P/V Ratio}.
+Margin of Safety: \text{Actual Sales} - \text{BEP Sales} = \text{Profit} / \text{P/V Ratio}.
+Material Variances: \text{MCV} = (\text{SQ} \times \text{SP}) - (\text{AQ} \times \text{AP}); \text{MPV} = \text{AQ} \times (\text{SP} - \text{AP});
+\text{MUV} = \text{SP} \times (\text{SQ} - \text{AQ}).
+Cost Accounting • 50 Exam Question Bank 	Page 7 of 7
+
+-- 7 of 7 --
+

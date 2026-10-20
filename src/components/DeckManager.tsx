@@ -9,6 +9,7 @@ import {
   BookOpen,
   Check,
   X,
+  Cloud,
 } from 'lucide-react';
 import { CategoryId, Difficulty, Flashcard } from '../types';
 import { CATEGORIES } from '../data/initialDecks';
@@ -17,11 +18,13 @@ import { saveCustomCards, loadCustomCards, toggleBookmark, loadBookmarks } from 
 interface DeckManagerProps {
   cards: Flashcard[];
   onRefreshCards: () => void;
+  onNavigateToDrive?: () => void;
 }
 
 export const DeckManager: React.FC<DeckManagerProps> = ({
   cards,
   onRefreshCards,
+  onNavigateToDrive,
 }) => {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
@@ -128,17 +131,29 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
             <span>Deck Explorer & Card Creator</span>
           </h1>
           <p className="text-xs text-slate-400 mt-1">
-            Browse {cards.length} preloaded and custom flashcards across all 8 disciplines.
+            Browse {cards.length} preloaded and custom flashcards across all 9 syllabus sections.
           </p>
         </div>
 
-        <button
-          onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition active:scale-95 cursor-pointer shrink-0"
-        >
-          <Plus className="w-4 h-4" />
-          <span>Create Flashcard</span>
-        </button>
+        <div className="flex items-center gap-2 shrink-0">
+          {onNavigateToDrive && (
+            <button
+              onClick={onNavigateToDrive}
+              className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-xs shadow-sm transition active:scale-95 cursor-pointer"
+            >
+              <Cloud className="w-4 h-4" />
+              <span>Google Drive Sync</span>
+            </button>
+          )}
+
+          <button
+            onClick={() => setShowCreateModal(true)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition active:scale-95 cursor-pointer"
+          >
+            <Plus className="w-4 h-4" />
+            <span>Create Flashcard</span>
+          </button>
+        </div>
       </div>
 
       {/* Filters & Search */}

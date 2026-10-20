@@ -11,6 +11,7 @@ import {
   Target,
   Sparkles,
   HelpCircle,
+  ClipboardCheck,
 } from 'lucide-react';
 import { CategoryId, Flashcard, UserStats } from '../types';
 import { CATEGORIES } from '../data/initialDecks';
@@ -28,6 +29,7 @@ interface QuizModeProps {
   onUpdateStats: (newStats: UserStats) => void;
   selectedCategory: CategoryId | 'all';
   onSelectCategory: (cat: CategoryId | 'all') => void;
+  onNavigateToMock?: () => void;
 }
 
 const QUESTION_TIME_LIMIT = 25; // seconds
@@ -38,6 +40,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
   onUpdateStats,
   selectedCategory,
   onSelectCategory,
+  onNavigateToMock,
 }) => {
   const [quizQuestions, setQuizQuestions] = useState<Flashcard[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -206,9 +209,9 @@ export const QuizMode: React.FC<QuizModeProps> = ({
         </div>
 
         {/* Question Count Selection */}
-        <div className="flex items-center justify-between bg-slate-900/60 border border-slate-800/80 rounded-2xl px-4 py-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-4 py-2">
           <span className="text-xs font-semibold text-slate-400">Quiz Length:</span>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             {[10, 25, 50, 100].map((num) => (
               <button
                 key={num}
@@ -222,6 +225,16 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                 {num} Qs
               </button>
             ))}
+            {onNavigateToMock && (
+              <button
+                onClick={onNavigateToMock}
+                className="px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-500/30 flex items-center gap-1 shadow-sm"
+                title="Launch full 120-question, 120-minute CBT Mock Exam"
+              >
+                <ClipboardCheck className="w-3.5 h-3.5 text-indigo-400" />
+                <span>120-Q Mock (120m)</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

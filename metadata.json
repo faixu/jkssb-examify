@@ -1,6 +1,6 @@
 {
   "name": "FlashMind Quiz & Flashcards",
-  "description": "Interactive flashcard quiz game with accounting, economics, statistics, English grammar, science, computer science, modern history, and general knowledge with offline PWA support, progress tracking, and daily streaks.",
+  "description": "Interactive flashcard and CBT mock test simulator for JKSSB FAA with 10 full syllabus 120-question exams (120 minutes each), accountancy, economics, statistics, English grammar, science, computer science, modern history, and general knowledge with Google Drive sync, offline PWA support, progress tracking, and daily streaks.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

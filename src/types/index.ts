@@ -48,7 +48,41 @@ export interface UserStats {
   categoryStats: Record<CategoryId, { reviewed: number; correct: number }>;
 }
 
-export type StudyMode = 'flip' | 'quiz' | 'speed' | 'stats' | 'decks';
+export type StudyMode = 'flip' | 'quiz' | 'mock' | 'speed' | 'stats' | 'decks' | 'drive';
+
+export interface ActiveMockConfig {
+  type: 'full' | 'section';
+  testNumber?: number; // 1 to 10 for full syllabus tests
+  sectionId?: CategoryId | 'all';
+  autoStart?: boolean;
+}
+
+export interface MockTestResult {
+  id: string;
+  title: string;
+  sectionId: CategoryId | 'all';
+  testNumber?: number;
+  date: string;
+  totalQuestions: number;
+  timeTakenSeconds: number;
+  totalTimeSeconds: number;
+  score: number;
+  maxMarks: number;
+  correctCount: number;
+  incorrectCount: number;
+  unattemptedCount: number;
+  accuracy: number;
+  negativeDeduction: number;
+  sectionBreakdown: {
+    sectionId: CategoryId;
+    sectionName: string;
+    total: number;
+    correct: number;
+    incorrect: number;
+    unattempted: number;
+    score: number;
+  }[];
+}
 
 export interface CategoryMeta {
   id: CategoryId;

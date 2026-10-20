@@ -1,0 +1,299 @@
+Costing Methods: 50 MCQ Practice Bank
+Marginal, Absorption, Standard, and Uniform Costing
+Section A: Marginal Costing
+1. In marginal costing, which costs are treated as product costs?
+A. Fixed costs only
+B. Variable costs only
+C. Both fixed and variable costs
+D. Semi-variable costs only
+Answer: B
+2. Marginal costing is also known as:
+A. Direct costing
+B. Absorption costing
+C. Historical costing
+D. Standard costing
+Answer: A
+3. Contribution is equal to:
+A. Sales − Fixed Costs
+B. Sales − Variable Costs
+C. Fixed Costs + Profit
+D. Both B and C
+Answer: D
+4. Under marginal costing, inventory is valued at:
+A. Total cost
+B. Fixed production cost
+C. Variable production cost
+D. Market price
+Answer: C
+5. Marginal cost is the change in total cost resulting from producing:
+A. A batch of products
+B. One additional unit of output
+C. A new product line
+D. None of the above
+Answer: B
+6. Which of the following is true about Fixed Costs in marginal costing?
+A. They are apportioned to products
+B. They are treated as period costs and charged to the Profit & Loss account
+C. They are carried forward to the next period as inventory
+D. They are ignored completely
+Answer: B
+Costing Methods - 50 MCQs 	Page 1
+
+-- 1 of 7 --
+
+8. If sales are Rs. 100,000, variable costs are Rs. 60,000, and fixed costs are Rs. 30,000, the profit under
+marginal costing is:
+A. Rs. 40,000
+B. Rs. 10,000
+C. Rs. 70,000
+D. Rs. 30,000
+Answer: B
+9. Marginal costing assumes that all costs can be classified into:
+A. Direct and indirect costs
+B. Fixed and variable costs
+C. Controllable and uncontrollable costs
+D. Normal and abnormal costs
+Answer: B
+10. In a period where production exactly equals sales, the profit calculated under marginal costing
+compared to absorption costing will be:
+A. Higher
+B. Lower
+C. Equal
+D. Unpredictable
+Answer: C
+11. A sunk cost is:
+A. Relevant for marginal costing decisions
+B. A future cost that differs between alternatives
+C. A historical cost that cannot be changed
+D. A variable cost
+Answer: C
+12. The Profit/Volume (P/V) ratio is unaffected by changes in:
+A. Selling price per unit
+B. Variable cost per unit
+C. Total fixed costs
+D. Sales mix
+Answer: C
+13. In a make-or-buy decision using marginal costing, a company should 'make' if:
+A. Marginal cost of making is less than the purchase price
+B. Total cost of making is less than the purchase price
+C. Fixed costs are high
+D. The purchase price equals marginal cost
+Answer: A
+14. Which statement is false regarding marginal costing?
+A. It avoids arbitrary apportionment of fixed overheads
+B. It is highly suitable for external financial reporting
+C. It highlights the contribution of each product
+D. It simplifies the valuation of stock
+Costing Methods - 50 MCQs 	Page 2
+
+-- 2 of 7 --
+
+Section B: Absorption Costing
+16. Absorption costing is also known as:
+A. Variable costing
+B. Direct costing
+C. Full costing
+D. Marginal costing
+Answer: C
+17. Under absorption costing, fixed manufacturing overheads are:
+A. Treated as period costs
+B. Ignored in product valuation
+C. Absorbed into the cost of units produced
+D. Charged directly to the Profit & Loss account
+Answer: C
+18. When production is greater than sales (inventory increases), the profit under absorption costing will
+be:
+A. Higher than marginal costing profit
+B. Lower than marginal costing profit
+C. Equal to marginal costing profit
+D. Zero
+Answer: A
+19. Which of the following items is included in inventory valuation under absorption costing but
+excluded under marginal costing?
+A. Direct Materials
+B. Direct Labor
+C. Variable Manufacturing Overheads
+D. Fixed Manufacturing Overheads
+Answer: D
+20. The problem of over or under-absorption of overheads arises only in:
+A. Marginal Costing
+B. Standard Costing
+C. Absorption Costing
+D. Uniform Costing
+Answer: C
+21. In absorption costing, gross profit is calculated by deducting:
+A. Variable costs from sales
+B. Total manufacturing costs (fixed + variable) from sales
+C. Fixed costs from sales
+D. Non-manufacturing costs from sales
+Answer: B
+22. Which costing method is generally required for external reporting and tax purposes (e.g.,
+GAAP/IFRS)?
+A Marginal Costing
+Costing Methods - 50 MCQs 	Page 3
+
+-- 3 of 7 --
+
+24. Fixed production overheads are absorbed based on a predetermined rate. If actual hours worked are
+less than budgeted, it typically results in:
+A. Over-absorption of overheads
+B. Under-absorption of overheads
+C. No effect on overheads
+D. Increase in fixed costs
+Answer: B
+25. If sales exceed production (inventory decreases), absorption costing profit will be:
+A. Higher than marginal costing profit
+B. Lower than marginal costing profit
+C. Equal to marginal costing profit
+D. Unchanged
+Answer: B
+Section C: Standard Costing
+26. Standard costing is a technique of:
+A. Cost ascertainment
+B. Cost reduction
+C. Cost control
+D. Cost allocation
+Answer: C
+27. A standard cost is a:
+A. Historical cost
+B. Predetermined cost representing what a product *should* cost
+C. Sunk cost
+D. Variable cost only
+Answer: B
+28. The difference between standard cost and actual cost is known as:
+A. Profit
+B. Variance
+C. Margin
+D. Contribution
+Answer: B
+29. Material Price Variance is calculated as:
+A. (Standard Price − Actual Price) × Actual Quantity
+B. (Standard Price − Actual Price) × Standard Quantity
+C. (Standard Quantity − Actual Quantity) × Standard Price
+D. (Standard Quantity − Actual Quantity) × Actual Price
+Answer: A
+30. An adverse (unfavorable) variance occurs when:
+A. Actual cost < Standard cost
+B. Actual cost > Standard cost
+C Standard cost = Actual cost
+Costing Methods - 50 MCQs 	Page 4
+
+-- 4 of 7 --
+
+32. Labor Rate Variance is equal to:
+A. (Standard Hours − Actual Hours) × Standard Rate
+B. (Standard Rate − Actual Rate) × Actual Hours
+C. (Standard Rate − Actual Rate) × Standard Hours
+D. (Standard Hours − Actual Hours) × Actual Rate
+Answer: B
+33. Which variance arises due to workers taking more time than allowed to complete a job?
+A. Labor Rate Variance
+B. Labor Mix Variance
+C. Labor Efficiency Variance
+D. Labor Yield Variance
+Answer: C
+34. A 'Basic Standard' is:
+A. A standard established for use over a long period
+B. A standard based on ideal conditions
+C. A standard that is updated monthly
+D. A standard based solely on historical averages
+Answer: A
+35. Idle Time Variance is always:
+A. Favorable
+B. Adverse
+C. Zero
+D. Equal to efficiency variance
+Answer: B
+36. If Standard Cost = Rs. 1,000 and Actual Cost = Rs. 1,200, the variance is:
+A. Rs. 200 Favorable
+B. Rs. 200 Adverse
+C. Rs. 2,200
+D. Rs. 1,000
+Answer: B
+37. Standard costing is most suitable for:
+A. Job order industries
+B. Process industries with repetitive mass production
+C. Service industries like hospitals
+D. Custom contract businesses
+Answer: B
+38. Overhead Volume Variance is a part of:
+A. Variable Overhead Variance
+B. Fixed Overhead Variance
+C. Material Variance
+D. Labor Variance
+Answer: B
+Costing Methods - 50 MCQs 	Page 5
+
+-- 5 of 7 --
+
+40. Material Cost Variance is the sum of:
+A. Material Price Variance + Material Usage Variance
+B. Material Mix Variance + Material Yield Variance
+C. Labor Rate Variance + Material Price Variance
+D. Fixed Overhead + Variable Overhead
+Answer: A
+Section D: Uniform Costing
+41. Uniform costing is:
+A. A distinct, separate method of costing like process costing
+B. The use of the same costing principles by several undertakings in the same industry
+C. Costing applied only to uniform, identical products
+D. A technique used only in monopolies
+Answer: B
+42. The main purpose of uniform costing is to:
+A. Increase competition blindly
+B. Facilitate inter-firm comparison
+C. Avoid paying taxes
+D. Standardize selling prices across all industries
+Answer: B
+43. Which of the following is essential for the success of uniform costing?
+A. Mutual trust and cooperation among participating firms
+B. All firms must be of the exact same size
+C. Government mandate
+D. Zero variance in standard costs
+Answer: A
+44. A document providing comprehensive guidelines for uniform costing to participating firms is called
+a:
+A. Cost Sheet
+B. Cost Manual
+C. Standard Ledger
+D. Master Budget
+Answer: B
+45. Inter-firm comparison involves comparing:
+A. Historical costs with standard costs of a single firm
+B. Financial and cost performance of different firms in an industry
+C. Actual costs with budgeted costs
+D. Marginal cost with absorption cost
+Answer: B
+46. Uniform costing is extremely helpful in:
+A. Negotiating with trade unions and government
+B. Hiding inefficiencies
+C Eliminating fixed costs entirely
+Costing Methods - 50 MCQs 	Page 6
+
+-- 6 of 7 --
+
+48. A major limitation of uniform costing is that:
+A. It creates unhealthy competition
+B. Firms may be hesitant to share confidential cost data
+C. It violates accounting standards
+D. It is only applicable to small-scale industries
+Answer: B
+49. Inter-firm comparison is often facilitated by:
+A. A central trade association or independent body
+B. The lowest performing firm
+C. Shareholders of the individual firms
+D. Creditors
+Answer: A
+50. To make inter-firm comparison meaningful, it is highly recommended to use:
+A. Ratios instead of absolute figures
+B. Only absolute profit figures
+C. Different accounting periods for different firms
+D. Historical costs from a decade ago
+Answer: A
+End of Practice Questions
+This workbook covered four major areas of management accounting: Marginal Costing, Absorption Costing,
+Standard Costing, and Uniform Costing.
+Costing Methods - 50 MCQs 	Page 7
+
+-- 7 of 7 --
+

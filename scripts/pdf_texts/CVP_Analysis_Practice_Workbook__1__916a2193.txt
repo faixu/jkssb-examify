@@ -1,0 +1,168 @@
+Cost-Volume-Profit (CVP) Analysis
+Practice Workbook: Target Profit, Break-Even, and Margin of Safety
+Key Formula: Required Units = (Total Fixed Costs + Target Profit) ÷ Contribution Margin per Unit
+Part 1: Target Profit Calculations
+1. From the following information, find out the number of units that must be sold by the
+firm to earn a profit of Rs. 1,00,000 per year.
+Sales price: Rs. 40 per unit
+Variable manufacturing costs: Rs. 15 per unit | Variable selling costs: Rs. 5 per unit
+Fixed factory overheads: Rs. 4,00,000 | Fixed selling costs: Rs. 1,00,000
+A) 25,000 units
+B) 30,000 units
+C) 35,000 units
+D) 40,000 units
+Correct Answer: B
+Contribution Margin = 40 − (15 + 5) = 20. Total Fixed Costs = 4,00,000 + 1,00,000 = 5,00,000.
+Required Units = (5,00,000 + 1,00,000) ÷ 20 = 6,00,000 ÷ 20 = 30,000 units.
+2. A company wants to achieve a target profit of Rs. 2,50,000. Calculate the required sales
+volume in units using the data below:
+Sales price: Rs. 60 per unit
+Variable manufacturing costs: Rs. 20 per unit | Variable selling costs: Rs. 10 per unit
+Fixed factory overheads: Rs. 3,50,000 | Fixed selling costs: Rs. 1,50,000
+A) 15,000 units
+B) 20,000 units
+C) 25,000 units
+D) 30,000 units
+Correct Answer: C
+Contribution Margin = 60 − 30 = 30. Total Fixed = 5,00,000.
+Required = (5,00,000 + 2,50,000) ÷ 30 = 25,000 units.
+CVP Analysis Practice Workbook 	Page 1 of 3
+
+-- 1 of 6 --
+
+3. Determine the number of units to be sold to earn a profit of Rs. 50,000 per year.
+Sales price: Rs. 100 per unit
+Variable costs: Rs. 40 (Mfg) + Rs. 20 (Selling) = Rs. 60 per unit
+Fixed costs: Rs. 1,00,000 (Factory) + Rs. 50,000 (Selling) = Rs. 1,50,000
+A) 4,000 units
+B) 5,000 units
+C) 6,000 units
+Correct Answer: B
+Required Units = (1,50,000 + 50,000) ÷ (100 − 60) = 2,00,000 ÷ 40 = 5,000 units.
+4. Find out the number of units that must be sold to earn a profit of Rs. 3,00,000 per year.
+Sales price: Rs. 20 per unit | Total Variable costs: Rs. 10 per unit
+Total Fixed costs: Rs. 6,00,000
+A) 80,000 units
+B) 85,000 units
+C) 90,000 units
+Correct Answer: C
+Required Units = (6,00,000 + 3,00,000) ÷ (20 − 10) = 9,00,000 ÷ 10 = 90,000 units.
+5. Calculate the target sales in units required to earn a profit of Rs. 1,20,000.
+Sales price: Rs. 80 per unit | Total Variable costs: Rs. 40 per unit
+Total Fixed costs: Rs. 2,80,000
+A) 8,000 units
+B) 10,000 units
+C) 12,000 units
+Correct Answer: B
+Required Units = (2,80,000 + 1,20,000) ÷ (80 − 40) = 4,00,000 ÷ 40 = 10,000 units.
+Part 2: Break-Even & P/V Ratio Quiz
+1. A company has fixed costs of $100,000. The selling price per unit is $50 and the
+variable cost per unit is $30. What is the break-even point in units?
+Correct Answer: 5,000 units
+BEP (units) = Fixed Costs ÷ Contribution Margin per unit = 100,000 ÷ (50 − 30) = 5,000.
+CVP Analysis Practice Workbook 	Page 2 of 3
+
+-- 2 of 6 --
+
+3. Total sales are $500,000 and total variable costs are $300,000. What is the
+Profit/Volume (P/V) ratio?
+Correct Answer: 40%
+Contribution = 500,000 − 300,000 = 200,000. P/V Ratio = (200,000 ÷ 500,000) × 100 = 40%.
+4. A company's actual sales are $800,000 and its break-even sales are $600,000. What is
+the margin of safety?
+Correct Answer: $200,000
+Margin of Safety = Actual Sales − Break-Even Sales = 800,000 − 600,000.
+5. At a break-even point of 10,000 units, the selling price is $20 and the variable cost is
+$12 per unit. What are the total fixed costs?
+Correct Answer: $80,000
+Fixed Costs = BEP (units) × Contribution Margin per unit = 10,000 × (20 − 12) = 80,000.
+6. If a company has total sales of $1,000,000, a Profit/Volume (P/V) ratio of 25%, and fixed
+costs of $150,000, what is the net profit?
+Correct Answer: $100,000
+Contribution = Sales × P/V = 250,000. Profit = Contribution − Fixed Costs = 250,000 − 150,000.
+7. A firm desires a target profit of $50,000. Its fixed costs are $150,000 and the
+contribution margin per unit is $25. How many units must be sold?
+Correct Answer: 8,000 units
+Target Units = (150,000 + 50,000) ÷ 25 = 200,000 ÷ 25 = 8,000.
+8. What happens to the break-even point if the variable cost per unit increases, assuming
+the selling price and total fixed costs remain constant?
+Correct Answer: It increases.
+Higher variable cost reduces the contribution margin, meaning more units must be sold to cover fixed
+costs.
+9. A company has a Margin of Safety of 20% and actual sales of 50,000 units. What is the
+break-even point in units?
+CVP Analysis Practice Workbook 	Page 3
+
+-- 3 of 6 --
+
+Part 3: Advanced CVP & P/V Ratio
+1. A company reports sales of Rs. 1,00,000 and a profit of Rs. 10,000 in Year 1. In Year 2,
+sales increased to Rs. 1,50,000 and profit increased to Rs. 20,000. What is the
+Profit/Volume (P/V) ratio?
+Correct Answer: 20%
+P/V Ratio = (Change in Profit ÷ Change in Sales) × 100
+= [(20,000 - 10,000) ÷ (1,50,000 - 1,00,000)] × 100 = (10,000 ÷ 50,000) × 100 = 20%.
+2. A firm has actual sales of Rs. 5,00,000 and its break-even sales are Rs. 4,00,000. What
+is the Margin of Safety percentage?
+Correct Answer: 20%
+Margin of Safety = Actual Sales - Break-Even Sales = 5,00,000 - 4,00,000 = 1,00,000.
+Margin of Safety % = (Margin of Safety ÷ Actual Sales) × 100 = (1,00,000 ÷ 5,00,000) × 100 = 20%.
+3. If a company has a P/V Ratio of 25%, Actual Sales of Rs. 6,00,000, and a Margin of
+Safety of Rs. 2,00,000, what are the total Fixed Costs?
+Correct Answer: Rs. 1,00,000
+Break-Even Sales = Actual Sales - Margin of Safety = 6,00,000 - 2,00,000 = 4,00,000.
+Fixed Costs = Break-Even Sales × P/V Ratio = 4,00,000 × 25% = 1,00,000.
+4. A product currently sells for Rs. 50 with a variable cost of Rs. 30. Total fixed costs are
+Rs. 1,00,000. If fixed costs increase by 20% and the variable cost per unit decreases by
+Rs. 5, what is the new break-even point in units?
+Correct Answer: 4,800 units
+New Fixed Costs = 1,00,000 + 20% = 1,20,000. New Variable Cost = 30 - 5 = 25.
+New Contribution Margin = 50 - 25 = 25. New BEP = 1,20,000 ÷ 25 = 4,800 units.
+CVP Analysis Practice Workbook 	Page 4
+
+-- 4 of 6 --
+
+5. AimFit Gym sells two products: Memberships (Contribution Margin Rs. 10) and Diet
+Plans (Contribution Margin Rs. 20). The sales mix is 60% Memberships and 40% Diet
+Plans. If total fixed costs are Rs. 70,000, how many Diet Plans must be sold to break
+even?
+Correct Answer: 2,000 units
+Weighted Average CM = (10 × 0.60) + (20 × 0.40) = 6 + 8 = Rs. 14.
+Total BEP (units) = 70,000 ÷ 14 = 5,000 units. Diet Plans sold = 5,000 × 40% = 2,000 units.
+6. A company has a selling price of Rs. 40, a variable cost of Rs. 24, and fixed costs of
+Rs. 1,60,000. The company is subject to a 40% income tax rate. How many units must be
+sold to achieve a target AFTER-TAX profit of Rs. 48,000?
+Correct Answer: 15,000 units
+Pre-Tax Target Profit = 48,000 ÷ (1 - 0.40) = 48,000 ÷ 0.60 = 80,000.
+Required Units = (Fixed Costs + Pre-Tax Target Profit) ÷ Unit CM = (1,60,000 + 80,000) ÷ (40 - 24) =
+2,40,000 ÷ 16 = 15,000 units.
+7. A company is considering two production machines. Machine A has fixed costs of Rs.
+50,000 and a variable cost of Rs. 10 per unit. Machine B has fixed costs of Rs. 80,000 and
+a variable cost of Rs. 5 per unit. At what sales volume will the total costs of both
+machines be identical (the indifference point)?
+Correct Answer: 6,000 units
+Set Total Costs equal: 50,000 + 10X = 80,000 + 5X.
+5X = 30,000 ➔ X = 6,000 units.
+8. A business has total Fixed Costs of Rs. 1,20,000 and a P/V ratio of 30%. What will be
+the net profit if total sales reach Rs. 6,00,000?
+Correct Answer: Rs. 60,000
+Contribution Margin = Sales × P/V Ratio = 6,00,000 × 30% = 1,80,000.
+Net Profit = Contribution Margin - Fixed Costs = 1,80,000 - 1,20,000 = 60,000.
+CVP Analysis Practice Workbook 	Page 5
+
+-- 5 of 6 --
+
+9. If a company has a Total Contribution Margin of Rs. 2,00,000 and a Net Profit of Rs.
+50,000, what is its Degree of Operating Leverage (DOL)?
+Correct Answer: 4.0
+DOL = Total Contribution Margin ÷ Net Profit = 2,00,000 ÷ 50,000 = 4.0.
+(This means a 10% increase in sales will result in a 40% increase in profit).
+10. If a product has a P/V ratio of 40% and its selling price is Rs. 150 per unit, what is the
+variable cost per unit?
+Correct Answer: Rs. 90
+Contribution Margin = Selling Price × P/V Ratio = 150 × 40% = 60.
+Variable Cost = Selling Price - Contribution Margin = 150 - 60 = Rs. 90.
+CVP Analysis Practice Workbook 	Page 6
+
+-- 6 of 6 --
+

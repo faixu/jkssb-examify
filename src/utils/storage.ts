@@ -1,10 +1,11 @@
-import { CardProgress, CategoryId, ConfidenceRating, Flashcard, UserStats } from '../types';
+import { CardProgress, CategoryId, ConfidenceRating, Flashcard, UserStats, MockTestResult } from '../types';
 import { INITIAL_FLASHCARDS } from '../data/initialDecks';
 
 const STATS_KEY = 'flashmind_stats_v1';
 const PROGRESS_KEY = 'flashmind_progress_v1';
 const CUSTOM_CARDS_KEY = 'flashmind_custom_cards_v1';
 const BOOKMARKS_KEY = 'flashmind_bookmarks_v1';
+const MOCK_RESULTS_KEY = 'flashmind_mock_results_v1';
 
 export function getTodayDateStr(): string {
   const d = new Date();
@@ -254,12 +255,32 @@ export function toggleBookmark(cardId: string): string[] {
   return next;
 }
 
+export function loadMockTestResults(): MockTestResult[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(MOCK_RESULTS_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function saveMockTestResult(result: MockTestResult): MockTestResult[] {
+  const current = loadMockTestResults();
+  const next = [result, ...current.slice(0, 49)]; // keep latest 50 results
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(MOCK_RESULTS_KEY, JSON.stringify(next));
+  }
+  return next;
+}
+
 export function exportStudyData(): string {
   const data = {
     stats: loadUserStats(),
     progress: loadCardProgress(),
     customCards: loadCustomCards(),
     bookmarks: loadBookmarks(),
+    mockResults: loadMockTestResults(),
     exportedAt: new Date().toISOString(),
   };
   return JSON.stringify(data, null, 2);
@@ -274,6 +295,9 @@ export function importStudyData(jsonString: string): boolean {
     if (data.bookmarks && typeof window !== 'undefined') {
       localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(data.bookmarks));
     }
+    if (data.mockResults && typeof window !== 'undefined') {
+      localStorage.setItem(MOCK_RESULTS_KEY, JSON.stringify(data.mockResults));
+    }
     return true;
   } catch {
     return false;
@@ -286,5 +310,6 @@ export function resetAllData() {
     localStorage.removeItem(PROGRESS_KEY);
     localStorage.removeItem(CUSTOM_CARDS_KEY);
     localStorage.removeItem(BOOKMARKS_KEY);
+    localStorage.removeItem(MOCK_RESULTS_KEY);
   }
 }

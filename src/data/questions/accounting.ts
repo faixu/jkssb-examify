@@ -1,6 +1,12 @@
 import { Flashcard } from '../../types';
+import { COST_ACCOUNTING_PDF_50_QUESTIONS } from './costAccountingPdfQuestions';
+import { COSTING_METHODS_PDF_50_QUESTIONS } from './costingMethodsPdfQuestions';
+import { CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS } from './cvpAnalysisPdfQuestions';
 
 export const ACCOUNTING_QUESTIONS: Flashcard[] = [
+  ...COST_ACCOUNTING_PDF_50_QUESTIONS,
+  ...COSTING_METHODS_PDF_50_QUESTIONS,
+  ...CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS,
   {
     "id": "acc-1",
     "categoryId": "accounting",
