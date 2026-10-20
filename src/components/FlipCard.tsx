@@ -51,15 +51,15 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto perspective-1000 min-h-[360px] sm:min-h-[400px]">
+    <div className="w-full max-w-2xl mx-auto perspective-1000 min-h-[300px] sm:min-h-[360px] md:min-h-[400px]">
       <div
         onClick={handleFlipClick}
-        className={`relative w-full h-full min-h-[360px] sm:min-h-[400px] transition-transform duration-500 transform-style-3d cursor-pointer select-none ${
+        className={`relative w-full h-full min-h-[300px] sm:min-h-[360px] md:min-h-[400px] transition-transform duration-500 transform-style-3d cursor-pointer select-none ${
           isFlipped ? 'rotate-y-180' : ''
         }`}
       >
         {/* ================= FRONT SIDE ================= */}
-        <div className="absolute inset-0 w-full h-full backface-hidden rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between shadow-2xl shadow-slate-950/80 hover:border-indigo-500/50 transition-colors">
+        <div className="absolute inset-0 w-full h-full backface-hidden rounded-3xl bg-slate-900 border border-slate-800 p-4 sm:p-8 flex flex-col justify-between shadow-2xl shadow-slate-950/80 hover:border-indigo-500/50 transition-colors">
           {/* Top Bar */}
           <div className="flex items-center justify-between gap-2 border-b border-slate-800/80 pb-4">
             <div className="flex items-center gap-2">
@@ -97,12 +97,12 @@ export const FlipCard: React.FC<FlipCardProps> = ({
           </div>
 
           {/* Question Center */}
-          <div className="my-auto py-6 sm:py-8 text-center">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-4 border border-indigo-500/20">
+          <div className="my-auto py-3 sm:py-8 text-center">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-3 sm:mb-4 border border-indigo-500/20">
               <HelpCircle className="w-3.5 h-3.5" />
               Question
             </div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-relaxed max-w-xl mx-auto">
+            <h2 className="text-base sm:text-xl lg:text-2xl font-extrabold text-white tracking-tight leading-relaxed max-w-xl mx-auto">
               {card.question}
             </h2>
 
@@ -141,7 +141,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
         </div>
 
         {/* ================= BACK SIDE ================= */}
-        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-3xl bg-gradient-to-b from-slate-900 to-indigo-950/40 border border-indigo-500/40 p-6 sm:p-8 flex flex-col justify-between shadow-2xl shadow-indigo-950/50">
+        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-3xl bg-gradient-to-b from-slate-900 to-indigo-950/40 border border-indigo-500/40 p-4 sm:p-8 flex flex-col justify-between shadow-2xl shadow-indigo-950/50">
           {/* Top Bar */}
           <div className="flex items-center justify-between gap-2 border-b border-indigo-500/20 pb-4">
             <div className="flex items-center gap-2">

@@ -86,6 +86,7 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
   const [testResult, setTestResult] = useState<MockTestResult | null>(null);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect' | 'correct' | 'unattempted' | 'review'>('all');
   const [paletteFilterSection, setPaletteFilterSection] = useState<CategoryId | 'all'>('all');
+  const [isMobilePaletteOpen, setIsMobilePaletteOpen] = useState(false);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [savedResults, setSavedResults] = useState<MockTestResult[]>([]);
 
@@ -766,61 +767,79 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
     const activeCat = CATEGORIES.find((c) => c.id === currentQuestion?.categoryId);
 
     return (
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 space-y-3 sm:space-y-4">
         {/* Sticky CBT Control Header */}
-        <div className="sticky top-16 z-30 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-xl flex flex-wrap items-center justify-between gap-3">
-          {/* Title & Question count */}
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
-              <FileCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-xs sm:text-sm text-white">
-                  {currentTestTitle}
-                </span>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">
-                  120 Questions
-                </span>
+        <div className="sticky top-16 z-30 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl p-2.5 sm:p-4 shadow-xl space-y-2">
+          {/* Row 1: Title / Badge + Timer + Pause + Submit */}
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <div className="p-1.5 sm:p-2 rounded-xl bg-indigo-500/10 text-indigo-400 shrink-0">
+                <FileCheck className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <span className="text-xs text-slate-400">
-                Attempted: <strong className="text-emerald-400">{testStats.answered}</strong> / {testStats.total} · Review: <strong className="text-purple-400">{testStats.review}</strong>
-              </span>
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-extrabold text-xs sm:text-sm text-white truncate max-w-[130px] sm:max-w-xs">
+                    {currentTestTitle.split('•')[0].trim()}
+                  </span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono shrink-0">
+                    120Q
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+              {/* Pause / Resume */}
+              <button
+                onClick={() => setTestStatus(isPaused ? 'running' : 'paused')}
+                className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800 active:bg-slate-700 text-xs font-medium text-slate-300 transition cursor-pointer"
+                title={isPaused ? 'Resume exam' : 'Pause exam'}
+              >
+                {isPaused ? <Play className="w-3.5 h-3.5 text-emerald-400" /> : <Pause className="w-3.5 h-3.5 text-amber-400" />}
+                <span className="hidden sm:inline">{isPaused ? 'Resume' : 'Pause'}</span>
+              </button>
+
+              {/* Countdown Display */}
+              <div
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-mono font-black border transition-all ${
+                  isTimeCritical
+                    ? 'bg-rose-500/20 text-rose-300 border-rose-500/40 animate-pulse'
+                    : isTimeUrgent
+                    ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                    : 'bg-slate-800 text-cyan-300 border-slate-700'
+                }`}
+              >
+                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>{formatTime(secondsLeft)}</span>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                onClick={() => setShowSubmitModal(true)}
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition cursor-pointer"
+              >
+                Submit
+              </button>
             </div>
           </div>
 
-          {/* 120-Minutes Live Timer & Actions */}
-          <div className="flex items-center gap-3">
-            {/* Pause / Resume */}
-            <button
-              onClick={() => setTestStatus(isPaused ? 'running' : 'paused')}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 transition cursor-pointer"
-              title={isPaused ? 'Resume exam' : 'Pause exam'}
-            >
-              {isPaused ? <Play className="w-3.5 h-3.5 text-emerald-400" /> : <Pause className="w-3.5 h-3.5 text-amber-400" />}
-              <span className="hidden sm:inline">{isPaused ? 'Resume' : 'Pause'}</span>
-            </button>
-
-            {/* Countdown Display */}
-            <div
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-sm font-mono font-black border transition-all ${
-                isTimeCritical
-                  ? 'bg-rose-500/20 text-rose-300 border-rose-500/40 animate-pulse'
-                  : isTimeUrgent
-                  ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-                  : 'bg-slate-800 text-cyan-300 border-slate-700'
-              }`}
-            >
-              <Clock className="w-4 h-4" />
-              <span>{formatTime(secondsLeft)}</span>
+          {/* Row 2: Status pill and Mobile Palette Drawer Trigger */}
+          <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-800/80 text-[11px] sm:text-xs text-slate-400">
+            <div className="flex items-center gap-2">
+              <span>Q <strong className="text-white">{currentIndex + 1}</strong>/120</span>
+              <span>•</span>
+              <span className="text-emerald-400 font-semibold">{testStats.answered} Ans</span>
+              <span>•</span>
+              <span className="text-purple-400 font-semibold">{testStats.review} Rev</span>
             </div>
 
-            {/* Submit Button */}
+            {/* Mobile Question Palette button */}
             <button
-              onClick={() => setShowSubmitModal(true)}
-              className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition cursor-pointer"
+              onClick={() => setIsMobilePaletteOpen(true)}
+              className="lg:hidden flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-600/30 active:bg-indigo-600/50 text-indigo-300 border border-indigo-500/40 text-[11px] font-bold cursor-pointer transition active:scale-95"
             >
-              Submit Test
+              <Layers className="w-3 h-3 text-indigo-400" />
+              <span>Palette (120)</span>
             </button>
           </div>
         </div>
@@ -968,8 +987,8 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
               </div>
             </div>
 
-            {/* Right 4 Cols: CBT Question Palette (1 to 120 Grid) */}
-            <div className="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl space-y-4">
+            {/* Right 4 Cols: CBT Question Palette (1 to 120 Grid) - Desktop */}
+            <div className="hidden lg:block lg:col-span-4 bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl space-y-4 sticky top-36">
               <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
                   Question Palette ({testQuestions.length})
@@ -1072,6 +1091,135 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
               </button>
             </div>
           </div>
+        )}
+
+        {/* Mobile Slide-Up Question Palette Drawer */}
+        {isMobilePaletteOpen && !isPaused && (
+          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-0 sm:p-4">
+            <div className="w-full sm:max-w-lg bg-slate-900 border border-slate-700 rounded-t-3xl sm:rounded-3xl p-5 shadow-2xl max-h-[85vh] flex flex-col space-y-4 animate-in slide-in-from-bottom duration-200">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-indigo-400" />
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+                    Question Palette ({testQuestions.length})
+                  </h3>
+                </div>
+                <button
+                  onClick={() => setIsMobilePaletteOpen(false)}
+                  className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white"
+                >
+                  <XCircle className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Status Legend */}
+              <div className="grid grid-cols-2 gap-2 text-[11px] font-medium text-slate-400">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-emerald-500" />
+                  <span>Answered ({testStats.answered})</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-purple-500" />
+                  <span>Review ({testStats.review})</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-slate-800 border border-slate-700" />
+                  <span>Unanswered ({testStats.unattempted})</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-indigo-500 ring-2 ring-indigo-400/50" />
+                  <span>Current Question</span>
+                </div>
+              </div>
+
+              {/* Section Filter Pills */}
+              {selectedSection === 'all' && (
+                <div className="flex items-center gap-1 overflow-x-auto pb-1 scrollbar-none border-t border-slate-800 pt-2 shrink-0">
+                  <button
+                    onClick={() => setPaletteFilterSection('all')}
+                    className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap cursor-pointer transition ${
+                      paletteFilterSection === 'all' ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-slate-400'
+                    }`}
+                  >
+                    All (120)
+                  </button>
+                  {CATEGORIES.map((cat) => {
+                    const hasQuestions = testQuestions.some((q) => q.categoryId === cat.id);
+                    if (!hasQuestions) return null;
+                    return (
+                      <button
+                        key={cat.id}
+                        onClick={() => setPaletteFilterSection(cat.id)}
+                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap cursor-pointer transition ${
+                          paletteFilterSection === cat.id ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-slate-400'
+                        }`}
+                      >
+                        {cat.name.split(' ')[0]}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Grid of 120 Questions */}
+              <div className="overflow-y-auto flex-1 pr-1 max-h-72">
+                <div className="grid grid-cols-6 sm:grid-cols-8 gap-2">
+                  {visiblePaletteIndices.map((idx) => {
+                    const status = getQuestionStatus(idx);
+                    const isCurrent = idx === currentIndex;
+
+                    let btnStyle = 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border-slate-750';
+                    if (status === 'answered') {
+                      btnStyle = 'bg-emerald-600 text-white font-bold border-emerald-500';
+                    } else if (status === 'review_answered') {
+                      btnStyle = 'bg-purple-600 text-white font-bold border-purple-400 ring-1 ring-emerald-400';
+                    } else if (status === 'review') {
+                      btnStyle = 'bg-purple-600 text-white font-bold border-purple-500';
+                    }
+
+                    if (isCurrent) {
+                      btnStyle += ' ring-2 ring-indigo-400 ring-offset-2 ring-offset-slate-900';
+                    }
+
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setCurrentIndex(idx);
+                          setIsMobilePaletteOpen(false);
+                        }}
+                        className={`h-9 rounded-xl flex items-center justify-center text-xs font-mono transition border cursor-pointer active:scale-95 ${btnStyle}`}
+                      >
+                        {idx + 1}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Close Button at bottom */}
+              <div className="pt-2 border-t border-slate-800">
+                <button
+                  onClick={() => setIsMobilePaletteOpen(false)}
+                  className="w-full py-2.5 rounded-xl bg-slate-800 active:bg-slate-700 text-slate-200 text-xs font-bold text-center cursor-pointer"
+                >
+                  Close &amp; Return to Question {currentIndex + 1}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Mobile Floating Action Button to quickly jump to palette anytime */}
+        {!isPaused && (
+          <button
+            onClick={() => setIsMobilePaletteOpen(true)}
+            className="lg:hidden fixed bottom-6 right-4 z-40 flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-indigo-600 active:bg-indigo-700 text-white font-bold text-xs shadow-2xl shadow-indigo-600/50 border border-indigo-400/40 cursor-pointer active:scale-95"
+            title="Open Question Palette (120 Questions)"
+          >
+            <Layers className="w-4 h-4" />
+            <span>Palette ({testStats.answered}/120)</span>
+          </button>
         )}
 
         {/* Confirmation Modal Before Submission */}

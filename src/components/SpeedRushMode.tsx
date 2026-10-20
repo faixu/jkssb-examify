@@ -186,22 +186,22 @@ export const SpeedRushMode: React.FC<SpeedRushModeProps> = ({
           </div>
 
           {/* Question Box */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-center">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-4 capitalize">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-center">
+            <span className="inline-block px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-3 sm:mb-4 capitalize">
               {currentCard.categoryId}
             </span>
 
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-8 max-w-xl mx-auto leading-relaxed">
+            <h3 className="text-base sm:text-2xl font-extrabold text-white tracking-tight mb-5 sm:mb-8 max-w-xl mx-auto leading-relaxed">
               {currentCard.question}
             </h3>
 
             {/* Quick 4 Options */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
               {randomizedOptions.map((opt, idx) => (
                 <button
                   key={idx}
                   onClick={() => handlePickAnswer(opt)}
-                  className="p-4 rounded-2xl bg-slate-800 hover:bg-indigo-600 hover:text-white text-slate-200 border border-slate-700/80 text-xs sm:text-sm font-semibold transition active:scale-95 cursor-pointer text-left"
+                  className="p-3.5 sm:p-4 rounded-2xl bg-slate-800 hover:bg-indigo-600 hover:text-white text-slate-200 border border-slate-700/80 text-xs sm:text-sm font-semibold transition active:scale-95 cursor-pointer text-left"
                 >
                   {opt}
                 </button>

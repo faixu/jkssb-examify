@@ -158,49 +158,49 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
       </div>
 
       {/* 4 Stat Metric Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold text-slate-400">Total XP</span>
-            <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
-              <Zap className="w-4 h-4 fill-indigo-400" />
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Total XP</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
+              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-indigo-400" />
             </div>
           </div>
-          <span className="text-2xl font-black text-white">{userStats.xp}</span>
-          <span className="text-[11px] text-indigo-400/80 block mt-1">+10 to +20 per review</span>
+          <span className="text-xl sm:text-2xl font-black text-white">{userStats.xp}</span>
+          <span className="text-[10px] sm:text-[11px] text-indigo-400/80 block mt-1">+10 to +20 per review</span>
         </div>
 
-        <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold text-slate-400">Overall Accuracy</span>
-            <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
-              <Target className="w-4 h-4" />
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Overall Accuracy</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
+              <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </div>
-          <span className="text-2xl font-black text-emerald-400">{overallAccuracy}%</span>
-          <span className="text-[11px] text-slate-400 block mt-1">{userStats.totalCorrect} / {userStats.totalCardsReviewed} correct</span>
+          <span className="text-xl sm:text-2xl font-black text-emerald-400">{overallAccuracy}%</span>
+          <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-1">{userStats.totalCorrect} / {userStats.totalCardsReviewed} correct</span>
         </div>
 
-        <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold text-slate-400">Cards Mastered</span>
-            <div className="p-2 rounded-xl bg-purple-500/10 text-purple-400">
-              <Award className="w-4 h-4" />
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Cards Mastered</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-purple-500/10 text-purple-400">
+              <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </div>
-          <span className="text-2xl font-black text-purple-400">{masteredCount}</span>
-          <span className="text-[11px] text-slate-400 block mt-1">{totalCardsCount} total in decks</span>
+          <span className="text-xl sm:text-2xl font-black text-purple-400">{masteredCount}</span>
+          <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-1">{totalCardsCount} total in decks</span>
         </div>
 
-        <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold text-slate-400">Active Study Days</span>
-            <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
-              <Calendar className="w-4 h-4" />
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Active Study Days</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-amber-500/10 text-amber-400">
+              <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </div>
-          <span className="text-2xl font-black text-amber-400">{userStats.activeDays?.length || 0}</span>
-          <span className="text-[11px] text-slate-400 block mt-1">Days with practice</span>
+          <span className="text-xl sm:text-2xl font-black text-amber-400">{userStats.activeDays?.length || 0}</span>
+          <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-1">Days with practice</span>
         </div>
       </div>
 
@@ -225,28 +225,28 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
         </div>
 
         {/* 28 Day Grid */}
-        <div className="grid grid-cols-7 gap-2 sm:gap-3">
+        <div className="grid grid-cols-7 gap-1 sm:gap-3">
           {calendarDays.map((d, idx) => (
             <div
               key={idx}
-              className={`p-2.5 sm:p-3 rounded-xl border text-center transition-all ${
+              className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl border text-center transition-all ${
                 d.active
                   ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300 shadow-sm shadow-emerald-500/10'
                   : 'bg-slate-800/40 border-slate-800 text-slate-500'
               } ${d.isToday ? 'ring-2 ring-indigo-500' : ''}`}
               title={`${d.label}: ${d.active ? 'Studied!' : 'No practice recorded'}`}
             >
-              <span className="block text-[10px] font-semibold uppercase opacity-75">
+              <span className="block text-[9px] sm:text-[10px] font-semibold uppercase opacity-75">
                 {d.label.split(' ')[0]}
               </span>
-              <span className="block text-xs sm:text-sm font-extrabold text-white mt-0.5">
+              <span className="block text-[11px] sm:text-sm font-extrabold text-white mt-0.5">
                 {d.label.split(' ')[1]}
               </span>
-              <div className="mt-1 flex justify-center">
+              <div className="mt-0.5 sm:mt-1 flex justify-center">
                 {d.active ? (
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
                 ) : (
-                  <span className="w-2 h-2 rounded-full bg-slate-700" />
+                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-slate-700" />
                 )}
               </div>
             </div>

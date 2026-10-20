@@ -1,12 +1,29 @@
 @import "tailwindcss";
 
 @layer base {
-  body {
+  html, body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+  }
+  button, a, input, select, textarea {
+    touch-action: manipulation;
   }
   code, pre, .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
+}
+
+/* Safe area padding utilities for mobile notches & gesture bars */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+.mb-safe {
+  margin-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
 /* 3D Flashcard Flip utilities */

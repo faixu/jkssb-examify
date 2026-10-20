@@ -49,7 +49,18 @@ export interface UserStats {
   categoryStats: Record<CategoryId, { reviewed: number; correct: number }>;
 }
 
-export type StudyMode = 'flip' | 'quiz' | 'mock' | 'speed' | 'stats' | 'decks' | 'drive';
+export type StudyMode = 'flip' | 'quiz' | 'mock' | 'speed' | 'stats' | 'decks' | 'drive' | 'chat';
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'model';
+  text: string;
+  timestamp: string;
+  modelUsed?: string;
+  isError?: boolean;
+}
+
+export type ChatRolePreset = 'mentor' | 'accounting' | 'gk' | 'mnemonics' | 'custom';
 
 export interface ActiveMockConfig {
   type: 'full' | 'section';

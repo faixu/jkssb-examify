@@ -126,32 +126,32 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
       {/* Top Header & Add Button */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-indigo-400" />
-            <span>Deck Explorer & Card Creator</span>
+          <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
+            <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" />
+            <span>Deck Explorer &amp; Card Creator</span>
           </h1>
           <p className="text-xs text-slate-400 mt-1">
-            Browse {cards.length} preloaded and custom flashcards across all 9 syllabus sections.
+            Browse {cards.length} preloaded and custom flashcards across all syllabus sections.
           </p>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 flex-wrap w-full sm:w-auto">
           {onNavigateToDrive && (
             <button
               onClick={onNavigateToDrive}
-              className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-xs shadow-sm transition active:scale-95 cursor-pointer"
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-500/10 active:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-xs shadow-sm transition cursor-pointer"
             >
               <Cloud className="w-4 h-4" />
-              <span>Google Drive Sync</span>
+              <span>Drive Sync</span>
             </button>
           )}
 
           <button
             onClick={() => setShowCreateModal(true)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition active:scale-95 cursor-pointer"
+            className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition cursor-pointer"
           >
             <Plus className="w-4 h-4" />
-            <span>Create Flashcard</span>
+            <span>Create Card</span>
           </button>
         </div>
       </div>
@@ -320,8 +320,8 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
 
       {/* Modal: Create Custom Card */}
       {showCreateModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 overflow-y-auto">
-          <div className="w-full max-w-lg rounded-3xl bg-slate-900 border border-slate-800 p-6 shadow-2xl text-slate-100 relative my-8">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-3 sm:p-4 overflow-y-auto">
+          <div className="w-full max-w-lg rounded-3xl bg-slate-900 border border-slate-800 p-4 sm:p-6 shadow-2xl text-slate-100 relative my-auto sm:my-8 max-h-[92vh] overflow-y-auto">
             <button
               onClick={() => setShowCreateModal(false)}
               className="absolute top-5 right-5 p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 cursor-pointer"

@@ -357,6 +357,23 @@ export const Header: React.FC<HeaderProps> = ({
               <Cloud className="w-3.5 h-3.5" />
               <span>Google Drive</span>
             </button>
+
+            {/* AI Exam Mentor & Doubt Solver */}
+            <button
+              onClick={() => onSelectMode('chat')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
+                currentMode === 'chat'
+                  ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-sm shadow-purple-600/40'
+                  : 'text-purple-300 hover:text-white hover:bg-purple-950/40 border border-purple-500/20'
+              }`}
+              title="Ask Gemini AI for step-by-step solutions, FAA exam tips & mnemonics"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+              <span>AI Mentor</span>
+              <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-purple-500/25 text-purple-200 border border-purple-400/30">
+                Gemini
+              </span>
+            </button>
           </nav>
 
           {/* Right Action Badges */}
@@ -482,41 +499,58 @@ export const Header: React.FC<HeaderProps> = ({
             <Cloud className="w-3.5 h-3.5" />
             <span>Drive</span>
           </button>
+
+          <button
+            onClick={() => onSelectMode('chat')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition cursor-pointer ${
+              currentMode === 'chat'
+                ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-sm'
+                : 'text-purple-300 hover:text-white bg-purple-950/40 border border-purple-500/30'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+            <span>AI Mentor</span>
+          </button>
         </div>
 
         {/* Mobile Mock Test Selection Drawer/Accordion */}
         {isMobileMockOpen && (
           <div className="lg:hidden pb-3 pt-1 border-t border-slate-800 animate-in fade-in slide-in-from-top-1">
-            <div className="p-3 rounded-2xl bg-slate-900 border border-slate-700/80 space-y-2.5">
+            <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-700/80 space-y-2.5 shadow-xl">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-extrabold text-white flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-emerald-400" /> 10 Full Syllabus FAA Mock Tests
+                  <Award className="w-3.5 h-3.5 text-emerald-400" /> 5 Full Syllabus FAA Mock Tests
                 </span>
                 <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
                   120 Qs · 120m
                 </span>
               </div>
               <p className="text-[11px] text-slate-400">
-                10 Full Mock Tests with all different questions (1,200 unique questions total):
+                5 Full Mock Tests with all different questions (600 unique questions total):
               </p>
-              <div className="grid grid-cols-2 gap-1.5 max-h-56 overflow-y-auto pr-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-60 overflow-y-auto pr-1">
                 {FULL_MOCKS_META.map((mock) => (
                   <button
                     key={mock.testNumber}
                     onClick={() => handleStartFullMock(mock.testNumber)}
-                    className="p-2 text-left rounded-xl bg-slate-800/80 hover:bg-indigo-900/40 border border-slate-700 hover:border-indigo-500 transition text-xs cursor-pointer"
+                    className="p-2.5 text-left rounded-xl bg-slate-800/80 active:bg-indigo-900/40 border border-slate-700 active:border-indigo-500 transition text-xs cursor-pointer flex flex-col justify-between"
                   >
-                    <div className="font-bold text-white text-[11px]">{mock.title}</div>
-                    <div className="text-[10px] text-slate-400 truncate">{mock.subtitle}</div>
+                    <div className="flex items-center justify-between gap-1">
+                      <div className="font-bold text-white text-[11px]">{mock.title}</div>
+                      <span className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded border ${mock.badgeColor}`}>
+                        {mock.shortTitle}
+                      </span>
+                    </div>
+                    <div className="text-[10px] text-slate-400 truncate mt-0.5">{mock.subtitle}</div>
                   </button>
                 ))}
               </div>
               <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
                 <button
                   onClick={handleGoToMockHub}
-                  className="w-full py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-bold text-center"
+                  className="w-full py-2 rounded-xl bg-indigo-600 active:bg-indigo-700 text-white text-xs font-bold text-center shadow-md shadow-indigo-600/30 transition cursor-pointer"
                 >
-                  View All Mocks & Sectional Drills
+                  View All 5 Full Mocks & 10 Sectional Drills
                 </button>
               </div>
             </div>
