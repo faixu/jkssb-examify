@@ -22,7 +22,7 @@ export const FAA_FULL_BLUEPRINT: { categoryId: CategoryId; name: string; count: 
   { categoryId: 'cs', name: 'Knowledge of Computers', count: 10 },
 ];
 
-export const TOTAL_MOCKS_COUNT = 10;
+export const TOTAL_MOCKS_COUNT = 5;
 
 export const FULL_MOCKS_META: FullMockMeta[] = [
   {
@@ -74,56 +74,6 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     difficulty: 'Balanced',
     highlight: 'Conceptual Depth',
     badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
-  },
-  {
-    testNumber: 6,
-    title: 'FAA Mock Test 06',
-    shortTitle: 'Mock 06',
-    subtitle: 'Comprehensive Practice Exam',
-    description: 'Realistic JKSSB question patterns with standard 4-option MCQs, multi-statement evaluations, and negative marking traps.',
-    difficulty: 'Moderate',
-    highlight: 'Comprehensive Drill',
-    badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
-  },
-  {
-    testNumber: 7,
-    title: 'FAA Mock Test 07',
-    shortTitle: 'Mock 07',
-    subtitle: 'Negative Marking Resistance',
-    description: 'Designed to build question-skipping discipline and accuracy. Test your judgment under pressure without losing marks.',
-    difficulty: 'Advanced',
-    highlight: 'Precision Under Pressure',
-    badgeColor: 'bg-red-500/20 text-red-300 border-red-500/30',
-  },
-  {
-    testNumber: 8,
-    title: 'FAA Mock Test 08',
-    shortTitle: 'Mock 08',
-    subtitle: 'Real Exam Pattern Simulation',
-    description: 'Authentic distribution mirroring past year JKSSB FAA examinations with tricky options and nuanced distractors.',
-    difficulty: 'Exam Simulation',
-    highlight: 'Authentic Simulation',
-    badgeColor: 'bg-violet-500/20 text-violet-300 border-violet-500/30',
-  },
-  {
-    testNumber: 9,
-    title: 'FAA Mock Test 09',
-    shortTitle: 'Mock 09',
-    subtitle: 'Advanced Problem Solver',
-    description: 'Challenging questions in Ricardian rent, indifference curve properties, coordinate geometry 3D vectors, and balance sheet reconciliation.',
-    difficulty: 'Advanced',
-    highlight: 'Top Scorer Challenge',
-    badgeColor: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
-  },
-  {
-    testNumber: 10,
-    title: 'FAA Mock Test 10',
-    shortTitle: 'Mock 10',
-    subtitle: 'Grand Finale Pre-Exam Simulation',
-    description: 'The ultimate final readiness full syllabus test. Final benchmark for your estimated score out of 120, time management, and rank.',
-    difficulty: 'Exam Simulation',
-    highlight: 'Grand Final Exam',
-    badgeColor: 'bg-teal-500/20 text-teal-300 border-teal-500/30',
   },
 ];
 

@@ -418,13 +418,13 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
                 <Award className="w-3.5 h-3.5 text-emerald-400" />
-                <span>JKSSB Official FAA CBT Simulator • 10 Full Syllabus Mocks</span>
+                <span>JKSSB Official FAA CBT Simulator • 5 Full Syllabus Mocks</span>
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
                 120 Questions · 120 Minutes CBT Series
               </h1>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Practice with <strong>10 Full Syllabus Mock Exams</strong> created strictly to the official JKSSB Finance Accounts Assistant (FAA) blueprint. Every mock contains <strong>120 all-different questions</strong> (1,200 unique questions in total) with strict 120-minute countdown, -0.25 negative marking, and real-time CBT palette.
+                Practice with <strong>5 Full Syllabus Mock Exams</strong> created strictly to the official JKSSB Finance Accounts Assistant (FAA) blueprint. Every mock contains <strong>120 all-different questions</strong> (600 unique questions in total) with strict 120-minute countdown, -0.25 negative marking, and real-time CBT palette.
               </p>
 
               {/* Badges */}
@@ -464,7 +464,7 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
           </div>
         </div>
 
-        {/* Tab Navigation: 10 Full Syllabus Mocks vs Sectional Drills vs Past Results */}
+        {/* Tab Navigation: 5 Full Syllabus Mocks vs Sectional Drills vs Past Results */}
         <div className="flex border-b border-slate-800 gap-2 sm:gap-4 overflow-x-auto pb-px">
           <button
             onClick={() => setHubTab('full')}
@@ -475,9 +475,9 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
             }`}
           >
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span>10 Full Syllabus FAA Mock Tests</span>
+            <span>5 Full Syllabus FAA Mock Tests</span>
             <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300">
-              10
+              5
             </span>
           </button>
 
@@ -519,18 +519,18 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
               <div>
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
                   <Award className="w-5 h-5 text-indigo-400" />
-                  <span>10 Complete FAA Mock Tests (100% Unique Questions)</span>
+                  <span>5 Complete FAA Mock Tests (100% Unique Questions)</span>
                 </h2>
                 <p className="text-xs text-slate-400">
                   Every test has 120 distinct questions matching the official FAA pattern: 30 GK (J&K Special) + 30 Accountancy + 10 English + 10 Statistics + 10 Math + 10 Economics + 10 Science + 10 Computers.
                 </p>
               </div>
               <span className="text-xs text-emerald-400 font-semibold px-2.5 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/20 self-start sm:self-center">
-                1,200 Total Unique Questions
+                600 Total Unique Questions
               </span>
             </div>
 
-            {/* Grid of 10 Full Mocks */}
+            {/* Grid of 5 Full Mocks */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {FULL_MOCKS_META.map((mock) => {
                 const bestScore = getBestScoreForMock(mock.testNumber);
@@ -681,7 +681,7 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
                 <FileCheck className="w-10 h-10 text-slate-600 mx-auto" />
                 <h3 className="text-sm font-bold text-white">No Mock Tests Attempted Yet</h3>
                 <p className="text-xs text-slate-400 max-w-md mx-auto">
-                  Take any of the 10 Full Syllabus Mocks above to benchmark your score under official CBT conditions!
+                  Take any of the 5 Full Syllabus Mocks above to benchmark your score under official CBT conditions!
                 </p>
                 <button
                   onClick={() => handleStartFullMock(1)}

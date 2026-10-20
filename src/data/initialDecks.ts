@@ -8,6 +8,7 @@ import { CS_QUESTIONS } from './questions/cs';
 import { HISTORY_QUESTIONS } from './questions/history';
 import { GENERAL_QUESTIONS } from './questions/general';
 import { MATHEMATICS_QUESTIONS } from './questions/math';
+import { CURRENT_AFFAIRS_QUESTIONS } from './questions/currentAffairs';
 
 export const CATEGORIES: CategoryMeta[] = [
   {
@@ -15,7 +16,7 @@ export const CATEGORIES: CategoryMeta[] = [
     name: 'General Knowledge (J&K UT Special)',
     marks: 30,
     syllabusRef: 'Section I - 30 Marks',
-    description: 'Current events, Indian freedom struggle, rivers & lakes, climate & crops, demography, environment & biodiversity, J&K UT history, geography, economy, culture, tourism, and J&K Reorganisation Act 2019.',
+    description: 'Current events & Central Government Schemes, Indian freedom struggle, rivers & lakes, climate & crops, demography, environment & biodiversity, J&K UT history, geography, economy, culture, tourism, and J&K Reorganisation Act 2019.',
     color: 'from-amber-500 to-orange-700',
     borderColor: 'border-amber-500',
     bgLight: 'bg-amber-500/10 text-amber-400',
@@ -118,6 +119,18 @@ export const CATEGORIES: CategoryMeta[] = [
     iconName: 'Landmark',
     badge: 'Bonus',
   },
+  {
+    id: 'current_affairs',
+    name: 'Current Affairs (JKSSB Special)',
+    marks: 20,
+    syllabusRef: 'Current Events & JKSSB Special 2026',
+    description: 'Complete 15-chapter coverage: J&K and Ladakh, National Affairs & Polity, Economy, Banking & Finance, International Affairs, S&T, Environment & Ecology, Defence & Security, Awards & Honours, Sports, Reports & Indices, Appointments, Books & Authors, Important Days, and Key Personalities.',
+    color: 'from-amber-500 to-rose-700',
+    borderColor: 'border-amber-500',
+    bgLight: 'bg-amber-500/10 text-amber-300',
+    iconName: 'Newspaper',
+    badge: '400+ Qs',
+  },
 ];
 
 export const INITIAL_FLASHCARDS: Flashcard[] = [
@@ -130,4 +143,5 @@ export const INITIAL_FLASHCARDS: Flashcard[] = [
   ...SCIENCE_QUESTIONS,
   ...CS_QUESTIONS,
   ...HISTORY_QUESTIONS,
+  ...CURRENT_AFFAIRS_QUESTIONS,
 ];

@@ -7,7 +7,8 @@ export type CategoryId =
   | 'economics'
   | 'science'
   | 'cs'
-  | 'history';
+  | 'history'
+  | 'current_affairs';
 
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
 

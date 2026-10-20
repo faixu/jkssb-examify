@@ -162,7 +162,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <ClipboardCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Mock Test (120 Qs)</span>
                 <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/25 text-emerald-300 border border-emerald-400/30">
-                  10 Mocks
+                  5 Mocks
                 </span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isMockDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -199,8 +199,8 @@ export const Header: React.FC<HeaderProps> = ({
                       }`}
                     >
                       <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Full Syllabus Mocks (10 Tests)</span>
-                      <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-1 rounded font-mono">10</span>
+                      <span>Full Syllabus Mocks (5 Tests)</span>
+                      <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-1 rounded font-mono">5</span>
                     </button>
                     <button
                       onClick={() => setDropdownTab('sections')}
@@ -212,15 +212,15 @@ export const Header: React.FC<HeaderProps> = ({
                     >
                       <BookOpen className="w-3.5 h-3.5 text-blue-400" />
                       <span>Sectional 120-Q Mocks</span>
-                      <span className="text-[10px] bg-slate-800 text-slate-300 px-1 rounded font-mono">9</span>
+                      <span className="text-[10px] bg-slate-800 text-slate-300 px-1 rounded font-mono">10</span>
                     </button>
                   </div>
 
-                  {/* Tab 1: 10 Full Syllabus Mocks */}
+                  {/* Tab 1: 5 Full Syllabus Mocks */}
                   {dropdownTab === 'full' && (
                     <div className="p-3 max-h-[360px] overflow-y-auto space-y-1.5 scrollbar-thin scrollbar-thumb-slate-700">
                       <div className="text-[11px] font-semibold text-slate-400 px-1 pb-1 flex items-center justify-between">
-                        <span>Select a Mock Test (All 10 have 100% different questions):</span>
+                        <span>Select a Mock Test (All 5 have 100% different questions):</span>
                         <span className="text-emerald-400 text-[10px]">Zero overlap</span>
                       </div>
                       <div className="grid grid-cols-2 gap-2">

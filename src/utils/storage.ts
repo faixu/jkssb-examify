@@ -43,6 +43,7 @@ const defaultStats: UserStats = {
     history: { reviewed: 0, correct: 0 },
     general: { reviewed: 0, correct: 0 },
     math: { reviewed: 0, correct: 0 },
+    current_affairs: { reviewed: 0, correct: 0 },
   },
 };
 
