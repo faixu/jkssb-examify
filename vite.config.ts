@@ -73,6 +73,25 @@ export default defineConfig(() => {
         '@': path.resolve(import.meta.dirname || process.cwd(), '.'),
       },
     },
+    build: {
+      sourcemap: false,
+      chunkSizeWarningLimit: 4500,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/lucide-react')) {
+              return 'icons';
+            }
+            if (id.includes('node_modules/firebase')) {
+              return 'firebase';
+            }
+            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+              return 'vendor-react';
+            }
+          },
+        },
+      },
+    },
     server: {
       // HMR is disabled in AI Studio preview environment
       hmr: process.env.ENABLE_HMR === 'true',

@@ -1,6 +1,7 @@
 import { CategoryId, Flashcard } from '../types';
 import { JKSSB_FAA_PDF_MOCK_QUESTIONS } from './questions/jkssbFaaFullMockPdfQuestions';
 import { JKSSB_DEO_2025_PDF_QUESTIONS } from './questions/jkssbDeo2025PdfQuestions';
+import { JKSSB_JA_2024_PDF_QUESTIONS } from './questions/jkssbJuniorAssistant2024PdfQuestions';
 import { isValidFlashcard } from './initialDecks';
 
 export interface FullMockMeta {
@@ -13,6 +14,9 @@ export interface FullMockMeta {
   highlight: string;
   badgeColor: string;
   pdfPath?: string;
+  timeMinutes?: number;
+  totalMarks?: number;
+  questionCount?: number;
 }
 
 export const FAA_FULL_BLUEPRINT: { categoryId: CategoryId; name: string; count: number }[] = [
@@ -26,7 +30,7 @@ export const FAA_FULL_BLUEPRINT: { categoryId: CategoryId; name: string; count: 
   { categoryId: 'cs', name: 'Knowledge of Computers', count: 10 },
 ];
 
-export const TOTAL_MOCKS_COUNT = 7;
+export const TOTAL_MOCKS_COUNT = 8;
 
 export const FULL_MOCKS_META: FullMockMeta[] = [
   {
@@ -39,6 +43,9 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     highlight: 'Official FAA Paper',
     badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
     pdfPath: '/assets/aistudio/JKSSB_Accounts_Assistant__Finance__120-MCQ_Mock_Exam.md_5271e456.pdf',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
   {
     testNumber: 2,
@@ -50,9 +57,26 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     highlight: 'DEO 2025 Series A',
     badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
     pdfPath: '/assets/aistudio/QP_Series-A_Data_entry_operator_24a3eaae.pdf',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
   {
     testNumber: 3,
+    title: 'JKSSB Junior Assistant — 80-MCQ Official Paper 2024',
+    shortTitle: 'JA 2024 Paper',
+    subtitle: 'Series A Complete 80-Question Examination (25-08-2024)',
+    description: 'Authentic 80-question exam transcribed from the official JKSSB Junior Assistant OMR Examination (25-08-2024, Series A). Covers General English, J&K UT Special, Computer Science/IT, Mental Ability & Mathematics.',
+    difficulty: 'Exam Simulation',
+    highlight: 'JA 2024 Series A',
+    badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    pdfPath: '/assets/aistudio/SET-A_JUNIOR_ASSISTANT_25-08-2024_a969da07.pdf',
+    timeMinutes: 80,
+    totalMarks: 80,
+    questionCount: 80,
+  },
+  {
+    testNumber: 4,
     title: 'FAA Mock Test 02',
     shortTitle: 'Mock 02',
     subtitle: 'Official Blueprint Baseline',
@@ -60,9 +84,12 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     difficulty: 'Balanced',
     highlight: 'Standard Baseline',
     badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
   {
-    testNumber: 4,
+    testNumber: 5,
     title: 'FAA Mock Test 03',
     shortTitle: 'Mock 03',
     subtitle: 'High-Yield Core Focus',
@@ -70,9 +97,12 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     difficulty: 'Moderate',
     highlight: 'High-Yield Topics',
     badgeColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
   {
-    testNumber: 5,
+    testNumber: 6,
     title: 'FAA Mock Test 04',
     shortTitle: 'Mock 04',
     subtitle: 'Speed & Numerical Accuracy',
@@ -80,9 +110,12 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     difficulty: 'Advanced',
     highlight: 'Numerical Intensive',
     badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
   {
-    testNumber: 6,
+    testNumber: 7,
     title: 'FAA Mock Test 05',
     shortTitle: 'Mock 05',
     subtitle: 'Accountancy & J&K Intensive',
@@ -90,9 +123,12 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     difficulty: 'Moderate',
     highlight: 'Top Weightage Focus',
     badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
   {
-    testNumber: 7,
+    testNumber: 8,
     title: 'FAA Mock Test 06',
     shortTitle: 'Mock 06',
     subtitle: 'Conceptual Mastery & Reasoning',
@@ -100,14 +136,18 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     difficulty: 'Balanced',
     highlight: 'Conceptual Depth',
     badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+    timeMinutes: 120,
+    totalMarks: 120,
+    questionCount: 120,
   },
 ];
 
 /**
- * Returns exactly 120 questions for a given full syllabus mock test (1 to 7).
+ * Returns questions for a given full syllabus mock test (1 to 8).
  * Test 1 delivers the exact 120 questions from the FAA Mock PDF.
  * Test 2 delivers the exact 120 questions from the DEO 2025 Paper PDF.
- * Tests 3-7 deliver disjoint balanced sets from the card pool.
+ * Test 3 delivers the exact 80 questions from the Junior Assistant 2024 Paper PDF.
+ * Tests 4-8 deliver disjoint balanced sets from the card pool.
  * Guarantees zero empty or invalid MCQs.
  */
 export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: number): Flashcard[] {
@@ -121,10 +161,15 @@ export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: numbe
     return JKSSB_DEO_2025_PDF_QUESTIONS.filter(isValidFlashcard).slice(0, 120);
   }
 
+  // If test 3 is requested, return the authentic 80 questions from the Junior Assistant 2024 Paper PDF
+  if (testNumber === 3 && JKSSB_JA_2024_PDF_QUESTIONS.length >= 80) {
+    return JKSSB_JA_2024_PDF_QUESTIONS.filter(isValidFlashcard).slice(0, 80);
+  }
+
   // Filter out any potential invalid or empty cards from the pool
   const sanitizedCards = allCards.filter(isValidFlashcard);
   const safeNumber = Math.max(1, Math.min(TOTAL_MOCKS_COUNT, testNumber));
-  const testIdx = Math.max(0, safeNumber - 3);
+  const testIdx = Math.max(0, safeNumber - 4);
 
   let testQuestions: Flashcard[] = [];
 
@@ -154,13 +199,23 @@ export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: numbe
 }
 
 /**
- * Returns 120 questions for an intensive single-subject mock test.
- * Prioritizes authentic examination MCQs (DEO 2025 and FAA papers) before filling with topic practice questions.
+ * Returns questions for an intensive single-subject mock test.
+ * Prioritizes authentic examination MCQs (JA 2024, DEO 2025, and FAA papers) before filling with topic practice questions.
  */
 export function getQuestionsForSectionMock(allCards: Flashcard[], sectionId: CategoryId): Flashcard[] {
   const sectionCards = allCards.filter(isValidFlashcard).filter((c) => c.categoryId === sectionId);
-  const examCards = sectionCards.filter((c) => c.id.startsWith('jkssb-deo-') || c.id.startsWith('jkssb-pdf-mock-'));
-  const otherCards = sectionCards.filter((c) => !c.id.startsWith('jkssb-deo-') && !c.id.startsWith('jkssb-pdf-mock-'));
+  const examCards = sectionCards.filter(
+    (c) =>
+      c.id.startsWith('jkssb-ja-') ||
+      c.id.startsWith('jkssb-deo-') ||
+      c.id.startsWith('jkssb-pdf-mock-')
+  );
+  const otherCards = sectionCards.filter(
+    (c) =>
+      !c.id.startsWith('jkssb-ja-') &&
+      !c.id.startsWith('jkssb-deo-') &&
+      !c.id.startsWith('jkssb-pdf-mock-')
+  );
   const combined = [...examCards, ...otherCards];
   if (combined.length <= 120) {
     return combined;

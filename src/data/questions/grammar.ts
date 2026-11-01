@@ -1,8 +1,10 @@
 import { Flashcard } from '../../types';
 import { ENGLISH_VOCAB_QUESTIONS } from './englishVocab';
 import { JKSSB_DEO_ENGLISH_QUESTIONS } from './jkssbDeo2025PdfQuestions';
+import { JKSSB_JA_ENGLISH_QUESTIONS } from './jkssbJuniorAssistant2024PdfQuestions';
 
 export const GRAMMAR_QUESTIONS: Flashcard[] = [
+  ...JKSSB_JA_ENGLISH_QUESTIONS,
   ...JKSSB_DEO_ENGLISH_QUESTIONS,
   ...ENGLISH_VOCAB_QUESTIONS,
   {

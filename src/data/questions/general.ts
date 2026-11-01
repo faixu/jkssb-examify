@@ -4,8 +4,10 @@ import { HISTORY_JKSSB_PDF_QUESTIONS } from './historyJkssbPdfQuestions';
 import { FREEDOM_STRUGGLE_PDF_QUESTIONS } from './freedomStrugglePdfQuestions';
 import { CENTRAL_GOVT_SCHEMES_PDF_QUESTIONS } from './centralGovtSchemesPdfQuestions';
 import { JKSSB_DEO_GENERAL_QUESTIONS } from './jkssbDeo2025PdfQuestions';
+import { JKSSB_JA_GENERAL_QUESTIONS } from './jkssbJuniorAssistant2024PdfQuestions';
 
 export const GENERAL_QUESTIONS: Flashcard[] = [
+  ...JKSSB_JA_GENERAL_QUESTIONS,
   ...JKSSB_DEO_GENERAL_QUESTIONS,
   ...CENTRAL_GOVT_SCHEMES_PDF_QUESTIONS,
   ...FREEDOM_TIMELINE_PDF_QUESTIONS,

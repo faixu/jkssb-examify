@@ -1,7 +1,9 @@
 import { Flashcard } from '../../types';
 import { JKSSB_DEO_CS_QUESTIONS } from './jkssbDeo2025PdfQuestions';
+import { JKSSB_JA_CS_QUESTIONS } from './jkssbJuniorAssistant2024PdfQuestions';
 
 export const CS_QUESTIONS: Flashcard[] = [
+  ...JKSSB_JA_CS_QUESTIONS,
   ...JKSSB_DEO_CS_QUESTIONS,
   {
     "id": "cs-1",

@@ -1,7 +1,9 @@
 import { Flashcard } from '../../types';
 import { JKSSB_DEO_MATH_QUESTIONS } from './jkssbDeo2025PdfQuestions';
+import { JKSSB_JA_MATH_QUESTIONS } from './jkssbJuniorAssistant2024PdfQuestions';
 
 export const MATHEMATICS_QUESTIONS: Flashcard[] = [
+  ...JKSSB_JA_MATH_QUESTIONS,
   ...JKSSB_DEO_MATH_QUESTIONS,
   {
     "id": "math-1",

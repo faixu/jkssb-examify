@@ -79,7 +79,8 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
   // User state map: question index -> answer state
   const [userAnswers, setUserAnswers] = useState<Record<number, UserAnswerState>>({});
 
-  // Timer: 120 minutes = 7200s
+  // Timer duration
+  const [totalDurationSeconds, setTotalDurationSeconds] = useState(TOTAL_TEST_TIME);
   const [secondsLeft, setSecondsLeft] = useState(TOTAL_TEST_TIME);
 
   // Review & Scorecard state
@@ -101,13 +102,15 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
     const questions = getQuestionsForFullMock(cards, testNum);
     if (questions.length === 0) return;
 
+    const testDuration = (meta.timeMinutes || 120) * 60;
     setCurrentTestNumber(testNum);
     setCurrentTestTitle(`${meta.title} • ${meta.subtitle}`);
     setSelectedSection('all');
     setTestQuestions(questions);
     setCurrentIndex(0);
     setUserAnswers({});
-    setSecondsLeft(TOTAL_TEST_TIME);
+    setTotalDurationSeconds(testDuration);
+    setSecondsLeft(testDuration);
     setTestStatus('running');
     setTestResult(null);
     setShowSubmitModal(false);
@@ -270,7 +273,7 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
 
   // Submit test and calculate comprehensive score & breakdowns
   const handleSubmitTestFinal = () => {
-    const timeTaken = TOTAL_TEST_TIME - secondsLeft;
+    const timeTaken = totalDurationSeconds - secondsLeft;
     let correct = 0;
     let incorrect = 0;
     let unattempted = 0;
@@ -334,7 +337,7 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
       date: new Date().toISOString(),
       totalQuestions: testQuestions.length,
       timeTakenSeconds: timeTaken,
-      totalTimeSeconds: TOTAL_TEST_TIME,
+      totalTimeSeconds: totalDurationSeconds,
       score: finalScore,
       maxMarks: testQuestions.length * MARKS_PER_CORRECT,
       correctCount: correct,
