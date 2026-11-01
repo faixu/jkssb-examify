@@ -5021,16 +5021,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-335",
     "categoryId": "current_affairs",
-    "question": "Cashless Nation: How UP! Changed Everything (2026) was written by:",
-    "answer": "Subbarao (d) Santanu Paul and B. Sambamurthy",
+    "question": "Cashless Nation: How UPI Changed Everything (2026) was written by:",
+    "answer": "Santanu Paul and B. Sambamurthy",
     "options": [
       "Nandan Nilekani and Viral Shah",
       "Dilip Asbe and Pramod Varma",
-      "",
-      "Subbarao (d) Santanu Paul and B. Sambamurthy"
+      "Duvvuri Subbarao",
+      "Santanu Paul and B. Sambamurthy"
     ],
-    "explanation": "The tagline was \u201cTogether We Read, Together We Lead.\u201d",
-    "tip": "The tagline was \u201cTogether We Read, Together We Lead.\u201d",
+    "explanation": "Cashless Nation: How UPI Changed Everything was co-authored by Santanu Paul and B. Sambamurthy, exploring the revolution of UPI in digital payments.",
+    "tip": "Authored by Santanu Paul and B. Sambamurthy.",
     "difficulty": "intermediate"
   },
   {

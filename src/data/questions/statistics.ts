@@ -1,6 +1,8 @@
 import { Flashcard } from '../../types';
+import { JKSSB_DEO_STATISTICS_QUESTIONS } from './jkssbDeo2025PdfQuestions';
 
 export const STATISTICS_QUESTIONS: Flashcard[] = [
+  ...JKSSB_DEO_STATISTICS_QUESTIONS,
   {
     "id": "stat-1",
     "categoryId": "statistics",

@@ -133,7 +133,18 @@ export const CATEGORIES: CategoryMeta[] = [
   },
 ];
 
-export const INITIAL_FLASHCARDS: Flashcard[] = [
+import { JKSSB_FAA_PDF_MOCK_QUESTIONS } from './questions/jkssbFaaFullMockPdfQuestions';
+
+export function isValidFlashcard(c: Flashcard | null | undefined): boolean {
+  if (!c) return false;
+  if (!c.question || !c.question.trim()) return false;
+  if (!c.answer || !c.answer.trim()) return false;
+  if (!Array.isArray(c.options) || c.options.length < 2) return false;
+  if (c.options.some((opt) => !opt || !opt.trim())) return false;
+  return true;
+}
+
+const RAW_FLASHCARDS: Flashcard[] = [
   ...GENERAL_QUESTIONS,
   ...ACCOUNTING_QUESTIONS,
   ...GRAMMAR_QUESTIONS,
@@ -144,4 +155,8 @@ export const INITIAL_FLASHCARDS: Flashcard[] = [
   ...CS_QUESTIONS,
   ...HISTORY_QUESTIONS,
   ...CURRENT_AFFAIRS_QUESTIONS,
+  ...JKSSB_FAA_PDF_MOCK_QUESTIONS,
 ];
+
+// Strict zero-empty-MCQ guarantee: filters out any card with blank question or invalid options
+export const INITIAL_FLASHCARDS: Flashcard[] = RAW_FLASHCARDS.filter(isValidFlashcard);

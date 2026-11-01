@@ -2,6 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Suppress Vite HMR WebSocket errors per AI Studio environment constraints
+      (function() {
+        var origConsoleError = console.error;
+        console.error = function() {
+          var text = '';
+          for (var i = 0; i < arguments.length; i++) {
+            var arg = arguments[i];
+            if (arg instanceof Error) {
+              text += ' ' + arg.message + ' ' + (arg.stack || '');
+            } else {
+              text += ' ' + String(arg);
+            }
+          }
+          if (
+            text.indexOf('WebSocket closed without opened') !== -1 ||
+            (text.indexOf('WebSocket') !== -1 && text.indexOf('@vite/client') !== -1)
+          ) {
+            return;
+          }
+          origConsoleError.apply(console, arguments);
+        };
+
+        window.addEventListener('error', function(event) {
+          var msg = (event && (event.message || (event.error && event.error.message))) || '';
+          if (
+            msg.indexOf('WebSocket') !== -1 ||
+            msg.indexOf('vite-hmr') !== -1 ||
+            (event.filename && event.filename.indexOf('@vite/client') !== -1)
+          ) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          var str = String((event && (event.reason && (event.reason.message || event.reason.stack || event.reason))) || '');
+          if (str.indexOf('WebSocket') !== -1 || str.indexOf('@vite/client') !== -1) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+          }
+        }, true);
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
     <title>FlashMind Quiz &amp; Flashcards</title>
     <meta name="description" content="Interactive flashcard and CBT mock test simulator for JKSSB FAA with 5 full syllabus 120-question exams (120 minutes each), dedicated Current Affairs section, accountancy, economics, statistics, English grammar, science, computer science, modern history, and general knowledge with Google Drive sync, offline PWA support, progress tracking, and daily streaks." />

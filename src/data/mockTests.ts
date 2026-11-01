@@ -1,4 +1,7 @@
 import { CategoryId, Flashcard } from '../types';
+import { JKSSB_FAA_PDF_MOCK_QUESTIONS } from './questions/jkssbFaaFullMockPdfQuestions';
+import { JKSSB_DEO_2025_PDF_QUESTIONS } from './questions/jkssbDeo2025PdfQuestions';
+import { isValidFlashcard } from './initialDecks';
 
 export interface FullMockMeta {
   testNumber: number;
@@ -9,6 +12,7 @@ export interface FullMockMeta {
   difficulty: 'Balanced' | 'Moderate' | 'Advanced' | 'Exam Simulation';
   highlight: string;
   badgeColor: string;
+  pdfPath?: string;
 }
 
 export const FAA_FULL_BLUEPRINT: { categoryId: CategoryId; name: string; count: number }[] = [
@@ -22,13 +26,35 @@ export const FAA_FULL_BLUEPRINT: { categoryId: CategoryId; name: string; count: 
   { categoryId: 'cs', name: 'Knowledge of Computers', count: 10 },
 ];
 
-export const TOTAL_MOCKS_COUNT = 5;
+export const TOTAL_MOCKS_COUNT = 7;
 
 export const FULL_MOCKS_META: FullMockMeta[] = [
   {
     testNumber: 1,
-    title: 'FAA Mock Test 01',
-    shortTitle: 'Mock 01',
+    title: 'JKSSB Accounts Assistant (Finance) — 120-MCQ Official Mock Exam',
+    shortTitle: 'FAA PDF Mock',
+    subtitle: 'Full-Length 120-MCQ Paper from Uploaded PDF',
+    description: 'Exact 120-question official mock examination transcribed from the JKSSB Accounts Assistant (Finance) PDF. Covers all 8 syllabus sections with official answer keys and step-by-step explanatory notes.',
+    difficulty: 'Exam Simulation',
+    highlight: 'Official FAA Paper',
+    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+    pdfPath: '/assets/aistudio/JKSSB_Accounts_Assistant__Finance__120-MCQ_Mock_Exam.md_5271e456.pdf',
+  },
+  {
+    testNumber: 2,
+    title: 'JKSSB Data Entry Operator (DEO) — 120-MCQ Official Paper 2025',
+    shortTitle: 'DEO 2025 Paper',
+    subtitle: 'Series A Complete 120-Question Examination',
+    description: 'Authentic 120-question exam transcribed from the official JKSSB Data Entry Operator OMR Examination 2025 (Series A). Covers J&K Special, General English, Mental Ability, Quantitative Math, Statistics, and Computer Science.',
+    difficulty: 'Exam Simulation',
+    highlight: 'DEO 2025 Series A',
+    badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
+    pdfPath: '/assets/aistudio/QP_Series-A_Data_entry_operator_24a3eaae.pdf',
+  },
+  {
+    testNumber: 3,
+    title: 'FAA Mock Test 02',
+    shortTitle: 'Mock 02',
     subtitle: 'Official Blueprint Baseline',
     description: 'Foundation exam covering J&K history & geography, core journal entries, BRS, basic grammar rules, and computer hardware essentials.',
     difficulty: 'Balanced',
@@ -36,9 +62,9 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
   },
   {
-    testNumber: 2,
-    title: 'FAA Mock Test 02',
-    shortTitle: 'Mock 02',
+    testNumber: 4,
+    title: 'FAA Mock Test 03',
+    shortTitle: 'Mock 03',
     subtitle: 'High-Yield Core Focus',
     description: 'High-probability topics on Indian freedom struggle, trial balance & partnership, index numbers (Laspeyres/Paasche), and macroeconomics.',
     difficulty: 'Moderate',
@@ -46,9 +72,9 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     badgeColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30',
   },
   {
-    testNumber: 3,
-    title: 'FAA Mock Test 03',
-    shortTitle: 'Mock 03',
+    testNumber: 5,
+    title: 'FAA Mock Test 04',
+    shortTitle: 'Mock 04',
     subtitle: 'Speed & Numerical Accuracy',
     description: 'Calculations in simple & compound interest, probability, matrices, cost accounting terms, and economic elasticity calculations.',
     difficulty: 'Advanced',
@@ -56,9 +82,9 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
   },
   {
-    testNumber: 4,
-    title: 'FAA Mock Test 04',
-    shortTitle: 'Mock 04',
+    testNumber: 6,
+    title: 'FAA Mock Test 05',
+    shortTitle: 'Mock 05',
     subtitle: 'Accountancy & J&K Intensive',
     description: 'Comprehensive 60-mark deep drill into voucher approaches, GST, PFMS, financial audit, and J&K Reorganisation Act 2019 clauses.',
     difficulty: 'Moderate',
@@ -66,9 +92,9 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
   },
   {
-    testNumber: 5,
-    title: 'FAA Mock Test 05',
-    shortTitle: 'Mock 05',
+    testNumber: 7,
+    title: 'FAA Mock Test 06',
+    shortTitle: 'Mock 06',
     subtitle: 'Conceptual Mastery & Reasoning',
     description: 'Conceptual questions spanning laws of motion, ecosystem biodiversity, grammar narration & voice, and operating system kernels.',
     difficulty: 'Balanced',
@@ -78,24 +104,37 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
 ];
 
 /**
- * Returns exactly 120 questions for a given full syllabus mock test (1 to 10).
- * Guarantees 100% disjoint, distinct questions across tests 1 to 10:
- * Mock 1, Mock 2, ..., Mock 10 have 0 overlapping questions!
+ * Returns exactly 120 questions for a given full syllabus mock test (1 to 7).
+ * Test 1 delivers the exact 120 questions from the FAA Mock PDF.
+ * Test 2 delivers the exact 120 questions from the DEO 2025 Paper PDF.
+ * Tests 3-7 deliver disjoint balanced sets from the card pool.
+ * Guarantees zero empty or invalid MCQs.
  */
 export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: number): Flashcard[] {
+  // If test 1 is requested, return the authentic 120 questions from the FAA Mock PDF
+  if (testNumber === 1 && JKSSB_FAA_PDF_MOCK_QUESTIONS.length >= 120) {
+    return JKSSB_FAA_PDF_MOCK_QUESTIONS.filter(isValidFlashcard).slice(0, 120);
+  }
+
+  // If test 2 is requested, return the authentic 120 questions from the DEO 2025 Paper PDF
+  if (testNumber === 2 && JKSSB_DEO_2025_PDF_QUESTIONS.length >= 120) {
+    return JKSSB_DEO_2025_PDF_QUESTIONS.filter(isValidFlashcard).slice(0, 120);
+  }
+
+  // Filter out any potential invalid or empty cards from the pool
+  const sanitizedCards = allCards.filter(isValidFlashcard);
   const safeNumber = Math.max(1, Math.min(TOTAL_MOCKS_COUNT, testNumber));
-  const testIdx = safeNumber - 1;
+  const testIdx = Math.max(0, safeNumber - 3);
 
   let testQuestions: Flashcard[] = [];
 
   for (const item of FAA_FULL_BLUEPRINT) {
-    const categoryCards = allCards.filter((c) => c.categoryId === item.categoryId);
+    const categoryCards = sanitizedCards.filter((c) => c.categoryId === item.categoryId);
     const start = testIdx * item.count;
     const end = start + item.count;
     const slice = categoryCards.slice(start, end);
 
     if (slice.length < item.count) {
-      // In case pool has fewer, grab other cards not already used
       const existingIds = new Set([...testQuestions, ...slice].map((c) => c.id));
       const remaining = categoryCards.filter((c) => !existingIds.has(c.id));
       testQuestions = [...testQuestions, ...slice, ...remaining.slice(0, item.count - slice.length)];
@@ -107,21 +146,24 @@ export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: numbe
   // Ensure exact length of 120
   if (testQuestions.length < 120) {
     const existingIds = new Set(testQuestions.map((c) => c.id));
-    const spare = allCards.filter((c) => !existingIds.has(c.id));
+    const spare = sanitizedCards.filter((c) => !existingIds.has(c.id));
     testQuestions = [...testQuestions, ...spare.slice(0, 120 - testQuestions.length)];
   }
 
-  return testQuestions.slice(0, 120);
+  return testQuestions.filter(isValidFlashcard).slice(0, 120);
 }
 
 /**
  * Returns 120 questions for an intensive single-subject mock test.
+ * Prioritizes authentic examination MCQs (DEO 2025 and FAA papers) before filling with topic practice questions.
  */
 export function getQuestionsForSectionMock(allCards: Flashcard[], sectionId: CategoryId): Flashcard[] {
-  const sectionCards = allCards.filter((c) => c.categoryId === sectionId);
-  if (sectionCards.length <= 120) {
-    return [...sectionCards];
+  const sectionCards = allCards.filter(isValidFlashcard).filter((c) => c.categoryId === sectionId);
+  const examCards = sectionCards.filter((c) => c.id.startsWith('jkssb-deo-') || c.id.startsWith('jkssb-pdf-mock-'));
+  const otherCards = sectionCards.filter((c) => !c.id.startsWith('jkssb-deo-') && !c.id.startsWith('jkssb-pdf-mock-'));
+  const combined = [...examCards, ...otherCards];
+  if (combined.length <= 120) {
+    return combined;
   }
-  // Take first 120 or shuffle if desired
-  return sectionCards.slice(0, 120);
+  return combined.slice(0, 120);
 }

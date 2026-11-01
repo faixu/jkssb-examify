@@ -1,3 +1,4 @@
+import http from 'http';
 import express from 'express';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
@@ -109,10 +110,18 @@ app.post('/api/chat', async (req, res) => {
 
 // Mounting Vite in development or serving static build in production
 async function startServer() {
+  const httpServer = http.createServer(app);
+
   if (process.env.NODE_ENV !== 'production') {
     const { createServer: createViteServer } = await import('vite');
+    // In AI Studio preview environment, HMR is disabled to avoid WebSocket closed errors
+    const isHmrEnabled = process.env.ENABLE_HMR === 'true';
     const vite = await createViteServer({
-      server: { middlewareMode: true, port, host: '0.0.0.0' },
+      server: {
+        middlewareMode: true,
+        hmr: isHmrEnabled ? { server: httpServer } : false,
+        watch: isHmrEnabled ? {} : null,
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);
@@ -123,7 +132,7 @@ async function startServer() {
     });
   }
 
-  app.listen(port, '0.0.0.0', () => {
+  httpServer.listen(port, '0.0.0.0', () => {
     console.log(`Server listening on port ${port} (mode: ${process.env.NODE_ENV || 'development'})`);
   });
 }

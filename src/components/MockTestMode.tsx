@@ -520,18 +520,58 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
               <div>
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
                   <Award className="w-5 h-5 text-indigo-400" />
-                  <span>5 Complete FAA Mock Tests (100% Unique Questions)</span>
+                  <span>6 Complete Full-Length FAA Mock Tests (100% Unique Questions)</span>
                 </h2>
                 <p className="text-xs text-slate-400">
                   Every test has 120 distinct questions matching the official FAA pattern: 30 GK (J&K Special) + 30 Accountancy + 10 English + 10 Statistics + 10 Math + 10 Economics + 10 Science + 10 Computers.
                 </p>
               </div>
               <span className="text-xs text-emerald-400 font-semibold px-2.5 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/20 self-start sm:self-center">
-                600 Total Unique Questions
+                720 Total Questions
               </span>
             </div>
 
-            {/* Grid of 5 Full Mocks */}
+            {/* Featured Official PDF Mock Banner */}
+            <div className="p-6 rounded-3xl bg-gradient-to-r from-amber-500/15 via-indigo-950/40 to-slate-900 border-2 border-amber-500/40 shadow-xl relative overflow-hidden">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative z-10">
+                <div className="space-y-2 max-w-2xl">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 text-xs font-black tracking-wide uppercase shadow-sm">
+                      Official Uploaded PDF Mock
+                    </span>
+                    <span className="text-xs font-mono font-bold text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded-md border border-amber-500/30">
+                      120 MCQs · 120 Minutes · 0.25 Negative Marking
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-black text-white">
+                    JKSSB Accounts Assistant (Finance) — Full-Length Mock Examination
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Directly transcribed with 100% fidelity from your uploaded PDF document. Features complete 8-section syllabus coverage (Q1–Q120), exact 4 options per question, verified answer keys, and step-by-step explanatory notes.
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 shrink-0 flex-wrap">
+                  <a
+                    href="/assets/aistudio/JKSSB_Accounts_Assistant__Finance__120-MCQ_Mock_Exam.md_5271e456.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition flex items-center gap-2 border border-slate-700"
+                  >
+                    <BookOpen className="w-4 h-4 text-amber-400" />
+                    <span>View Original PDF</span>
+                  </a>
+                  <button
+                    onClick={() => handleStartFullMock(1)}
+                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 text-xs font-black shadow-lg shadow-amber-500/20 transition cursor-pointer flex items-center gap-2"
+                  >
+                    <Play className="w-4 h-4 fill-slate-950" />
+                    <span>Start PDF Mock Exam</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Grid of 6 Full Mocks */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {FULL_MOCKS_META.map((mock) => {
                 const bestScore = getBestScoreForMock(mock.testNumber);
@@ -540,7 +580,11 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
                 return (
                   <div
                     key={mock.testNumber}
-                    className="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/60 transition-all group flex flex-col justify-between shadow-lg hover:shadow-indigo-500/10"
+                    className={`p-5 rounded-2xl bg-slate-900 border ${
+                      mock.testNumber === 1
+                        ? 'border-amber-500/40 hover:border-amber-400 shadow-amber-500/10'
+                        : 'border-slate-800 hover:border-indigo-500/60 shadow-indigo-500/10'
+                    } transition-all group flex flex-col justify-between shadow-lg`}
                   >
                     <div>
                       {/* Top Badges */}
@@ -560,8 +604,11 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
 
                       {/* Title & Subtitle */}
                       <h3 className="text-base font-extrabold text-white group-hover:text-indigo-300 transition">
-                        {mock.title}: {mock.subtitle}
+                        {mock.title}
                       </h3>
+                      <p className="text-xs font-medium text-indigo-400 mt-0.5">
+                        {mock.subtitle}
+                      </p>
                       <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
                         {mock.description}
                       </p>
@@ -580,7 +627,7 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
                     </div>
 
                     {/* Bottom Action & Best Score */}
-                    <div className="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+                    <div className="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between gap-2">
                       <div>
                         {hasAttempted ? (
                           <span className="text-xs font-bold text-emerald-400 flex items-center gap-1">
@@ -594,13 +641,29 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
                         )}
                       </div>
 
-                      <button
-                        onClick={() => handleStartFullMock(mock.testNumber)}
-                        className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-md shadow-indigo-600/30 transition cursor-pointer flex items-center gap-1.5 group-hover:translate-x-0.5"
-                      >
-                        <span>{hasAttempted ? 'Retake Exam' : 'Start 120m Exam'}</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </button>
+                      <div className="flex items-center gap-2">
+                        {mock.pdfPath && (
+                          <a
+                            href={mock.pdfPath}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold border border-slate-700 transition"
+                          >
+                            PDF
+                          </a>
+                        )}
+                        <button
+                          onClick={() => handleStartFullMock(mock.testNumber)}
+                          className={`px-4 py-2 rounded-xl ${
+                            mock.testNumber === 1
+                              ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-black'
+                              : 'bg-indigo-600 hover:bg-indigo-500 text-white font-bold'
+                          } text-xs shadow-md transition cursor-pointer flex items-center gap-1.5 group-hover:translate-x-0.5`}
+                        >
+                          <span>{hasAttempted ? 'Retake Exam' : 'Start 120m Exam'}</span>
+                          <ChevronRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );

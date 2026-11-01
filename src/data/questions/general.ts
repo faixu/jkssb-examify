@@ -3,8 +3,10 @@ import { FREEDOM_TIMELINE_PDF_QUESTIONS } from './freedomTimelineQuestions';
 import { HISTORY_JKSSB_PDF_QUESTIONS } from './historyJkssbPdfQuestions';
 import { FREEDOM_STRUGGLE_PDF_QUESTIONS } from './freedomStrugglePdfQuestions';
 import { CENTRAL_GOVT_SCHEMES_PDF_QUESTIONS } from './centralGovtSchemesPdfQuestions';
+import { JKSSB_DEO_GENERAL_QUESTIONS } from './jkssbDeo2025PdfQuestions';
 
 export const GENERAL_QUESTIONS: Flashcard[] = [
+  ...JKSSB_DEO_GENERAL_QUESTIONS,
   ...CENTRAL_GOVT_SCHEMES_PDF_QUESTIONS,
   ...FREEDOM_TIMELINE_PDF_QUESTIONS,
   ...HISTORY_JKSSB_PDF_QUESTIONS,

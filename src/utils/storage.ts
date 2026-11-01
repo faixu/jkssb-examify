@@ -1,5 +1,5 @@
 import { CardProgress, CategoryId, ConfidenceRating, Flashcard, UserStats, MockTestResult } from '../types';
-import { INITIAL_FLASHCARDS } from '../data/initialDecks';
+import { INITIAL_FLASHCARDS, isValidFlashcard } from '../data/initialDecks';
 
 const STATS_KEY = 'flashmind_stats_v1';
 const PROGRESS_KEY = 'flashmind_progress_v1';
@@ -211,7 +211,9 @@ export function loadCustomCards(): Flashcard[] {
   if (typeof window === 'undefined') return [];
   try {
     const raw = localStorage.getItem(CUSTOM_CARDS_KEY);
-    return raw ? JSON.parse(raw) : [];
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter(isValidFlashcard) : [];
   } catch {
     return [];
   }
@@ -220,7 +222,8 @@ export function loadCustomCards(): Flashcard[] {
 export function saveCustomCards(cards: Flashcard[]) {
   if (typeof window === 'undefined') return;
   try {
-    localStorage.setItem(CUSTOM_CARDS_KEY, JSON.stringify(cards));
+    const valid = cards.filter(isValidFlashcard);
+    localStorage.setItem(CUSTOM_CARDS_KEY, JSON.stringify(valid));
   } catch (err) {
     console.error('Failed to save custom cards', err);
   }
@@ -228,7 +231,7 @@ export function saveCustomCards(cards: Flashcard[]) {
 
 export function getAllCards(): Flashcard[] {
   const custom = loadCustomCards();
-  return [...INITIAL_FLASHCARDS, ...custom];
+  return [...INITIAL_FLASHCARDS, ...custom].filter(isValidFlashcard);
 }
 
 export function loadBookmarks(): string[] {

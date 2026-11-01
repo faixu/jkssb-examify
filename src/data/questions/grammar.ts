@@ -1,7 +1,9 @@
 import { Flashcard } from '../../types';
 import { ENGLISH_VOCAB_QUESTIONS } from './englishVocab';
+import { JKSSB_DEO_ENGLISH_QUESTIONS } from './jkssbDeo2025PdfQuestions';
 
 export const GRAMMAR_QUESTIONS: Flashcard[] = [
+  ...JKSSB_DEO_ENGLISH_QUESTIONS,
   ...ENGLISH_VOCAB_QUESTIONS,
   {
     "id": "gram-1",
