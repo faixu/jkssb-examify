@@ -206,12 +206,14 @@ export function getQuestionsForSectionMock(allCards: Flashcard[], sectionId: Cat
   const sectionCards = allCards.filter(isValidFlashcard).filter((c) => c.categoryId === sectionId);
   const examCards = sectionCards.filter(
     (c) =>
+      c.id.startsWith('msoffice-') ||
       c.id.startsWith('jkssb-ja-') ||
       c.id.startsWith('jkssb-deo-') ||
       c.id.startsWith('jkssb-pdf-mock-')
   );
   const otherCards = sectionCards.filter(
     (c) =>
+      !c.id.startsWith('msoffice-') &&
       !c.id.startsWith('jkssb-ja-') &&
       !c.id.startsWith('jkssb-deo-') &&
       !c.id.startsWith('jkssb-pdf-mock-')

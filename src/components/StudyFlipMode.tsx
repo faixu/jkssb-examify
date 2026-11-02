@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import {
   ChevronLeft,
   ChevronRight,
@@ -9,6 +9,10 @@ import {
   CheckCircle2,
   Award,
   Zap,
+  ChevronDown,
+  Check,
+  BookOpen,
+  Layers,
 } from 'lucide-react';
 import { CategoryId, ConfidenceRating, Difficulty, Flashcard, UserStats } from '../types';
 import { CATEGORIES } from '../data/initialDecks';
@@ -53,6 +57,20 @@ export const StudyFlipMode: React.FC<StudyFlipModeProps> = ({
     hard: 0,
     again: 0,
   });
+
+  const [isSubjectDropdownOpen, setIsSubjectDropdownOpen] = useState(false);
+  const subjectDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (subjectDropdownRef.current && !subjectDropdownRef.current.contains(e.target as Node)) {
+        setIsSubjectDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
 
   // Filter cards
   const filteredCards = useMemo(() => {
@@ -162,45 +180,223 @@ export const StudyFlipMode: React.FC<StudyFlipModeProps> = ({
     setDeck(filteredCards);
   };
 
+  const activeCategoryMeta = CATEGORIES.find((c) => c.id === selectedCategory);
+  const activeCount =
+    selectedCategory === 'all'
+      ? cards.length
+      : cards.filter((c) => c.categoryId === selectedCategory).length;
+
   return (
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       {/* Category & Filters Header */}
       <div className="mb-6 space-y-4">
-        {/* Categories Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-          <button
-            onClick={() => onSelectCategory('all')}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
-              selectedCategory === 'all'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-            }`}
-          >
-            All Subjects ({cards.length})
-          </button>
-          {CATEGORIES.map((cat) => {
-            const count = cards.filter((c) => c.categoryId === cat.id).length;
-            const isSelected = selectedCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => onSelectCategory(cat.id)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
-                  isSelected
-                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-                }`}
-              >
-                <span>{cat.name}</span>
-                {cat.marks && (
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono">
-                    {cat.marks}M
-                  </span>
-                )}
-                <span className="text-[10px] opacity-75 font-mono">({count})</span>
-              </button>
-            );
-          })}
+        {/* Clean Subject Selection Dropdown & Quick Access */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          {/* Custom Interactive Subject Dropdown */}
+          <div ref={subjectDropdownRef} className="relative w-full sm:w-auto">
+            <button
+              type="button"
+              onClick={() => setIsSubjectDropdownOpen((prev) => !prev)}
+              className="w-full sm:w-auto min-w-[280px] md:min-w-[340px] flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-850 border border-slate-700/80 hover:border-indigo-500/60 shadow-lg shadow-black/30 transition-all cursor-pointer group text-left"
+              aria-expanded={isSubjectDropdownOpen}
+              aria-haspopup="listbox"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <div
+                  className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-inner ${
+                    selectedCategory === 'all'
+                      ? 'bg-indigo-600/20 text-indigo-400 border border-indigo-500/30'
+                      : activeCategoryMeta?.bgLight || 'bg-slate-800 text-slate-300'
+                  }`}
+                >
+                  {selectedCategory === 'all' ? (
+                    <Layers className="w-4 h-4" />
+                  ) : (
+                    <BookOpen className="w-4 h-4" />
+                  )}
+                </div>
+                <div className="min-w-0">
+                  <div className="text-[10px] uppercase tracking-wider font-extrabold text-slate-400 flex items-center gap-1.5">
+                    <span>Subject Deck</span>
+                    {activeCategoryMeta?.marks && (
+                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
+                        {activeCategoryMeta.marks} Marks
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors truncate">
+                    {selectedCategory === 'all' ? 'All Subjects Combined' : activeCategoryMeta?.name}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-lg border border-slate-700/60">
+                  {activeCount} Qs
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-slate-400 group-hover:text-white transition-transform duration-200 ${
+                    isSubjectDropdownOpen ? 'rotate-180 text-indigo-400' : ''
+                  }`}
+                />
+              </div>
+            </button>
+
+            {/* Dropdown Menu Modal */}
+            {isSubjectDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-full sm:w-[400px] max-h-[420px] overflow-y-auto rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl shadow-black/80 z-50 p-2 space-y-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-900 animate-in fade-in zoom-in-95 duration-150">
+                <div className="px-3 py-2 text-[11px] font-semibold text-slate-400 flex items-center justify-between border-b border-slate-800/80 mb-1">
+                  <span>Select Subject to Study:</span>
+                  <span className="text-[10px] text-indigo-400 font-mono font-bold">11 Decks Available</span>
+                </div>
+
+                {/* Option: All Subjects Combined */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectCategory('all');
+                    setIsSubjectDropdownOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition-all cursor-pointer ${
+                    selectedCategory === 'all'
+                      ? 'bg-indigo-600 text-white font-bold shadow-md shadow-indigo-600/30'
+                      : 'hover:bg-slate-800/80 text-slate-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0">
+                      <Layers className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold truncate">All Subjects Combined</div>
+                      <div
+                        className={`text-[10px] ${
+                          selectedCategory === 'all' ? 'text-indigo-200' : 'text-slate-400'
+                        }`}
+                      >
+                        Complete syllabus question pool
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span
+                      className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
+                        selectedCategory === 'all'
+                          ? 'bg-indigo-700/60 text-white'
+                          : 'bg-slate-800 text-slate-300'
+                      }`}
+                    >
+                      {cards.length} Qs
+                    </span>
+                    {selectedCategory === 'all' && <Check className="w-4 h-4 text-white" />}
+                  </div>
+                </button>
+
+                {/* Subject Categories List */}
+                {CATEGORIES.map((cat) => {
+                  const isSelected = selectedCategory === cat.id;
+                  const count = cards.filter((c) => c.categoryId === cat.id).length;
+                  return (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => {
+                        onSelectCategory(cat.id);
+                        setIsSubjectDropdownOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition-all cursor-pointer ${
+                        isSelected
+                          ? 'bg-indigo-600 text-white font-bold shadow-md shadow-indigo-600/30'
+                          : 'hover:bg-slate-800/80 text-slate-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+                            isSelected ? 'bg-white/20 text-white' : cat.bgLight
+                          }`}
+                        >
+                          <BookOpen className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-xs font-bold truncate">{cat.name}</div>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            {cat.marks && (
+                              <span
+                                className={`text-[9px] font-mono px-1.5 py-0.2 rounded border ${
+                                  isSelected
+                                    ? 'bg-white/20 text-white border-white/30'
+                                    : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20'
+                                }`}
+                              >
+                                {cat.marks} Marks
+                              </span>
+                            )}
+                            <span
+                              className={`text-[10px] ${
+                                isSelected ? 'text-indigo-200' : 'text-slate-400'
+                              } truncate`}
+                            >
+                              {cat.syllabusRef}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0">
+                        <span
+                          className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
+                            isSelected ? 'bg-indigo-700/60 text-white' : 'bg-slate-800 text-slate-300'
+                          }`}
+                        >
+                          {count} Qs
+                        </span>
+                        {isSelected && <Check className="w-4 h-4 text-white" />}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Quick-Access Pills for Fast Switching */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs">
+            <span className="text-[11px] font-semibold text-slate-400 shrink-0 hidden md:inline">
+              Quick:
+            </span>
+            <button
+              type="button"
+              onClick={() => onSelectCategory('all')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
+                selectedCategory === 'all'
+                  ? 'bg-indigo-600 text-white shadow-sm'
+                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
+              }`}
+            >
+              All ({cards.length})
+            </button>
+            {['cs', 'general', 'grammar', 'accounting', 'math'].map((catId) => {
+              const cat = CATEGORIES.find((c) => c.id === catId);
+              if (!cat) return null;
+              const isSelected = selectedCategory === cat.id;
+              const count = cards.filter((c) => c.categoryId === cat.id).length;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => onSelectCategory(cat.id)}
+                  className={`px-2.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer flex items-center gap-1 ${
+                    isSelected
+                      ? 'bg-indigo-600 text-white shadow-sm'
+                      : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
+                  }`}
+                >
+                  <span>{cat.name.split(' ')[0]}</span>
+                  <span className="text-[10px] opacity-70 font-mono">({count})</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Sub-Filters: Difficulty + Bookmarks + Shuffle */}

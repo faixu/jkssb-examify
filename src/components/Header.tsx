@@ -101,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center justify-between h-16 gap-3">
           {/* Logo & Brand */}
           <div
-            onClick={() => onSelectMode('flip')}
+            onClick={() => onSelectMode('quiz')}
             className="flex items-center gap-3 cursor-pointer select-none group shrink-0"
           >
             <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-pink-500 shadow-md shadow-indigo-500/25 group-hover:scale-105 transition-transform">
@@ -122,20 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 bg-slate-900/90 p-1 rounded-xl border border-slate-800/80">
-            {/* Flashcards */}
-            <button
-              onClick={() => onSelectMode('flip')}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
-                currentMode === 'flip'
-                  ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-600/40'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-              }`}
-            >
-              <Layers className="w-3.5 h-3.5" />
-              <span>Flashcards</span>
-            </button>
-
-            {/* Quiz Game */}
+            {/* Quiz Game - 1st */}
             <button
               onClick={() => onSelectMode('quiz')}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
@@ -148,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span>Quiz Game</span>
             </button>
 
-            {/* Mock Test (120 Qs) Dropdown Menu - NEXT TO QUIZ GAME */}
+            {/* Mock Test (120 Qs) Dropdown Menu - 2nd */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsMockDropdownOpen((prev) => !prev)}
@@ -306,6 +293,19 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </div>
 
+            {/* Flashcards - 3rd */}
+            <button
+              onClick={() => onSelectMode('flip')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
+                currentMode === 'flip'
+                  ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-600/40'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              <span>Flashcards</span>
+            </button>
+
             {/* Speed Rush */}
             <button
               onClick={() => onSelectMode('speed')}
@@ -426,16 +426,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Navigation bar */}
         <div className="flex lg:hidden overflow-x-auto py-2 gap-1.5 scrollbar-none border-t border-slate-800/50">
-          <button
-            onClick={() => onSelectMode('flip')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition cursor-pointer ${
-              currentMode === 'flip' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-400 hover:text-white bg-slate-900/60'
-            }`}
-          >
-            <Layers className="w-3.5 h-3.5" />
-            <span>Flashcards</span>
-          </button>
-
+          {/* Quiz Game - 1st */}
           <button
             onClick={() => onSelectMode('quiz')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition cursor-pointer ${
@@ -446,7 +437,7 @@ export const Header: React.FC<HeaderProps> = ({
             <span>Quiz Game</span>
           </button>
 
-          {/* Mobile Mock Test Dropdown Trigger */}
+          {/* Mobile Mock Test Dropdown Trigger - 2nd */}
           <button
             onClick={() => setIsMobileMockOpen((prev) => !prev)}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition cursor-pointer border ${
@@ -458,6 +449,17 @@ export const Header: React.FC<HeaderProps> = ({
             <ClipboardCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>Mock Test (120 Qs)</span>
             <ChevronDown className={`w-3 h-3 transition-transform ${isMobileMockOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {/* Flashcards - 3rd */}
+          <button
+            onClick={() => onSelectMode('flip')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition cursor-pointer ${
+              currentMode === 'flip' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-400 hover:text-white bg-slate-900/60'
+            }`}
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>Flashcards</span>
           </button>
 
           <button

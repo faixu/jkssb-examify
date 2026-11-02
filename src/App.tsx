@@ -31,7 +31,7 @@ export default function App() {
   const [cards, setCards] = useState<Flashcard[]>([]);
   const [userStats, setUserStats] = useState<UserStats>(loadUserStats());
   const [cardProgress, setCardProgress] = useState<Record<string, CardProgress>>({});
-  const [currentMode, setCurrentMode] = useState<StudyMode>('flip');
+  const [currentMode, setCurrentMode] = useState<StudyMode>('quiz');
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
   const [activeMockConfig, setActiveMockConfig] = useState<ActiveMockConfig | null>(null);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
