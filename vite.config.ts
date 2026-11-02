@@ -67,6 +67,65 @@ export default defineConfig(() => {
           enabled: false,
         },
       }),
+      {
+        name: 'suppress-hmr-ws-error',
+        transformIndexHtml: {
+          order: 'pre',
+          handler() {
+            return [
+              {
+                tag: 'script',
+                children: `(function() {
+  if (typeof window === 'undefined') return;
+  try {
+    class MockHMRWebSocket extends EventTarget {
+      static CONNECTING = 0; static OPEN = 1; static CLOSING = 2; static CLOSED = 3;
+      CONNECTING = 0; OPEN = 1; CLOSING = 2; CLOSED = 3;
+      constructor(url, protocols) {
+        super();
+        this.url = String(url);
+        this.protocol = Array.isArray(protocols) ? (protocols[0] || '') : (protocols || '');
+        this.readyState = 1;
+        this.bufferedAmount = 0; this.extensions = ''; this.binaryType = 'blob';
+        this.onopen = null; this.onmessage = null; this.onerror = null; this.onclose = null;
+        var self = this;
+        setTimeout(function() {
+          var openEvt = new Event('open');
+          self.dispatchEvent(openEvt);
+          if (typeof self.onopen === 'function') {
+            try { self.onopen(openEvt); } catch (e) {}
+          }
+        }, 0);
+      }
+      send() {}
+      close(code, reason) {
+        this.readyState = 3;
+        var closeEvt = new CloseEvent('close', { wasClean: true, code: code || 1000, reason: reason || '' });
+        this.dispatchEvent(closeEvt);
+        if (typeof this.onclose === 'function') {
+          try { this.onclose(closeEvt); } catch (e) {}
+        }
+      }
+    }
+    window.WebSocket = MockHMRWebSocket;
+  } catch (e) {}
+  var origErr = console.error;
+  console.error = function() {
+    var txt = '';
+    for (var i = 0; i < arguments.length; i++) {
+      var a = arguments[i];
+      txt += ' ' + (a instanceof Error ? a.message + ' ' + (a.stack || '') : String(a));
+    }
+    if (txt.indexOf('WebSocket') !== -1 || txt.indexOf('@vite/client') !== -1) return;
+    origErr.apply(console, arguments);
+  };
+})();`,
+                injectTo: 'head-prepend',
+              },
+            ];
+          },
+        },
+      },
     ],
     resolve: {
       alias: {

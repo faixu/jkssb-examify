@@ -124,6 +124,35 @@ async function startServer() {
       },
       appType: 'spa',
     });
+    // Intercept /@vite/client in development to neutralize HMR WebSocket transport
+    // when HMR is disabled in AI Studio preview environments
+    app.use((req, res, next) => {
+      if (req.url && req.url.startsWith('/@vite/client')) {
+        const origWrite = res.write.bind(res);
+        const origEnd = res.end.bind(res);
+        const chunks: Buffer[] = [];
+
+        res.write = function (chunk: any, ...args: any[]) {
+          if (chunk) chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+          return true;
+        } as any;
+
+        res.end = function (chunk: any, ...args: any[]) {
+          if (chunk) chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+          let body = Buffer.concat(chunks).toString('utf-8');
+
+          body = body.replace(
+            'const createWebSocketModuleRunnerTransport = (options) => {',
+            'const createWebSocketModuleRunnerTransport = (options) => ({ connect: async () => {}, disconnect: async () => {}, send: () => {} }); const _unused_wsTransport = (options) => {'
+          );
+
+          res.setHeader('content-length', Buffer.byteLength(body));
+          return origEnd(body, ...args);
+        } as any;
+      }
+      next();
+    });
+
     app.use(vite.middlewares);
   } else {
     app.use(express.static('dist'));

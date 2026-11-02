@@ -1,23 +1,34 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PRVBD9NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+    <meta name="google-site-verification" content="8QeIRyAwCv8wvKI8Q3l4CBjgAuF_9zgpGXci6qceD3k" />
     <meta charset="UTF-8" />
     <script>
       // Stub Vite HMR WebSocket and suppress WebSocket errors per AI Studio environment constraints (HMR disabled)
       (function() {
-        if (typeof window !== 'undefined' && window.WebSocket) {
+        if (typeof window !== 'undefined') {
           try {
-            var OriginalWebSocket = window.WebSocket;
-            var MockHMRWebSocket = function(url, protocols) {
-              var isHmr = false;
-              if (protocols === 'vite-hmr') isHmr = true;
-              if (Array.isArray(protocols) && protocols.indexOf('vite-hmr') !== -1) isHmr = true;
-              if (typeof url === 'string' && (url.indexOf('vite-hmr') !== -1 || url.indexOf('/@vite/client') !== -1)) isHmr = true;
+            class MockHMRWebSocket extends EventTarget {
+              static CONNECTING = 0;
+              static OPEN = 1;
+              static CLOSING = 2;
+              static CLOSED = 3;
 
-              if (isHmr) {
-                var emitter = new EventTarget();
+              CONNECTING = 0;
+              OPEN = 1;
+              CLOSING = 2;
+              CLOSED = 3;
+
+              constructor(url, protocols) {
+                super();
                 this.url = String(url);
-                this.protocol = 'vite-hmr';
+                this.protocol = Array.isArray(protocols) ? (protocols[0] || '') : (protocols || '');
                 this.readyState = 1; // WebSocket.OPEN
                 this.bufferedAmount = 0;
                 this.extensions = '';
@@ -28,82 +39,77 @@
                 this.onclose = null;
 
                 var self = this;
-                this.addEventListener = function(type, listener, opts) {
-                  emitter.addEventListener(type, listener, opts);
-                };
-                this.removeEventListener = function(type, listener, opts) {
-                  emitter.removeEventListener(type, listener, opts);
-                };
-                this.dispatchEvent = function(event) {
-                  return emitter.dispatchEvent(event);
-                };
-                this.send = function() {};
-                this.close = function() {
-                  self.readyState = 3; // CLOSED
-                };
-
                 setTimeout(function() {
-                  var evt = new Event('open');
-                  emitter.dispatchEvent(evt);
+                  var openEvt = new Event('open');
+                  self.dispatchEvent(openEvt);
                   if (typeof self.onopen === 'function') {
-                    try { self.onopen(evt); } catch (e) {}
+                    try { self.onopen(openEvt); } catch (e) {}
                   }
-                }, 10);
-
-                return this;
+                }, 0);
               }
-              return new OriginalWebSocket(url, protocols);
-            };
 
-            MockHMRWebSocket.prototype = OriginalWebSocket.prototype;
-            MockHMRWebSocket.CONNECTING = 0;
-            MockHMRWebSocket.OPEN = 1;
-            MockHMRWebSocket.CLOSING = 2;
-            MockHMRWebSocket.CLOSED = 3;
+              send(data) {}
+
+              close(code, reason) {
+                this.readyState = 3; // CLOSED
+                var self = this;
+                var closeEvt = new CloseEvent('close', { wasClean: true, code: code || 1000, reason: reason || '' });
+                self.dispatchEvent(closeEvt);
+                if (typeof self.onclose === 'function') {
+                  try { self.onclose(closeEvt); } catch (e) {}
+                }
+              }
+            }
+
             window.WebSocket = MockHMRWebSocket;
           } catch (e) {}
-        }
 
-        var origConsoleError = console.error;
-        console.error = function() {
-          var text = '';
-          for (var i = 0; i < arguments.length; i++) {
-            var arg = arguments[i];
-            if (arg instanceof Error) {
-              text += ' ' + arg.message + ' ' + (arg.stack || '');
-            } else {
-              text += ' ' + String(arg);
+          var origConsoleError = console.error;
+          console.error = function() {
+            var text = '';
+            for (var i = 0; i < arguments.length; i++) {
+              var arg = arguments[i];
+              if (arg instanceof Error) {
+                text += ' ' + arg.message + ' ' + (arg.stack || '');
+              } else {
+                text += ' ' + String(arg);
+              }
             }
-          }
-          if (
-            text.indexOf('WebSocket closed without opened') !== -1 ||
-            (text.indexOf('WebSocket') !== -1 && (text.indexOf('@vite/client') !== -1 || text.indexOf('vite') !== -1))
-          ) {
-            return;
-          }
-          origConsoleError.apply(console, arguments);
-        };
+            if (
+              text.indexOf('WebSocket closed without opened') !== -1 ||
+              (text.indexOf('WebSocket') !== -1 && (text.indexOf('@vite/client') !== -1 || text.indexOf('vite') !== -1 || text.indexOf('failed to connect') !== -1))
+            ) {
+              return;
+            }
+            origConsoleError.apply(console, arguments);
+          };
 
-        window.addEventListener('error', function(event) {
-          var msg = (event && (event.message || (event.error && event.error.message))) || '';
-          if (
-            msg.indexOf('WebSocket') !== -1 ||
-            msg.indexOf('vite-hmr') !== -1 ||
-            (event.filename && event.filename.indexOf('@vite/client') !== -1)
-          ) {
-            event.stopImmediatePropagation();
-            event.preventDefault();
-            return true;
-          }
-        }, true);
+          window.addEventListener('error', function(event) {
+            var msg = (event && (event.message || (event.error && event.error.message))) || '';
+            if (
+              msg.indexOf('WebSocket') !== -1 ||
+              msg.indexOf('vite-hmr') !== -1 ||
+              msg.indexOf('vite-ping') !== -1 ||
+              (event.filename && event.filename.indexOf('@vite/client') !== -1)
+            ) {
+              event.stopImmediatePropagation();
+              event.preventDefault();
+              return true;
+            }
+          }, true);
 
-        window.addEventListener('unhandledrejection', function(event) {
-          var str = String((event && (event.reason && (event.reason.message || event.reason.stack || event.reason))) || '');
-          if (str.indexOf('WebSocket') !== -1 || str.indexOf('@vite/client') !== -1 || str.indexOf('vite') !== -1) {
-            event.stopImmediatePropagation();
-            event.preventDefault();
-          }
-        }, true);
+          window.addEventListener('unhandledrejection', function(event) {
+            var str = String((event && (event.reason && (event.reason.message || event.reason.stack || event.reason))) || '');
+            if (
+              str.indexOf('WebSocket') !== -1 ||
+              str.indexOf('@vite/client') !== -1 ||
+              str.indexOf('vite') !== -1
+            ) {
+              event.stopImmediatePropagation();
+              event.preventDefault();
+            }
+          }, true);
+        }
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
