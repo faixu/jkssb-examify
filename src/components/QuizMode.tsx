@@ -18,7 +18,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { CategoryId, Flashcard, UserStats } from '../types';
-import { CATEGORIES } from '../data/initialDecks';
+import { CATEGORIES, CATEGORY_QUESTION_COUNTS } from '../data/initialDecks';
 import { recordStudyActivity } from '../utils/storage';
 import {
   playCorrectSound,
@@ -172,38 +172,51 @@ export const QuizMode: React.FC<QuizModeProps> = ({
     }
   };
 
+  const activeCategoryMeta = CATEGORIES.find((c) => c.id === selectedCategory);
+  const getCategoryDisplayCount = (catId: CategoryId | 'all') => {
+    const loadedCount =
+      catId === 'all' ? cards.length : cards.filter((c) => c.categoryId === catId).length;
+    return Math.max(CATEGORY_QUESTION_COUNTS[catId] || 0, loadedCount);
+  };
+  const activeCount = getCategoryDisplayCount(selectedCategory);
+  const totalDisplayCount = getCategoryDisplayCount('all');
+
   if (!currentQuestion && !isQuizComplete) {
     return (
-      <div className="text-center py-20 text-slate-400">
-        <p>No questions available for this category.</p>
-        <button
-          onClick={() => onSelectCategory('all')}
-          className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold"
-        >
-          Select All Categories
-        </button>
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
+        <div className="mb-6 space-y-3 min-h-[104px]">
+          <div className="h-14 w-full sm:w-[340px] rounded-2xl bg-slate-900/90 border border-slate-800 animate-pulse" />
+          <div className="h-10 w-full rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse" />
+        </div>
+        <div className="w-full min-h-[480px] rounded-3xl bg-slate-900/80 border border-slate-800 p-6 flex flex-col justify-between animate-pulse">
+          <div className="h-6 w-48 bg-slate-800 rounded-lg" />
+          <div className="space-y-3 my-8">
+            <div className="h-7 w-3/4 bg-slate-800 rounded-lg" />
+            <div className="h-7 w-1/2 bg-slate-800 rounded-lg" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="h-14 bg-slate-800/80 rounded-2xl" />
+            <div className="h-14 bg-slate-800/80 rounded-2xl" />
+            <div className="h-14 bg-slate-800/80 rounded-2xl" />
+            <div className="h-14 bg-slate-800/80 rounded-2xl" />
+          </div>
+        </div>
       </div>
     );
   }
 
-  const activeCategoryMeta = CATEGORIES.find((c) => c.id === selectedCategory);
-  const activeCount =
-    selectedCategory === 'all'
-      ? cards.length
-      : cards.filter((c) => c.categoryId === selectedCategory).length;
-
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-      {/* Controls Bar: Clean Subject Selection & Session Size */}
-      <div className="mb-6 space-y-3">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
+      {/* Controls Bar: Clean Subject Selection & Session Size (Reserved min-height prevents CLS) */}
+      <div className="mb-6 space-y-3 min-h-[104px]">
         {/* Clean Subject Selection Dropdown & Quick Access */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 min-h-[54px]">
           {/* Custom Interactive Subject Dropdown */}
           <div ref={subjectDropdownRef} className="relative w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setIsSubjectDropdownOpen((prev) => !prev)}
-              className="w-full sm:w-auto min-w-[280px] md:min-w-[340px] flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-850 border border-slate-700/80 hover:border-indigo-500/60 shadow-lg shadow-black/30 transition-all cursor-pointer group text-left"
+              className="w-full sm:w-auto min-w-[280px] md:min-w-[340px] min-h-[54px] flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-850 border border-slate-700/80 hover:border-indigo-500/60 shadow-lg shadow-black/30 transition-all cursor-pointer group text-left"
               aria-expanded={isSubjectDropdownOpen}
               aria-haspopup="listbox"
             >
@@ -222,7 +235,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                   )}
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[10px] uppercase tracking-wider font-extrabold text-slate-400 flex items-center gap-1.5">
+                  <div className="text-[10px] uppercase tracking-wider font-extrabold text-slate-400 flex items-center gap-1.5 min-h-[16px]">
                     <span>Quiz Subject</span>
                     {activeCategoryMeta?.marks && (
                       <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
@@ -237,7 +250,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
               </div>
 
               <div className="flex items-center gap-2 shrink-0">
-                <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-lg border border-slate-700/60">
+                <span className="text-xs font-mono tabular-nums min-w-[64px] text-center font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-lg border border-slate-700/60">
                   {activeCount} Qs
                 </span>
                 <ChevronDown
@@ -286,13 +299,13 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span
-                      className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
+                      className={`text-[11px] font-mono tabular-nums px-2 py-0.5 rounded-md ${
                         selectedCategory === 'all'
                           ? 'bg-indigo-700/60 text-white'
                           : 'bg-slate-800 text-slate-300'
                       }`}
                     >
-                      {cards.length} Qs
+                      {totalDisplayCount} Qs
                     </span>
                     {selectedCategory === 'all' && <Check className="w-4 h-4 text-white" />}
                   </div>
@@ -301,7 +314,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                 {/* Subject Categories List */}
                 {CATEGORIES.map((cat) => {
                   const isSelected = selectedCategory === cat.id;
-                  const count = cards.filter((c) => c.categoryId === cat.id).length;
+                  const count = getCategoryDisplayCount(cat.id);
                   return (
                     <button
                       key={cat.id}
@@ -350,7 +363,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <span
-                          className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
+                          className={`text-[11px] font-mono tabular-nums px-2 py-0.5 rounded-md ${
                             isSelected ? 'bg-indigo-700/60 text-white' : 'bg-slate-800 text-slate-300'
                           }`}
                         >
@@ -366,26 +379,26 @@ export const QuizMode: React.FC<QuizModeProps> = ({
           </div>
 
           {/* Quick-Access Pills for Fast Switching */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs min-h-[34px]">
             <span className="text-[11px] font-semibold text-slate-400 shrink-0 hidden md:inline">
               Quick:
             </span>
             <button
               type="button"
               onClick={() => onSelectCategory('all')}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer font-mono tabular-nums ${
                 selectedCategory === 'all'
                   ? 'bg-indigo-600 text-white shadow-sm'
                   : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
-              All ({cards.length})
+              All ({totalDisplayCount})
             </button>
-            {['cs', 'general', 'grammar', 'accounting', 'math'].map((catId) => {
+            {(['cs', 'general', 'grammar', 'accounting', 'math'] as CategoryId[]).map((catId) => {
               const cat = CATEGORIES.find((c) => c.id === catId);
               if (!cat) return null;
               const isSelected = selectedCategory === cat.id;
-              const count = cards.filter((c) => c.categoryId === cat.id).length;
+              const count = getCategoryDisplayCount(cat.id);
               return (
                 <button
                   key={cat.id}
@@ -398,7 +411,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                   }`}
                 >
                   <span>{cat.name.split(' ')[0]}</span>
-                  <span className="text-[10px] opacity-70 font-mono">({count})</span>
+                  <span className="text-[10px] opacity-70 font-mono tabular-nums">({count})</span>
                 </button>
               );
             })}

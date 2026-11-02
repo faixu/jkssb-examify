@@ -44,8 +44,18 @@ export default defineConfig(() => {
           ],
         },
         workbox: {
-          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB to accommodate 4,500 questions for complete offline PWA caching
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB to accommodate offline PWA caching
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
+          navigateFallbackDenylist: [
+            /^\/api\//,
+            /^\/\.well-known\//,
+            /^\/llms\.txt$/,
+            /^\/llms-full\.txt$/,
+            /^\/sitemap\.xml$/,
+            /^\/sitemap$/,
+            /^\/robots\.txt$/,
+            /^\/google.*\.html$/,
+          ],
           runtimeCaching: [
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -134,18 +144,28 @@ export default defineConfig(() => {
     },
     build: {
       sourcemap: false,
-      chunkSizeWarningLimit: 4500,
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
           manualChunks(id) {
             if (id.includes('node_modules/lucide-react')) {
-              return 'icons';
+              return 'vendor-icons';
             }
-            if (id.includes('node_modules/firebase')) {
-              return 'firebase';
+            if (id.includes('node_modules/firebase') || id.includes('node_modules/@firebase')) {
+              return 'vendor-firebase';
             }
-            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            if (
+              id.includes('node_modules/react') ||
+              id.includes('node_modules/react-dom') ||
+              id.includes('node_modules/scheduler')
+            ) {
               return 'vendor-react';
+            }
+            if (id.includes('/src/data/questions/')) {
+              const match = id.match(/\/src\/data\/questions\/([^/.]+)/);
+              if (match && match[1]) {
+                return `questions-${match[1].toLowerCase()}`;
+              }
             }
           },
         },

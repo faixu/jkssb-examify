@@ -1,5 +1,10 @@
 import { CardProgress, CategoryId, ConfidenceRating, Flashcard, UserStats, MockTestResult } from '../types';
-import { INITIAL_FLASHCARDS, isValidFlashcard } from '../data/initialDecks';
+import {
+  getCachedFlashcards,
+  loadCategoryQuestions,
+  loadAllCategoryQuestions,
+  isValidFlashcard,
+} from '../data/initialDecks';
 
 const STATS_KEY = 'flashmind_stats_v1';
 const PROGRESS_KEY = 'flashmind_progress_v1';
@@ -231,7 +236,16 @@ export function saveCustomCards(cards: Flashcard[]) {
 
 export function getAllCards(): Flashcard[] {
   const custom = loadCustomCards();
-  return [...INITIAL_FLASHCARDS, ...custom].filter(isValidFlashcard);
+  return [...getCachedFlashcards(), ...custom].filter(isValidFlashcard);
+}
+
+export async function loadCardsForCategory(category: CategoryId | 'all'): Promise<Flashcard[]> {
+  if (category === 'all') {
+    await loadAllCategoryQuestions();
+  } else {
+    await loadCategoryQuestions(category);
+  }
+  return getAllCards();
 }
 
 export function loadBookmarks(): string[] {

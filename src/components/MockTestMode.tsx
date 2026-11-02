@@ -34,6 +34,9 @@ import {
   TOTAL_MOCKS_COUNT,
   getQuestionsForFullMock,
   getQuestionsForSectionMock,
+  loadQuestionsForFullMockAsync,
+  loadQuestionsForSectionMockAsync,
+  preloadMockPdfQuestions,
   FullMockMeta,
 } from '../data/mockTests';
 
@@ -91,15 +94,19 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [savedResults, setSavedResults] = useState<MockTestResult[]>([]);
 
-  // Load previous mock test results
+  // Load previous mock test results and warm mock question chunks in background
   useEffect(() => {
     setSavedResults(loadMockTestResults());
+    preloadMockPdfQuestions().catch(() => {});
   }, []);
 
-  // Handler to start Full Syllabus Mock Test (1 to 10)
-  const handleStartFullMock = useCallback((testNum: number) => {
+  // Handler to start Full Syllabus Mock Test (1 to 8)
+  const handleStartFullMock = useCallback(async (testNum: number) => {
     const meta = FULL_MOCKS_META.find((m) => m.testNumber === testNum) || FULL_MOCKS_META[0];
-    const questions = getQuestionsForFullMock(cards, testNum);
+    let questions = getQuestionsForFullMock(cards, testNum);
+    if (questions.length < (meta.questionCount || 80)) {
+      questions = await loadQuestionsForFullMockAsync(cards, testNum);
+    }
     if (questions.length === 0) return;
 
     const testDuration = (meta.timeMinutes || 120) * 60;
@@ -118,9 +125,12 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
   }, [cards]);
 
   // Handler to start Sectional 120-Q Mock Test
-  const handleStartSectionMock = useCallback((catId: CategoryId) => {
+  const handleStartSectionMock = useCallback(async (catId: CategoryId) => {
     const catMeta = CATEGORIES.find((c) => c.id === catId);
-    const questions = getQuestionsForSectionMock(cards, catId);
+    let questions = getQuestionsForSectionMock(cards, catId);
+    if (questions.length < 50) {
+      questions = await loadQuestionsForSectionMockAsync(cards, catId);
+    }
     if (questions.length === 0) return;
 
     setCurrentTestNumber(null);

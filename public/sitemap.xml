@@ -1,112 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 1. Primary Landing & Exam Portal -->
   <url>
     <loc>https://jkssb-mcq-quiz.ai.studio/</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- 2. Exam Modes -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?mode=quiz</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/jk-special-gk</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?mode=mock</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/computer-fundamentals</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?mode=flip</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/general-science</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/accountancy</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?mode=speed</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/general-english</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?mode=stats</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 3. All Public Quiz & Study Categories (JKSSB FAA 120 Marks Syllabus) -->
-  <!-- General Knowledge with special reference to J&K UT (30 Marks) -->
-  <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=general</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/statistics</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Accountancy and Book Keeping (30 Marks) -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=accounting</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/mathematics</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Computer Applications & IT (30 Marks) -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=cs</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/economics</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- General English & Grammar (10 Marks) -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=grammar</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/history</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Statistics (10 Marks) -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=statistics</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/current-affairs</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Mathematics (10 Marks) -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=math</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/mock-tests</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
-  <!-- General Economics (10 Marks) -->
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=economics</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- General Science (10 Marks) -->
-  <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=science</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- History of J&K and India -->
-  <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=history</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- Current Affairs & Recent Events -->
-  <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/?subject=current_affairs</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/flashcards</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

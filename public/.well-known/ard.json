@@ -1,0 +1,96 @@
+{
+  "$schema": "https://ard-spec.org/schemas/v1/ard-manifest.schema.json",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "identifier": "urn:air:jkssb-mcq-quiz.ai.studio:education:jkssb-mcq-quiz-portal",
+      "displayName": "FlashMind JKSSB MCQ Practice Quiz & Mock Tests",
+      "type": "text/html",
+      "description": "Free interactive JKSSB multiple-choice question (MCQ) practice portal with 6,296+ topic-wise questions, instant explanations, full-length 120-question mock tests, and flashcards covering J&K GK, Computer Applications, General Science, Accountancy, Economics, English, Statistics, Mathematics, and Reasoning.",
+      "url": "https://jkssb-mcq-quiz.ai.studio/",
+      "capabilities": [
+        "mcq-quiz",
+        "mock-tests",
+        "flashcards",
+        "instant-explanations",
+        "exam-preparation"
+      ],
+      "tags": [
+        "jkssb",
+        "jammu-and-kashmir",
+        "general-knowledge",
+        "accountancy",
+        "computer-fundamentals",
+        "mock-test",
+        "mcq"
+      ],
+      "representativeQueries": [
+        "Practice free JKSSB multiple-choice questions on J&K History, Geography, and Reorganization Act 2019",
+        "Take a full-length 120-question JKSSB Finance Account Assistant (FAA) or General Line mock test",
+        "Study JKSSB Computer Applications, Accountancy, Statistics, and General Science MCQs with explanations"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-04-20T00:00:00Z",
+      "trustManifest": {
+        "identity": "https://jkssb-mcq-quiz.ai.studio",
+        "llmsTxt": "https://jkssb-mcq-quiz.ai.studio/llms.txt",
+        "sitemap": "https://jkssb-mcq-quiz.ai.studio/sitemap.xml"
+      }
+    },
+    {
+      "identifier": "urn:air:jkssb-mcq-quiz.ai.studio:quiz:jk-special-gk",
+      "displayName": "JKSSB J&K Special GK MCQ Practice Quiz",
+      "type": "text/html",
+      "description": "1,284 targeted JKSSB MCQs on Jammu & Kashmir History, Geography, Rivers, Lakes, Culture, Economy, and J&K Reorganization Act 2019 with detailed explanations.",
+      "url": "https://jkssb-mcq-quiz.ai.studio/quizzes/jk-special-gk",
+      "capabilities": [
+        "mcq-quiz",
+        "topic-filtering",
+        "instant-explanations"
+      ],
+      "tags": [
+        "jkssb",
+        "jk-gk",
+        "jammu-and-kashmir-history",
+        "reorganization-act-2019"
+      ],
+      "representativeQueries": [
+        "JKSSB J&K Reorganization Act 2019 practice MCQs with answers",
+        "Jammu and Kashmir rivers, lakes, and mountain passes quiz for JKSSB exams"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-04-20T00:00:00Z",
+      "trustManifest": {
+        "identity": "https://jkssb-mcq-quiz.ai.studio"
+      }
+    },
+    {
+      "identifier": "urn:air:jkssb-mcq-quiz.ai.studio:quiz:mock-tests",
+      "displayName": "JKSSB Full-Length 120-Question OMR Mock Tests",
+      "type": "text/html",
+      "description": "Full-length 120-question timed JKSSB mock examinations with 0.25 negative marking, section-wise score breakdown, and answer explanations.",
+      "url": "https://jkssb-mcq-quiz.ai.studio/mock-tests",
+      "capabilities": [
+        "mock-tests",
+        "timed-exam",
+        "negative-marking-analytics"
+      ],
+      "tags": [
+        "jkssb",
+        "mock-test",
+        "faa",
+        "vlw",
+        "general-line"
+      ],
+      "representativeQueries": [
+        "Attempt a free 120-question JKSSB full-length mock test online",
+        "JKSSB exam simulator with 0.25 negative marking and sectional cutoff analysis"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-04-20T00:00:00Z",
+      "trustManifest": {
+        "identity": "https://jkssb-mcq-quiz.ai.studio"
+      }
+    }
+  ]
+}

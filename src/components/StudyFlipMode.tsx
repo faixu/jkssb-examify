@@ -15,7 +15,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { CategoryId, ConfidenceRating, Difficulty, Flashcard, UserStats } from '../types';
-import { CATEGORIES } from '../data/initialDecks';
+import { CATEGORIES, CATEGORY_QUESTION_COUNTS } from '../data/initialDecks';
 import { FlipCard } from './FlipCard';
 import {
   recordStudyActivity,
@@ -181,15 +181,17 @@ export const StudyFlipMode: React.FC<StudyFlipModeProps> = ({
   };
 
   const activeCategoryMeta = CATEGORIES.find((c) => c.id === selectedCategory);
-  const activeCount =
-    selectedCategory === 'all'
-      ? cards.length
-      : cards.filter((c) => c.categoryId === selectedCategory).length;
+  const getCategoryDisplayCount = (catId: CategoryId | 'all') => {
+    const loadedCount =
+      catId === 'all' ? cards.length : cards.filter((c) => c.categoryId === catId).length;
+    return Math.max(CATEGORY_QUESTION_COUNTS[catId] || 0, loadedCount);
+  };
+  const activeCount = getCategoryDisplayCount(selectedCategory);
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
       {/* Category & Filters Header */}
-      <div className="mb-6 space-y-4">
+      <div className="mb-6 space-y-4 min-h-[104px]">
         {/* Clean Subject Selection Dropdown & Quick Access */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           {/* Custom Interactive Subject Dropdown */}

@@ -1,8 +1,5 @@
 import { CategoryId, Flashcard } from '../types';
-import { JKSSB_FAA_PDF_MOCK_QUESTIONS } from './questions/jkssbFaaFullMockPdfQuestions';
-import { JKSSB_DEO_2025_PDF_QUESTIONS } from './questions/jkssbDeo2025PdfQuestions';
-import { JKSSB_JA_2024_PDF_QUESTIONS } from './questions/jkssbJuniorAssistant2024PdfQuestions';
-import { isValidFlashcard } from './initialDecks';
+import { isValidFlashcard, loadAllCategoryQuestions, loadCategoryQuestions } from './initialDecks';
 
 export interface FullMockMeta {
   testNumber: number;
@@ -38,7 +35,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'JKSSB Accounts Assistant (Finance) — 120-MCQ Official Mock Exam',
     shortTitle: 'FAA PDF Mock',
     subtitle: 'Full-Length 120-MCQ Paper from Uploaded PDF',
-    description: 'Exact 120-question official mock examination transcribed from the JKSSB Accounts Assistant (Finance) PDF. Covers all 8 syllabus sections with official answer keys and step-by-step explanatory notes.',
+    description:
+      'Exact 120-question official mock examination transcribed from the JKSSB Accounts Assistant (Finance) PDF. Covers all 8 syllabus sections with official answer keys and step-by-step explanatory notes.',
     difficulty: 'Exam Simulation',
     highlight: 'Official FAA Paper',
     badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
@@ -52,7 +50,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'JKSSB Data Entry Operator (DEO) — 120-MCQ Official Paper 2025',
     shortTitle: 'DEO 2025 Paper',
     subtitle: 'Series A Complete 120-Question Examination',
-    description: 'Authentic 120-question exam transcribed from the official JKSSB Data Entry Operator OMR Examination 2025 (Series A). Covers J&K Special, General English, Mental Ability, Quantitative Math, Statistics, and Computer Science.',
+    description:
+      'Authentic 120-question exam transcribed from the official JKSSB Data Entry Operator OMR Examination 2025 (Series A). Covers J&K Special, General English, Mental Ability, Quantitative Math, Statistics, and Computer Science.',
     difficulty: 'Exam Simulation',
     highlight: 'DEO 2025 Series A',
     badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
@@ -66,7 +65,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'JKSSB Junior Assistant — 80-MCQ Official Paper 2024',
     shortTitle: 'JA 2024 Paper',
     subtitle: 'Series A Complete 80-Question Examination (25-08-2024)',
-    description: 'Authentic 80-question exam transcribed from the official JKSSB Junior Assistant OMR Examination (25-08-2024, Series A). Covers General English, J&K UT Special, Computer Science/IT, Mental Ability & Mathematics.',
+    description:
+      'Authentic 80-question exam transcribed from the official JKSSB Junior Assistant OMR Examination (25-08-2024, Series A). Covers General English, J&K UT Special, Computer Science/IT, Mental Ability & Mathematics.',
     difficulty: 'Exam Simulation',
     highlight: 'JA 2024 Series A',
     badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
@@ -80,7 +80,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'FAA Mock Test 02',
     shortTitle: 'Mock 02',
     subtitle: 'Official Blueprint Baseline',
-    description: 'Foundation exam covering J&K history & geography, core journal entries, BRS, basic grammar rules, and computer hardware essentials.',
+    description:
+      'Foundation exam covering J&K history & geography, core journal entries, BRS, basic grammar rules, and computer hardware essentials.',
     difficulty: 'Balanced',
     highlight: 'Standard Baseline',
     badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
@@ -93,7 +94,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'FAA Mock Test 03',
     shortTitle: 'Mock 03',
     subtitle: 'High-Yield Core Focus',
-    description: 'High-probability topics on Indian freedom struggle, trial balance & partnership, index numbers (Laspeyres/Paasche), and macroeconomics.',
+    description:
+      'High-probability topics on Indian freedom struggle, trial balance & partnership, index numbers (Laspeyres/Paasche), and macroeconomics.',
     difficulty: 'Moderate',
     highlight: 'High-Yield Topics',
     badgeColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30',
@@ -106,7 +108,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'FAA Mock Test 04',
     shortTitle: 'Mock 04',
     subtitle: 'Speed & Numerical Accuracy',
-    description: 'Calculations in simple & compound interest, probability, matrices, cost accounting terms, and economic elasticity calculations.',
+    description:
+      'Calculations in simple & compound interest, probability, matrices, cost accounting terms, and economic elasticity calculations.',
     difficulty: 'Advanced',
     highlight: 'Numerical Intensive',
     badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
@@ -119,7 +122,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'FAA Mock Test 05',
     shortTitle: 'Mock 05',
     subtitle: 'Accountancy & J&K Intensive',
-    description: 'Comprehensive 60-mark deep drill into voucher approaches, GST, PFMS, financial audit, and J&K Reorganisation Act 2019 clauses.',
+    description:
+      'Comprehensive 60-mark deep drill into voucher approaches, GST, PFMS, financial audit, and J&K Reorganisation Act 2019 clauses.',
     difficulty: 'Moderate',
     highlight: 'Top Weightage Focus',
     badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
@@ -132,7 +136,8 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
     title: 'FAA Mock Test 06',
     shortTitle: 'Mock 06',
     subtitle: 'Conceptual Mastery & Reasoning',
-    description: 'Conceptual questions spanning laws of motion, ecosystem biodiversity, grammar narration & voice, and operating system kernels.',
+    description:
+      'Conceptual questions spanning laws of motion, ecosystem biodiversity, grammar narration & voice, and operating system kernels.',
     difficulty: 'Balanced',
     highlight: 'Conceptual Depth',
     badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
@@ -142,31 +147,89 @@ export const FULL_MOCKS_META: FullMockMeta[] = [
   },
 ];
 
+// Cached PDF mock question sets loaded via dynamic import()
+let cachedFaaPdfQuestions: Flashcard[] | null = null;
+let cachedDeoPdfQuestions: Flashcard[] | null = null;
+let cachedJaPdfQuestions: Flashcard[] | null = null;
+
+export async function preloadMockPdfQuestions(): Promise<void> {
+  const [faaMod, deoMod, jaMod] = await Promise.all([
+    import('./questions/jkssbFaaFullMockPdfQuestions'),
+    import('./questions/jkssbDeo2025PdfQuestions'),
+    import('./questions/jkssbJuniorAssistant2024PdfQuestions'),
+    loadAllCategoryQuestions(),
+  ]);
+  cachedFaaPdfQuestions = faaMod.JKSSB_FAA_PDF_MOCK_QUESTIONS.filter(isValidFlashcard);
+  cachedDeoPdfQuestions = deoMod.JKSSB_DEO_2025_PDF_QUESTIONS.filter(isValidFlashcard);
+  cachedJaPdfQuestions = jaMod.JKSSB_JA_2024_PDF_QUESTIONS.filter(isValidFlashcard);
+}
+
 /**
- * Returns questions for a given full syllabus mock test (1 to 8).
- * Test 1 delivers the exact 120 questions from the FAA Mock PDF.
- * Test 2 delivers the exact 120 questions from the DEO 2025 Paper PDF.
- * Test 3 delivers the exact 80 questions from the Junior Assistant 2024 Paper PDF.
- * Tests 4-8 deliver disjoint balanced sets from the card pool.
- * Guarantees zero empty or invalid MCQs.
+ * Async loader for Full Mock Test questions (dynamically imports the required question bank on demand)
+ */
+export async function loadQuestionsForFullMockAsync(
+  allCards: Flashcard[],
+  testNumber: number
+): Promise<Flashcard[]> {
+  if (testNumber === 1) {
+    if (!cachedFaaPdfQuestions) {
+      const mod = await import('./questions/jkssbFaaFullMockPdfQuestions');
+      cachedFaaPdfQuestions = mod.JKSSB_FAA_PDF_MOCK_QUESTIONS.filter(isValidFlashcard);
+    }
+    if (cachedFaaPdfQuestions.length >= 120) {
+      return cachedFaaPdfQuestions.slice(0, 120);
+    }
+  }
+
+  if (testNumber === 2) {
+    if (!cachedDeoPdfQuestions) {
+      const mod = await import('./questions/jkssbDeo2025PdfQuestions');
+      cachedDeoPdfQuestions = mod.JKSSB_DEO_2025_PDF_QUESTIONS.filter(isValidFlashcard);
+    }
+    if (cachedDeoPdfQuestions.length >= 120) {
+      return cachedDeoPdfQuestions.slice(0, 120);
+    }
+  }
+
+  if (testNumber === 3) {
+    if (!cachedJaPdfQuestions) {
+      const mod = await import('./questions/jkssbJuniorAssistant2024PdfQuestions');
+      cachedJaPdfQuestions = mod.JKSSB_JA_2024_PDF_QUESTIONS.filter(isValidFlashcard);
+    }
+    if (cachedJaPdfQuestions.length >= 80) {
+      return cachedJaPdfQuestions.slice(0, 80);
+    }
+  }
+
+  const fullPool = allCards.length > 200 ? allCards : await loadAllCategoryQuestions();
+  return getQuestionsForFullMock(fullPool, testNumber);
+}
+
+export async function loadQuestionsForSectionMockAsync(
+  allCards: Flashcard[],
+  sectionId: CategoryId
+): Promise<Flashcard[]> {
+  const sectionCards = await loadCategoryQuestions(sectionId);
+  const merged = sectionCards.length > 0 ? sectionCards : allCards;
+  return getQuestionsForSectionMock(merged, sectionId);
+}
+
+/**
+ * Synchronous getter for Full Syllabus Mock Test (uses cached PDF sets or full pool).
  */
 export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: number): Flashcard[] {
-  // If test 1 is requested, return the authentic 120 questions from the FAA Mock PDF
-  if (testNumber === 1 && JKSSB_FAA_PDF_MOCK_QUESTIONS.length >= 120) {
-    return JKSSB_FAA_PDF_MOCK_QUESTIONS.filter(isValidFlashcard).slice(0, 120);
+  if (testNumber === 1 && cachedFaaPdfQuestions && cachedFaaPdfQuestions.length >= 120) {
+    return cachedFaaPdfQuestions.slice(0, 120);
   }
 
-  // If test 2 is requested, return the authentic 120 questions from the DEO 2025 Paper PDF
-  if (testNumber === 2 && JKSSB_DEO_2025_PDF_QUESTIONS.length >= 120) {
-    return JKSSB_DEO_2025_PDF_QUESTIONS.filter(isValidFlashcard).slice(0, 120);
+  if (testNumber === 2 && cachedDeoPdfQuestions && cachedDeoPdfQuestions.length >= 120) {
+    return cachedDeoPdfQuestions.slice(0, 120);
   }
 
-  // If test 3 is requested, return the authentic 80 questions from the Junior Assistant 2024 Paper PDF
-  if (testNumber === 3 && JKSSB_JA_2024_PDF_QUESTIONS.length >= 80) {
-    return JKSSB_JA_2024_PDF_QUESTIONS.filter(isValidFlashcard).slice(0, 80);
+  if (testNumber === 3 && cachedJaPdfQuestions && cachedJaPdfQuestions.length >= 80) {
+    return cachedJaPdfQuestions.slice(0, 80);
   }
 
-  // Filter out any potential invalid or empty cards from the pool
   const sanitizedCards = allCards.filter(isValidFlashcard);
   const safeNumber = Math.max(1, Math.min(TOTAL_MOCKS_COUNT, testNumber));
   const testIdx = Math.max(0, safeNumber - 4);
@@ -188,7 +251,6 @@ export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: numbe
     }
   }
 
-  // Ensure exact length of 120
   if (testQuestions.length < 120) {
     const existingIds = new Set(testQuestions.map((c) => c.id));
     const spare = sanitizedCards.filter((c) => !existingIds.has(c.id));
@@ -198,10 +260,6 @@ export function getQuestionsForFullMock(allCards: Flashcard[], testNumber: numbe
   return testQuestions.filter(isValidFlashcard).slice(0, 120);
 }
 
-/**
- * Returns questions for an intensive single-subject mock test.
- * Prioritizes authentic examination MCQs (JA 2024, DEO 2025, and FAA papers) before filling with topic practice questions.
- */
 export function getQuestionsForSectionMock(allCards: Flashcard[], sectionId: CategoryId): Flashcard[] {
   const sectionCards = allCards.filter(isValidFlashcard).filter((c) => c.categoryId === sectionId);
   const examCards = sectionCards.filter(
