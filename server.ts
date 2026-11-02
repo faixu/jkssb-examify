@@ -32,6 +32,21 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', time: new Date().toISOString() });
 });
 
+// Google Search Console HTML verification file route
+app.get('/google272431db41c0e72c.html', (_req, res) => {
+  res.type('text/html').send('google-site-verification: google272431db41c0e72c.html\n');
+});
+
+// Search Engine Crawlers: robots.txt
+app.get('/robots.txt', (_req, res) => {
+  res.type('text/plain').send('User-agent: *\nAllow: /\n\nSitemap: https://jkssb-mcq-quiz.ai.studio/sitemap.xml\n');
+});
+
+// Search Engine Crawlers: sitemap.xml
+app.get('/sitemap.xml', (_req, res) => {
+  res.sendFile('public/sitemap.xml', { root: '.' });
+});
+
 // Multi-turn Gemini Chat endpoint
 app.post('/api/chat', async (req, res) => {
   try {
