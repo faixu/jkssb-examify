@@ -201,39 +201,57 @@ function injectRouteSEOIntoHtml(rawHtml: string, reqUrl: string): string {
       .join('\n            ');
 
     const prerenderedRootContent = `<div id="root">
-      <article class="max-w-5xl mx-auto px-4 py-8 text-slate-200">
-        <header>
-          <h1 class="text-2xl font-extrabold text-white">${safeH1}</h1>
-          <p class="mt-2 text-sm text-slate-300">${safeIntro}</p>
+      <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+        <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-slate-950/90 min-h-[105px] lg:min-h-[65px] flex items-center">
+          <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="font-extrabold text-lg text-white tracking-tight">FlashMind JKSSB Prep</div>
+          </div>
         </header>
-        <section class="mt-6">
-          <h2 class="text-lg font-bold text-white">Syllabus Covered (${escapeHtml(topic.marksWeightage)})</h2>
-          <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-slate-300">
-            ${syllabusItemsHtml}
-          </ul>
+        <section class="border-b border-slate-800/70 bg-slate-950 min-h-[132px] md:min-h-[92px] flex items-center">
+          <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3">
+            <h1 class="text-base sm:text-lg font-extrabold text-white tracking-tight line-clamp-1 min-h-[24px] sm:min-h-[28px]">${safeH1}</h1>
+            <p class="text-xs text-slate-400 line-clamp-2 mt-0.5 max-w-3xl min-h-[32px]">${safeIntro}</p>
+          </div>
         </section>
-        <section class="mt-6">
-          <h2 class="text-lg font-bold text-white">Key Study Notes &amp; Exam Highlights</h2>
-          <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-slate-300">
-            ${notesItemsHtml}
-          </ul>
-        </section>
-        <section class="mt-6">
-          <h2 class="text-lg font-bold text-white">Sample Solved JKSSB Questions &amp; Answer Key</h2>
-          ${sampleQuestionsHtml}
-        </section>
-        <nav aria-label="JKSSB Subject Quizzes" class="mt-6">
-          <h2 class="text-lg font-bold text-white">Topic-Wise JKSSB Practice Quizzes</h2>
-          <ul class="mt-2 space-y-1 text-sm text-indigo-400">
-            ${navLinksHtml}
-            <li><a href="/mock-tests">Start JKSSB 120-Question CBT Mock Tests</a></li>
-            <li><a href="/flashcards">Open JKSSB Spaced Repetition Flashcards</a></li>
-          </ul>
-        </nav>
-      </article>
+        <main class="flex-1 w-full pb-12">
+          <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
+            <div class="mb-6 space-y-3 min-h-[104px]">
+              <div class="h-[54px] w-full sm:w-[340px] rounded-2xl bg-slate-900/90 border border-slate-800"></div>
+              <div class="h-[38px] w-full rounded-2xl bg-slate-900/60 border border-slate-800/80"></div>
+            </div>
+            <div class="w-full min-h-[480px] rounded-3xl bg-slate-900 border border-slate-800 p-4 sm:p-8"></div>
+          </div>
+          <article class="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 border-t border-slate-800/80 space-y-8 text-slate-200">
+            <section>
+              <h2 class="text-sm sm:text-base font-extrabold text-white">Syllabus Covered (${escapeHtml(topic.marksWeightage)})</h2>
+              <ul class="mt-2 list-disc pl-5 space-y-1 text-xs text-slate-300">
+                ${syllabusItemsHtml}
+              </ul>
+            </section>
+            <section>
+              <h2 class="text-sm sm:text-base font-extrabold text-white">Key Study Notes &amp; Exam Highlights</h2>
+              <ul class="mt-2 list-disc pl-5 space-y-1 text-xs text-slate-300">
+                ${notesItemsHtml}
+              </ul>
+            </section>
+            <section>
+              <h2 class="text-sm sm:text-base font-extrabold text-white">Sample Solved JKSSB Questions &amp; Answer Key</h2>
+              ${sampleQuestionsHtml}
+            </section>
+            <nav aria-label="JKSSB Subject Quizzes">
+              <h2 class="text-sm sm:text-base font-extrabold text-white">Topic-Wise JKSSB Practice Quizzes</h2>
+              <ul class="mt-2 space-y-1 text-xs text-indigo-400">
+                ${navLinksHtml}
+                <li><a href="/mock-tests">Start JKSSB 120-Question CBT Mock Tests</a></li>
+                <li><a href="/flashcards">Open JKSSB Spaced Repetition Flashcards</a></li>
+              </ul>
+            </nav>
+          </article>
+        </main>
+      </div>
     </div>`;
 
-    html = html.replace(/<div id="root">[\s\S]*?<\/article>\s*<\/div>/i, prerenderedRootContent);
+    html = html.replace(/<div id="root">[\s\S]*?<\/main>\s*<\/div>\s*<\/div>/i, prerenderedRootContent);
 
     return html;
   } catch (_e) {

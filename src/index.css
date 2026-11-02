@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Plus Jakarta Sans Fallback';
+  src: local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 105.2%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
 @layer base {
   html, body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, -apple-system, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
     overscroll-behavior-y: none;
@@ -11,7 +20,7 @@
     touch-action: manipulation;
   }
   code, pre, .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 }
 

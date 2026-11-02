@@ -230,29 +230,29 @@ export default function App() {
       />
 
       {/* Semantic H1 & Topic Breadcrumb Header Banner (Reserved min-height prevents CLS) */}
-      <section className="border-b border-slate-800/70 bg-gradient-to-r from-slate-950 via-indigo-950/25 to-slate-950 min-h-[88px] flex items-center">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <div>
-            <div className="flex items-center gap-2 text-[11px] font-semibold text-indigo-400">
+      <section className="border-b border-slate-800/70 bg-gradient-to-r from-slate-950 via-indigo-950/25 to-slate-950 min-h-[132px] md:min-h-[92px] flex items-center">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 text-[11px] font-semibold text-indigo-400 min-h-[20px]">
               <a
                 href="/"
                 onClick={(e) => handleTopicLinkClick(e, 'all')}
-                className="hover:underline"
+                className="hover:underline shrink-0"
               >
                 JKSSB Quiz Portal
               </a>
-              <span className="text-slate-600">/</span>
-              <span className="text-slate-300">
+              <span className="text-slate-600 shrink-0">/</span>
+              <span className="text-slate-300 truncate">
                 {currentMode === 'quiz' ? activeTopicSEO.shortName : currentSEO.title.split('|')[0].trim()}
               </span>
-              <span className="px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
+              <span className="px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold shrink-0">
                 {activeTopicSEO.marksWeightage}
               </span>
             </div>
-            <h1 className="text-base sm:text-lg font-extrabold text-white tracking-tight mt-0.5">
+            <h1 className="text-base sm:text-lg font-extrabold text-white tracking-tight mt-0.5 line-clamp-1 min-h-[24px] sm:min-h-[28px]">
               {currentSEO.h1}
             </h1>
-            <p className="text-xs text-slate-400 line-clamp-2 mt-0.5 max-w-3xl">
+            <p className="text-xs text-slate-400 line-clamp-2 mt-0.5 max-w-3xl min-h-[32px]">
               {activeTopicSEO.intro}
             </p>
           </div>

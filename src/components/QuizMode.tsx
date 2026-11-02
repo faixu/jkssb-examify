@@ -46,7 +46,6 @@ export const QuizMode: React.FC<QuizModeProps> = ({
   onSelectCategory,
   onNavigateToMock,
 }) => {
-  const [quizQuestions, setQuizQuestions] = useState<Flashcard[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -79,9 +78,17 @@ export const QuizMode: React.FC<QuizModeProps> = ({
     return cards.filter((c) => selectedCategory === 'all' || c.categoryId === selectedCategory);
   }, [cards, selectedCategory]);
 
+  // Synchronous initial quiz selection so frame 0 renders immediately without a skeleton-to-content jump
+  const [quizQuestions, setQuizQuestions] = useState<Flashcard[]>(() => {
+    const initialPool = cards.filter((c) => selectedCategory === 'all' || c.categoryId === selectedCategory);
+    return initialPool.slice(0, 10);
+  });
+  const activeSessionKeyRef = useRef<string>(`${selectedCategory}:10`);
+
   const startNewQuiz = useCallback(() => {
     const count = Math.min(questionCount, pool.length);
     const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, count);
+    activeSessionKeyRef.current = `${selectedCategory}:${questionCount}`;
     setQuizQuestions(shuffled);
     setCurrentIndex(0);
     setSelectedOption(null);
@@ -93,19 +100,40 @@ export const QuizMode: React.FC<QuizModeProps> = ({
     setHighestCombo(0);
     setCorrectCount(0);
     setIsQuizComplete(false);
-  }, [pool, questionCount]);
+  }, [pool, questionCount, selectedCategory]);
 
   useEffect(() => {
-    startNewQuiz();
-  }, [startNewQuiz]);
+    const targetKey = `${selectedCategory}:${questionCount}`;
+    if (activeSessionKeyRef.current !== targetKey) {
+      // User switched category or quiz length -> start fresh quiz
+      startNewQuiz();
+      return;
+    }
+
+    // Background question chunks loaded for the current category:
+    // Keep already-rendered questions (especially index 0 on screen!) completely untouched to guarantee 0 CLS,
+    // and only top up remaining unseen slots up to questionCount.
+    setQuizQuestions((prev) => {
+      if (prev.length >= questionCount || pool.length <= prev.length) {
+        return prev;
+      }
+      const existingIds = new Set(prev.map((q) => q.id));
+      const additional = pool
+        .filter((q) => !existingIds.has(q.id))
+        .slice(0, questionCount - prev.length);
+      return additional.length > 0 ? [...prev, ...additional] : prev;
+    });
+  }, [selectedCategory, questionCount, pool, startNewQuiz]);
 
   const currentQuestion = quizQuestions[currentIndex];
+  const currentQuestionId = currentQuestion?.id;
 
-  // Options shuffled once per question
+  // Deterministic option order per question ID so options never shift on background state updates
   const randomizedOptions = useMemo(() => {
     if (!currentQuestion) return [];
-    return [...currentQuestion.options].sort(() => Math.random() - 0.5);
-  }, [currentQuestion]);
+    return [...currentQuestion.options];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentQuestionId]);
 
   const handleSubmitAnswer = useCallback((chosen: string) => {
     if (isSubmitted || !currentQuestion) return;

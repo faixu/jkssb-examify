@@ -84,13 +84,27 @@ export const StudyFlipMode: React.FC<StudyFlipModeProps> = ({
 
   // Deck of active cards
   const [deck, setDeck] = useState<Flashcard[]>(filteredCards);
+  const filterKeyRef = useRef<string>(`${selectedCategory}:${difficultyFilter}:${onlyBookmarks}`);
 
   useEffect(() => {
-    setDeck(filteredCards);
-    setCurrentIndex(0);
-    setIsFlipped(false);
-    setSessionCompleted(false);
-  }, [filteredCards]);
+    const nextKey = `${selectedCategory}:${difficultyFilter}:${onlyBookmarks}`;
+    if (filterKeyRef.current !== nextKey) {
+      filterKeyRef.current = nextKey;
+      setDeck(filteredCards);
+      setCurrentIndex(0);
+      setIsFlipped(false);
+      setSessionCompleted(false);
+      return;
+    }
+
+    // Background question chunks loaded: preserve the currently displayed card and append new ones
+    setDeck((prev) => {
+      if (prev.length === 0) return filteredCards;
+      const existingIds = new Set(prev.map((c) => c.id));
+      const additional = filteredCards.filter((c) => !existingIds.has(c.id));
+      return additional.length > 0 ? [...prev, ...additional] : prev;
+    });
+  }, [filteredCards, selectedCategory, difficultyFilter, onlyBookmarks]);
 
   const currentCard = deck[currentIndex];
 
