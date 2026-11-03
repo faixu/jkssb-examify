@@ -1,7 +1,7 @@
 import { CategoryId, CategoryMeta, Flashcard } from '../types';
 
 export const CATEGORY_QUESTION_COUNTS: Record<CategoryId | 'all', number> = {
-  all: 6296,
+  all: 6820,
   general: 816,
   accounting: 705,
   grammar: 1054,
@@ -9,7 +9,7 @@ export const CATEGORY_QUESTION_COUNTS: Record<CategoryId | 'all', number> = {
   math: 570,
   economics: 610,
   science: 510,
-  cs: 612,
+  cs: 1136,
   history: 500,
   current_affairs: 401,
 };

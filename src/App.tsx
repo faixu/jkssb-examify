@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useCallback, useRef, Suspense, lazy } from 'react';
 import { CategoryId, Flashcard, StudyMode, UserStats, CardProgress, ActiveMockConfig } from './types';
 import { getAllCards, loadCardsForCategory, loadUserStats, loadCardProgress } from './utils/storage';
-import { loadCategoryQuestions } from './data/initialDecks';
 import {
   TOPIC_SEO_MAP,
   resolveRouteFromLocation,
@@ -10,6 +9,7 @@ import {
 import { Header } from './components/Header';
 import { QuizMode } from './components/QuizMode';
 import { OfflineIndicator } from './components/OfflineIndicator';
+import { TelegramButton } from './components/TelegramButton';
 import {
   Sparkles,
   ShieldCheck,
@@ -22,13 +22,9 @@ import {
   Cloud,
   MoreHorizontal,
   X,
-  BookOpen,
-  CheckCircle2,
-  ArrowRight,
-  FileText,
 } from 'lucide-react';
 
-// Code-split secondary mode views so initial index-*.js bundle only contains Header + QuizMode
+// Code-split secondary mode views and below-the-fold study guide so initial index-*.js bundle stays ultra-compact
 const StudyFlipMode = lazy(() =>
   import('./components/StudyFlipMode').then((m) => ({ default: m.StudyFlipMode }))
 );
@@ -49,6 +45,9 @@ const GoogleDriveSync = lazy(() =>
 );
 const GeminiChatbot = lazy(() =>
   import('./components/GeminiChatbot').then((m) => ({ default: m.GeminiChatbot }))
+);
+const SEOStudyGuide = lazy(() =>
+  import('./components/SEOStudyGuide').then((m) => ({ default: m.SEOStudyGuide }))
 );
 
 function ModeSkeleton() {
@@ -77,6 +76,9 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>(initialRoute.category);
   const [activeMockConfig, setActiveMockConfig] = useState<ActiveMockConfig | null>(null);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const [shouldRenderStudyGuide, setShouldRenderStudyGuide] = useState(false);
+  const studyGuideSentinelRef = useRef<HTMLDivElement>(null);
 
   const refreshAllData = useCallback(() => {
     setCards(getAllCards());
@@ -84,39 +86,72 @@ export default function App() {
     setCardProgress(loadCardProgress());
   }, []);
 
-  // Dynamically load question chunks on demand based on selected category or mode
+  // Track first user interaction so passive mobile loads use STARTER_FLASHCARDS with zero heavy chunk downloads
+  useEffect(() => {
+    if (hasUserInteracted) return;
+    const markInteracted = () => {
+      setHasUserInteracted(true);
+    };
+    window.addEventListener('pointerdown', markInteracted, { passive: true, once: true });
+    window.addEventListener('keydown', markInteracted, { passive: true, once: true });
+    window.addEventListener('touchstart', markInteracted, { passive: true, once: true });
+    return () => {
+      window.removeEventListener('pointerdown', markInteracted);
+      window.removeEventListener('keydown', markInteracted);
+      window.removeEventListener('touchstart', markInteracted);
+    };
+  }, [hasUserInteracted]);
+
+  // Mount below-the-fold SEOStudyGuide chunk only when scrolled near viewport or on user interaction
+  useEffect(() => {
+    if (shouldRenderStudyGuide) return;
+    const onScrollOrInteract = () => setShouldRenderStudyGuide(true);
+    window.addEventListener('scroll', onScrollOrInteract, { passive: true, once: true });
+
+    let observer: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== 'undefined' && studyGuideSentinelRef.current) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            setShouldRenderStudyGuide(true);
+            observer?.disconnect();
+          }
+        },
+        { rootMargin: '250px' }
+      );
+      observer.observe(studyGuideSentinelRef.current);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScrollOrInteract);
+      observer?.disconnect();
+    };
+  }, [shouldRenderStudyGuide]);
+
+  // Dynamically load only the active category's question chunk after user interaction or explicit category change
   useEffect(() => {
     let cancelled = false;
 
     async function loadActiveQuestions() {
-      if (selectedCategory !== 'all') {
-        // Load only the selected subject module immediately
-        const updated = await loadCardsForCategory(selectedCategory);
-        if (!cancelled) setCards(updated);
-      } else if (currentMode === 'mock' || currentMode === 'decks') {
-        // Full Mock Hub or Deck Manager needs all categories
+      if (currentMode === 'decks') {
         const updated = await loadCardsForCategory('all');
         if (!cancelled) setCards(updated);
-      } else {
-        // On initial 'all' view, load the high-weightage J&K GK module first to keep TBT near 0ms,
-        // then load remaining categories during idle time
-        await loadCategoryQuestions('general');
-        if (!cancelled) setCards(getAllCards());
-
-        const idleTimer = setTimeout(async () => {
-          const allUpdated = await loadCardsForCategory('all');
-          if (!cancelled) setCards(allUpdated);
-        }, 1200);
-
-        return () => clearTimeout(idleTimer);
+        return;
       }
+      if (!hasUserInteracted) {
+        return;
+      }
+      const targetCat: CategoryId = selectedCategory === 'all' ? 'general' : selectedCategory;
+      const updated = await loadCardsForCategory(targetCat);
+      if (!cancelled) setCards(updated);
     }
 
     loadActiveQuestions().catch(() => {});
+
     return () => {
       cancelled = true;
     };
-  }, [selectedCategory, currentMode]);
+  }, [selectedCategory, currentMode, hasUserInteracted]);
 
   // Listen for browser back/forward navigation (popstate)
   useEffect(() => {
@@ -129,7 +164,7 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Synchronize clean URL, <title>, <meta name="description">, <link rel="canonical">, and JSON-LD Quiz schema
+  // Synchronize clean URL, <title>, <meta name="description">, and <link rel="canonical">
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const seo = getCanonicalSEO(currentMode, selectedCategory);
@@ -156,41 +191,6 @@ export default function App() {
     if (window.location.pathname !== seo.path) {
       window.history.pushState({ mode: currentMode, category: selectedCategory }, '', seo.path);
     }
-
-    let dynamicSchemaEl = document.getElementById('dynamic-quiz-schema') as HTMLScriptElement | null;
-    if (!dynamicSchemaEl) {
-      dynamicSchemaEl = document.createElement('script');
-      dynamicSchemaEl.id = 'dynamic-quiz-schema';
-      dynamicSchemaEl.type = 'application/ld+json';
-      document.head.appendChild(dynamicSchemaEl);
-    }
-
-    const quizSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'Quiz',
-      name: seo.h1,
-      description: seo.description,
-      url: seo.canonicalUrl,
-      educationalAlignment: {
-        '@type': 'AlignmentObject',
-        alignmentType: 'educationalSubject',
-        targetName: seo.topic.shortName,
-      },
-      hasPart: seo.topic.sampleQuestions.map((sq) => ({
-        '@type': 'Question',
-        eduQuestionType: 'Multiple choice',
-        text: sq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: sq.answer,
-          comment: {
-            '@type': 'Comment',
-            text: sq.explanation,
-          },
-        },
-      })),
-    };
-    dynamicSchemaEl.textContent = JSON.stringify(quizSchema);
   }, [currentMode, selectedCategory]);
 
   const handleUpdateStats = (newStats: UserStats) => {
@@ -210,8 +210,14 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleMockLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setActiveMockConfig(null);
+    setCurrentMode('mock');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const currentSEO = getCanonicalSEO(currentMode, selectedCategory);
-  const activeTopicSEO = currentSEO.topic;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white">
@@ -229,83 +235,7 @@ export default function App() {
         xp={userStats.xp}
       />
 
-      {/* Semantic H1 & Topic Breadcrumb Header Banner (Reserved min-height prevents CLS) */}
-      <section className="border-b border-slate-800/70 bg-gradient-to-r from-slate-950 via-indigo-950/25 to-slate-950 min-h-[132px] md:min-h-[92px] flex items-center">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <div className="min-w-0">
-            <div className="flex items-center gap-2 text-[11px] font-semibold text-indigo-400 min-h-[20px]">
-              <a
-                href="/"
-                onClick={(e) => handleTopicLinkClick(e, 'all')}
-                className="hover:underline shrink-0"
-              >
-                JKSSB Quiz Portal
-              </a>
-              <span className="text-slate-600 shrink-0">/</span>
-              <span className="text-slate-300 truncate">
-                {currentMode === 'quiz' ? activeTopicSEO.shortName : currentSEO.title.split('|')[0].trim()}
-              </span>
-              <span className="px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold shrink-0">
-                {activeTopicSEO.marksWeightage}
-              </span>
-            </div>
-            <h1 className="text-base sm:text-lg font-extrabold text-white tracking-tight mt-0.5 line-clamp-1 min-h-[24px] sm:min-h-[28px]">
-              {currentSEO.h1}
-            </h1>
-            <p className="text-xs text-slate-400 line-clamp-2 mt-0.5 max-w-3xl min-h-[32px]">
-              {activeTopicSEO.intro}
-            </p>
-          </div>
 
-          {/* Quick Crawlable Anchor Links for Top JKSSB Subjects */}
-          <nav aria-label="Popular JKSSB Quiz Topics" className="flex items-center gap-1.5 flex-wrap shrink-0">
-            <a
-              href="/quizzes/jk-special-gk"
-              onClick={(e) => handleTopicLinkClick(e, 'general')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition ${
-                currentMode === 'quiz' && selectedCategory === 'general'
-                  ? 'bg-indigo-600 text-white border-indigo-400'
-                  : 'bg-slate-900/90 text-slate-300 border-slate-800 hover:border-indigo-500/50 hover:text-white'
-              }`}
-            >
-              J&amp;K GK Quiz
-            </a>
-            <a
-              href="/quizzes/computer-fundamentals"
-              onClick={(e) => handleTopicLinkClick(e, 'cs')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition ${
-                currentMode === 'quiz' && selectedCategory === 'cs'
-                  ? 'bg-indigo-600 text-white border-indigo-400'
-                  : 'bg-slate-900/90 text-slate-300 border-slate-800 hover:border-indigo-500/50 hover:text-white'
-              }`}
-            >
-              Computer Quiz
-            </a>
-            <a
-              href="/quizzes/general-science"
-              onClick={(e) => handleTopicLinkClick(e, 'science')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition ${
-                currentMode === 'quiz' && selectedCategory === 'science'
-                  ? 'bg-indigo-600 text-white border-indigo-400'
-                  : 'bg-slate-900/90 text-slate-300 border-slate-800 hover:border-indigo-500/50 hover:text-white'
-              }`}
-            >
-              Science Quiz
-            </a>
-            <a
-              href="/quizzes/accountancy"
-              onClick={(e) => handleTopicLinkClick(e, 'accounting')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition ${
-                currentMode === 'quiz' && selectedCategory === 'accounting'
-                  ? 'bg-indigo-600 text-white border-indigo-400'
-                  : 'bg-slate-900/90 text-slate-300 border-slate-800 hover:border-indigo-500/50 hover:text-white'
-              }`}
-            >
-              Accountancy Quiz
-            </a>
-          </nav>
-        </div>
-      </section>
 
       {/* Main Content Area */}
       <main className="flex-1 w-full pb-12">
@@ -386,148 +316,66 @@ export default function App() {
           </Suspense>
         )}
 
-        {/* On-Page Structured Study Guide, Syllabus & Sample Answer Key (Indexable Content) */}
-        <article className="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 border-t border-slate-800/80 space-y-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Syllabus Covered H2 */}
-            <section className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/90 space-y-3">
-              <div className="flex items-center gap-2 text-indigo-400">
-                <BookOpen className="w-4 h-4" />
-                <h2 className="text-sm sm:text-base font-extrabold text-white">
-                  Syllabus Covered: {activeTopicSEO.shortName}
-                </h2>
-              </div>
-              <p className="text-xs text-slate-400">
-                Official JKSSB General Line, Graduate Level, FAA, Junior Assistant &amp; Patwari syllabus topics tested in this module:
-              </p>
-              <ul className="space-y-2 text-xs text-slate-300">
-                {activeTopicSEO.syllabusTopics.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            {/* Study Notes & Exam Instructions H2 */}
-            <section className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/90 space-y-3">
-              <div className="flex items-center gap-2 text-amber-400">
-                <FileText className="w-4 h-4" />
-                <h2 className="text-sm sm:text-base font-extrabold text-white">
-                  Study Notes &amp; JKSSB Exam Instructions
-                </h2>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300">
-                {activeTopicSEO.studyNotes.map((note, idx) => (
-                  <li key={idx} className="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 leading-relaxed">
-                    {note}
-                  </li>
-                ))}
-              </ul>
-              <div className="p-3 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-[11px] text-slate-300">
-                <strong className="text-indigo-300">Exam Marking Scheme:</strong> Every correct MCQ awards{' '}
-                <span className="text-emerald-400 font-semibold">+1.00 mark</span>, while each incorrect answer deducts{' '}
-                <span className="text-rose-400 font-semibold">-0.25 marks</span> (1/4th negative marking). Unattempted questions carry zero penalty.
-              </div>
-            </section>
-          </div>
-
-          {/* Sample Solved Questions & Written Answer Key H2 */}
-          <section className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/90 space-y-4">
-            <div>
-              <h2 className="text-sm sm:text-base font-extrabold text-white">
-                Recent Solved Questions &amp; Answer Key ({activeTopicSEO.shortName})
-              </h2>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Review solved multiple-choice questions with detailed explanations for JKSSB exam preparation:
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {activeTopicSEO.sampleQuestions.map((sq, idx) => (
-                <div
-                  key={idx}
-                  className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/90 flex flex-col justify-between space-y-3"
-                >
-                  <div className="space-y-2">
-                    <h3 className="text-xs font-bold text-white leading-snug">
-                      Q{idx + 1}. {sq.question}
-                    </h3>
-                    <div className="grid grid-cols-2 gap-1.5 text-[11px]">
-                      {sq.options.map((opt, oIdx) => (
-                        <div
-                          key={oIdx}
-                          className={`px-2 py-1 rounded border ${
-                            opt === sq.answer
-                              ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300 font-semibold'
-                              : 'bg-slate-900 border-slate-800 text-slate-400'
-                          }`}
-                        >
-                          {String.fromCharCode(65 + oIdx)}. {opt}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="pt-2 border-t border-slate-800/80 text-[11px] text-slate-300">
-                    <span className="font-bold text-emerald-400">Answer: {sq.answer}</span> — {sq.explanation}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Descriptive Anchor Links for All Topic Directories H2 */}
-          <section className="p-5 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-3">
-            <h2 className="text-sm sm:text-base font-extrabold text-white">
-              Browse JKSSB Topic-Wise MCQ Quizzes by Subject
-            </h2>
-            <p className="text-xs text-slate-400">
-              Select a subject directory below to launch targeted JKSSB practice questions with instant answer verification:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-              {Object.values(TOPIC_SEO_MAP).map((topicItem) => (
-                <a
-                  key={topicItem.slug}
-                  href={topicItem.path}
-                  onClick={(e) => handleTopicLinkClick(e, topicItem.categoryId)}
-                  className={`p-3 rounded-xl border text-left transition flex items-center justify-between gap-2 group ${
-                    currentMode === 'quiz' && selectedCategory === topicItem.categoryId
-                      ? 'bg-indigo-600/20 border-indigo-500 text-white'
-                      : 'bg-slate-950/70 border-slate-800/90 text-slate-300 hover:border-indigo-500/50 hover:text-white'
-                  }`}
-                >
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold text-indigo-300 group-hover:text-indigo-200 truncate">
-                      {topicItem.navAnchorText}
-                    </div>
-                    <div className="text-[10px] text-slate-500 truncate mt-0.5">
-                      {topicItem.marksWeightage}
-                    </div>
-                  </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-indigo-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-              ))}
-            </div>
-          </section>
-        </article>
+        {/* Lazy-loaded On-Page Structured Study Guide, Syllabus, Sample Answer Key & Share/Embed Widget */}
+        <div ref={studyGuideSentinelRef} className="w-full">
+          {shouldRenderStudyGuide ? (
+            <Suspense fallback={<div className="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 min-h-[420px]" />}>
+              <SEOStudyGuide
+                currentMode={currentMode}
+                selectedCategory={selectedCategory}
+                currentSEO={currentSEO}
+                onTopicLinkClick={handleTopicLinkClick}
+                onMockLinkClick={handleMockLinkClick}
+              />
+            </Suspense>
+          ) : (
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 min-h-[420px]" />
+          )}
+        </div>
       </main>
 
       {/* Offline Status Float Indicator */}
       <OfflineIndicator />
 
+      {/* Join Telegram Channel Floating Button on Below Right Corner */}
+      <TelegramButton />
+
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950/80 py-6 pb-20 md:pb-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
             <span className="font-bold text-slate-400">FlashMind JKSSB Quiz &amp; Mock Test Portal</span>
             <span className="text-slate-600">•</span>
             <span className="flex items-center gap-1 text-slate-400">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               Offline PWA Enabled
             </span>
+            <span className="text-slate-600">•</span>
+            <a
+              href="https://t.me/flshmnd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sky-400 hover:text-sky-300 font-semibold transition"
+              title="Join our official Telegram Channel @flshmnd"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+              </svg>
+              <span>Telegram @flshmnd</span>
+            </a>
           </div>
 
           <div className="flex items-center gap-2 flex-wrap justify-center text-[11px] text-slate-400">
+            <span className="flex items-center">
+              <a
+                href="/jkssb-faa-mock-test"
+                onClick={handleMockLinkClick}
+                className="hover:text-emerald-400 text-emerald-300/90 font-semibold transition cursor-pointer"
+              >
+                JKSSB FAA Mock Test
+              </a>
+              <span className="mx-1.5 text-slate-700">·</span>
+            </span>
             {Object.values(TOPIC_SEO_MAP)
               .filter((t) => t.categoryId !== 'all')
               .map((t, i, arr) => (
@@ -736,6 +584,32 @@ export default function App() {
                   </div>
                 </div>
               </button>
+
+              {/* Official Telegram Channel */}
+              <a
+                href="https://t.me/flshmnd"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMoreOpen(false)}
+                className="p-3 rounded-2xl border text-left flex items-start gap-3 transition cursor-pointer col-span-2 bg-gradient-to-r from-sky-950/40 to-blue-950/40 border-sky-500/30 text-sky-200 hover:bg-sky-900/40 active:scale-[0.99]"
+              >
+                <div className="p-2 rounded-xl bg-sky-500/20 text-sky-300 shrink-0">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-white">Join Telegram Channel</span>
+                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-sky-500/30 text-sky-200 border border-sky-400/40">
+                      @flshmnd
+                    </span>
+                  </div>
+                  <div className="text-[10px] text-slate-300 mt-0.5">
+                    Daily JKSSB study updates, MCQs &amp; PDF notes
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>

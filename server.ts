@@ -1,10 +1,12 @@
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import zlib from 'zlib';
 import express from 'express';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 import { resolveRouteFromLocation, getCanonicalSEO, TOPIC_SEO_MAP } from './src/utils/seo';
+import { TOPIC_SEO_DETAILS } from './src/utils/seoDetails';
 
 dotenv.config();
 
@@ -39,70 +41,70 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/jk-special-gk</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-faa-mock-test</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-general-knowledge-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/computer-fundamentals</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-accountancy-mock-test</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/general-science</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-computer-applications-mcq</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/accountancy</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-general-science-quiz</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-general-english-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/general-english</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-statistics-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/statistics</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-mathematics-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/mathematics</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-economics-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/economics</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-modern-history-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/history</loc>
+    <loc>https://jkssb-mcq-quiz.ai.studio/jkssb-current-affairs-quiz</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/quizzes/current-affairs</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jkssb-mcq-quiz.ai.studio/mock-tests</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://jkssb-mcq-quiz.ai.studio/flashcards</loc>
@@ -126,12 +128,11 @@ function injectRouteSEOIntoHtml(rawHtml: string, reqUrl: string): string {
     const { mode, category } = resolveRouteFromLocation(parsedUrl.pathname, parsedUrl.search);
     const seo = getCanonicalSEO(mode, category);
     const topic = seo.topic;
+    const details = TOPIC_SEO_DETAILS[topic.categoryId] || TOPIC_SEO_DETAILS.all;
 
     const safeTitle = escapeHtml(seo.title);
     const safeDesc = escapeHtml(seo.description);
     const safeCanonical = escapeHtml(seo.canonicalUrl);
-    const safeH1 = escapeHtml(seo.h1);
-    const safeIntro = escapeHtml(topic.intro);
 
     let html = rawHtml;
 
@@ -172,16 +173,64 @@ function injectRouteSEOIntoHtml(rawHtml: string, reqUrl: string): string {
       `<meta name="twitter:description" content="${safeDesc}" />`
     );
 
-    // 5. Build pre-rendered semantic HTML inside <div id="root"> for first-pass crawler visibility
-    const syllabusItemsHtml = topic.syllabusTopics
+    // 5. Inject route-specific Course + Quiz + FAQPage JSON-LD schema
+    const routeJsonLd = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Course',
+          '@id': `${seo.canonicalUrl}#course`,
+          name: seo.h1,
+          description: topic.intro,
+          provider: {
+            '@type': 'Organization',
+            name: 'FlashMind Quiz & Flashcards',
+            sameAs: 'https://jkssb-mcq-quiz.ai.studio/',
+          },
+        },
+        {
+          '@type': 'Quiz',
+          '@id': `${seo.canonicalUrl}#quiz`,
+          name: seo.h1,
+          description: seo.description,
+          url: seo.canonicalUrl,
+          educationalAlignment: {
+            '@type': 'AlignmentObject',
+            alignmentType: 'educationalSubject',
+            targetName: topic.shortName,
+          },
+          hasPart: details.sampleQuestions.map((sq) => ({
+            '@type': 'Question',
+            eduQuestionType: 'Multiple choice',
+            text: sq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: sq.answer,
+              comment: {
+                '@type': 'Comment',
+                text: sq.explanation,
+              },
+            },
+          })),
+        },
+      ],
+    };
+
+    html = html.replace(
+      /<script id="server-seo-schema" type="application\/ld\+json">[\s\S]*?<\/script>/i,
+      `<script id="server-seo-schema" type="application/ld+json">${JSON.stringify(routeJsonLd)}</script>`
+    );
+
+    // 6. Build pre-rendered semantic HTML inside <div id="root"> for first-pass crawler visibility
+    const syllabusItemsHtml = details.syllabusTopics
       .map((item) => `<li>${escapeHtml(item)}</li>`)
       .join('\n            ');
 
-    const notesItemsHtml = topic.studyNotes
+    const notesItemsHtml = details.studyNotes
       .map((note) => `<li>${escapeHtml(note)}</li>`)
       .join('\n            ');
 
-    const sampleQuestionsHtml = topic.sampleQuestions
+    const sampleQuestionsHtml = details.sampleQuestions
       .map(
         (sq, idx) => `
           <div class="mt-4">
@@ -207,19 +256,18 @@ function injectRouteSEOIntoHtml(rawHtml: string, reqUrl: string): string {
             <div class="font-extrabold text-lg text-white tracking-tight">FlashMind JKSSB Prep</div>
           </div>
         </header>
-        <section class="border-b border-slate-800/70 bg-slate-950 min-h-[132px] md:min-h-[92px] flex items-center">
-          <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3">
-            <h1 class="text-base sm:text-lg font-extrabold text-white tracking-tight line-clamp-1 min-h-[24px] sm:min-h-[28px]">${safeH1}</h1>
-            <p class="text-xs text-slate-400 line-clamp-2 mt-0.5 max-w-3xl min-h-[32px]">${safeIntro}</p>
+        <section class="border-b border-slate-800/70 bg-slate-950 min-h-[76px] md:min-h-[58px] flex items-center">
+          <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-2.5">
+            <div class="text-[11px] font-semibold text-indigo-400">JKSSB Quiz Portal / ${escapeHtml(topic.shortName)}</div>
           </div>
         </section>
         <main class="flex-1 w-full pb-12">
-          <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
-            <div class="mb-6 space-y-3 min-h-[104px]">
-              <div class="h-[54px] w-full sm:w-[340px] rounded-2xl bg-slate-900/90 border border-slate-800"></div>
-              <div class="h-[38px] w-full rounded-2xl bg-slate-900/60 border border-slate-800/80"></div>
+          <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 min-h-[640px]">
+            <div class="mb-3 space-y-2 min-h-[96px]">
+              <div class="h-[48px] w-full sm:w-[320px] rounded-2xl bg-slate-900/90 border border-slate-800"></div>
+              <div class="h-[36px] w-full rounded-2xl bg-slate-900/60 border border-slate-800/80"></div>
             </div>
-            <div class="w-full min-h-[480px] rounded-3xl bg-slate-900 border border-slate-800 p-4 sm:p-8"></div>
+            <div class="w-full min-h-[380px] rounded-2xl bg-slate-900 border border-slate-800 p-3.5 sm:p-5"></div>
           </div>
           <article class="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 border-t border-slate-800/80 space-y-8 text-slate-200">
             <section>
@@ -239,10 +287,10 @@ function injectRouteSEOIntoHtml(rawHtml: string, reqUrl: string): string {
               ${sampleQuestionsHtml}
             </section>
             <nav aria-label="JKSSB Subject Quizzes">
-              <h2 class="text-sm sm:text-base font-extrabold text-white">Topic-Wise JKSSB Practice Quizzes</h2>
+              <h2 class="text-sm sm:text-base font-extrabold text-white">Topic-Wise JKSSB Practice Quizzes &amp; Mock Tests</h2>
               <ul class="mt-2 space-y-1 text-xs text-indigo-400">
+                <li><a href="/jkssb-faa-mock-test">Start JKSSB FAA Mock Test Online Free (120 Questions CBT)</a></li>
                 ${navLinksHtml}
-                <li><a href="/mock-tests">Start JKSSB 120-Question CBT Mock Tests</a></li>
                 <li><a href="/flashcards">Open JKSSB Spaced Repetition Flashcards</a></li>
               </ul>
             </nav>
@@ -306,27 +354,27 @@ app.get(['/llms.txt', '/llms-full.txt'], (req, res) => {
 
   const llmsMarkdown = `# FlashMind JKSSB MCQ Practice Quiz & Mock Tests
 
-> Free interactive JKSSB exam preparation platform featuring 6,296+ topic-wise multiple-choice questions (MCQs), full-length 120-question OMR mock exams with negative marking, and spaced-repetition flashcards for Jammu and Kashmir Services Selection Board (JKSSB) aspirants.
+> Free interactive JKSSB exam preparation platform featuring 6,296+ topic-wise multiple-choice questions (MCQs), full-length 120-question CBT mock exams with negative marking, and spaced-repetition flashcards for Jammu and Kashmir Services Selection Board (JKSSB) aspirants.
 
-FlashMind provides syllabus-aligned practice tests and instant detailed explanations for JKSSB General Line, Finance Account Assistant (FAA), Panchayat Secretary (VLW), Sub-Inspector, Junior Assistant, and Patwari examinations.
+FlashMind provides syllabus-aligned JKSSB account assistant practice questions, JKSSB FAA mock test online free modules, and instant detailed explanations for JKSSB General Line, Finance Account Assistant (FAA), Panchayat Secretary (VLW), Sub-Inspector, Junior Assistant, and Patwari examinations.
 
-## JKSSB Subject-Wise MCQ Quizzes
+## High-Intent JKSSB Landing Pages & Subject Quizzes
 
-- [JKSSB J&K Special GK Quiz (History, Geography & Reorganization Act 2019)](${baseUrl}/quizzes/jk-special-gk): 1,284 practice MCQs covering Jammu & Kashmir history, physiography, rivers, lakes, climate, art, culture, and the J&K Reorganization Act 2019.
-- [JKSSB Computer Fundamentals & Applications Quiz](${baseUrl}/quizzes/computer-fundamentals): 1,210 practice MCQs covering computer hardware, operating systems, MS Word, MS Excel, MS PowerPoint, DBMS, networking, and cybersecurity.
-- [JKSSB General Science & Environment Quiz](${baseUrl}/quizzes/general-science): 1,004 practice MCQs covering physics, chemistry, biology, human nutrition, ecosystems, biodiversity, and environmental ecology.
-- [JKSSB Accountancy & Bookkeeping Quiz](${baseUrl}/quizzes/accountancy): 815 practice MCQs covering double-entry bookkeeping, journal entries, ledger, trial balance, BRS, partnership accounts, GST, and auditing.
-- [JKSSB Indian Economy & Fiscal Policy Quiz](${baseUrl}/quizzes/economics): 467 practice MCQs covering national income, RBI monetary policy, fiscal policy, inflation, five-year plans, and economic reforms.
-- [JKSSB General English & Comprehension Quiz](${baseUrl}/quizzes/general-english): 433 practice MCQs covering tenses, articles, prepositions, active/passive voice, direct/indirect speech, synonyms, antonyms, and idioms.
-- [JKSSB Statistics & Probability Quiz](${baseUrl}/quizzes/statistics): 372 practice MCQs covering primary and secondary data collection, central tendency, dispersion, correlation, index numbers, and vital statistics.
-- [JKSSB Quantitative Aptitude & Mathematics Quiz](${baseUrl}/quizzes/mathematics): 305 practice MCQs covering percentage, ratio, profit and loss, simple and compound interest, linear equations, and mensuration.
-- [JKSSB Modern History & Freedom Struggle Quiz](${baseUrl}/quizzes/history): 216 practice MCQs covering Indian National Movement, social reforms, Revolt of 1857, and constitutional developments.
-- [JKSSB Current Affairs & General Knowledge Quiz](${baseUrl}/quizzes/current-affairs): 190 practice MCQs covering J&K UT developments, national schemes, international organizations, sports, and awards.
+- [JKSSB FAA Mock Test Online Free (120 Questions CBT)](${baseUrl}/jkssb-faa-mock-test): Timed 120-minute CBT mock exams with 0.25 negative marking, section-wise score analytics, and detailed solutions.
+- [JKSSB General Knowledge Quiz (J&K Special GK)](${baseUrl}/jkssb-general-knowledge-quiz): 1,284 practice MCQs covering Jammu & Kashmir history, physiography, rivers, lakes, climate, art, culture, and the J&K Reorganization Act 2019.
+- [JKSSB Accountancy Mock Test & Account Assistant Practice Questions](${baseUrl}/jkssb-accountancy-mock-test): 815 practice MCQs covering double-entry bookkeeping, journal entries, ledger, trial balance, BRS, partnership accounts, GST, and auditing.
+- [JKSSB Computer Applications MCQ Quiz](${baseUrl}/jkssb-computer-applications-mcq): 1,210 practice MCQs covering computer hardware, operating systems, MS Word, MS Excel, MS PowerPoint, DBMS, networking, and cybersecurity.
+- [JKSSB General Science & Environment Quiz](${baseUrl}/jkssb-general-science-quiz): 1,004 practice MCQs covering physics, chemistry, biology, human nutrition, ecosystems, biodiversity, and environmental ecology.
+- [JKSSB General Economics & Fiscal Policy Quiz](${baseUrl}/jkssb-economics-quiz): 467 practice MCQs covering national income, RBI monetary policy, fiscal policy, inflation, five-year plans, and economic reforms.
+- [JKSSB General English & Comprehension Quiz](${baseUrl}/jkssb-general-english-quiz): 433 practice MCQs covering tenses, articles, prepositions, active/passive voice, direct/indirect speech, synonyms, antonyms, and idioms.
+- [JKSSB Statistics & Probability Quiz](${baseUrl}/jkssb-statistics-quiz): 372 practice MCQs covering primary and secondary data collection, central tendency, dispersion, correlation, index numbers, and vital statistics.
+- [JKSSB Quantitative Aptitude & Mathematics Quiz](${baseUrl}/jkssb-mathematics-quiz): 305 practice MCQs covering percentage, ratio, profit and loss, simple and compound interest, linear equations, and mensuration.
+- [JKSSB Modern History & Freedom Struggle Quiz](${baseUrl}/jkssb-modern-history-quiz): 216 practice MCQs covering Indian National Movement, social reforms, Revolt of 1857, and constitutional developments.
+- [JKSSB Current Affairs & General Knowledge Quiz](${baseUrl}/jkssb-current-affairs-quiz): 190 practice MCQs covering J&K UT developments, national schemes, international organizations, sports, and awards.
 
 ## Exam Modes & Study Tools
 
 - [JKSSB MCQ Practice Hub (All Subjects)](${baseUrl}/): Main interactive quiz dashboard with instant answer explanations, progress tracking, and custom topic filtering.
-- [JKSSB Full-Length 120-Question Mock Tests](${baseUrl}/mock-tests): Timed 120-minute OMR-style mock exams with 0.25 negative marking, section-wise score analytics, and detailed solutions.
 - [JKSSB Active Recall Flashcards](${baseUrl}/flashcards): Interactive flip-card study decks for rapid revision of J&K GK, Computer shortcuts, Accountancy formulas, and Science facts.
 
 ## Discovery & Machine-Readable Resources
@@ -365,10 +413,10 @@ app.get('/.well-known/ard.json', (req, res) => {
       entries: [
         {
           identifier: `urn:air:${cleanHost}:education:jkssb-mcq-quiz-portal`,
-          displayName: 'FlashMind JKSSB MCQ Practice Quiz & Mock Tests',
+          displayName: 'FlashMind Quiz & Flashcards — JKSSB FAA Mock Test Online Free',
           type: 'text/html',
           description:
-            'Free interactive JKSSB multiple-choice question (MCQ) practice portal with 6,296+ topic-wise questions, instant explanations, full-length 120-question mock tests, and flashcards covering J&K GK, Computer Applications, General Science, Accountancy, Economics, English, Statistics, Mathematics, and Reasoning.',
+            'Free interactive JKSSB FAA mock test online free and JKSSB account assistant practice questions portal with 6,296+ topic-wise questions, instant explanations, full-length 120-question CBT mock tests, and flashcards.',
           url: `${baseUrl}/`,
           capabilities: [
             'mcq-quiz',
@@ -379,17 +427,17 @@ app.get('/.well-known/ard.json', (req, res) => {
           ],
           tags: [
             'jkssb',
-            'jammu-and-kashmir',
+            'jkssb-faa-mock-test',
             'general-knowledge',
             'accountancy',
-            'computer-fundamentals',
+            'computer-applications',
             'mock-test',
             'mcq',
           ],
           representativeQueries: [
-            'Practice free JKSSB multiple-choice questions on J&K History, Geography, and Reorganization Act 2019',
-            'Take a full-length 120-question JKSSB Finance Account Assistant (FAA) or General Line mock test',
-            'Study JKSSB Computer Applications, Accountancy, Statistics, and General Science MCQs with explanations',
+            'JKSSB FAA mock test online free',
+            'JKSSB account assistant practice questions',
+            'JKSSB mock test 120 questions CBT',
           ],
           version: '1.0.0',
           updatedAt: '2026-04-20T00:00:00Z',
@@ -400,17 +448,17 @@ app.get('/.well-known/ard.json', (req, res) => {
           },
         },
         {
-          identifier: `urn:air:${cleanHost}:quiz:jk-special-gk`,
-          displayName: 'JKSSB J&K Special GK MCQ Practice Quiz',
+          identifier: `urn:air:${cleanHost}:quiz:jkssb-general-knowledge-quiz`,
+          displayName: 'JKSSB General Knowledge Quiz (J&K Special GK)',
           type: 'text/html',
           description:
             '1,284 targeted JKSSB MCQs on Jammu & Kashmir History, Geography, Rivers, Lakes, Culture, Economy, and J&K Reorganization Act 2019 with detailed explanations.',
-          url: `${baseUrl}/quizzes/jk-special-gk`,
+          url: `${baseUrl}/jkssb-general-knowledge-quiz`,
           capabilities: ['mcq-quiz', 'topic-filtering', 'instant-explanations'],
           tags: ['jkssb', 'jk-gk', 'jammu-and-kashmir-history', 'reorganization-act-2019'],
           representativeQueries: [
-            'JKSSB J&K Reorganization Act 2019 practice MCQs with answers',
-            'Jammu and Kashmir rivers, lakes, and mountain passes quiz for JKSSB exams',
+            'JKSSB General Knowledge Quiz practice MCQs with answers',
+            'Jammu and Kashmir rivers, lakes, and Reorganization Act 2019 quiz',
           ],
           version: '1.0.0',
           updatedAt: '2026-04-20T00:00:00Z',
@@ -419,17 +467,17 @@ app.get('/.well-known/ard.json', (req, res) => {
           },
         },
         {
-          identifier: `urn:air:${cleanHost}:quiz:mock-tests`,
-          displayName: 'JKSSB Full-Length 120-Question OMR Mock Tests',
+          identifier: `urn:air:${cleanHost}:quiz:jkssb-faa-mock-test`,
+          displayName: 'JKSSB FAA Mock Test Online Free (120 Questions CBT)',
           type: 'text/html',
           description:
-            'Full-length 120-question timed JKSSB mock examinations with 0.25 negative marking, section-wise score breakdown, and answer explanations.',
-          url: `${baseUrl}/mock-tests`,
+            'Full-length 120-question timed JKSSB CBT mock examinations with 0.25 negative marking, section-wise score breakdown, and answer explanations.',
+          url: `${baseUrl}/jkssb-faa-mock-test`,
           capabilities: ['mock-tests', 'timed-exam', 'negative-marking-analytics'],
           tags: ['jkssb', 'mock-test', 'faa', 'vlw', 'general-line'],
           representativeQueries: [
-            'Attempt a free 120-question JKSSB full-length mock test online',
-            'JKSSB exam simulator with 0.25 negative marking and sectional cutoff analysis',
+            'Attempt a JKSSB FAA mock test online free',
+            'JKSSB mock test 120 questions CBT with 0.25 negative marking',
           ],
           version: '1.0.0',
           updatedAt: '2026-04-20T00:00:00Z',
@@ -571,19 +619,111 @@ async function startServer() {
         let template = fs.readFileSync(indexPath, 'utf-8');
         template = await vite.transformIndexHtml(url, template);
         const finalHtml = injectRouteSEOIntoHtml(template, url);
-        res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).end(finalHtml);
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        res.setHeader('Vary', 'Accept-Encoding');
+        const acceptEncoding = req.headers['accept-encoding'] || '';
+        const buf = Buffer.from(finalHtml, 'utf-8');
+        if (acceptEncoding.includes('br')) {
+          res.setHeader('Content-Encoding', 'br');
+          return res.status(200).end(
+            zlib.brotliCompressSync(buf, {
+              params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 4 },
+            })
+          );
+        }
+        if (acceptEncoding.includes('gzip')) {
+          res.setHeader('Content-Encoding', 'gzip');
+          return res.status(200).end(zlib.gzipSync(buf, { level: 6 }));
+        }
+        res.status(200).end(buf);
       } catch (e) {
         next(e);
       }
     });
   } else {
-    app.use(express.static('dist', { index: false }));
+    const compressedAssetCache = new Map<string, { br?: Buffer; gzip?: Buffer; raw: Buffer; mime: string }>();
+
+    app.get('/assets/*', (req, res, next) => {
+      try {
+        const relPath = req.path.replace(/^\/+/, '');
+        if (relPath.includes('..')) return next();
+        const fullPath = path.resolve(process.cwd(), 'dist', relPath);
+        if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isFile()) {
+          return next();
+        }
+
+        let entry = compressedAssetCache.get(fullPath);
+        if (!entry) {
+          const raw = fs.readFileSync(fullPath);
+          const ext = path.extname(fullPath).toLowerCase();
+          const mime =
+            ext === '.js'
+              ? 'application/javascript; charset=utf-8'
+              : ext === '.css'
+              ? 'text/css; charset=utf-8'
+              : ext === '.svg'
+              ? 'image/svg+xml'
+              : ext === '.json'
+              ? 'application/json; charset=utf-8'
+              : 'application/octet-stream';
+
+          const isCompressible = ext === '.js' || ext === '.css' || ext === '.svg' || ext === '.json';
+          entry = {
+            raw,
+            mime,
+            br: isCompressible
+              ? zlib.brotliCompressSync(raw, {
+                  params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 5 },
+                })
+              : undefined,
+            gzip: isCompressible ? zlib.gzipSync(raw, { level: 6 }) : undefined,
+          };
+          compressedAssetCache.set(fullPath, entry);
+        }
+
+        res.setHeader('Content-Type', entry.mime);
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        res.setHeader('Vary', 'Accept-Encoding');
+
+        const acceptEncoding = req.headers['accept-encoding'] || '';
+        if (entry.br && acceptEncoding.includes('br')) {
+          res.setHeader('Content-Encoding', 'br');
+          return res.status(200).send(entry.br);
+        }
+        if (entry.gzip && acceptEncoding.includes('gzip')) {
+          res.setHeader('Content-Encoding', 'gzip');
+          return res.status(200).send(entry.gzip);
+        }
+        return res.status(200).send(entry.raw);
+      } catch (_e) {
+        return next();
+      }
+    });
+
+    app.use(express.static('dist', { index: false, maxAge: '7d' }));
+
     app.get('*', (req, res) => {
       const distIndexPath = path.resolve(process.cwd(), 'dist/index.html');
       if (fs.existsSync(distIndexPath)) {
         const rawHtml = fs.readFileSync(distIndexPath, 'utf-8');
         const finalHtml = injectRouteSEOIntoHtml(rawHtml, req.originalUrl || '/');
-        res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(finalHtml);
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        res.setHeader('Vary', 'Accept-Encoding');
+        const acceptEncoding = req.headers['accept-encoding'] || '';
+        const buf = Buffer.from(finalHtml, 'utf-8');
+        if (acceptEncoding.includes('br')) {
+          res.setHeader('Content-Encoding', 'br');
+          return res.status(200).send(
+            zlib.brotliCompressSync(buf, {
+              params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 4 },
+            })
+          );
+        }
+        if (acceptEncoding.includes('gzip')) {
+          res.setHeader('Content-Encoding', 'gzip');
+          return res.status(200).send(zlib.gzipSync(buf, { level: 6 }));
+        }
+        res.status(200).send(buf);
       } else {
         res.sendFile('dist/index.html', { root: '.' });
       }

@@ -1,26 +1,26 @@
 # FlashMind JKSSB MCQ Practice Quiz & Mock Tests
 
-> Free interactive JKSSB exam preparation platform featuring 6,296+ topic-wise multiple-choice questions (MCQs), full-length 120-question OMR mock exams with negative marking, and spaced-repetition flashcards for Jammu and Kashmir Services Selection Board (JKSSB) aspirants.
+> Free interactive JKSSB exam preparation platform featuring 6,296+ topic-wise multiple-choice questions (MCQs), full-length 120-question CBT mock exams with negative marking, and spaced-repetition flashcards for Jammu and Kashmir Services Selection Board (JKSSB) aspirants.
 
-FlashMind provides syllabus-aligned practice tests and instant detailed explanations for JKSSB General Line, Finance Account Assistant (FAA), Panchayat Secretary (VLW), Sub-Inspector, Junior Assistant, and Patwari examinations.
+FlashMind provides syllabus-aligned JKSSB account assistant practice questions, JKSSB FAA mock test online free modules, and instant detailed explanations for JKSSB General Line, Finance Account Assistant (FAA), Panchayat Secretary (VLW), Sub-Inspector, Junior Assistant, and Patwari examinations.
 
-## JKSSB Subject-Wise MCQ Quizzes
+## High-Intent JKSSB Landing Pages & Subject Quizzes
 
-- [JKSSB J&K Special GK Quiz (History, Geography & Reorganization Act 2019)](https://jkssb-mcq-quiz.ai.studio/quizzes/jk-special-gk): 1,284 practice MCQs covering Jammu & Kashmir history, physiography, rivers, lakes, climate, art, culture, and the J&K Reorganization Act 2019.
-- [JKSSB Computer Fundamentals & Applications Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/computer-fundamentals): 1,210 practice MCQs covering computer hardware, operating systems, MS Word, MS Excel, MS PowerPoint, DBMS, networking, and cybersecurity.
-- [JKSSB General Science & Environment Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/general-science): 1,004 practice MCQs covering physics, chemistry, biology, human nutrition, ecosystems, biodiversity, and environmental ecology.
-- [JKSSB Accountancy & Bookkeeping Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/accountancy): 815 practice MCQs covering double-entry bookkeeping, journal entries, ledger, trial balance, BRS, partnership accounts, GST, and auditing.
-- [JKSSB Indian Economy & Fiscal Policy Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/economics): 467 practice MCQs covering national income, RBI monetary policy, fiscal policy, inflation, five-year plans, and economic reforms.
-- [JKSSB General English & Comprehension Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/general-english): 433 practice MCQs covering tenses, articles, prepositions, active/passive voice, direct/indirect speech, synonyms, antonyms, and idioms.
-- [JKSSB Statistics & Probability Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/statistics): 372 practice MCQs covering primary and secondary data collection, central tendency, dispersion, correlation, index numbers, and vital statistics.
-- [JKSSB Quantitative Aptitude & Mathematics Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/mathematics): 305 practice MCQs covering percentage, ratio, profit and loss, simple and compound interest, linear equations, and mensuration.
-- [JKSSB General Knowledge & Current Affairs Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/general-knowledge): 216 practice MCQs covering Indian Constitution, history, geography, national events, international organizations, and awards.
-- [JKSSB Logical Reasoning & Mental Ability Quiz](https://jkssb-mcq-quiz.ai.studio/quizzes/reasoning): 190 practice MCQs covering number and letter series, coding-decoding, blood relations, direction sense, syllogisms, and analogies.
+- [JKSSB FAA Mock Test Online Free (120 Questions CBT)](https://jkssb-mcq-quiz.ai.studio/jkssb-faa-mock-test): Timed 120-minute CBT mock exams with 0.25 negative marking, section-wise score analytics, and detailed solutions.
+- [JKSSB General Knowledge Quiz (J&K Special GK)](https://jkssb-mcq-quiz.ai.studio/jkssb-general-knowledge-quiz): 1,284 practice MCQs covering Jammu & Kashmir history, physiography, rivers, lakes, climate, art, culture, and the J&K Reorganization Act 2019.
+- [JKSSB Accountancy Mock Test & Account Assistant Practice Questions](https://jkssb-mcq-quiz.ai.studio/jkssb-accountancy-mock-test): 815 practice MCQs covering double-entry bookkeeping, journal entries, ledger, trial balance, BRS, partnership accounts, GST, and auditing.
+- [JKSSB Computer Applications MCQ Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-computer-applications-mcq): 1,210 practice MCQs covering computer hardware, operating systems, MS Word, MS Excel, MS PowerPoint, DBMS, networking, and cybersecurity.
+- [JKSSB General Science & Environment Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-general-science-quiz): 1,004 practice MCQs covering physics, chemistry, biology, human nutrition, ecosystems, biodiversity, and environmental ecology.
+- [JKSSB General Economics & Fiscal Policy Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-economics-quiz): 467 practice MCQs covering national income, RBI monetary policy, fiscal policy, inflation, five-year plans, and economic reforms.
+- [JKSSB General English & Comprehension Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-general-english-quiz): 433 practice MCQs covering tenses, articles, prepositions, active/passive voice, direct/indirect speech, synonyms, antonyms, and idioms.
+- [JKSSB Statistics & Probability Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-statistics-quiz): 372 practice MCQs covering primary and secondary data collection, central tendency, dispersion, correlation, index numbers, and vital statistics.
+- [JKSSB Quantitative Aptitude & Mathematics Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-mathematics-quiz): 305 practice MCQs covering percentage, ratio, profit and loss, simple and compound interest, linear equations, and mensuration.
+- [JKSSB Modern History & Freedom Struggle Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-modern-history-quiz): 216 practice MCQs covering Indian National Movement, social reforms, Revolt of 1857, and constitutional developments.
+- [JKSSB Current Affairs & General Knowledge Quiz](https://jkssb-mcq-quiz.ai.studio/jkssb-current-affairs-quiz): 190 practice MCQs covering J&K UT developments, national schemes, international organizations, sports, and awards.
 
 ## Exam Modes & Study Tools
 
 - [JKSSB MCQ Practice Hub (All Subjects)](https://jkssb-mcq-quiz.ai.studio/): Main interactive quiz dashboard with instant answer explanations, progress tracking, and custom topic filtering.
-- [JKSSB Full-Length 120-Question Mock Tests](https://jkssb-mcq-quiz.ai.studio/mock-tests): Timed 120-minute OMR-style mock exams with 0.25 negative marking, section-wise score analytics, and detailed solutions.
 - [JKSSB Active Recall Flashcards](https://jkssb-mcq-quiz.ai.studio/flashcards): Interactive flip-card study decks for rapid revision of J&K GK, Computer shortcuts, Accountancy formulas, and Science facts.
 
 ## Discovery & Machine-Readable Resources

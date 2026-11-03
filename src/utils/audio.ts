@@ -1,5 +1,3 @@
-import confetti from 'canvas-confetti';
-
 let audioCtx: AudioContext | null = null;
 let soundEnabled = true;
 
@@ -153,16 +151,19 @@ export function playStreakCelebration() {
 }
 
 export function fireConfetti() {
-  try {
-    confetti({
-      particleCount: 60,
-      spread: 70,
-      origin: { y: 0.7 },
-      colors: ['#6366f1', '#ec4899', '#10b981', '#f59e0b', '#3b82f6'],
+  import('canvas-confetti')
+    .then((mod) => {
+      const confetti = mod.default;
+      confetti({
+        particleCount: 60,
+        spread: 70,
+        origin: { y: 0.7 },
+        colors: ['#6366f1', '#ec4899', '#10b981', '#f59e0b', '#3b82f6'],
+      });
+    })
+    .catch(() => {
+      // Ignore if canvas is unavailable
     });
-  } catch {
-    // Ignore if canvas is unavailable
-  }
 }
 
 // Text-to-Speech Web Speech API

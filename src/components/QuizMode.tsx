@@ -211,22 +211,22 @@ export const QuizMode: React.FC<QuizModeProps> = ({
 
   if (!currentQuestion && !isQuizComplete) {
     return (
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
-        <div className="mb-6 space-y-3 min-h-[104px]">
-          <div className="h-14 w-full sm:w-[340px] rounded-2xl bg-slate-900/90 border border-slate-800 animate-pulse" />
-          <div className="h-10 w-full rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse" />
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 min-h-[640px]">
+        <div className="mb-3 space-y-2 min-h-[96px]">
+          <div className="h-12 w-full sm:w-[340px] rounded-2xl bg-slate-900/90 border border-slate-800 animate-pulse" />
+          <div className="h-9 w-full rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse" />
         </div>
-        <div className="w-full min-h-[480px] rounded-3xl bg-slate-900/80 border border-slate-800 p-6 flex flex-col justify-between animate-pulse">
-          <div className="h-6 w-48 bg-slate-800 rounded-lg" />
-          <div className="space-y-3 my-8">
-            <div className="h-7 w-3/4 bg-slate-800 rounded-lg" />
-            <div className="h-7 w-1/2 bg-slate-800 rounded-lg" />
+        <div className="w-full min-h-[380px] rounded-2xl bg-slate-900/80 border border-slate-800 p-5 flex flex-col justify-between animate-pulse">
+          <div className="h-5 w-48 bg-slate-800 rounded-lg" />
+          <div className="space-y-2.5 my-4">
+            <div className="h-6 w-3/4 bg-slate-800 rounded-lg" />
+            <div className="h-6 w-1/2 bg-slate-800 rounded-lg" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="h-14 bg-slate-800/80 rounded-2xl" />
-            <div className="h-14 bg-slate-800/80 rounded-2xl" />
-            <div className="h-14 bg-slate-800/80 rounded-2xl" />
-            <div className="h-14 bg-slate-800/80 rounded-2xl" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="h-11 bg-slate-800/80 rounded-xl" />
+            <div className="h-11 bg-slate-800/80 rounded-xl" />
+            <div className="h-11 bg-slate-800/80 rounded-xl" />
+            <div className="h-11 bg-slate-800/80 rounded-xl" />
           </div>
         </div>
       </div>
@@ -234,17 +234,17 @@ export const QuizMode: React.FC<QuizModeProps> = ({
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 min-h-[640px]">
       {/* Controls Bar: Clean Subject Selection & Session Size (Reserved min-height prevents CLS) */}
-      <div className="mb-6 space-y-3 min-h-[104px]">
+      <div className="mb-3 space-y-2 min-h-[96px]">
         {/* Clean Subject Selection Dropdown & Quick Access */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 min-h-[54px]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 min-h-[48px]">
           {/* Custom Interactive Subject Dropdown */}
           <div ref={subjectDropdownRef} className="relative w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setIsSubjectDropdownOpen((prev) => !prev)}
-              className="w-full sm:w-auto min-w-[280px] md:min-w-[340px] min-h-[54px] flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-850 border border-slate-700/80 hover:border-indigo-500/60 shadow-lg shadow-black/30 transition-all cursor-pointer group text-left"
+              className="w-full sm:w-auto min-w-[260px] md:min-w-[320px] min-h-[48px] flex items-center justify-between gap-3 px-3.5 py-2 rounded-2xl bg-slate-900/90 hover:bg-slate-850 border border-slate-700/80 hover:border-indigo-500/60 shadow-lg shadow-black/30 transition-all cursor-pointer group text-left"
               aria-expanded={isSubjectDropdownOpen}
               aria-haspopup="listbox"
             >
@@ -526,13 +526,13 @@ export const QuizMode: React.FC<QuizModeProps> = ({
         </div>
       ) : (
         /* Active Quiz Arena */
-        <div className="space-y-4 sm:space-y-6">
+        <div className="space-y-2.5 sm:space-y-3">
           {/* Top Info Bar: Progress, Timer, Combo, Score */}
-          <div className="bg-slate-900/90 rounded-2xl p-3 sm:p-4 border border-slate-800 flex items-center justify-between gap-2 sm:gap-4 flex-wrap">
+          <div className="bg-slate-900/90 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 border border-slate-800 flex items-center justify-between gap-2 sm:gap-4 flex-wrap">
             {/* Question Counter */}
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <div className="p-1 sm:p-1.5 rounded-lg bg-indigo-500/10 text-indigo-400">
-                <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <div className="p-1 rounded-lg bg-indigo-500/10 text-indigo-400">
+                <Target className="w-3.5 h-3.5" />
               </div>
               <span className="text-xs font-bold text-slate-300">
                 Q{currentIndex + 1} <span className="text-slate-500 font-normal">/ {quizQuestions.length}</span>
@@ -541,12 +541,12 @@ export const QuizMode: React.FC<QuizModeProps> = ({
 
             {/* Timer countdown */}
             <div className="flex items-center gap-2">
-              <div className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-xl text-xs font-bold font-mono transition-colors ${
+              <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-bold font-mono transition-colors ${
                 timeLeft <= 5
                   ? 'bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse'
                   : 'bg-slate-800 text-slate-300 border border-slate-700'
               }`}>
-                <Clock className="w-3.5 h-3.5" />
+                <Clock className="w-3 h-3" />
                 <span>{timeLeft}s</span>
               </div>
             </div>
@@ -567,22 +567,22 @@ export const QuizMode: React.FC<QuizModeProps> = ({
           </div>
 
           {/* Question Box */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl">
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 sm:p-5 shadow-xl">
+            <div className="flex items-center justify-between mb-2 sm:mb-2.5">
+              <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
                 {CATEGORIES.find((c) => c.id === currentQuestion.categoryId)?.name}
               </span>
-              <span className="text-[11px] sm:text-xs text-slate-400 capitalize">
+              <span className="text-[10px] sm:text-[11px] text-slate-400 capitalize">
                 {currentQuestion.difficulty}
               </span>
             </div>
 
-            <h2 className="text-base sm:text-2xl font-bold text-white tracking-tight leading-snug mb-4 sm:mb-6">
+            <h2 className="text-sm sm:text-lg font-bold text-white tracking-tight leading-snug mb-3 sm:mb-3.5">
               {currentQuestion.question}
             </h2>
 
             {/* Multiple Choice Options */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
               {randomizedOptions.map((opt, idx) => {
                 const isSelected = selectedOption === opt;
                 const isCorrect = opt === currentQuestion.answer;
@@ -604,48 +604,50 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                     key={idx}
                     disabled={isSubmitted}
                     onClick={() => handleSubmitAnswer(opt)}
-                    className={`p-4 rounded-2xl border text-left text-xs sm:text-sm font-medium transition-all active:scale-98 cursor-pointer flex items-start gap-3 ${optionStyle}`}
+                    className={`px-3 py-2 sm:px-3.5 sm:py-2.5 min-h-[42px] rounded-xl border text-left text-xs sm:text-[13px] font-medium transition-all active:scale-98 cursor-pointer flex items-center gap-2.5 ${optionStyle}`}
                   >
-                    <span className="w-6 h-6 rounded-lg bg-slate-700/60 flex items-center justify-center text-xs font-bold shrink-0 text-slate-300">
+                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-700/60 flex items-center justify-center text-[11px] font-bold shrink-0 text-slate-300">
                       {String.fromCharCode(65 + idx)}
                     </span>
-                    <span className="leading-snug pt-0.5">{opt}</span>
+                    <span className="leading-snug flex-1">{opt}</span>
 
                     {isSubmitted && isCorrect && (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 ml-auto mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 ml-auto" />
                     )}
                     {isSubmitted && isSelected && !isCorrect && (
-                      <XCircle className="w-4 h-4 text-rose-400 shrink-0 ml-auto mt-0.5" />
+                      <XCircle className="w-4 h-4 text-rose-400 shrink-0 ml-auto" />
                     )}
                   </button>
                 );
               })}
             </div>
 
-            {/* Post-submission explanation */}
+            {/* Post-submission explanation & Next Question */}
             {isSubmitted && (
-              <div className="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-xs text-slate-300 animate-fade-in space-y-2">
-                <div className="flex items-center gap-2 font-bold text-indigo-300">
-                  <HelpCircle className="w-4 h-4" />
-                  <span>Explanation & Context</span>
-                </div>
-                <p className="leading-relaxed text-slate-200">
-                  {currentQuestion.explanation}
-                </p>
-                {currentQuestion.tip && (
-                  <div className="text-[11px] text-amber-300/90 pt-1 flex items-center gap-1.5 font-medium">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Tip: {currentQuestion.tip}</span>
+              <div className="mt-3 p-3 sm:p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-xs text-slate-300 animate-fade-in flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div className="space-y-1 min-w-0 flex-1">
+                  <div className="flex items-center gap-1.5 font-bold text-indigo-300 text-[11px] sm:text-xs">
+                    <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>Explanation & Context</span>
                   </div>
-                )}
+                  <p className="leading-snug text-slate-200 text-[11px] sm:text-xs">
+                    {currentQuestion.explanation}
+                  </p>
+                  {currentQuestion.tip && (
+                    <div className="text-[11px] text-amber-300/90 flex items-center gap-1 font-medium">
+                      <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
+                      <span>Tip: {currentQuestion.tip}</span>
+                    </div>
+                  )}
+                </div>
 
-                <div className="pt-3 flex justify-end">
+                <div className="flex justify-end shrink-0">
                   <button
                     onClick={handleNextQuestion}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition cursor-pointer shadow-md shadow-indigo-600/30"
+                    className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2 min-h-[38px] rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition cursor-pointer shadow-md shadow-indigo-600/30"
                   >
                     <span>{currentIndex + 1 < quizQuestions.length ? 'Next Question' : 'View Results'}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>

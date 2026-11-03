@@ -36,7 +36,6 @@ import {
   getQuestionsForSectionMock,
   loadQuestionsForFullMockAsync,
   loadQuestionsForSectionMockAsync,
-  preloadMockPdfQuestions,
   FullMockMeta,
 } from '../data/mockTests';
 
@@ -94,10 +93,9 @@ export const MockTestMode: React.FC<MockTestModeProps> = ({
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [savedResults, setSavedResults] = useState<MockTestResult[]>([]);
 
-  // Load previous mock test results and warm mock question chunks in background
+  // Load previous mock test results synchronously from localStorage without preloading 3.5 MB of question chunks
   useEffect(() => {
     setSavedResults(loadMockTestResults());
-    preloadMockPdfQuestions().catch(() => {});
   }, []);
 
   // Handler to start Full Syllabus Mock Test (1 to 8)

@@ -1,5 +1,6 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import * as esbuild from 'esbuild';
 import path from 'path';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
@@ -11,7 +12,8 @@ export default defineConfig(() => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg'],
+        injectRegister: null,
+        includeAssets: ['favicon.ico', 'icon.svg'],
         manifest: {
           id: '/',
           name: 'FlashMind Quiz & Flashcards',
@@ -44,19 +46,39 @@ export default defineConfig(() => {
           ],
         },
         workbox: {
-          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB to accommodate offline PWA caching
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
-          navigateFallbackDenylist: [
-            /^\/api\//,
-            /^\/\.well-known\//,
-            /^\/llms\.txt$/,
-            /^\/llms-full\.txt$/,
-            /^\/sitemap\.xml$/,
-            /^\/sitemap$/,
-            /^\/robots\.txt$/,
-            /^\/google.*\.html$/,
-          ],
+          // Only precache lightweight app icons and manifest (< 5 KiB total) on install
+          // instead of downloading all 3.8 MB of question chunks on first mobile visit
+          globPatterns: ['**/*.{ico,svg,webmanifest}'],
+          navigateFallback: null,
           runtimeCaching: [
+            {
+              urlPattern: /\/assets\/.*\.(?:js|css)$/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'flashmind-assets-cache',
+                expiration: {
+                  maxEntries: 60,
+                  maxAgeSeconds: 60 * 60 * 24 * 30,
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
+            {
+              urlPattern: /\/.*\.(?:png|ico|svg|webp)$/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'flashmind-images-cache',
+                expiration: {
+                  maxEntries: 20,
+                  maxAgeSeconds: 60 * 60 * 24 * 90,
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
               handler: 'CacheFirst',
@@ -79,6 +101,7 @@ export default defineConfig(() => {
       }),
       {
         name: 'suppress-hmr-ws-error',
+        apply: 'serve',
         transformIndexHtml: {
           order: 'pre',
           handler() {
@@ -136,6 +159,59 @@ export default defineConfig(() => {
           },
         },
       },
+      {
+        name: 'inline-render-blocking-css',
+        apply: 'build',
+        enforce: 'post',
+        generateBundle(_options, bundle) {
+          // 1. Ensure all emitted JavaScript chunks are minified & stripped of comments
+          for (const item of Object.values(bundle)) {
+            if (item.type === 'chunk' && item.fileName.endsWith('.js') && typeof item.code === 'string') {
+              try {
+                const minified = esbuild.transformSync(item.code, {
+                  minify: true,
+                  legalComments: 'none',
+                  target: 'es2020',
+                });
+                item.code = minified.code;
+              } catch (_e) {
+                // Keep original code if transform fails
+              }
+            }
+          }
+
+          const htmlAsset = bundle['index.html'];
+          if (!htmlAsset || htmlAsset.type !== 'asset' || typeof htmlAsset.source !== 'string') {
+            return;
+          }
+          let html = htmlAsset.source;
+
+          // 2. Minify and inline compiled stylesheet assets directly into <head>
+          html = html.replace(
+            /<link\s+rel="stylesheet"[^>]*href="\/?(assets\/[^"]+\.css)"[^>]*>/gi,
+            (fullMatch, cssPath) => {
+              const cssAsset = bundle[cssPath];
+              if (cssAsset && cssAsset.type === 'asset' && typeof cssAsset.source === 'string') {
+                let cssCode = cssAsset.source;
+                try {
+                  cssCode = esbuild.transformSync(cssCode, {
+                    loader: 'css',
+                    minify: true,
+                    legalComments: 'none',
+                  }).code;
+                } catch (_e) {
+                  // Keep original CSS if transform fails
+                }
+                delete bundle[cssPath];
+                return `<style id="inlined-critical-tailwind">${cssCode}</style>`;
+              }
+              return fullMatch;
+            }
+          );
+
+          htmlAsset.source = html;
+        },
+      },
     ],
     resolve: {
       alias: {
@@ -143,14 +219,12 @@ export default defineConfig(() => {
       },
     },
     build: {
+      minify: 'esbuild',
       sourcemap: false,
       chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
           manualChunks(id) {
-            if (id.includes('node_modules/lucide-react')) {
-              return 'vendor-icons';
-            }
             if (id.includes('node_modules/firebase') || id.includes('node_modules/@firebase')) {
               return 'vendor-firebase';
             }

@@ -1,9 +1,11 @@
 import { Flashcard } from '../../types';
+import { COMPUTER_500_PDF_QUESTIONS } from './computer500PdfQuestions';
 import { MS_OFFICE_PRACTICE_QUESTIONS } from './msOfficePracticePdfQuestions';
 import { JKSSB_DEO_CS_QUESTIONS } from './jkssbDeo2025PdfQuestions';
 import { JKSSB_JA_CS_QUESTIONS } from './jkssbJuniorAssistant2024PdfQuestions';
 
 export const CS_QUESTIONS: Flashcard[] = [
+  ...COMPUTER_500_PDF_QUESTIONS,
   ...MS_OFFICE_PRACTICE_QUESTIONS,
   ...JKSSB_JA_CS_QUESTIONS,
   ...JKSSB_DEO_CS_QUESTIONS,

@@ -1,4 +1,11 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "./App.tsx";
+@source "./components";
+@source "./data/initialDecks.ts";
+@source "./data/mockTests.ts";
+@source "./utils/seo.ts";
+@source "../index.html";
+@source "../server.ts";
 
 @font-face {
   font-family: 'Plus Jakarta Sans Fallback';
