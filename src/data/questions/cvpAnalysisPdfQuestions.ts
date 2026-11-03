@@ -83,7 +83,7 @@ export const CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS: Flashcard[] = [
   {
     "id": "cvp-p2-1",
     "categoryId": "accounting",
-    "question": "A company has fixed costs of 00,000. The selling price per unit is 0 and the variable cost per unit is 0. What is the break-even point in units?",
+    "question": "A company has fixed costs of Rs. 1,00,000. The selling price per unit is Rs. 50 and the variable cost per unit is Rs. 30. What is the break-even point in units?",
     "answer": "5,000 units",
     "options": [
       "3,000 units",
@@ -91,29 +91,29 @@ export const CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS: Flashcard[] = [
       "5,000 units",
       "6,000 units"
     ],
-    "explanation": "BEP (units) = Fixed Costs ÷ Unit CM = 100,000 ÷ (50 - 30) = 100,000 ÷ 20 = 5,000 units.",
+    "explanation": "BEP (units) = Fixed Costs ÷ Unit CM = Rs. 1,00,000 ÷ (Rs. 50 - Rs. 30) = Rs. 1,00,000 ÷ Rs. 20 = 5,000 units.",
     "tip": "BEP in units = Fixed Costs ÷ (SP - VC).",
     "difficulty": "beginner"
   },
   {
     "id": "cvp-p2-2",
     "categoryId": "accounting",
-    "question": "If a business has a Selling Price of 00, Variable Cost of 0 per unit, and Fixed Costs of 0,000, what is the Break-Even Point in sales value?",
-    "answer": "00,000",
+    "question": "If a business has a Selling Price of Rs. 100, Variable Cost of Rs. 60 per unit, and Fixed Costs of Rs. 80,000, what is the Break-Even Point in sales value?",
+    "answer": "Rs. 2,00,000",
     "options": [
-      "50,000",
-      "80,000",
-      "00,000",
-      "40,000"
+      "Rs. 1,50,000",
+      "Rs. 1,80,000",
+      "Rs. 2,00,000",
+      "Rs. 2,40,000"
     ],
-    "explanation": "P/V Ratio = (100 - 60) ÷ 100 = 40%. BEP (Sales Value) = Fixed Costs ÷ P/V Ratio = 80,000 ÷ 0.40 = 00,000.",
+    "explanation": "P/V Ratio = (100 - 60) ÷ 100 = 40%. BEP (Sales Value) = Fixed Costs ÷ P/V Ratio = Rs. 80,000 ÷ 0.40 = Rs. 2,00,000.",
     "tip": "BEP in Value = Fixed Costs ÷ P/V Ratio.",
     "difficulty": "intermediate"
   },
   {
     "id": "cvp-p2-3",
     "categoryId": "accounting",
-    "question": "Total sales are 00,000 and total variable costs are 00,000. What is the Profit/Volume (P/V) ratio?",
+    "question": "Total sales are Rs. 5,00,000 and total variable costs are Rs. 3,00,000. What is the Profit/Volume (P/V) ratio?",
     "answer": "40%",
     "options": [
       "30%",
@@ -121,59 +121,59 @@ export const CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS: Flashcard[] = [
       "50%",
       "60%"
     ],
-    "explanation": "Total Contribution = Sales - Variable Costs = 00,000 - 00,000 = 00,000. P/V Ratio = (Contribution ÷ Sales) × 100 = (200,000 ÷ 500,000) × 100 = 40%.",
+    "explanation": "Total Contribution = Sales - Variable Costs = Rs. 5,00,000 - Rs. 3,00,000 = Rs. 2,00,000. P/V Ratio = (Contribution ÷ Sales) × 100 = (2,00,000 ÷ 5,00,000) × 100 = 40%.",
     "tip": "P/V ratio is also known as Contribution Margin Ratio.",
     "difficulty": "beginner"
   },
   {
     "id": "cvp-p2-4",
     "categoryId": "accounting",
-    "question": "A company's actual sales are 00,000 and its break-even sales are 00,000. What is the Margin of Safety (MoS)?",
-    "answer": "00,000",
+    "question": "A company's actual sales are Rs. 5,00,000 and its break-even sales are Rs. 3,00,000. What is the Margin of Safety (MoS)?",
+    "answer": "Rs. 2,00,000",
     "options": [
-      "50,000",
-      "00,000",
-      "50,000",
-      "00,000"
+      "Rs. 1,50,000",
+      "Rs. 2,00,000",
+      "Rs. 2,50,000",
+      "Rs. 3,00,000"
     ],
-    "explanation": "Margin of Safety = Actual Sales - Break-Even Sales = 00,000 - 00,000 = 00,000.",
+    "explanation": "Margin of Safety = Actual Sales - Break-Even Sales = Rs. 5,00,000 - Rs. 3,00,000 = Rs. 2,00,000.",
     "tip": "Margin of safety measures cushion of sales above break-even.",
     "difficulty": "beginner"
   },
   {
     "id": "cvp-p2-5",
     "categoryId": "accounting",
-    "question": "At a break-even point of 10,000 units, the selling price is 0 and the variable cost is 2 per unit. What are the total fixed costs?",
-    "answer": "0,000",
+    "question": "At a break-even point of 10,000 units, the selling price is Rs. 20 and the variable cost is Rs. 12 per unit. What are the total fixed costs?",
+    "answer": "Rs. 80,000",
     "options": [
-      "0,000",
-      "0,000",
-      "00,000",
-      "20,000"
+      "Rs. 60,000",
+      "Rs. 80,000",
+      "Rs. 1,00,000",
+      "Rs. 1,20,000"
     ],
-    "explanation": "Contribution Margin per unit = 0 - 2 = . Fixed Costs = BEP (units) × Unit CM = 10,000 ×  = 0,000.",
+    "explanation": "Contribution Margin per unit = Rs. 20 - Rs. 12 = Rs. 8. Fixed Costs = BEP (units) × Unit CM = 10,000 × Rs. 8 = Rs. 80,000.",
     "tip": "At BEP, Total Fixed Costs equal Total Contribution.",
     "difficulty": "intermediate"
   },
   {
     "id": "cvp-p2-6",
     "categoryId": "accounting",
-    "question": "If a company has total sales of ,000,000, a Profit/Volume (P/V) ratio of 25%, and fixed costs of 50,000, what is the net profit?",
-    "answer": "00,000",
+    "question": "If a company has total sales of Rs. 1,000,000, a Profit/Volume (P/V) ratio of 25%, and fixed costs of Rs. 150,000, what is the net profit?",
+    "answer": "Rs. 100,000",
     "options": [
-      "0,000",
-      "00,000",
-      "20,000",
-      "50,000"
+      "Rs. 80,000",
+      "Rs. 100,000",
+      "Rs. 120,000",
+      "Rs. 150,000"
     ],
-    "explanation": "Total Contribution = Sales × P/V Ratio = ,000,000 × 25% = 50,000. Net Profit = Contribution - Fixed Costs = 50,000 - 50,000 = 00,000.",
+    "explanation": "Total Contribution = Sales × P/V Ratio = Rs. 1,000,000 × 25% = Rs. 250,000. Net Profit = Contribution - Fixed Costs = Rs. 250,000 - Rs. 150,000 = Rs. 100,000.",
     "tip": "Profit = (Sales × P/V Ratio) - Fixed Costs.",
     "difficulty": "intermediate"
   },
   {
     "id": "cvp-p2-7",
     "categoryId": "accounting",
-    "question": "A firm desires a target profit of 0,000. Its fixed costs are 50,000 and the contribution margin per unit is 5. How many units must be sold?",
+    "question": "A firm desires a target profit of Rs. 50,000. Its fixed costs are Rs. 150,000 and the contribution margin per unit is Rs. 25. How many units must be sold?",
     "answer": "8,000 units",
     "options": [
       "6,000 units",
@@ -181,7 +181,7 @@ export const CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS: Flashcard[] = [
       "8,000 units",
       "9,000 units"
     ],
-    "explanation": "Target Units = (Fixed Costs + Target Profit) ÷ Unit CM = (50,000 + 0,000) ÷ 5 = 00,000 ÷ 5 = 8,000 units.",
+    "explanation": "Target Units = (Fixed Costs + Target Profit) ÷ Unit CM = (Rs. 150,000 + Rs. 50,000) ÷ Rs. 25 = Rs. 200,000 ÷ Rs. 25 = 8,000 units.",
     "tip": "Target units = Total desired contribution ÷ CM per unit.",
     "difficulty": "beginner"
   },

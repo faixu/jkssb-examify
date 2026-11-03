@@ -22,6 +22,7 @@ import {
   Cloud,
   MoreHorizontal,
   X,
+  Globe,
 } from 'lucide-react';
 
 // Code-split secondary mode views and below-the-fold study guide so initial index-*.js bundle stays ultra-compact
@@ -45,6 +46,9 @@ const GoogleDriveSync = lazy(() =>
 );
 const GeminiChatbot = lazy(() =>
   import('./components/GeminiChatbot').then((m) => ({ default: m.GeminiChatbot }))
+);
+const CurrentAffairsSection = lazy(() =>
+  import('./components/CurrentAffairsSection').then((m) => ({ default: m.CurrentAffairsSection }))
 );
 const SEOStudyGuide = lazy(() =>
   import('./components/SEOStudyGuide').then((m) => ({ default: m.SEOStudyGuide }))
@@ -312,6 +316,10 @@ export default function App() {
               <GeminiChatbot
                 onNavigateToMode={(mode) => setCurrentMode(mode as StudyMode)}
               />
+            )}
+
+            {currentMode === 'current_affairs' && (
+              <CurrentAffairsSection />
             )}
           </Suspense>
         )}
@@ -581,6 +589,34 @@ export default function App() {
                   </div>
                   <div className="text-[10px] text-slate-300 mt-0.5">
                     Step-by-step JKSSB numericals, concepts &amp; mnemonics
+                  </div>
+                </div>
+              </button>
+
+              {/* Chinar Current Affairs (2-Tier Dynamic MCQ Bank) */}
+              <button
+                onClick={() => {
+                  setCurrentMode('current_affairs');
+                  setIsMobileMoreOpen(false);
+                }}
+                className={`p-3 rounded-2xl border text-left flex items-start gap-3 transition cursor-pointer col-span-2 ${
+                  currentMode === 'current_affairs'
+                    ? 'bg-gradient-to-r from-amber-600/30 via-orange-600/30 to-indigo-600/30 border-amber-400 text-white shadow-lg'
+                    : 'bg-gradient-to-r from-amber-950/40 to-slate-900 border-amber-500/30 text-amber-200 hover:bg-amber-900/40'
+                }`}
+              >
+                <div className="p-2 rounded-xl bg-amber-500/20 text-amber-300 shrink-0">
+                  <Globe className="w-4 h-4 text-amber-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-white">Chinar Current Affairs</span>
+                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-amber-500/30 text-amber-200 border border-amber-400/40">
+                      2-Tier MCQs
+                    </span>
+                  </div>
+                  <div className="text-[10px] text-slate-300 mt-0.5">
+                    J&amp;K UT, National &amp; International multi-tier dropdown question bank
                   </div>
                 </div>
               </button>

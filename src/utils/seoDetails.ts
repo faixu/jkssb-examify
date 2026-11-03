@@ -17,7 +17,7 @@ export const TOPIC_SEO_DETAILS: Record<CategoryId | 'all', TopicSEODetails> = {
     ],
     studyNotes: [
       'JKSSB CBT & OMR Exam Pattern: 120 multiple-choice questions carrying 1 mark each (120 minutes duration) with 0.25 negative marking for wrong answers.',
-      'High-Yield Focus: J&K Reorganization Act 2019 (103 sections, 5 schedules), Rivers & Hydroelectric Projects of J&K, Accounting Golden Rules, and MS Excel Formulas account for over 45% of recurring exam questions.',
+      'High-Yield Focus: The J&K Reorganisation Act 2019 (comprising 14 Parts, 103 Sections, and 5 Schedules), major rivers and hydroelectric projects of J&K, fundamental accounting principles, and essential computer applications form key components of core syllabus questions in JKSSB exams.',
       'Active Recall Strategy: Alternate between topic-wise MCQ practice and 5-box Leitner spaced repetition flashcards to lock in factual dates, articles, and formulas.',
     ],
     sampleQuestions: [

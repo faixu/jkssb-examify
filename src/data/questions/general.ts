@@ -1202,7 +1202,7 @@ export const GENERAL_QUESTIONS: Flashcard[] = [
     "id": "gen-80",
     "categoryId": "general",
     "question": "Which district of Jammu and Kashmir is the largest in geographic land area following the reorganization into Union Territories?",
-    "answer": "Doda (or Kishtwar among undivided areas)",
+    "answer": "Kishtwar",
     "options": [
       "Kishtwar",
       "Baramulla",

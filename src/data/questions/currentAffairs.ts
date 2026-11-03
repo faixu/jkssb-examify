@@ -1,25 +1,18 @@
 import { Flashcard } from '../../types';
 
-/**
- * JKSSB Current Affairs 2026 Question Bank
- * Extracted directly from Quint Essence IAS JKSSB Current Affairs 2026 Edition
- * Covers 15 Chapters across Jammu & Kashmir, National, Economy, International,
- * Science & Tech, Environment, Defence, Awards, Sports, Indices, Appointments,
- * Books & Authors, Important Days, People, and Places.
- */
 export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-1",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the resolution passed by the J&K Legislative Assembly on 28 September 2026: \u20181. It sought the immediate and urgent restoration of full statehood. 2. Statehood will stand restored once the Lieutenant Governor assents to the resolution. 3. It referred to the autonomy resolutions of 2000 and 2024 Which of the statements given above is/are correct?",
+    "question": "Consider the following statements about the resolution passed by the J&K Legislative Assembly on 28 September 2026: ‘1. It sought the immediate and urgent restoration of full statehood. 2. Statehood will stand restored once the Lieutenant Governor assents to the resolution. 3. It referred to the autonomy resolutions of 2000 and 2024 Which of the statements given above is/are correct?",
     "answer": "1 and 3 only",
     "options": [
       "1 and 2 only",
       "1 and 3 only",
       "2 and 3 only",
-      "1,2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "The resolution is non-binding. Statehood requires parliamentary legislation under Articles 3-4 and changes to the J&K Rearganisation Act",
+    "explanation": "The resolution is non-binding. Statehood requires parliamentary legislation under Articles 3-4 and changes to the J&K Reorganisation Act",
     "tip": "The resolution is non-binding. Statehood requires parliamentary legislation under Articles 3-4 and changes to the J&K Re...",
     "difficulty": "intermediate"
   },
@@ -31,77 +24,77 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "options": [
       "1846 by Gulab Singh",
       "1872 by Maharaja Ranbir Singh",
-      "1925 by Maharaja Har Singh",
+      "1925 by Maharaja Hari Singh",
       "1952 by Sheikh Abdullah"
     ],
-    "explanation": "Maharaja Ranbir Singh started the Darbar Move in 1872; it resumed in November 2025. 3 6 Changthang headquarters is Nyoma, not Hanle; Nubra-Diskit, Sham-Khaltse and Zanskar-Padum are correct.",
-    "tip": "Maharaja Ranbir Singh started the Darbar Move in 1872; it resumed in November 2025. 3 6 Changthang headquarters is Nyoma...",
+    "explanation": "Maharaja Ranbir Singh started the bi-annual Darbar Move tradition in 1872 between Jammu and Srinagar. It was resumed in November 2025.",
+    "tip": "Darbar Move started in 1872 by Maharaja Ranbir Singh.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-3",
     "categoryId": "current_affairs",
-    "question": "Consider the following pairs (new district of Ladakh - headquarters): 4. Nubra - Diskit 2. Sham - Khaltse 3. Changthang - Hanle 4. Zanskar - Padum How many of the above pairs are correctly matched?",
-    "answer": "All four",
+    "question": "Consider the following pairs (new district of Ladakh - headquarters): 1. Nubra - Diskit 2. Sham - Khaltse 3. Changthang - Hanle 4. Zanskar - Padum. How many of the above pairs are correctly matched?",
+    "answer": "Only three",
     "options": [
       "Only one",
       "Only two",
       "Only three",
       "All four"
     ],
-    "explanation": "The regulations provide the 85% jabs reservation, 15-year residence condition, one-third women\u2019s Hill Council seats, and official-language recognition of Bhoti and Purgi",
-    "tip": "The regulations provide the 85% jabs reservation, 15-year residence condition, one-third women\u2019s Hill Council seats, and...",
+    "explanation": "Nubra headquarters is Diskit, Sham headquarters is Khaltse, and Zanskar headquarters is Padum. Changthang district headquarters is Nyoma (not Hanle). Therefore, only three pairs are correctly matched.",
+    "tip": "Changthang headquarters is Nyoma, not Hanle.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-4",
     "categoryId": "current_affairs",
-    "question": "With reference to the Ladakh regulations notified in June 2025, consider: 1. Up to 85% of government jobs (excluding EWS) are reserved for residents. 2. Domicile requires 15 years of residence in Ladakh. 3. One-third of seats in the Hill Councils are reserved for women. 4. Bhoti and Purgi are among the official |anguages Which are correct?",
-    "answer": "1,2 and 3 only",
+    "question": "With reference to the Ladakh reservation regulations notified in June 2025, consider: 1. Up to 85% of government jobs are reserved for local residents. 2. Domicile requires 15 years of residence in Ladakh. 3. One-third of seats in the Hill Councils are reserved for women. 4. Bhoti and Purgi are recognized official languages. Which statements are correct?",
+    "answer": "1, 2, 3 and 4",
     "options": [
-      "1,2 and 3 only",
-      "2, 3. and 4 only",
-      "4, 3and 4 only",
-      "1,2, 3and4"
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "1, 3 and 4 only",
+      "1, 2, 3 and 4"
     ],
-    "explanation": "Zojila connects Sonamarg to Drass/Kargil: the tunnel inaugurated in January 2025 was Z-Morh.",
-    "tip": "Zojila connects Sonamarg to Drass/Kargil: the tunnel inaugurated in January 2025 was Z-Morh.",
+    "explanation": "The Ladakh regulations provide up to 85% job reservation for local residents, a 15-year residency criterion for domicile, 33% reservation for women in Ladakh Autonomous Hill Development Councils, and recognition of Bhoti and Purgi as official languages.",
+    "tip": "Ladakh notified 85% resident jobs reservation and 1/3rd women seats in Hill Councils.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-5",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the Zojila Tunnel: 4. Its breakthrough was achieved in June 2026 at Minamarg in Kargil 2. It will connect Sonamarg with Drass/Kargil on NH-1 3. It is the same tunnel the PM inaugurated in January 2025. Which are correct?",
-    "answer": "1,2and3",
+    "question": "Consider the following statements about the Zojila Tunnel: 1. Its breakthrough was achieved on the Sonamarg-Drass axis. 2. It will provide all-weather connectivity between Srinagar/Sonamarg and Drass/Kargil on NH-1. 3. It spans over 14 km, making it one of the longest bi-directional tunnels in Asia. Which statements are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 and 2 only",
-      "2 only",
+      "2 and 3 only",
       "1 and 3 only",
-      "1,2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Chenab is an arch bridge; Anji Khad is the frst cable-stayed railway bridge. Both are in Reasi.",
-    "tip": "Chenab is an arch bridge; Anji Khad is the frst cable-stayed railway bridge. Both are in Reasi.",
+    "explanation": "The Zojila Tunnel on NH-1 spans 14.15 km between Baltal/Sonamarg in Kashmir and Minamarg/Drass in Ladakh, providing all-weather strategic connectivity and bypassing the avalanche-prone Zojila Pass.",
+    "tip": "Zojila Tunnel = 14.15 km connecting Sonamarg and Drass on NH-1.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-6",
     "categoryId": "current_affairs",
     "question": "Which of the following statements about the Chenab Rail Bridge is incorrect?",
-    "answer": "It is located in Reasi district",
+    "answer": "It is India's first cable-stayed railway bridge",
     "options": [
-      "Itis the world's highest railway arch bridge",
-      "It is located in Reasi district",
+      "It is the world's highest railway arch bridge",
+      "It is located in Reasi district of Jammu & Kashmir",
       "It stands about 359 m above the river bed",
-      "It is India's first cable-stayed railway bridge. 4147 (] A Quink Essence Ag"
+      "It is India's first cable-stayed railway bridge"
     ],
-    "explanation": "Pakal Dul is on the Marusudar, a Chenab tributary, in Kishtwar.",
-    "tip": "Pakal Dul is on the Marusudar, a Chenab tributary, in Kishtwar.",
+    "explanation": "The Chenab Rail Bridge is a steel arch bridge standing 359 m above the river bed in Reasi district, making it the highest railway arch bridge in the world. India's first cable-stayed railway bridge is the nearby Anji Khad Bridge, also in Reasi district.",
+    "tip": "Chenab Bridge is an arch bridge; Anji Khad Bridge is cable-stayed.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-7",
     "categoryId": "current_affairs",
-    "question": "The 4,000 MW Pakal Dul Hydroelectric Project is located on the river:",
+    "question": "The 1,000 MW Pakal Dul Hydroelectric Project is located on which river in Jammu and Kashmir?",
     "answer": "Marusudar",
     "options": [
       "Chenab",
@@ -109,353 +102,353 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Jhelum",
       "Kishanganga"
     ],
-    "explanation": "Sawalkote lies between Baglihar upstream and Salal downstream, in Ramban/Udhampur.",
-    "tip": "Sawalkote lies between Baglihar upstream and Salal downstream, in Ramban/Udhampur.",
+    "explanation": "The 1,000 MW Pakal Dul Hydroelectric Project is located on the Marusudar River, a major tributary of the Chenab River, in Kishtwar district of Jammu and Kashmir.",
+    "tip": "Pakal Dul (1000 MW) is on the Marusudar river in Kishtwar.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-8",
     "categoryId": "current_affairs",
-    "question": "The 1,855 MW Sawalkote project on the Chenab lies between which two existing projects?",
-    "answer": "Dulhasti and Baglinar",
+    "question": "The 1,855 MW Sawalkote hydroelectric project on the Chenab lies between which two existing projects?",
+    "answer": "Baglihar (upstream) and Salal (downstream)",
     "options": [
-      "Dulhasti and Baglinar",
+      "Dulhasti and Baglihar",
       "Baglihar (upstream) and Salal (downstream)",
       "Salal and Ratle",
       "Kiru and Kwar"
     ],
-    "explanation": "The 1960 treaty had World Bank involvement. Chenab is a western river allocated to Pakistan, with limited permitted Indian use.",
-    "tip": "The 1960 treaty had World Bank involvement. Chenab is a western river allocated to Pakistan, with limited permitted Indi...",
+    "explanation": "The 1,855 MW Sawalkote Hydroelectric Project on the Chenab River is situated between the Baglihar project upstream and the Salal project downstream across Ramban and Udhampur districts.",
+    "tip": "Sawalkote lies between Baglihar upstream and Salal downstream.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-9",
     "categoryId": "current_affairs",
-    "question": "With reference to the Indus Waters Treaty, which India placed in abeyance in April 2025, consider: 4. It was signed in 1960 at Karachi 2. It was brokered by the World Bank. 3. India has unrestricted rights over the waters of the Chenab. Which are correct?",
-    "answer": "1 and 3 only",
+    "question": "With reference to the Indus Waters Treaty (1960), consider: 1. It was signed in 1960 at Karachi. 2. It was brokered by the World Bank. 3. India has unrestricted rights over the waters of the Eastern rivers (Ravi, Beas, Sutlej). Which statements are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
       "1 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Brij Lal Bhat received the award for Social Work; Shafi Shaug for Literature and Education; Padma Gurmet for Medicine.",
-    "tip": "Brij Lal Bhat received the award for Social Work; Shafi Shaug for Literature and Education; Padma Gurmet for Medicine.",
+    "explanation": "The Indus Waters Treaty was signed in Karachi in 1960 by Indian PM Jawaharlal Nehru and Pakistani President Ayub Khan, brokered by the World Bank. India received unrestricted use of the three Eastern rivers (Ravi, Beas, Sutlej), while the Western rivers (Indus, Jhelum, Chenab) were allocated to Pakistan with limited non-consumptive and run-of-the-river power rights for India.",
+    "tip": "IWT 1960 brokered by World Bank; Eastern rivers to India, Western to Pakistan.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-10",
     "categoryId": "current_affairs",
-    "question": "Consider the following pairs (Padma Shri 2026 - field): 4. Brij Lal Bhat - Literature & Education 2. Prof. Shafi Shaug - Literature & Education 3. Dr Padma Gurmet - Medicine How many pairs are correctly matched?",
-    "answer": "Only one",
+    "question": "Consider the following pairs (Padma Shri awardees from J&K - field): 1. Brij Lal Bhat - Social Work 2. Prof. Shafi Shaug - Literature & Education 3. Dr. Padma Gurmet - Medicine. How many pairs are correctly matched?",
+    "answer": "All three",
     "options": [
       "None",
       "Only one",
       "Only two",
       "All three"
     ],
-    "explanation": "Khajur Singh Thakur won the Dogri award for Thakur Satsayie. 12 \u00a2 Ali Shaida\u2019s Najdavanek\u2019y Pot Aalav is Kashmiri poetry. 3 \u00abOC The explicitly dated 2025 census count was 323 hangul, reported in January 2026.",
-    "tip": "Khajur Singh Thakur won the Dogri award for Thakur Satsayie. 12 \u00a2 Ali Shaida\u2019s Najdavanek\u2019y Pot Aalav is Kashmiri poetry...",
+    "explanation": "All three pairs are correctly matched: Brij Lal Bhat received the Padma Shri for Social Work, Prof. Shafi Shaug for Literature and Education, and Dr. Padma Gurmet (Director, National Institute of Sowa-Rigpa) for Medicine.",
+    "tip": "All 3 J&K Padma Shri recipients correctly matched to their fields.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-11",
     "categoryId": "current_affairs",
-    "question": "Who won the Sahitya Akademi Award 2025 for Dogri?",
-    "answer": "Mamta Kalia",
+    "question": "Who won the Sahitya Akademi Award 2025 for Dogri literature?",
+    "answer": "Khajur Singh Thakur",
     "options": [
       "Ali Shaida",
       "Khajur Singh Thakur",
       "Pritpal Singh Betab",
       "Mamta Kalia"
     ],
-    "explanation": "Hangul is J&K\u2019s state animal, largely confined to Dachigam in the Zabanwan range, and protected under Schedule I. 15 Cc Karnataka was J&K\u2019s final opponent. J&K secured its first title on first-innings lead.",
-    "tip": "Hangul is J&K\u2019s state animal, largely confined to Dachigam in the Zabanwan range, and protected under Schedule I. 15 Cc ...",
+    "explanation": "Khajur Singh Thakur was conferred the prestigious Sahitya Akademi Award for Dogri for his poetry collection Thakur Satsayie.",
+    "tip": "Sahitya Akademi Dogri 2025 = Khajur Singh Thakur (Thakur Satsayie).",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-12",
     "categoryId": "current_affairs",
-    "question": "Najdavanek'y Pot Aalav, which won the Sahitya Akademi Award 2025, is a work in",
-    "answer": "Dogri",
+    "question": "Najdavanek'y Pot Aalav, which won the Sahitya Akademi Award 2025, is a literary work in which language?",
+    "answer": "Kashmiri",
     "options": [
       "Dogri",
       "Urdu",
       "Kashmiri",
       "Punjabi"
     ],
-    "explanation": "The sixth edition used Leh for ice sports and Gulmarg for snow sports: the Indian Army was overall champion.",
-    "tip": "The sixth edition used Leh for ice sports and Gulmarg for snow sports: the Indian Army was overall champion.",
+    "explanation": "Najdavanek'y Pot Aalav is an acclaimed Kashmiri poetry collection by poet Ali Shaida that won the Sahitya Akademi Award for Kashmiri.",
+    "tip": "Najdavanek'y Pot Aalav by Ali Shaida is a Kashmiri work.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-13",
     "categoryId": "current_affairs",
-    "question": "The hangu! population as per the 2025 census (reported January 2026) was:",
-    "answer": "289",
+    "question": "The hangul (Kashmir Stag) population as per the 2025 census reported in January 2026 was:",
+    "answer": "323",
     "options": [
       "261",
       "289",
       "323",
-      "412 Q14, Consider the following statements about the hangul: 4. It is the state animal of J&K. 2. It is largely confined to Dachigam National Park in the Zabarwan range 3. It is listed in Schedule | of the Wildlife (Protection) Act, 1972. Which are correct? (a) 1 and 2 only (b) 2 and 3 only (c) 1 and 3 only (d) 1, 2and3"
+      "350"
     ],
-    "explanation": "Mithun Manhas became the 37th BCCI President, succeeding Roger Binny.",
-    "tip": "Mithun Manhas became the 37th BCCI President, succeeding Roger Binny.",
+    "explanation": "The 2025 Hangul Census reported the population of the critically endangered Kashmir Stag (Hangul) in Dachigam National Park and adjoining sanctuaries at 323, showing steady recovery from 289 in 2023.",
+    "tip": "Hangul census count 2025 = 323 individuals.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-14",
     "categoryId": "current_affairs",
-    "question": "Which team was J&K\u2019s opponent in the Ran|i Trophy 2025-26 final, where J&K won the title on first-innings lead?",
-    "answer": "Kerala 148 (] A Quink Essence Ag",
+    "question": "Which team was J&K’s opponent in the Ranji Trophy final, where J&K secured its historic maiden title on first-innings lead?",
+    "answer": "Karnataka",
     "options": [
       "Mumbai",
       "Vidarbha",
       "Karnataka",
-      "Kerala 148 (] A Quink Essence Ag"
+      "Kerala"
     ],
-    "explanation": "Omar Abdullah held Finance; the net Budget Estimate was %1,13,767 crore and the fiscal deficit 4.6% of GSDP.",
-    "tip": "Omar Abdullah held Finance; the net Budget Estimate was %1,13,767 crore and the fiscal deficit 4.6% of GSDP.",
+    "explanation": "Jammu & Kashmir faced Karnataka in the Ranji Trophy final and won the prestigious domestic cricket championship on the basis of a first-innings lead.",
+    "tip": "J&K defeated Karnataka on first-innings lead in the Ranji Trophy final.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-15",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the Khelo India Winter Games 2026: 4, It was the sixth edition. 2. Ice sports were held in Leh and snow sports in Gulmarg 3. Jammu & Kashmir emerged as the overall champion Which are correct?",
-    "answer": "4 only",
+    "question": "Consider the following statements about the Khelo India Winter Games: 1. Ice sports were hosted in Leh, Ladakh. 2. Snow sports were hosted in Gulmarg, J&K. 3. The Indian Army emerged as the overall champion team. Which statements are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "The tertiary sector had the largest share, at 61.02%. 20 2A RWECIS was extended to apple, saffron, mango and litchi. 2 06D MUMKIN supports applicants aged 18-35 buying small commercial vehicles, with the lower of 780,000 or 10% of on-road price as subsidy. 197 Quin\u00e9 E ssence [pf Q ~~ Answer Explanation",
-    "tip": "The tertiary sector had the largest share, at 61.02%. 20 2A RWECIS was extended to apple, saffron, mango and litchi. 2 0...",
+    "explanation": "In the Khelo India Winter Games, the ice sporting events were held in Leh (Ladakh) and snow sports in Gulmarg (J&K). The Indian Army team finished on top of the medal tally.",
+    "tip": "Khelo India Winter Games: Ice sports at Leh, Snow sports at Gulmarg; Army champion.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-16",
     "categoryId": "current_affairs",
-    "question": "Mithun Manhas, elected in September 2025, is the:",
+    "question": "Mithun Manhas from Jammu & Kashmir was elected as the:",
     "answer": "37th BCCI President",
     "options": [
-      "36th BCC! President",
+      "36th BCCI President",
       "37th BCCI President",
       "ICC Chairman",
       "BCCI Secretary"
     ],
-    "explanation": "The reference date is 1 October 2026 for the designated snow-bound areas, and 1 March 2027 for the rest of India.",
-    "tip": "The reference date is 1 October 2026 for the designated snow-bound areas, and 1 March 2027 for the rest of India.",
+    "explanation": "Former J&K and Delhi cricketer Mithun Manhas became the 37th President of the Board of Control for Cricket in India (BCCI), succeeding Roger Binny.",
+    "tip": "Mithun Manhas is the 37th President of BCCI.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-17",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the J&X Budget 2026-27 4. It was presented by the Chief Minister, who holds the Finance portfolio. 2. The net budget is about %1.14 lakh crore 3. The fiscal deficit is projected at about 4.6% of GSDP Which are correct?",
-    "answer": "2 and 3 only",
+    "question": "Consider the following statements about the J&K Budget: 1. It was presented in the Legislative Assembly by the Chief Minister holding the Finance portfolio. 2. The net budget outlay was over ₹1.13 lakh crore. 3. The fiscal deficit was estimated at approximately 4.6% of GSDP. Which statements are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "Baltal is in Ganderbal; the Pahalgam-Chandanwani route is in Anantnag.",
-    "tip": "Baltal is in Ganderbal; the Pahalgam-Chandanwani route is in Anantnag.",
+    "explanation": "The J&K Budget was presented by the Chief Minister (who holds the Finance portfolio) with a total net estimate of over ₹1.13 lakh crore and a budgeted fiscal deficit of 4.6% of GSDP.",
+    "tip": "J&K Budget: presented by CM/Finance Minister; net outlay ~₹1.14 lakh crore, fiscal deficit 4.6%.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-18",
     "categoryId": "current_affairs",
-    "question": "As per the J&K Economic Survey 2025-26, the largest share of the UT's economy comes from the:",
-    "answer": "tertiary sector",
+    "question": "As per the J&K Economic Survey, the largest share of the UT's Gross State Value Added (GSVA) comes from the:",
+    "answer": "Tertiary sector (Services)",
     "options": [
-      "primary sector",
-      "secondary sector",
-      "tertiary sector",
-      "primary and secondary equally"
+      "Primary sector (Agriculture)",
+      "Secondary sector (Manufacturing/Industry)",
+      "Tertiary sector (Services)",
+      "Primary and Secondary sectors equally"
     ],
-    "explanation": "AB-PMJAY SEHAT provides %5 lakh health cover to all J&K residents. 25 \u00b0=\u00abSd HADP has an outlay of 5,013 crore and 29 projects.",
-    "tip": "AB-PMJAY SEHAT provides %5 lakh health cover to all J&K residents. 25 \u00b0=\u00abSd HADP has an outlay of 5,013 crore and 29 pro...",
+    "explanation": "The tertiary (services) sector contributes the largest share to Jammu & Kashmir's economy at over 61% of GSVA, followed by agriculture and industry.",
+    "tip": "Tertiary sector accounts for over 61% of J&K GSVA.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-19",
     "categoryId": "current_affairs",
-    "question": "Under the J&K Budget 2026-27, the Restructured Weather Based Crop Insurance Scheme was extended to:",
-    "answer": "apple, saffron, mango and litehi",
+    "question": "Under the J&K Budget, the Restructured Weather Based Crop Insurance Scheme (RWBCIS) was extended to which commercial crops?",
+    "answer": "Apple, saffron, mango and litchi",
     "options": [
-      "apple, saffron, mango and litehi",
-      "paddy and maize only",
-      "walnut and almond only",
-      "saffron only"
+      "Apple, saffron, mango and litchi",
+      "Paddy and maize only",
+      "Walnut and almond only",
+      "Saffron only"
     ],
-    "explanation": "Police and public order are reserved to the LG under the J&K Reorganisation Act, 2019. 02 National Affairs and Polity Q Answer Explanation 1 ic Tamil Nadu-Vijay, Assam-Sarma and Puducherry-Rangasamy are correct. Kerala\u2019s Chief Minister is V.D. Satheesan.",
-    "tip": "Police and public order are reserved to the LG under the J&K Reorganisation Act, 2019. 02 National Affairs and Polity Q ...",
+    "explanation": "The Restructured Weather Based Crop Insurance Scheme (RWBCIS) in J&K was extended to cover apple, saffron, mango, and litchi against localized weather perils.",
+    "tip": "RWBCIS covers apple, saffron, mango and litchi.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-20",
     "categoryId": "current_affairs",
-    "question": ". Consider the following statements about the MUMKIN scheme of J&K: 4, Itis a livelihood generation scheme for young people. 2. It provides a subsidy of up to %80,000 or 10% of the on-road price, whichever is lower, to buy small commercial vehicles 3. The applicant should be 18-35 years old. Which are correct?",
-    "answer": "1 only",
+    "question": "Consider the following statements about the MUMKIN scheme under Mission Youth J&K: 1. It is a flagship youth livelihood generation initiative. 2. It provides a subsidy of up to ₹80,000 or 10% of on-road vehicle cost (matched by 10% vehicle manufacturer discount). 3. The applicant age criteria is 18 to 35 years. Which are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 and 2 only",
-      "1 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "Artide 66 includes elected and nominated MPs, but not MLAs. Article 71 sends disputes to the Supreme Court.",
-    "tip": "Artide 66 includes elected and nominated MPs, but not MLAs. Article 71 sends disputes to the Supreme Court.",
+    "explanation": "Under the MUMKIN scheme of Mission Youth J&K, eligible youths aged 18–35 receive financial assistance to acquire small commercial vehicles, with 10% subsidy from Mission Youth and 10% discount from the vehicle maker, requiring zero upfront collateral.",
+    "tip": "MUMKIN: 18-35 years, 10% subsidy + 10% manufacturer discount on commercial vehicles.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-21",
     "categoryId": "current_affairs",
-    "question": "For Census 2027, the reference date for Ladakh and the snow-bound areas of J&K is",
-    "answer": "1 April 2026",
+    "question": "For the upcoming national Census, what is the reference date for Ladakh and the designated snow-bound areas of Jammu & Kashmir and Himachal Pradesh?",
+    "answer": "1 October 2026",
     "options": [
-      "1 March 2027",
       "1 October 2026",
-      "1 April 2026",
-      "16 June 2025"
+      "1 March 2027",
+      "1 January 2026",
+      "1 April 2027"
     ],
-    "explanation": "C.P. Radhakrishnan was Governor af Maharashtra before becoming Vice-President.",
-    "tip": "C.P. Radhakrishnan was Governor af Maharashtra before becoming Vice-President.",
+    "explanation": "The Census reference date for snow-bound and non-synchronous areas (Ladakh, higher reaches of J&K, Himachal Pradesh, and Uttarakhand) is 1 October 2026, whereas 1 March 2027 is the reference date for the rest of India.",
+    "tip": "Census reference date: 1 Oct 2026 for snow-bound regions; 1 March 2027 for rest of India.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-22",
     "categoryId": "current_affairs",
-    "question": "Which Amarnath Yatra route starts from Ganderbal district?",
-    "answer": "Battal",
+    "question": "Which Amarnath Yatra base camp and trekking route begins from Ganderbal district in Kashmir?",
+    "answer": "Baltal route",
     "options": [
-      "Pahaigam",
-      "Battal",
-      "Chandanwari",
-      "Sheshnag"
+      "Baltal route",
+      "Pahalgam-Chandanwari route",
+      "Panjtarni route",
+      "Sheshnag route"
     ],
-    "explanation": "The 2025 SIR began in Bihar.",
-    "tip": "The 2025 SIR began in Bihar.",
+    "explanation": "The shorter 14 km Baltal route begins from Baltal in Ganderbal district of Kashmir, while the traditional 48 km route begins from Chandanwari / Pahalgam in Anantnag district.",
+    "tip": "Baltal route is in Ganderbal district; Pahalgam-Chandanwari route is in Anantnag.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-23",
     "categoryId": "current_affairs",
-    "question": "Which J&K scheme gives universal health cover of 25 lakh per family to all residents?",
-    "answer": "HADP 149 (] \u2019 Quint Essence ise",
+    "question": "Which J&K health insurance scheme provides universal cashless health cover of ₹5 lakh per family to all UT residents on a floater basis?",
+    "answer": "Ayushman Bharat PM-JAY SEHAT",
     "options": [
-      "MUMKIN",
-      "Tejaswini",
-      "AB-PMJAY SEHAT",
-      "HADP 149 (] \u2019 Quint Essence ise"
+      "Ayushman Bharat PM-JAY SEHAT",
+      "Arogya Sanjeevani J&K",
+      "HADP Health Shield",
+      "Mission Youth Swasthya"
     ],
-    "explanation": "The four qualifying dates are 1 January, 1 April, 1 July and 1 October, introduced by the 2021 amendment.",
-    "tip": "The four qualifying dates are 1 January, 1 April, 1 July and 1 October, introduced by the 2021 amendment.",
+    "explanation": "Ayushman Bharat PM-JAY SEHAT is a universal health insurance scheme that covers all residents of Jammu and Kashmir with ₹5 lakh annual cashless hospitalization cover per family.",
+    "tip": "AB-PMJAY SEHAT provides ₹5 lakh universal health cover to all J&K families.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-24",
     "categoryId": "current_affairs",
-    "question": "The Holistic Agriculture Development Programme (HADP) of J&K has:",
-    "answer": "\u00a51,000 crore and 10 projects",
+    "question": "The Holistic Agriculture Development Programme (HADP) of Jammu and Kashmir has an approved financial outlay of:",
+    "answer": "₹5,013 crore across 29 projects",
     "options": [
-      "85,013 crore and 29 projects",
-      "\u00a51,000 crore and 10 projects",
-      "\u00a33,000 crore and 29 projects",
-      "%5,043 crore and 50 projects"
+      "₹5,013 crore across 29 projects",
+      "₹2,500 crore across 15 projects",
+      "₹1,000 crore across 10 projects",
+      "₹10,000 crore across 50 projects"
     ],
-    "explanation": "The 129th Amendment Bill proposes simultaneous elections, including insertion of Article 82A.",
-    "tip": "The 129th Amendment Bill proposes simultaneous elections, including insertion of Article 82A.",
+    "explanation": "The Holistic Agriculture Development Programme (HADP) in J&K entails an investment of ₹5,013 crore across 29 targeted sectoral projects to transform agriculture, horticulture, and livestock economy in the UT.",
+    "tip": "HADP outlay = ₹5,013 crore across 29 projects.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-25",
     "categoryId": "current_affairs",
-    "question": "Under the J&K Reorganisation Act, 2019, which subject is reserved for the LG (Union) and not the elected government of the UT of J&k?",
-    "answer": "Health",
+    "question": "Under the Jammu and Kashmir Reorganisation Act, 2019, which of the following subjects are specifically reserved for the Lieutenant Governor?",
+    "answer": "Public Order and Police",
     "options": [
-      "Public order and police",
-      "Education",
-      "Health",
-      "Agriculture 150 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "Public Order and Police",
+      "Agriculture and Land Revenue",
+      "School and Higher Education",
+      "Municipal Governance"
     ],
-    "explanation": "The Bill proposed a maximum of 860; a propased strength must not be confused with the existing maximum.",
-    "tip": "The Bill proposed a maximum of 860; a propased strength must not be confused with the existing maximum.",
+    "explanation": "Under Section 32 of the J&K Reorganisation Act, 2019, the legislative assembly of J&K can make laws for any part of the UT regarding State List subjects except 'Police' (Entry 2) and 'Public Order' (Entry 1), which remain under the executive control of the Lieutenant Governor.",
+    "tip": "Police and Public Order are reserved to the LG under the J&K Reorganisation Act 2019.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-26",
     "categoryId": "current_affairs",
-    "question": "Consider the following pairs (State - CM swom in in May 2028): 4. Tamil Nadu - C. Joseph Vijay 2. Kerala - Pinarayi Vijayan 3. Assam - Himanta Biswa Sarma 4. Puducherry -N. Rangasamy How many of the above pairs are correctly matched?",
-    "answer": "Only two",
+    "question": "Consider the following pairs of Chief Ministers who took oath following state assembly elections: 1. Assam - Himanta Biswa Sarma 2. Puducherry - N. Rangasamy 3. Kerala - Pinarayi Vijayan. How many pairs are correctly matched?",
+    "answer": "All three",
     "options": [
       "Only one",
       "Only two",
-      "Only three",
-      "All four"
+      "All three",
+      "None"
     ],
-    "explanation": "The reference date is 1 October 2026 for the designated snow-bound areas, and 1 March 2027 for the rest of India.",
-    "tip": "The reference date is 1 October 2026 for the designated snow-bound areas, and 1 March 2027 for the rest of India.",
+    "explanation": "All three pairs are correctly matched with their respective Chief Ministers.",
+    "tip": "Assam - Sarma; Puducherry - Rangasamy; Kerala - Vijayan.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-27",
     "categoryId": "current_affairs",
-    "question": "With reference to the Vice-Presicential election of 9 September 2025, consider: 4. Nominated members of the Rajya Sabha were eligible to vote. 2. Members of State Legislative Assemblies were eligible to vote 3. Disputes about the election are decided by the Supreme Court Which of the statements given above is/are correct?",
-    "answer": "1 and 3 only",
+    "question": "With reference to the election of the Vice-President of India, consider: 1. The electoral college consists of members of both Houses of Parliament (both elected and nominated). 2. Members of State Legislative Assemblies do not participate. 3. Disputes regarding election are decided by the Supreme Court of India. Which are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 and 2 only",
-      "1 and 3 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "Baltal is in Ganderbal; the Pahalgam-Chandanwani route is in Anantnag.",
-    "tip": "Baltal is in Ganderbal; the Pahalgam-Chandanwani route is in Anantnag.",
+    "explanation": "Under Article 66, the Vice-President is elected by an electoral college consisting of all members (elected and nominated) of both Lok Sabha and Rajya Sabha; MLAs do not participate. Under Article 71, all doubts and disputes arising out of the election are inquired into and decided by the Supreme Court.",
+    "tip": "Vice-President electoral college: MPs of both houses only (Article 66); Supreme Court decides disputes (Article 71).",
     "difficulty": "advanced"
   },
   {
     "id": "ca-28",
     "categoryId": "current_affairs",
-    "question": "When elected Vice-President in 2025, C._P. Radhakrishnan was serving as the Governor of-",
+    "question": "When elected Vice-President of India, C.P. Radhakrishnan was serving as the Governor of which state?",
     "answer": "Maharashtra",
     "options": [
-      "Jharkhand",
-      "Telangana",
       "Maharashtra",
-      "Tamil Nadu"
+      "Jharkhand",
+      "Tamil Nadu",
+      "West Bengal"
     ],
-    "explanation": "AB-PMJAY SEHAT provides %5 lakh health cover to all J&K residents. 25 \u00b0=\u00abSd HADP has an outlay of 5,013 crore and 29 projects.",
-    "tip": "AB-PMJAY SEHAT provides %5 lakh health cover to all J&K residents. 25 \u00b0=\u00abSd HADP has an outlay of 5,013 crore and 29 pro...",
+    "explanation": "C.P. Radhakrishnan was serving as the Governor of Maharashtra prior to his election as Vice-President of India.",
+    "tip": "C.P. Radhakrishnan was Governor of Maharashtra before becoming Vice-President.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-29",
     "categoryId": "current_affairs",
-    "question": "The 2025 Special Intensive Revision (SIR) of electoral rolls was first carried outin:",
-    "answer": "Assam",
+    "question": "The 2025 Special Intensive Revision (SIR) of electoral rolls by the Election Commission of India was initiated in:",
+    "answer": "Bihar",
     "options": [
-      "Assam",
       "Bihar",
-      "West Bengal",
-      "Delhi"
+      "Assam",
+      "Jammu & Kashmir",
+      "Uttar Pradesh"
     ],
-    "explanation": "Police and public order are reserved to the LG under the J&K Reorganisation Act, 2019. 02 National Affairs and Polity Q Answer Explanation 1 ic Tamil Nadu-Vijay, Assam-Sarma and Puducherry-Rangasamy are correct. Kerala\u2019s Chief Minister is V.D. Satheesan.",
-    "tip": "Police and public order are reserved to the LG under the J&K Reorganisation Act, 2019. 02 National Affairs and Polity Q ...",
+    "explanation": "The Election Commission conducted the Special Intensive Revision (SIR) across selected constituencies starting with Bihar ahead of the 2025 assembly elections.",
+    "tip": "2025 SIR began in Bihar.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-30",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the qualifying dates for enrolment as a voter: 4. There are four qualifying dates in a year. 2. They were introduced by the Electian Laws (Amendment) Act, 2021 3. 1 October is one of them. Which are correct?",
-    "answer": "1 and 2 only",
+    "question": "Under the amended Representation of the People Act, how many qualifying dates in a calendar year are available for eligible citizens to enrol as voters (1 January, 1 April, 1 July, 1 October)?",
+    "answer": "Four qualifying dates",
     "options": [
-      "1 only",
-      "1 and 2 only",
-      "2 and 3 only",
-      "1, 2and3"
+      "Two qualifying dates",
+      "Three qualifying dates",
+      "Four qualifying dates",
+      "One single qualifying date"
     ],
-    "explanation": "Artide 66 includes elected and nominated MPs, but not MLAs. Article 71 sends disputes to the Supreme Court.",
-    "tip": "Artide 66 includes elected and nominated MPs, but not MLAs. Article 71 sends disputes to the Supreme Court.",
+    "explanation": "The Election Laws (Amendment) Act amended Section 14(b) of the RPA 1950 to provide four qualifying dates every year — January 1, April 1, July 1, and October 1 — instead of the earlier single January 1 date.",
+    "tip": "Four qualifying dates: 1 Jan, 1 April, 1 July, 1 Oct.",
     "difficulty": "beginner"
   },
   {
@@ -469,8 +462,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "raising Lok Sabha strength to 850",
       "women's reservation"
     ],
-    "explanation": "C.P. Radhakrishnan was Governor af Maharashtra before becoming Vice-President.",
-    "tip": "C.P. Radhakrishnan was Governor af Maharashtra before becoming Vice-President.",
+    "explanation": "C.P. Radhakrishnan was Governor of Maharashtra before becoming Vice-President.",
+    "tip": "C.P. Radhakrishnan was Governor of Maharashtra before becoming Vice-President.",
     "difficulty": "intermediate"
   },
   {
@@ -482,7 +475,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "750",
       "800",
       "850",
-      "888 151 @ 7006256779, 7006442202 @ www.aqcrias.com A Quink Essence Ag"
+      "888"
     ],
     "explanation": "The 2025 SIR began in Bihar.",
     "tip": "The 2025 SIR began in Bihar.",
@@ -506,31 +499,31 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-34",
     "categoryId": "current_affairs",
-    "question": "Consider the following about removing the Speaker of the Lok Sabha: 4. The resolution needs at least 14 days\u2019 notice. 2. It must be passed by a majority of all the then members of the House. 3. While the resolution is being considered, the Speaker cannot vote at all Which are correct?",
-    "answer": "2 and 3 only",
+    "question": "Consider the following statements about removing the Speaker of the Lok Sabha: 1. The resolution needs at least 14 days’ notice. 2. It must be passed by a majority of all the then members of the House. 3. While the resolution is being considered, the Speaker cannot vote in case of equality of votes. Which statements are correct?",
+    "answer": "1, 2 and 3",
     "options": [
-      "1 and2 only",
+      "1 and 2 only",
       "2 and 3 only",
-      "7 and 3 only",
-      "1, 2and3 Q10, The Presidential Reference on Governors\u2019 assent to Bills (answered on 20 November 2025) was made under: (a) Arficle 142 (b) Article 143 (c) Article 145 (d) Article 200"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "The 129th Amendment Bill proposes simultaneous elections, including insertion of Article 82A.",
-    "tip": "The 129th Amendment Bill proposes simultaneous elections, including insertion of Article 82A.",
+    "explanation": "Under Article 94(c) and Article 96, a resolution to remove the Speaker requires 14 days' notice and must be passed by an effective majority. Under Article 96(2), the Speaker can speak and vote in the first instance, but cannot vote in the case of equality of votes.",
+    "tip": "Speaker removal: 14 days notice, effective majority, can vote in first instance but not casting vote.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-35",
     "categoryId": "current_affairs",
     "question": "Consider the following about the Supreme Court's opinion of 20 November 2025 1. It upheld the fixed timelines laid down in the April 2025 Tamil Nadu Governor case. 2. It ruled out \"deemed assent\" 3. It held that a Governor's prolonged, unexplained inaction may attract limited judicial scrutiny Which are correct?",
-    "answer": "4 and 3 only",
+    "answer": "1 and 3 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "The Bill proposed a maximum of 860; a propased strength must not be confused with the existing maximum.",
-    "tip": "The Bill proposed a maximum of 860; a propased strength must not be confused with the existing maximum.",
+    "explanation": "The Bill proposed a maximum of 860; a proposed strength must not be confused with the existing maximum.",
+    "tip": "The Bill proposed a maximum of 860; a proposed strength must not be confused with the existing maximum.",
     "difficulty": "intermediate"
   },
   {
@@ -559,23 +552,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "twas enacted under Article 3 by a simple majority _",
       "It was done by a Presidential Order under Article 4"
     ],
-    "explanation": "The resolution requires 14 days\u2019 notice and an effective majority. Article 96 allows the Speaker to vote in the first instance.",
-    "tip": "The resolution requires 14 days\u2019 notice and an effective majority. Article 96 allows the Speaker to vote in the first in...",
+    "explanation": "The resolution requires 14 days’ notice and an effective majority. Article 96 allows the Speaker to vote in the first instance.",
+    "tip": "The resolution requires 14 days’ notice and an effective majority. Article 96 allows the Speaker to vote in the first in...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-38",
     "categoryId": "current_affairs",
-    "question": "Raj Niwas, the official residence of Lieutenant Governors, has been renamed",
+    "question": "Raj Niwas, the official residence of Lieutenant Governors of Union Territories, has been renamed:",
     "answer": "Lok Niwas",
     "options": [
       "Lok Bhavan",
       "Lok Niwas",
       "Jan Niwas",
-      "Seva Sadan Q15, \"Seva Teerth\", inaugurated on 73 February 2026, houses (a) the new Pariiament's committee rooms (b) the PMO, the National Security Council Secretariat and the Cabinet Secretariat (c) the Ministries of Home Affairs and External Affairs (d) the Election Commission of India"
+      "Seva Sadan"
     ],
-    "explanation": "Artide 143 provides the Supreme Court's advisory jurisdiction for a Presidential Reference. 1\u00b0=62=~B The opinion rejected fixed court-imposed timelines and deemed assent, while allowing limited scrutiny of prolonged unexplained inaction",
-    "tip": "Artide 143 provides the Supreme Court's advisory jurisdiction for a Presidential Reference. 1\u00b0=62=~B The opinion rejecte...",
+    "explanation": "The Union Ministry of Home Affairs announced the renaming of Raj Niwas (the official residence of Lieutenant Governors of Union Territories) to 'Lok Niwas' to symbolise governance dedicated to the people.",
+    "tip": "Raj Niwas renamed to Lok Niwas.",
     "difficulty": "intermediate"
   },
   {
@@ -587,10 +580,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "N. Biren Singh",
       "Th. Biswajit Singh",
       "Yumnam Khemehand Singh",
-      "Nemcha Kipgen 152 (] A Quink Essence Ag"
+      "Nemcha Kipgen"
     ],
-    "explanation": "Surya Kant is from Haryana and is the 53rd CJl. 49 \u00ab\u00a2 A State-name change under Articles 3-4 requires a simple majority; it is not an Article 368 amendment.",
-    "tip": "Surya Kant is from Haryana and is the 53rd CJl. 49 \u00ab\u00a2 A State-name change under Articles 3-4 requires a simple majority;...",
+    "explanation": "Surya Kant is from Haryana and is the 53rd CJl. 49 «¢ A State-name change under Articles 3-4 requires a simple majority; it is not an Article 368 amendment.",
+    "tip": "Surya Kant is from Haryana and is the 53rd CJl. 49 «¢ A State-name change under Articles 3-4 requires a simple majority;...",
     "difficulty": "advanced"
   },
   {
@@ -602,7 +595,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "Raj Niwas became Lok Niwas for LGs; Raj Bhavan became Lok Bhavan for Governors.",
     "tip": "Raj Niwas became Lok Niwas for LGs; Raj Bhavan became Lok Bhavan for Governors.",
@@ -627,12 +620,12 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-42",
     "categoryId": "current_affairs",
     "question": "Consider the following statements about Census 2027: 4. It will be the first census with caste enumeration since 1934 2. The reference date for snow-bound areas such as Ladakh and J&K is 1 October 2026 3, Census is a subject in the Concurrent List. Which are correct?",
-    "answer": "4 and 3 only",
+    "answer": "1 and 3 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
     "explanation": "Yumnam Khemchand Singh became Chief Minister when President's Rule was revoked. W B Both the National Emergency condition and the Election Commission certificate are required. An Assembly resolution is not an extension condition. 198 ssence [AC clases redefined",
     "tip": "Yumnam Khemchand Singh became Chief Minister when President's Rule was revoked. W B Both the National Emergency conditio...",
@@ -664,8 +657,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "2, 3and 4 only",
       "1,2, 3 and4"
     ],
-    "explanation": "Concurrent List subject. 2 \u00a2 The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarantee. 21 =&B The Foreigners Act, Pessport Entry Act and Registration of Foreigners Act were consolidated; the Citizenship Act wes not repealed",
-    "tip": "Concurrent List subject. 2 \u00a2 The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarant...",
+    "explanation": "Concurrent List subject. 2 ¢ The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarantee. 21 =&B The Foreigners Act, Pessport Entry Act and Registration of Foreigners Act were consolidated; the Citizenship Act wes not repealed",
+    "tip": "Concurrent List subject. 2 ¢ The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarant...",
     "difficulty": "intermediate"
   },
   {
@@ -679,7 +672,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "inland waterways",
       "communal harmony"
     ],
-    "explanation": "SHANTI concems licensed private participation in civil nuclear energy. 25 +c The prohibition covers online money games based on skill or chance; it does not ban all online games, 24 \u00ab=B The Gourt stayed the five-years-practice requirement, while declining to stay the entire Act 25 6 Mizoram was the first State under ULLAS; Ledakh was the first UT. Kerale\u2019s eerlier declaration was a separate campaign 2 0A Kerala, on Kerala Pirevi Day. ae The guests were Ant\u00e9nio Costa of the European Council and Ursula von der Leyen of the European Commission.",
+    "explanation": "SHANTI concems licensed private participation in civil nuclear energy. 25 +c The prohibition covers online money games based on skill or chance; it does not ban all online games, 24 «=B The Gourt stayed the five-years-practice requirement, while declining to stay the entire Act 25 6 Mizoram was the first State under ULLAS; Ledakh was the first UT. Kerale’s eerlier declaration was a separate campaign 2 0A Kerala, on Kerala Pirevi Day. ae The guests were Anténio Costa of the European Council and Ursula von der Leyen of the European Commission.",
     "tip": "SHANTI concems licensed private participation in civil nuclear energy. 25 +c The prohibition covers online money games b...",
     "difficulty": "advanced"
   },
@@ -687,15 +680,15 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-46",
     "categoryId": "current_affairs",
     "question": "Under the Promotion and Regulation of Online Gaming Act, 2025",
-    "answer": "online money games are allowed under licence 153 (] A Quink Essence Ag",
+    "answer": "online money games are allowed under licence",
     "options": [
       "all online games are banned",
       "only chance-based money games are banned",
       "online money games are banned, whether skill-based or chance-based",
-      "online money games are allowed under licence 153 (] A Quink Essence Ag"
+      "online money games are allowed under licence"
     ],
-    "explanation": "Vande Mataram\u2019s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 200A Article 3: State-name alteration; Article 82: readjustment; Article 94: Speaker removal; Article 143; advisory jurisdiction",
-    "tip": "Vande Mataram\u2019s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 ...",
+    "explanation": "Vande Mataram’s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 200A Article 3: State-name alteration; Article 82: readjustment; Article 94: Speaker removal; Article 143; advisory jurisdiction",
+    "tip": "Vande Mataram’s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 ...",
     "difficulty": "intermediate"
   },
   {
@@ -751,7 +744,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "options": [
       "Prabowo Subianto",
       "Emmanuel Macron",
-      "Ant\u00e9nio Costa and Ursula von der Leyen",
+      "Anténio Costa and Ursula von der Leyen",
       "Keir Starmer"
     ],
     "explanation": "Section 45ZA provides for Government notification in consuitetion with RBI; the retained period is April 2026-March 2031",
@@ -769,8 +762,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Only three",
       "All four"
     ],
-    "explanation": "Section 4528 constitutes the sixemember Monetary Policy Committee.",
-    "tip": "Section 4528 constitutes the sixemember Monetary Policy Committee.",
+    "explanation": "Section 4528 constitutes the six-member Monetary Policy Committee.",
+    "tip": "Section 4528 constitutes the six-member Monetary Policy Committee.",
     "difficulty": "advanced"
   },
   {
@@ -782,7 +775,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Article 3 - 1. Advisory jurisdiction of the Supreme Court",
       "Article 82 - 2. Removal of the Speaker",
       "Article 94 - 3. Alteration of the name of a State",
-      "Article 143 - 4. Readjustment after each census (a) A-3, B4, C-2, D-1 (b) Ad, B-3, C-1, D-2 (c) A-3, B-2, C-4, D-1 (d) A-t, B-4, C-2, D-3 154 (]"
+      "Article 143 - 4. Readjustment after each census (a) A-3, B4, C-2, D-1 (b) Ad, B-3, C-1, D-2 (c) A-3, B-2, C-4, D-1 (d) A-t, B-4, C-2, D-3 154"
     ],
     "explanation": "Rohit Jain became an RBI Deputy Governor in May 2026",
     "tip": "Rohit Jain became an RBI Deputy Governor in May 2026",
@@ -806,16 +799,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-54",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the RBI's August 2026 policy: 4. The MPC kept the repo rate unchanged by a unanimous vote 2. The stance was changed to \"accommodative\" 3. CPI in\u2018lation for 2026-27 was projected at 5.0%. Which are correct?",
+    "question": "Consider the following statements about the RBI's August 2026 policy: 4. The MPC kept the repo rate unchanged by a unanimous vote 2. The stance was changed to \"accommodative\" 3. CPI in‘lation for 2026-27 was projected at 5.0%. Which are correct?",
     "answer": "1 and 2 only",
     "options": [
       "1 and 2 only",
       "1 and 3 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Concurrent List subject. 2 \u00a2 The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarantee. 21 =&B The Foreigners Act, Pessport Entry Act and Registration of Foreigners Act were consolidated; the Citizenship Act wes not repealed",
-    "tip": "Concurrent List subject. 2 \u00a2 The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarant...",
+    "explanation": "Concurrent List subject. 2 ¢ The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarantee. 21 =&B The Foreigners Act, Pessport Entry Act and Registration of Foreigners Act were consolidated; the Citizenship Act wes not repealed",
+    "tip": "Concurrent List subject. 2 ¢ The guarantee is 125 days per rural household annually, replacing MGNREGA's 100-day guarant...",
     "difficulty": "beginner"
   },
   {
@@ -829,7 +822,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "25 bps in Dec 2025",
       "150 bps in 2024"
     ],
-    "explanation": "SHANTI concems licensed private participation in civil nuclear energy. 25 +c The prohibition covers online money games based on skill or chance; it does not ban all online games, 24 \u00ab=B The Gourt stayed the five-years-practice requirement, while declining to stay the entire Act 25 6 Mizoram was the first State under ULLAS; Ledakh was the first UT. Kerale\u2019s eerlier declaration was a separate campaign 2 0A Kerala, on Kerala Pirevi Day. ae The guests were Ant\u00e9nio Costa of the European Council and Ursula von der Leyen of the European Commission.",
+    "explanation": "SHANTI concems licensed private participation in civil nuclear energy. 25 +c The prohibition covers online money games based on skill or chance; it does not ban all online games, 24 «=B The Gourt stayed the five-years-practice requirement, while declining to stay the entire Act 25 6 Mizoram was the first State under ULLAS; Ledakh was the first UT. Kerale’s eerlier declaration was a separate campaign 2 0A Kerala, on Kerala Pirevi Day. ae The guests were Anténio Costa of the European Council and Ursula von der Leyen of the European Commission.",
     "tip": "SHANTI concems licensed private participation in civil nuclear energy. 25 +c The prohibition covers online money games b...",
     "difficulty": "intermediate"
   },
@@ -844,8 +837,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "MPC; 2026-2031",
       "Finance Commission; 2026-2031"
     ],
-    "explanation": "Vande Mataram\u2019s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 200A Article 3: State-name alteration; Article 82: readjustment; Article 94: Speaker removal; Article 143; advisory jurisdiction",
-    "tip": "Vande Mataram\u2019s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 ...",
+    "explanation": "Vande Mataram’s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 200A Article 3: State-name alteration; Article 82: readjustment; Article 94: Speaker removal; Article 143; advisory jurisdiction",
+    "tip": "Vande Mataram’s composition and the births of Patel and Birsa date to 1875; Guru Tegh Bahadur's martyrdam dates to 1675 ...",
     "difficulty": "intermediate"
   },
   {
@@ -896,7 +889,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-60",
     "categoryId": "current_affairs",
-    "question": "According to the June 2026 Provisional Estimates, India\u2019s real GDP growth in FY 2025-26 was",
+    "question": "According to the June 2026 Provisional Estimates, India’s real GDP growth in FY 2025-26 was",
     "answer": "7.4%",
     "options": [
       "65%",
@@ -919,20 +912,20 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "78%",
       "8.4%"
     ],
-    "explanation": "Section 4528 constitutes the sixemember Monetary Policy Committee.",
-    "tip": "Section 4528 constitutes the sixemember Monetary Policy Committee.",
+    "explanation": "Section 4528 constitutes the six-member Monetary Policy Committee.",
+    "tip": "Section 4528 constitutes the six-member Monetary Policy Committee.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-62",
     "categoryId": "current_affairs",
-    "question": "In the Budget 2026-27 \"Rupee comes from\u201d chart, the largest single source is:",
+    "question": "In the Budget 2026-27 \"Rupee comes from” chart, the largest single source is:",
     "answer": "Corperation tax",
     "options": [
       "Income tax",
       "Corperation tax",
       "Borrowings and other liabilities",
-      "GST 155 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "GST"
     ],
     "explanation": "Rohit Jain became an RBI Deputy Governor in May 2026",
     "tip": "Rohit Jain became an RBI Deputy Governor in May 2026",
@@ -942,10 +935,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-63",
     "categoryId": "current_affairs",
     "question": "In the \"Rupee goes to\" chart, the largest item is",
-    "answer": "States\u2019 share of taxes",
+    "answer": "States’ share of taxes",
     "options": [
       "Interest payments",
-      "States\u2019 share of taxes",
+      "States’ share of taxes",
       "Defence",
       "Central sector schemes"
     ],
@@ -959,7 +952,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "question": "Biopharma SHAKTI, announced in Budget 2026-27, has an outlay of:",
     "answer": "240,000 crore",
     "options": [
-      "%1,000 crore",
+      "₹1,000 crore",
       "210,000 crore over 5 years",
       "240,000 crore",
       "1 lakh crore"
@@ -979,14 +972,14 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Gujarat, Maharashtra, Goa, Karnataka",
       "Assam, Meghalaya, Tripura, Mizoram"
     ],
-    "explanation": "base estimate 9 \u00a2 Q1 FY 2026-27 real GDP growth was 7.8%. wm Borrowings and other liabilities are the largest component, at 24%.",
-    "tip": "base estimate 9 \u00a2 Q1 FY 2026-27 real GDP growth was 7.8%. wm Borrowings and other liabilities are the largest component,...",
+    "explanation": "base estimate 9 ¢ Q1 FY 2026-27 real GDP growth was 7.8%. wm Borrowings and other liabilities are the largest component, at 24%.",
+    "tip": "base estimate 9 ¢ Q1 FY 2026-27 real GDP growth was 7.8%. wm Borrowings and other liabilities are the largest component,...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-66",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements: \u201c4. As per the Economic Survey 2025-26, India accounts for more than 5% of global merchandise exports. 2. As per the Economic Survey 2025-26, India\u2019s services imports were greater than its exports. Which is/are correct?",
+    "question": "Consider the following statements: “4. As per the Economic Survey 2025-26, India accounts for more than 5% of global merchandise exports. 2. As per the Economic Survey 2025-26, India’s services imports were greater than its exports. Which is/are correct?",
     "answer": "2 only",
     "options": [
       "1 only",
@@ -994,14 +987,14 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Both",
       "Neither"
     ],
-    "explanation": "States\u2019 share of taxes is the largest component, at 22%, followed by interest at 20%. 199 ssence [AC clases redefined",
-    "tip": "States\u2019 share of taxes is the largest component, at 22%, followed by interest at 20%. 199 ssence [AC clases redefined",
+    "explanation": "States’ share of taxes is the largest component, at 22%, followed by interest at 20%. 199 ssence [AC clases redefined",
+    "tip": "States’ share of taxes is the largest component, at 22%, followed by interest at 20%. 199 ssence [AC clases redefined",
     "difficulty": "beginner"
   },
   {
     "id": "ca-67",
     "categoryId": "current_affairs",
-    "question": "The Economic Survey 2025-26 projected India\u2019s real GDP growth for 2026-27 at:",
+    "question": "The Economic Survey 2025-26 projected India’s real GDP growth for 2026-27 at:",
     "answer": "6.8-7.2%",
     "options": [
       "6.3-6.8%",
@@ -1076,16 +1069,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-72",
     "categoryId": "current_affairs",
-    "question": "Consider the following about the Income-tax Act, 2025: \u201c1. It came into force on 1 April 2026 2. It introduces the concept of \u201ctax year\u2019. 3. It abolished the old tax regime. Which are correct?",
+    "question": "Consider the following about the Income-tax Act, 2025: “1. It came into force on 1 April 2026 2. It introduces the concept of “tax year’. 3. It abolished the old tax regime. Which are correct?",
     "answer": "2 and 3 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
       "1 and 3 only",
-      "1, 2and3 156 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "1, 2 and 3"
     ],
-    "explanation": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) \u00b0C Contribution to GDP is the new criterion, with 10% weight.",
-    "tip": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) \u00b0C Contribution to GDP is the ne...",
+    "explanation": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) °C Contribution to GDP is the new criterion, with 10% weight.",
+    "tip": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) °C Contribution to GDP is the ne...",
     "difficulty": "beginner"
   },
   {
@@ -1129,7 +1122,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Liechtenstein",
       "Denmark"
     ],
-    "explanation": "regime. 2 6c Accounts allow up to four nominees; lockers and safe custody allow successive nominations only. 22) 1c. The insurer FDI limit rose from 74% to 100%. 23\u00b0 \u00ab=D EFTA comprises Switzerland, Norway, Iceland and Liechtenstein; Denmark is not included. 2400 S8P upgraded India to BBB; Fitch's rating remained BBB-,",
+    "explanation": "regime. 2 6c Accounts allow up to four nominees; lockers and safe custody allow successive nominations only. 22) 1c. The insurer FDI limit rose from 74% to 100%. 23° «=D EFTA comprises Switzerland, Norway, Iceland and Liechtenstein; Denmark is not included. 2400 S8P upgraded India to BBB; Fitch's rating remained BBB-,",
     "tip": "regime. 2 6c Accounts allow up to four nominees; lockers and safe custody allow successive nominations only. 22) 1c. The...",
     "difficulty": "advanced"
   },
@@ -1137,15 +1130,15 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-76",
     "categoryId": "current_affairs",
     "question": "Which agency upgraded India's sovereign rating to BBB in August 20257",
-    "answer": "Fiteh",
+    "answer": "Fitch",
     "options": [
       "Moody's",
-      "Fiteh",
+      "Fitch",
       "S&P Global",
       "DBRS"
     ],
-    "explanation": "The Pulses Mission targets self-sufficiency by 2030-31. 26 \u00ab8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Surya Ghar concems rooftop solar.",
-    "tip": "The Pulses Mission targets self-sufficiency by 2030-31. 26 \u00ab8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Su...",
+    "explanation": "The Pulses Mission targets self-sufficiency by 2030-31. 26 «8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Surya Ghar concems rooftop solar.",
+    "tip": "The Pulses Mission targets self-sufficiency by 2030-31. 26 «8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Su...",
     "difficulty": "intermediate"
   },
   {
@@ -1159,8 +1152,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "2035",
       "2047"
     ],
-    "explanation": "CA Prasanna Kumar D is ICAI\u2019s 74th President for 2026-27 2 6c Zou Jay\u2019 heads the AIIB, headquartered in Beijing.",
-    "tip": "CA Prasanna Kumar D is ICAI\u2019s 74th President for 2026-27 2 6c Zou Jay\u2019 heads the AIIB, headquartered in Beijing.",
+    "explanation": "CA Prasanna Kumar D is ICAI’s 74th President for 2026-27 2 6c Zou Jay’ heads the AIIB, headquartered in Beijing.",
+    "tip": "CA Prasanna Kumar D is ICAI’s 74th President for 2026-27 2 6c Zou Jay’ heads the AIIB, headquartered in Beijing.",
     "difficulty": "intermediate"
   },
   {
@@ -1202,22 +1195,22 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "NDB",
       "ADB",
       "AlIB",
-      "IMF 157 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "IMF"
     ],
-    "explanation": "A The New Delhi venue and declaration are correct. It was Incia\u2019s fourth cheirship; Malaysia and Thailand are partners,",
-    "tip": "A The New Delhi venue and declaration are correct. It was Incia\u2019s fourth cheirship; Malaysia and Thailand are partners,",
+    "explanation": "A The New Delhi venue and declaration are correct. It was Incia’s fourth cheirship; Malaysia and Thailand are partners,",
+    "tip": "A The New Delhi venue and declaration are correct. It was Incia’s fourth cheirship; Malaysia and Thailand are partners,",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-81",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the Strait of Hormuz: \u20184. It connects the Persian Gulf with the Gulf of Oman 2. Oman's Musandam peninsula lies on its southern side. 3. It connects the Red Sea with the Gulf of Aden. Which are correct?",
+    "question": "Consider the following statements about the Strait of Hormuz: ‘4. It connects the Persian Gulf with the Gulf of Oman 2. Oman's Musandam peninsula lies on its southern side. 3. It connects the Red Sea with the Gulf of Aden. Which are correct?",
     "answer": "1 and 2 only",
     "options": [
       "only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "Biopharma SHAKTI has 10,000 crore over five years.",
     "tip": "Biopharma SHAKTI has 10,000 crore over five years.",
@@ -1256,7 +1249,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-84",
     "categoryId": "current_affairs",
-    "question": "With reference to the 18th BRICS Summit. consider: \u201c4. It was held in New Delhi on 12-13 September 2026. 2. It was India's third BRICS chairship. 3. Its outcome document is the New Delhi Declaration. 4. Malaysia and Thailand attended as full members. Which are correct?",
+    "question": "With reference to the 18th BRICS Summit. consider: “4. It was held in New Delhi on 12-13 September 2026. 2. It was India's third BRICS chairship. 3. Its outcome document is the New Delhi Declaration. 4. Malaysia and Thailand attended as full members. Which are correct?",
     "answer": "1, 2 and 3 only",
     "options": [
       "1 and 3 only",
@@ -1294,20 +1287,20 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Bishkek",
       "Dushanbe"
     ],
-    "explanation": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) \u00b0C Contribution to GDP is the new criterion, with 10% weight.",
-    "tip": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) \u00b0C Contribution to GDP is the ne...",
+    "explanation": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) °C Contribution to GDP is the new criterion, with 10% weight.",
+    "tip": "The recommendation is 41% of the divisible pool, unchanged from the 15th Commission 48) °C Contribution to GDP is the ne...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-87",
     "categoryId": "current_affairs",
-    "question": "Consider the following about the SCO: 4. Its Regional Anti-Terrorist Structure (RATS) is based in Tashkent. 2. Belarus became its tenth member in 2024. 3. India refused to sign the SCO Defence Ministers\u2019 joint document at Qingdao (June 2025) because it left out the Pahalgam attack Which are correct?",
+    "question": "Consider the following about the SCO: 4. Its Regional Anti-Terrorist Structure (RATS) is based in Tashkent. 2. Belarus became its tenth member in 2024. 3. India refused to sign the SCO Defence Ministers’ joint document at Qingdao (June 2025) because it left out the Pahalgam attack Which are correct?",
     "answer": "2 and 3 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4. and 3 only",
-      "1, 2and3 158 (] \u2019 Quint Essence ie"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
     "explanation": "The removed slabs are 12% and 28%; the main slabs are 5% and 18%, alongside a special 40% rate",
     "tip": "The removed slabs are 12% and 28%; the main slabs are 5% and 18%, alongside a special 40% rate",
@@ -1316,7 +1309,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-88",
     "categoryId": "current_affairs",
-    "question": "The first G20 Leaders\u2019 Summit in Africa was held in",
+    "question": "The first G20 Leaders’ Summit in Africa was held in",
     "answer": "Cape Town, 2024",
     "options": [
       "Cape Town, 2024",
@@ -1332,21 +1325,21 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-89",
     "categoryId": "current_affairs",
     "question": "Consider the following about the G20: 4. The African Union became a permanent member at the New Delhi Summit (2023) 2. The USA holds the presidency for 2026. 3. The United Kingdom will hold the 2027 presidency. Which are correct?",
-    "answer": "1, 2and3",
+    "answer": "1, 2 and 3",
     "options": [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "regime. 2 6c Accounts allow up to four nominees; lockers and safe custody allow successive nominations only. 22) 1c. The insurer FDI limit rose from 74% to 100%. 23\u00b0 \u00ab=D EFTA comprises Switzerland, Norway, Iceland and Liechtenstein; Denmark is not included. 2400 S8P upgraded India to BBB; Fitch's rating remained BBB-,",
+    "explanation": "regime. 2 6c Accounts allow up to four nominees; lockers and safe custody allow successive nominations only. 22) 1c. The insurer FDI limit rose from 74% to 100%. 23° «=D EFTA comprises Switzerland, Norway, Iceland and Liechtenstein; Denmark is not included. 2400 S8P upgraded India to BBB; Fitch's rating remained BBB-,",
     "tip": "regime. 2 6c Accounts allow up to four nominees; lockers and safe custody allow successive nominations only. 22) 1c. The...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-90",
     "categoryId": "current_affairs",
-    "question": "The Quad Foreign Ministers\u2019 Meeting of May 2026 was held in:",
+    "question": "The Quad Foreign Ministers’ Meeting of May 2026 was held in:",
     "answer": "Canberra",
     "options": [
       "Tokyo",
@@ -1354,38 +1347,38 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "New Delhi",
       "Washington"
     ],
-    "explanation": "The Pulses Mission targets self-sufficiency by 2030-31. 26 \u00ab8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Surya Ghar concems rooftop solar.",
-    "tip": "The Pulses Mission targets self-sufficiency by 2030-31. 26 \u00ab8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Su...",
+    "explanation": "The Pulses Mission targets self-sufficiency by 2030-31. 26 «8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Surya Ghar concems rooftop solar.",
+    "tip": "The Pulses Mission targets self-sufficiency by 2030-31. 26 «8 PM Surya Sarovar concems 5,000 MW of floating solar; PM Su...",
     "difficulty": "beginner"
   },
   {
     "id": "ca-91",
     "categoryId": "current_affairs",
-    "question": "Which of the following statements about the Quad is/are correct? 4. It is a treaty-based military alliance. 2. It was first proposed by Shinzo Abe in 2007. 3. India hosted a Quad Leaders\u2019 Summit in 2025",
+    "question": "Which of the following statements about the Quad is/are correct? 4. It is a treaty-based military alliance. 2. It was first proposed by Shinzo Abe in 2007. 3. India hosted a Quad Leaders’ Summit in 2025",
     "answer": "2 only",
     "options": [
       "only",
       "2 only",
       "2 and 3 only",
-      "1,2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "CA Prasanna Kumar D is ICAI\u2019s 74th President for 2026-27 2 6c Zou Jay\u2019 heads the AIIB, headquartered in Beijing.",
-    "tip": "CA Prasanna Kumar D is ICAI\u2019s 74th President for 2026-27 2 6c Zou Jay\u2019 heads the AIIB, headquartered in Beijing.",
+    "explanation": "CA Prasanna Kumar D is ICAI’s 74th President for 2026-27 2 6c Zou Jay’ heads the AIIB, headquartered in Beijing.",
+    "tip": "CA Prasanna Kumar D is ICAI’s 74th President for 2026-27 2 6c Zou Jay’ heads the AIIB, headquartered in Beijing.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-92",
     "categoryId": "current_affairs",
-    "question": "The G7 Summit of June 2026, where PM Modi addressed outreach sessions, was held at!",
+    "question": "The G7 Summit of 2026, where outreach sessions with partner countries were held, took place in:",
     "answer": "Evian",
     "options": [
       "Kananaskis",
       "Evian",
       "Hiroshima",
-      "Apulia Q13, NATO's 2026 summit was held in: (a) The Hague (b) Vilnius (c) Ankara (d) Washington"
+      "Apulia"
     ],
-    "explanation": "Hormuz connects the Persian Gulf and Gulf of Oman, with Musandam to the south; statement 3 describes a different strait.",
-    "tip": "Hormuz connects the Persian Gulf and Gulf of Oman, with Musandam to the south; statement 3 describes a different strait.",
+    "explanation": "The 52nd G7 Summit (2026) was hosted in Evian, France, following the 51st G7 Summit (2025) in Kananaskis, Canada, and the 50th (2024) in Apulia, Italy.",
+    "tip": "G7 host cities: 2024 Apulia, 2025 Kananaskis, 2026 Evian.",
     "difficulty": "intermediate"
   },
   {
@@ -1414,8 +1407,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "elected by a two-thirds majority of the General Assembly, without the Security Council",
       "appointed by the P5 by consensus"
     ],
-    "explanation": "A The New Delhi venue and declaration are correct. It was Incia\u2019s fourth cheirship; Malaysia and Thailand are partners,",
-    "tip": "A The New Delhi venue and declaration are correct. It was Incia\u2019s fourth cheirship; Malaysia and Thailand are partners,",
+    "explanation": "A The New Delhi venue and declaration are correct. It was Incia’s fourth cheirship; Malaysia and Thailand are partners,",
+    "tip": "A The New Delhi venue and declaration are correct. It was Incia’s fourth cheirship; Malaysia and Thailand are partners,",
     "difficulty": "intermediate"
   },
   {
@@ -1442,7 +1435,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Tuvalu",
       "Maldives",
       "Vanuatu",
-      "Fiji 159 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Fiji"
     ],
     "explanation": "The 26th summit was at Bishkek, Kyrgyzstan; Tianjin hosted the 25th",
     "tip": "The 26th summit was at Bishkek, Kyrgyzstan; Tianjin hosted the 25th",
@@ -1459,8 +1452,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Hisila Yami",
       "Arzu Rana Deuba"
     ],
-    "explanation": "RATS is in Tashkent, Belarus joined as the tenth member, and India\u2019s Qingdao decision concemed omission of Pahelgam. 200 ssence [AC clases redefined",
-    "tip": "RATS is in Tashkent, Belarus joined as the tenth member, and India\u2019s Qingdao decision concemed omission of Pahelgam. 200...",
+    "explanation": "RATS is in Tashkent, Belarus joined as the tenth member, and India’s Qingdao decision concemed omission of Pahelgam. 200 ssence [AC clases redefined",
+    "tip": "RATS is in Tashkent, Belarus joined as the tenth member, and India’s Qingdao decision concemed omission of Pahelgam. 200...",
     "difficulty": "intermediate"
   },
   {
@@ -1474,8 +1467,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Soe Win",
       "Thein Sein"
     ],
-    "explanation": "Johannesburg hosted the first G20 Leaders\u2019 Summit in Africa in 2025.",
-    "tip": "Johannesburg hosted the first G20 Leaders\u2019 Summit in Africa in 2025.",
+    "explanation": "Johannesburg hosted the first G20 Leaders’ Summit in Africa in 2025.",
+    "tip": "Johannesburg hosted the first G20 Leaders’ Summit in Africa in 2025.",
     "difficulty": "intermediate"
   },
   {
@@ -1504,8 +1497,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Sudan",
       "Afghanistan"
     ],
-    "explanation": "The Foreign Ministers\u2019 Meeting took place in New Delhi",
-    "tip": "The Foreign Ministers\u2019 Meeting took place in New Delhi",
+    "explanation": "The Foreign Ministers’ Meeting took place in New Delhi",
+    "tip": "The Foreign Ministers’ Meeting took place in New Delhi",
     "difficulty": "intermediate"
   },
   {
@@ -1519,8 +1512,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "the African Union",
       "BIMSTEC"
     ],
-    "explanation": "Shinzo Abe proposed the Quad in 2007. It is not 2 treaty-based military alliance, and India did not host a leaders\u2019 summit in 2025, 12\u00b0 \u00a9 =B The 2026 venue was Evian-les-Bains, France. a Ankara, Tiirkiye, hosted NATO's 2026 summit. 4\u00b0 8B Timor-Leste became ASEAN\u2019s eleventh member in October 2028.",
-    "tip": "Shinzo Abe proposed the Quad in 2007. It is not 2 treaty-based military alliance, and India did not host a leaders\u2019 summ...",
+    "explanation": "Shinzo Abe proposed the Quad in 2007. It is not a treaty-based military alliance, and India did not host a leaders’ summit in 2025, 12° © =B The 2026 venue was Evian-les-Bains, France. a Ankara, Tiirkiye, hosted NATO's 2026 summit. 4° 8B Timor-Leste became ASEAN’s eleventh member in October 2028.",
+    "tip": "Shinzo Abe proposed the Quad in 2007. It is not a treaty-based military alliance, and India did not host a leaders’ summ...",
     "difficulty": "intermediate"
   },
   {
@@ -1532,10 +1525,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, \u00a2 Khalilur Rahman of Bangladesh was elected for the 81st session; Baerbock headed the 80th. Ww Vanuatu led the UNGA initiative requesting the ICJ climate advisory opinion 18 0O=&@ Sushila Kerki was the first woman Prime Minister, in an interim role; Bhandari was the first woman President.",
-    "tip": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, \u00a2 Khalilur Rahman of Bangladesh ...",
+    "explanation": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, ¢ Khalilur Rahman of Bangladesh was elected for the 81st session; Baerbock headed the 80th. Ww Vanuatu led the UNGA initiative requesting the ICJ climate advisory opinion 18 0O=&@ Sushila Kerki was the first woman Prime Minister, in an interim role; Bhandari was the first woman President.",
+    "tip": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, ¢ Khalilur Rahman of Bangladesh ...",
     "difficulty": "beginner"
   },
   {
@@ -1549,8 +1542,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Siang",
       "Testa"
     ],
-    "explanation": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 \u00ab\u00a2 Russia was the first country to recognise the Teliben govemment formally, in July 2025 21\u00b0 \u00ab=B Resolution 2803 concems Gaza, the Board of Peace and the International Stabilization Force 22 \u00ab8B Ant\u00e9nio Costa and Ursula von der Leyen 23\u00b0 \u00ab=D All three statements on flights, the yatra end the Medog dam are correct 206 The Yarlung Tsengpo enters as the Siang, then becomes the Brahmaputra in Assam.",
-    "tip": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 \u00ab\u00a2 Russia was the first country to recognise the Teliben...",
+    "explanation": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 «¢ Russia was the first country to recognise the Teliben govemment formally, in July 2025 21° «=B Resolution 2803 concems Gaza, the Board of Peace and the International Stabilization Force 22 «8B Anténio Costa and Ursula von der Leyen 23° «=D All three statements on flights, the yatra end the Medog dam are correct 206 The Yarlung Tsengpo enters as the Siang, then becomes the Brahmaputra in Assam.",
+    "tip": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 «¢ Russia was the first country to recognise the Teliben...",
     "difficulty": "intermediate"
   },
   {
@@ -1564,23 +1557,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Mullah Baradar",
       "Sirajuddin Haggani"
     ],
-    "explanation": "The upgrade announcement accompanied Amir Khan Muttag\u2019s October 2025 visit.",
-    "tip": "The upgrade announcement accompanied Amir Khan Muttag\u2019s October 2025 visit.",
+    "explanation": "The upgrade announcement accompanied Amir Khan Muttag’s October 2025 visit.",
+    "tip": "The upgrade announcement accompanied Amir Khan Muttag’s October 2025 visit.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-105",
     "categoryId": "current_affairs",
     "question": "The WTO's 14th Ministerial Conference (March 2026) was held in",
-    "answer": "Yaound\u00e9",
+    "answer": "Yaoundé",
     "options": [
       "Abu Dhabi",
-      "Yaound\u00e9",
+      "Yaoundé",
       "Geneva",
-      "Nairobi 160 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ise"
+      "Nairobi"
     ],
-    "explanation": "The 14th Ministerial Conference was held in Yaound\u00e9, Cameroon a 6G Zimbabwe. She is the first woman and first African IOC President.",
-    "tip": "The 14th Ministerial Conference was held in Yaound\u00e9, Cameroon a 6G Zimbabwe. She is the first woman and first African IO...",
+    "explanation": "The 14th Ministerial Conference was held in Yaoundé, Cameroon a 6G Zimbabwe. She is the first woman and first African IOC President.",
+    "tip": "The 14th Ministerial Conference was held in Yaoundé, Cameroon a 6G Zimbabwe. She is the first woman and first African IO...",
     "difficulty": "advanced"
   },
   {
@@ -1606,8 +1599,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1, 2and3 161 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
     "explanation": "India became the fourth country to achieve space docking, after the US, Russia and China.",
     "tip": "India became the fourth country to achieve space docking, after the US, Russia and China.",
@@ -1624,20 +1617,20 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Sth",
       "6th"
     ],
-    "explanation": "Johannesburg hosted the first G20 Leaders\u2019 Summit in Africa in 2025.",
-    "tip": "Johannesburg hosted the first G20 Leaders\u2019 Summit in Africa in 2025.",
+    "explanation": "Johannesburg hosted the first G20 Leaders’ Summit in Africa in 2025.",
+    "tip": "Johannesburg hosted the first G20 Leaders’ Summit in Africa in 2025.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-109",
     "categoryId": "current_affairs",
     "question": "Consider the following about SpaDex: 1. It was launched by PSLV-C60. 2. Its two satellites were named SDX-01 (Chaser) and SDX-02 (Target). 3. It was launched from the Kulasekarapattinam spaceport Which are correct?",
-    "answer": "1, 2and3",
+    "answer": "1, 2 and 3",
     "options": [
       "only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "All correct. The 2026 summit is planned at Doral, Miami.",
     "tip": "All correct. The 2026 summit is planned at Doral, Miami.",
@@ -1654,8 +1647,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "LVM3-M5",
       "SSLV-D3"
     ],
-    "explanation": "The Foreign Ministers\u2019 Meeting took place in New Delhi",
-    "tip": "The Foreign Ministers\u2019 Meeting took place in New Delhi",
+    "explanation": "The Foreign Ministers’ Meeting took place in New Delhi",
+    "tip": "The Foreign Ministers’ Meeting took place in New Delhi",
     "difficulty": "intermediate"
   },
   {
@@ -1667,10 +1660,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 only",
       "1 and 2 only",
       "2. and 3 only",
-      "1,2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Shinzo Abe proposed the Quad in 2007. It is not 2 treaty-based military alliance, and India did not host a leaders\u2019 summit in 2025, 12\u00b0 \u00a9 =B The 2026 venue was Evian-les-Bains, France. a Ankara, Tiirkiye, hosted NATO's 2026 summit. 4\u00b0 8B Timor-Leste became ASEAN\u2019s eleventh member in October 2028.",
-    "tip": "Shinzo Abe proposed the Quad in 2007. It is not 2 treaty-based military alliance, and India did not host a leaders\u2019 summ...",
+    "explanation": "Shinzo Abe proposed the Quad in 2007. It is not a treaty-based military alliance, and India did not host a leaders’ summit in 2025, 12° © =B The 2026 venue was Evian-les-Bains, France. a Ankara, Tiirkiye, hosted NATO's 2026 summit. 4° 8B Timor-Leste became ASEAN’s eleventh member in October 2028.",
+    "tip": "Shinzo Abe proposed the Quad in 2007. It is not a treaty-based military alliance, and India did not host a leaders’ summ...",
     "difficulty": "advanced"
   },
   {
@@ -1684,8 +1677,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "India's first hyperspectral satellite",
       "India's first radar satellite"
     ],
-    "explanation": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, \u00a2 Khalilur Rahman of Bangladesh was elected for the 81st session; Baerbock headed the 80th. Ww Vanuatu led the UNGA initiative requesting the ICJ climate advisory opinion 18 0O=&@ Sushila Kerki was the first woman Prime Minister, in an interim role; Bhandari was the first woman President.",
-    "tip": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, \u00a2 Khalilur Rahman of Bangladesh ...",
+    "explanation": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, ¢ Khalilur Rahman of Bangladesh was elected for the 81st session; Baerbock headed the 80th. Ww Vanuatu led the UNGA initiative requesting the ICJ climate advisory opinion 18 0O=&@ Sushila Kerki was the first woman Prime Minister, in an interim role; Bhandari was the first woman President.",
+    "tip": "Under Aricle $7, the Security Council recommends and the General Assembly appoints. 46, ¢ Khalilur Rahman of Bangladesh ...",
     "difficulty": "intermediate"
   },
   {
@@ -1699,8 +1692,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "GSAT-20",
       "BlueBird Block-2"
     ],
-    "explanation": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 \u00ab\u00a2 Russia was the first country to recognise the Teliben govemment formally, in July 2025 21\u00b0 \u00ab=B Resolution 2803 concems Gaza, the Board of Peace and the International Stabilization Force 22 \u00ab8B Ant\u00e9nio Costa and Ursula von der Leyen 23\u00b0 \u00ab=D All three statements on flights, the yatra end the Medog dam are correct 206 The Yarlung Tsengpo enters as the Siang, then becomes the Brahmaputra in Assam.",
-    "tip": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 \u00ab\u00a2 Russia was the first country to recognise the Teliben...",
+    "explanation": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 «¢ Russia was the first country to recognise the Teliben govemment formally, in July 2025 21° «=B Resolution 2803 concems Gaza, the Board of Peace and the International Stabilization Force 22 «8B Anténio Costa and Ursula von der Leyen 23° «=D All three statements on flights, the yatra end the Medog dam are correct 206 The Yarlung Tsengpo enters as the Siang, then becomes the Brahmaputra in Assam.",
+    "tip": "Min Aung Hlaing was elected President by Myanmar's Parliament 2 «¢ Russia was the first country to recognise the Teliben...",
     "difficulty": "intermediate"
   },
   {
@@ -1712,10 +1705,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 and 2 only",
       "1 and 3 only",
       "2 and 3 only",
-      "1, 2and3 162 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "1, 2 and 3"
     ],
-    "explanation": "The upgrade announcement accompanied Amir Khan Muttag\u2019s October 2025 visit.",
-    "tip": "The upgrade announcement accompanied Amir Khan Muttag\u2019s October 2025 visit.",
+    "explanation": "The upgrade announcement accompanied Amir Khan Muttag’s October 2025 visit.",
+    "tip": "The upgrade announcement accompanied Amir Khan Muttag’s October 2025 visit.",
     "difficulty": "beginner"
   },
   {
@@ -1729,8 +1722,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Soyuz MS-27",
       "Gaganyaan H1"
     ],
-    "explanation": "The 14th Ministerial Conference was held in Yaound\u00e9, Cameroon a 6G Zimbabwe. She is the first woman and first African IOC President.",
-    "tip": "The 14th Ministerial Conference was held in Yaound\u00e9, Cameroon a 6G Zimbabwe. She is the first woman and first African IO...",
+    "explanation": "The 14th Ministerial Conference was held in Yaoundé, Cameroon a 6G Zimbabwe. She is the first woman and first African IOC President.",
+    "tip": "The 14th Ministerial Conference was held in Yaoundé, Cameroon a 6G Zimbabwe. She is the first woman and first African IO...",
     "difficulty": "intermediate"
   },
   {
@@ -1766,16 +1759,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-118",
     "categoryId": "current_affairs",
-    "question": "The first module of the Bharatiya Antariksh Station (BAS-1) is targeted for:",
+    "question": "The first module of the Bharatiya Antariksh Station (BAS-1) is targeted for launch by ISRO in:",
     "answer": "2028",
     "options": [
       "2026",
       "2028",
       "2032",
-      "2035 Q12, India\u2019s first private orbital launch, Vikram-1 (July 2026), was carried out by: (a) Agnikul Cosmos (b) Skyroot Aerospace (c) Pixxel (d) Dhruva Space"
+      "2035"
     ],
-    "explanation": "SpaDeX used PSLV-C60 and the Chaser and Target satellites; its launch site was Sriharikota.",
-    "tip": "SpaDeX used PSLV-C60 and the Chaser and Target satellites; its launch site was Sriharikota.",
+    "explanation": "ISRO plans to launch the base module of the Bharatiya Antariksh Station (BAS-1) by 2028, with the full multi-module space station slated for completion by 2035.",
+    "tip": "BAS-1 first module launch target = 2028; full station by 2035.",
     "difficulty": "intermediate"
   },
   {
@@ -1789,8 +1782,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "a crewed lunar south-pole landing",
       "2 Mars sample-return mission"
     ],
-    "explanation": "GSLV-F16 carrying NVS-02 marked Sriharikota\u2019s 100th launch.",
-    "tip": "GSLV-F16 carrying NVS-02 marked Sriharikota\u2019s 100th launch.",
+    "explanation": "GSLV-F16 carrying NVS-02 marked Sriharikota’s 100th launch.",
+    "tip": "GSLV-F16 carrying NVS-02 marked Sriharikota’s 100th launch.",
     "difficulty": "intermediate"
   },
   {
@@ -1849,8 +1842,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "aquantum chip",
       "a5G modem"
     ],
-    "explanation": "NISAR carries NASA's L-band and ISRO\u2019s S-band radar, and ISRO launched it on GSLV-F18.",
-    "tip": "NISAR carries NASA's L-band and ISRO\u2019s S-band radar, and ISRO launched it on GSLV-F18.",
+    "explanation": "NISAR carries NASA's L-band and ISRO’s S-band radar, and ISRO launched it on GSLV-F18.",
+    "tip": "NISAR carries NASA's L-band and ISRO’s S-band radar, and ISRO launched it on GSLV-F18.",
     "difficulty": "advanced"
   },
   {
@@ -1877,7 +1870,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Meity",
       "DST",
       "DAE",
-      "DoT 163 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Ecsence. iad"
+      "DoT"
     ],
     "explanation": "Rakesh Sharma flew en Soyuz T-11 to Salyut-7 in 1984.",
     "tip": "Rakesh Sharma flew en Soyuz T-11 to Salyut-7 in 1984.",
@@ -1886,7 +1879,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-126",
     "categoryId": "current_affairs",
-    "question": "The Prototype Fast Breeder Reactor that reached first criticality on 6 April 2026 is at\u2019",
+    "question": "The Prototype Fast Breeder Reactor that reached first criticality on 6 April 2026 is at’",
     "answer": "Rawatbhata",
     "options": [
       "Tarapur",
@@ -1894,8 +1887,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Kalpakkam",
       "Rawatbhata"
     ],
-    "explanation": "The designates are Nair, Krishnan, Pratap and Shukle; Rekesh Sharma is not one of the four.",
-    "tip": "The designates are Nair, Krishnan, Pratap and Shukle; Rekesh Sharma is not one of the four.",
+    "explanation": "The designates are Nair, Krishnan, Pratap and Shukla; Rakesh Sharma is not one of the four.",
+    "tip": "The designates are Nair, Krishnan, Pratap and Shukla; Rakesh Sharma is not one of the four.",
     "difficulty": "beginner"
   },
   {
@@ -1907,7 +1900,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 and 2 only",
       "2 and 3 only",
       "1 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "BAS-1 has a 2028 target; the complete station has e 2035 target.",
     "tip": "BAS-1 has a 2028 target; the complete station has e 2035 target.",
@@ -1924,14 +1917,14 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Kutch",
       "Pench"
     ],
-    "explanation": "Vikram-t is Skyroat Aerospace\u2019s orbital launcher. 13\u00b0\u00b0\u00ab=~B Artemis I was @ crewed lunar flyby without \u00a2 lending",
-    "tip": "Vikram-t is Skyroat Aerospace\u2019s orbital launcher. 13\u00b0\u00b0\u00ab=~B Artemis I was @ crewed lunar flyby without \u00a2 lending",
+    "explanation": "Vikram-t is Skyroat Aerospace’s orbital launcher. 13°°«=~B Artemis I was @ crewed lunar flyby without ¢ lending",
+    "tip": "Vikram-t is Skyroat Aerospace’s orbital launcher. 13°°«=~B Artemis I was @ crewed lunar flyby without ¢ lending",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-129",
     "categoryId": "current_affairs",
-    "question": "The world\u2019s highest imaging Cherenkov telescope, MACE, Is in:",
+    "question": "The world’s highest imaging Cherenkov telescope, MACE, Is in:",
     "answer": "Arunachal Pradesh",
     "options": [
       "Sikkim",
@@ -1946,7 +1939,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-130",
     "categoryId": "current_affairs",
-    "question": "The world\u2019s first genome-edited rice varieties (May 2025) were released by:",
+    "question": "The world’s first genome-edited rice varieties (May 2025) were released by:",
     "answer": "ICAR",
     "options": [
       "IRRI",
@@ -1954,8 +1947,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "CSIR",
       "DBT"
     ],
-    "explanation": "SUATLAS is the third known interstellar object, after \u2018Oumuamua and Borisov.",
-    "tip": "SUATLAS is the third known interstellar object, after \u2018Oumuamua and Borisov.",
+    "explanation": "SUATLAS is the third known interstellar object, after ‘Oumuamua and Borisov.",
+    "tip": "SUATLAS is the third known interstellar object, after ‘Oumuamua and Borisov.",
     "difficulty": "intermediate"
   },
   {
@@ -1984,8 +1977,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "MRNA vaccines",
       "graphene"
     ],
-    "explanation": "Vikram 3201 is SCL Mohali\u2019s indigenous 32-bit space-grade processor",
-    "tip": "Vikram 3201 is SCL Mohali\u2019s indigenous 32-bit space-grade processor",
+    "explanation": "Vikram 3201 is SCL Mohali’s indigenous 32-bit space-grade processor",
+    "tip": "Vikram 3201 is SCL Mohali’s indigenous 32-bit space-grade processor",
     "difficulty": "beginner"
   },
   {
@@ -1997,16 +1990,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Reasi, J&K",
       "Leh, Ladakh",
       "Kinnaur, HP",
-      "Korba, Chhattisgarh 164 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "Korba, Chhattisgarh"
     ],
-    "explanation": "The Teta-PSMC commerciel fab is at Dholera; Sanand\u2019s milestone concerns packaging",
-    "tip": "The Teta-PSMC commerciel fab is at Dholera; Sanand\u2019s milestone concerns packaging",
+    "explanation": "The Teta-PSMC commerciel fab is at Dholera; Sanand’s milestone concerns packaging",
+    "tip": "The Teta-PSMC commerciel fab is at Dholera; Sanand’s milestone concerns packaging",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-134",
     "categoryId": "current_affairs",
-    "question": "\"Chillai Kalan\", in news during Kashmir\u2019s dry winter of 2025-26, refers to:",
+    "question": "\"Chillai Kalan\", in news during Kashmir’s dry winter of 2025-26, refers to:",
     "answer": "a glacier in Gurez",
     "options": [
       "the 40-day harshest phase of the Kashmir winter",
@@ -2029,8 +2022,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "the north-east monsoon",
       "tropical cyclones from the Arabian Sea"
     ],
-    "explanation": "NISAR carries NASA's L-band and ISRO\u2019s S-band radar, and ISRO launched it on GSLV-F18.",
-    "tip": "NISAR carries NASA's L-band and ISRO\u2019s S-band radar, and ISRO launched it on GSLV-F18.",
+    "explanation": "NISAR carries NASA's L-band and ISRO’s S-band radar, and ISRO launched it on GSLV-F18.",
+    "tip": "NISAR carries NASA's L-band and ISRO’s S-band radar, and ISRO launched it on GSLV-F18.",
     "difficulty": "advanced"
   },
   {
@@ -2057,7 +2050,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 and 2 only",
       "1 and 3 only",
       "2. and 3 only",
-      "1,2and3"
+      "1, 2 and 3"
     ],
     "explanation": "Rakesh Sharma flew en Soyuz T-11 to Salyut-7 in 1984.",
     "tip": "Rakesh Sharma flew en Soyuz T-11 to Salyut-7 in 1984.",
@@ -2074,8 +2067,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "195",
       "7,500"
     ],
-    "explanation": "The designates are Nair, Krishnan, Pratap and Shukle; Rekesh Sharma is not one of the four.",
-    "tip": "The designates are Nair, Krishnan, Pratap and Shukle; Rekesh Sharma is not one of the four.",
+    "explanation": "The designates are Nair, Krishnan, Pratap and Shukla; Rakesh Sharma is not one of the four.",
+    "tip": "The designates are Nair, Krishnan, Pratap and Shukla; Rakesh Sharma is not one of the four.",
     "difficulty": "beginner"
   },
   {
@@ -2084,7 +2077,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "question": "The UN declared 2025 as the International Year of:",
     "answer": "Rangelands and Pastoralists",
     "options": [
-      "Glaciers\u2019 Preservation",
+      "Glaciers’ Preservation",
       "Rangelands and Pastoralists",
       "Millets",
       "Camelids"
@@ -2104,18 +2097,18 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Nyoma",
       "Pang"
     ],
-    "explanation": "Vikram-t is Skyroat Aerospace\u2019s orbital launcher. 13\u00b0\u00b0\u00ab=~B Artemis I was @ crewed lunar flyby without \u00a2 lending",
-    "tip": "Vikram-t is Skyroat Aerospace\u2019s orbital launcher. 13\u00b0\u00b0\u00ab=~B Artemis I was @ crewed lunar flyby without \u00a2 lending",
+    "explanation": "Vikram-t is Skyroat Aerospace’s orbital launcher. 13°°«=~B Artemis I was @ crewed lunar flyby without ¢ lending",
+    "tip": "Vikram-t is Skyroat Aerospace’s orbital launcher. 13°°«=~B Artemis I was @ crewed lunar flyby without ¢ lending",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-141",
     "categoryId": "current_affairs",
-    "question": "The overarching political decision of COP30 (Bel\u00e9m) is popularly known as the:",
+    "question": "The overarching political decision of COP30 (Belém) is popularly known as the:",
     "answer": "Dubai Consensus",
     "options": [
       "Global Mutirao",
-      "Bel\u00e9m Accord",
+      "Belém Accord",
       "Dubai Consensus",
       "Baku Roadmap"
     ],
@@ -2134,8 +2127,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "COP29: NCQG of $300 billion a year by 2035",
       "COP30: Paris Rulebook finalised"
     ],
-    "explanation": "SUATLAS is the third known interstellar object, after \u2018Oumuamua and Borisov.",
-    "tip": "SUATLAS is the third known interstellar object, after \u2018Oumuamua and Borisov.",
+    "explanation": "SUATLAS is the third known interstellar object, after ‘Oumuamua and Borisov.",
+    "tip": "SUATLAS is the third known interstellar object, after ‘Oumuamua and Borisov.",
     "difficulty": "intermediate"
   },
   {
@@ -2147,7 +2140,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "47%",
       "45%",
       "50%",
-      "60% 165 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "60%"
     ],
     "explanation": "The venue was Bharat Mandapam, New Delhi.",
     "tip": "The venue was Bharat Mandapam, New Delhi.",
@@ -2162,10 +2155,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 and 2 only",
       "2 and 3 only",
       "1 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Vikram 3201 is SCL Mohali\u2019s indigenous 32-bit space-grade processor",
-    "tip": "Vikram 3201 is SCL Mohali\u2019s indigenous 32-bit space-grade processor",
+    "explanation": "Vikram 3201 is SCL Mohali’s indigenous 32-bit space-grade processor",
+    "tip": "Vikram 3201 is SCL Mohali’s indigenous 32-bit space-grade processor",
     "difficulty": "beginner"
   },
   {
@@ -2179,8 +2172,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "7 Jan 2026",
       "4 Nov 2020"
     ],
-    "explanation": "The Teta-PSMC commerciel fab is at Dholera; Sanand\u2019s milestone concerns packaging",
-    "tip": "The Teta-PSMC commerciel fab is at Dholera; Sanand\u2019s milestone concerns packaging",
+    "explanation": "The Teta-PSMC commerciel fab is at Dholera; Sanand’s milestone concerns packaging",
+    "tip": "The Teta-PSMC commerciel fab is at Dholera; Sanand’s milestone concerns packaging",
     "difficulty": "intermediate"
   },
   {
@@ -2194,8 +2187,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Turning Point",
       "OF Target"
     ],
-    "explanation": "\u2018The Department of Science and Technology implements the National Quantum Mission",
-    "tip": "\u2018The Department of Science and Technology implements the National Quantum Mission",
+    "explanation": "‘The Department of Science and Technology implements the National Quantum Mission",
+    "tip": "‘The Department of Science and Technology implements the National Quantum Mission",
     "difficulty": "intermediate"
   },
   {
@@ -2204,10 +2197,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "question": "According to the WMO State of the Global Climate 2026 report:",
     "answer": "2025 was cooler than 2015",
     "options": [
-      "2025 was the 2nd or 3rd warmest year, about 1.43\u00b0C above pre-industrial levels",
+      "2025 was the 2nd or 3rd warmest year, about 1.43°C above pre-industrial levels",
       "2025 was the warmest year on record",
       "2025 was cooler than 2015",
-      "the 1.5\u00b0C Paris limit has been formally breached"
+      "the 1.5°C Paris limit has been formally breached"
     ],
     "explanation": "The 500 MWe PFBR is at Kalpakkam, Tamil Nadu.",
     "tip": "The 500 MWe PFBR is at Kalpakkam, Tamil Nadu.",
@@ -2224,8 +2217,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "deficient",
       "excess"
     ],
-    "explanation": "PFER uses sodium, marks stage two and was built by BHAVINI, not NPCIL. 22 \u00ab=8B Hanle, Ladakh, became India\u2019s frst Dark Sky Reserve in 2022 23\u00b0 \u00ab=8B MACE is at Hanle in Ladakh, at about 4,300 m. 24 \u00ab=B ICAR released DRR Dhan 100 and Pusa DST Rice 1 2 \u00b0\u00b02\u00ab<A Physics: macroscopic quantum tunnelling; Chemistry: MOFs; Medicine: peripheral immune tolerance 26 \u00ab=&B Tregs (peripheral immune tolerance). a7 GSI reported the inferred lithium resources in Reasi, J&K. 4 EK Chillai Kelan is Kashmir\u2019's 40-day harshest winter phase, from 21 December to 29 January.",
-    "tip": "PFER uses sodium, marks stage two and was built by BHAVINI, not NPCIL. 22 \u00ab=8B Hanle, Ladakh, became India\u2019s frst Dark S...",
+    "explanation": "PFER uses sodium, marks stage two and was built by BHAVINI, not NPCIL. 22 «=8B Hanle, Ladakh, became India’s first Dark Sky Reserve in 2022 23° «=8B MACE is at Hanle in Ladakh, at about 4,300 m. 24 «=B ICAR released DRR Dhan 100 and Pusa DST Rice 1 2 °°2«<A Physics: macroscopic quantum tunnelling; Chemistry: MOFs; Medicine: peripheral immune tolerance 26 «=&B Tregs (peripheral immune tolerance). a7 GSI reported the inferred lithium resources in Reasi, J&K. 4 EK Chillai Kelan is Kashmir’'s 40-day harshest winter phase, from 21 December to 29 January.",
+    "tip": "PFER uses sodium, marks stage two and was built by BHAVINI, not NPCIL. 22 «=8B Hanle, Ladakh, became India’s first Dark S...",
     "difficulty": "intermediate"
   },
   {
@@ -2261,7 +2254,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-151",
     "categoryId": "current_affairs",
-    "question": "UNCCD COP\u20197 (Aug 2026), held under the theme \"Restoring Land. Restoring Hope.\u201d, took place at:",
+    "question": "UNCCD COP17 (Aug 2026), held under the theme \"Restoring Land. Restoring Hope.”, took place at:",
     "answer": "Yerevan",
     "options": [
       "Riyadh",
@@ -2269,8 +2262,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Samarkand",
       "Ulaanbaatar"
     ],
-    "explanation": "Statements 1 and 3 ere correct. Tso Kar includes freshwater Stertsapuk Tso and hyperseline Tso Ker; Dal is not a Ramsar site 202 Quin\u00e9 E ssence [pf Q ~~ Answer Explanation 5 Cc The NDMA programme covers 195 high-risk glacial lakes, including lakes in J&K and Ladakh.",
-    "tip": "Statements 1 and 3 ere correct. Tso Kar includes freshwater Stertsapuk Tso and hyperseline Tso Ker; Dal is not a Ramsar ...",
+    "explanation": "Statements 1 and 3 are correct. Tso Kar includes freshwater Stertsapuk Tso and hyperseline Tso Ker; Dal is not a Ramsar site 202 Quiné E ssence [pf Q ~~ Answer Explanation 5 Cc The NDMA programme covers 195 high-risk glacial lakes, including lakes in J&K and Ladakh.",
+    "tip": "Statements 1 and 3 are correct. Tso Kar includes freshwater Stertsapuk Tso and hyperseline Tso Ker; Dal is not a Ramsar ...",
     "difficulty": "intermediate"
   },
   {
@@ -2284,20 +2277,20 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Geneva",
       "Nairobi"
     ],
-    "explanation": "2025 was the Intemational Year of Glaciers\u2019 Preservation; 2026 is the year of Rangelands and Pastor\u00e9lists.",
-    "tip": "2025 was the Intemational Year of Glaciers\u2019 Preservation; 2026 is the year of Rangelands and Pastor\u00e9lists.",
+    "explanation": "2025 was the Intemational Year of Glaciers’ Preservation; 2026 is the year of Rangelands and Pastorélists.",
+    "tip": "2025 was the Intemational Year of Glaciers’ Preservation; 2026 is the year of Rangelands and Pastorélists.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-153",
     "categoryId": "current_affairs",
     "question": "The BENJ (High Seas) Agreement entered into force on:",
-    "answer": "8 Jun 2026 166 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Ecsence. iad",
+    "answer": "8 Jun 2026",
     "options": [
       "19 Jun 2023",
       "20 Sep 2025",
       "17 Jan 2026",
-      "8 Jun 2026 166 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Ecsence. iad"
+      "8 Jun 2026"
     ],
     "explanation": "Pang is the site of the 13 GW solar-and-wind project. Puga is associated with geothermal energy.",
     "tip": "Pang is the site of the 13 GW solar-and-wind project. Puga is associated with geothermal energy.",
@@ -2314,8 +2307,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       ") Chhari-Dhand, Kutch",
       "Surha Tal (Jai Prakash Narayan Bird Sanctuary), Ballia"
     ],
-    "explanation": "COP30's Global Mutir\u00e9o decision takes its name from a term meaning collective community effort.",
-    "tip": "COP30's Global Mutir\u00e9o decision takes its name from a term meaning collective community effort.",
+    "explanation": "COP30's Global Mutiréo decision takes its name from a term meaning collective community effort.",
+    "tip": "COP30's Global Mutiréo decision takes its name from a term meaning collective community effort.",
     "difficulty": "intermediate"
   },
   {
@@ -2329,8 +2322,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Pakke Tiger Reserve",
       "Keibul Lamjao Nationa! Park"
     ],
-    "explanation": "\u2018COP30 did not finalise the Paris Rulebook; that work was completed at COP24 and COP26.",
-    "tip": "\u2018COP30 did not finalise the Paris Rulebook; that work was completed at COP24 and COP26.",
+    "explanation": "‘COP30 did not finalise the Paris Rulebook; that work was completed at COP24 and COP26.",
+    "tip": "‘COP30 did not finalise the Paris Rulebook; that work was completed at COP24 and COP26.",
     "difficulty": "intermediate"
   },
   {
@@ -2344,8 +2337,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Busan",
       "Riyadh"
     ],
-    "explanation": "The 2035 NDC target is e 47% reduction in GDP emissions intensity against the 2005 baseline. 4\u00b068 Statements 2 and 3 ere correct. The 60% target concerns installed capacity, not electricity generation",
-    "tip": "The 2035 NDC target is e 47% reduction in GDP emissions intensity against the 2005 baseline. 4\u00b068 Statements 2 and 3 ere...",
+    "explanation": "The 2035 NDC target is e 47% reduction in GDP emissions intensity against the 2005 baseline. 4°68 Statements 2 and 3 are correct. The 60% target concerns installed capacity, not electricity generation",
+    "tip": "The 2035 NDC target is e 47% reduction in GDP emissions intensity against the 2005 baseline. 4°68 Statements 2 and 3 ere...",
     "difficulty": "beginner"
   },
   {
@@ -2357,7 +2350,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 and 2 only",
       "2 and 3 only",
       "1 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "Ordered in Jan 2025, it took effect on 27 Jan 2026. 7 Jan 2026 was the UNFCCC-exit announcement.",
     "tip": "Ordered in Jan 2025, it took effect on 27 Jan 2026. 7 Jan 2026 was the UNFCCC-exit announcement.",
@@ -2374,8 +2367,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Agasthyamala",
       "Khangchendzonga"
     ],
-    "explanation": "UNEP\u2019s 2025 Emissions Gap Report was titled Off Target.",
-    "tip": "UNEP\u2019s 2025 Emissions Gap Report was titled Off Target.",
+    "explanation": "UNEP’s 2025 Emissions Gap Report was titled Off Target.",
+    "tip": "UNEP’s 2025 Emissions Gap Report was titled Off Target.",
     "difficulty": "intermediate"
   },
   {
@@ -2462,10 +2455,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Indore",
       "Jabalpur",
       "Surat",
-      "Lucknow 167 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ise"
+      "Lucknow"
     ],
-    "explanation": "Glaw Lake lies within Kamlang Tiger Reserve in Arunachal Pradesh and became the siate\u2019s first Ramsar site. 23 Cc Sarnath was inscribed at the 48th World Heritage Committee session in Busan, Republic of Korea. 24 2D Chaukhandi Stupa + Archaeological Remains (Dhamek and Dharmarajika stupas). The Deer Park is also called Rishipatana, sipatana or Mrigadava.",
-    "tip": "Glaw Lake lies within Kamlang Tiger Reserve in Arunachal Pradesh and became the siate\u2019s first Ramsar site. 23 Cc Sarnath...",
+    "explanation": "Glaw Lake lies within Kamlang Tiger Reserve in Arunachal Pradesh and became the siate’s first Ramsar site. 23 Cc Sarnath was inscribed at the 48th World Heritage Committee session in Busan, Republic of Korea. 24 2D Chaukhandi Stupa + Archaeological Remains (Dhamek and Dharmarajika stupas). The Deer Park is also called Rishipatana, sipatana or Mrigadava.",
+    "tip": "Glaw Lake lies within Kamlang Tiger Reserve in Arunachal Pradesh and became the siate’s first Ramsar site. 23 Cc Sarnath...",
     "difficulty": "intermediate"
   },
   {
@@ -2479,8 +2472,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "150th",
       "180th out of 180"
     ],
-    "explanation": "Cold Desert in Himachal Pradesh became India\u2019s 13th UNESCO-network biosphere reserve in September 2025.",
-    "tip": "Cold Desert in Himachal Pradesh became India\u2019s 13th UNESCO-network biosphere reserve in September 2025.",
+    "explanation": "Cold Desert in Himachal Pradesh became India’s 13th UNESCO-network biosphere reserve in September 2025.",
+    "tip": "Cold Desert in Himachal Pradesh became India’s 13th UNESCO-network biosphere reserve in September 2025.",
     "difficulty": "advanced"
   },
   {
@@ -2492,7 +2485,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Republic of Korea",
       "Azerbaijan",
       "Saudi Arabia",
-      "C\u00e9te d'ivoire"
+      "Céte d'ivoire"
     ],
     "explanation": "Madhav in Madhya Pradesh became the 58th tiger reserve; Ratapani was the 57th.",
     "tip": "Madhav in Madhya Pradesh became the 58th tiger reserve; Ratapani was the 57th.",
@@ -2502,12 +2495,12 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-167",
     "categoryId": "current_affairs",
     "question": "In the Climate Change Performance Index 2026, India ranked 23rd. Which statement about the CCP! is correct?",
-    "answer": "India improved \u2018rom 30th 168 @ 7006256779, 7006442202 @ www.aqcrias.com",
+    "answer": "India improved ‘rom 30th",
     "options": [
       "It is published by UNEP",
-      "Denmark ranked \u2018st",
+      "Denmark ranked ‘st",
       "The top three ranks were left vacant because no country performed well enough",
-      "India improved \u2018rom 30th 168 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "India improved ‘rom 30th"
     ],
     "explanation": "28 Feb 2026. 17 Sep 2022 = the Namibian batch. Feb 2023 = South Africa. 20 Apr 2025 = Gandhi Sagar release.",
     "tip": "28 Feb 2026. 17 Sep 2022 = the Namibian batch. Feb 2023 = South Africa. 20 Apr 2025 = Gandhi Sagar release.",
@@ -2524,8 +2517,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Pahalgam (Baisaran)",
       "Reasi"
     ],
-    "explanation": "Operation Mahadev took place near Dachigam / Harwan on Srinagar\u2019s outskirts. 3 \u00b0O<A& Mudh-Nyoma is in easter Ladakh; it became operational in November 2025.",
-    "tip": "Operation Mahadev took place near Dachigam / Harwan on Srinagar\u2019s outskirts. 3 \u00b0O<A& Mudh-Nyoma is in easter Ladakh; it ...",
+    "explanation": "Operation Mahadev took place near Dachigam / Harwan on Srinagar’s outskirts. 3 °O<A& Mudh-Nyoma is in easter Ladakh; it became operational in November 2025.",
+    "tip": "Operation Mahadev took place near Dachigam / Harwan on Srinagar’s outskirts. 3 °O<A& Mudh-Nyoma is in easter Ladakh; it ...",
     "difficulty": "beginner"
   },
   {
@@ -2546,7 +2539,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-170",
     "categoryId": "current_affairs",
-    "question": "The Mudh-Nyoma air base, made operational in Nov 2025, is in\u2019",
+    "question": "The Mudh-Nyoma air base, made operational in Nov 2025, is in’",
     "answer": "North Sikkim",
     "options": [
       "Eastem Ladakh",
@@ -2576,7 +2569,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-172",
     "categoryId": "current_affairs",
-    "question": "The \u201cChinar Corps\" is:",
+    "question": "The “Chinar Corps\" is:",
     "answer": "14 Corps, Leh",
     "options": [
       "14 Corps, Leh",
@@ -2599,8 +2592,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Shinku La Tunnel",
       "Zojila Tunnel"
     ],
-    "explanation": "General Dhiraj Seth became the 31st Chief of Amy Staff on 30 June 2026. WA \u2018Western Naval Command (Mumbai); he took over as CNS on 31 May 2026 @ & DIHAR, the Defence Institute of High Altitude Research, is located in Leh. 43008: Rudra brigades combine multiple arms, including infantry, armour, artillery, special forces and drones. a) Up te 25% of en Agniveer batch may be retained as regular personnel efter the four-year tenure.",
-    "tip": "General Dhiraj Seth became the 31st Chief of Amy Staff on 30 June 2026. WA \u2018Western Naval Command (Mumbai); he took over...",
+    "explanation": "General Dhiraj Seth became the 31st Chief of Amy Staff on 30 June 2026. WA ‘Western Naval Command (Mumbai); he took over as CNS on 31 May 2026 @ & DIHAR, the Defence Institute of High Altitude Research, is located in Leh. 43008: Rudra brigades combine multiple arms, including infantry, armour, artillery, special forces and drones. a) Up te 25% of en Agniveer batch may be retained as regular personnel efter the four-year tenure.",
+    "tip": "General Dhiraj Seth became the 31st Chief of Amy Staff on 30 June 2026. WA ‘Western Naval Command (Mumbai); he took over...",
     "difficulty": "intermediate"
   },
   {
@@ -2614,8 +2607,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Zoiila",
       "Rezang La"
     ],
-    "explanation": "%7.85 lakh crore is the total MoD allocation; the capital outlay is about X2.19 lakh core. 1 \u00a2 The increase is X14,802 crore. Dividing by 23,622 crore and mutiplying by 100 gives approximately 62.7%. 7 2B Defence production in FY2025-26 was 71.78 lakh crore; production is distinct from exports and the Budget allocation",
-    "tip": "%7.85 lakh crore is the total MoD allocation; the capital outlay is about X2.19 lakh core. 1 \u00a2 The increase is X14,802 c...",
+    "explanation": "₹7.85 lakh crore is the total MoD allocation; the capital outlay is about X2.19 lakh core. 1 ¢ The increase is X14,802 crore. Dividing by 23,622 crore and mutiplying by 100 gives approximately 62.7%. 7 2B Defence production in FY2025-26 was 71.78 lakh crore; production is distinct from exports and the Budget allocation",
+    "tip": "₹7.85 lakh crore is the total MoD allocation; the capital outlay is about X2.19 lakh core. 1 ¢ The increase is X14,802 c...",
     "difficulty": "beginner"
   },
   {
@@ -2629,23 +2622,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Gen Manoj Pande",
       "Gen N.S. Raja Subramani"
     ],
-    "explanation": "The Defence Acquisition Council grants Acceptance of Necessity; itis chaired by the Defence Minister. Ww OA The Agni-Prime test used a rail-based mobile launcher, rather than a submarine or ship. 20\u00b0 \u00ab=B Mission Divyastra was the first Agni-V test with multiple independently-targetable re-entry vehicles. 4 6 IADWS combines QRSAM and VSHORADS with a laser-based directec-energy weapon 2 \u00a9 Both: the 2025 mission and the IAF's $-400 nickname 204 ssence [AC clases redefined 23 \u00ab=8B INS Aridhaman is the third SSBN, following INS Arihant and INS Arighaat",
+    "explanation": "The Defence Acquisition Council grants Acceptance of Necessity; itis chaired by the Defence Minister. Ww OA The Agni-Prime test used a rail-based mobile launcher, rather than a submarine or ship. 20° «=B Mission Divyastra was the first Agni-V test with multiple independently-targetable re-entry vehicles. 4 6 IADWS combines QRSAM and VSHORADS with a laser-based directec-energy weapon 2 © Both: the 2025 mission and the IAF's $-400 nickname 204 ssence [AC clases redefined 23 «=8B INS Aridhaman is the third SSBN, following INS Arihant and INS Arighaat",
     "tip": "The Defence Acquisition Council grants Acceptance of Necessity; itis chaired by the Defence Minister. Ww OA The Agni-Pri...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-176",
     "categoryId": "current_affairs",
-    "question": "Consider these statements about the CDS:",
-    "answer": "1,2, 3and4",
+    "question": "Consider the following statements regarding the Chief of Defence Staff (CDS): 1. Permanent Chairman of the Chiefs of Staff Committee. 2. Heads the Department of Military Affairs (DMA) in the Ministry of Defence. 3. Chairs the Defence Acquisition Council (DAC). 4. Age ceiling is 65 years. Which statements are correct?",
+    "answer": "1, 2 and 4 only",
     "options": [
-      "Permanent Chairman of the Chiefs of Staff Committee; (a) heads the Department of Military Affairs: (3) chairs the Defence Acquisition Council; (4) age ceiling of 85. Which are correct? (a) 1,2.and 4 only",
+      "1, 2 and 4 only",
       "1 and 3 only",
       "2, 3 and 4 only",
-      "1,2, 3and4"
+      "1, 2, 3 and 4"
     ],
-    "explanation": "INS Tamal was built in Russia and commissioned in July 2025 as the Navy's lastimported warship.",
-    "tip": "INS Tamal was built in Russia and commissioned in July 2025 as the Navy's lastimported warship.",
+    "explanation": "The CDS is the permanent Chairman of the Chiefs of Staff Committee, heads the Department of Military Affairs, and serves up to age 65. The Defence Acquisition Council (DAC) is chaired by the Raksha Mantri (Defence Minister), not the CDS.",
+    "tip": "CDS: heads DMA, permanent COSC chair, age ceiling 65. Defence Minister chairs DAC.",
     "difficulty": "intermediate"
   },
   {
@@ -2659,8 +2652,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "31st COAS an 34 May 2026",
       "Vice Chief on 30 Jun 2026"
     ],
-    "explanation": "Project 17A produces Nilgiri-class stealth \u2018rigates. Project 18B concems destroyers; Project 75 concerns conventional submarines. 262A Visakhapatnam hosted both events and is the headquarters of Eastem Naval Commend",
-    "tip": "Project 17A produces Nilgiri-class stealth \u2018rigates. Project 18B concems destroyers; Project 75 concerns conventional su...",
+    "explanation": "Project 17A produces Nilgiri-class stealth ‘rigates. Project 18B concems destroyers; Project 75 concerns conventional submarines. 262A Visakhapatnam hosted both events and is the headquarters of Eastem Naval Commend",
+    "tip": "Project 17A produces Nilgiri-class stealth ‘rigates. Project 18B concems destroyers; Project 75 concerns conventional su...",
     "difficulty": "advanced"
   },
   {
@@ -2672,10 +2665,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "FOC-in-C, Western Naval Command",
       "FOC-in-C, Eastern Naval Command",
       "Commandant, NDA",
-      "DG, Indian Coast Guard 169 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "DG, Indian Coast Guard"
     ],
-    "explanation": "Chandigarh, after 62 years in service (inducted 1963) 28\u00b0 \u00ab=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
-    "tip": "Chandigarh, after 62 years in service (inducted 1963) 28\u00b0 \u00ab=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
+    "explanation": "Chandigarh, after 62 years in service (inducted 1963) 28° «=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
+    "tip": "Chandigarh, after 62 years in service (inducted 1963) 28° «=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
     "difficulty": "intermediate"
   },
   {
@@ -2704,7 +2697,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "drone-only units",
       "naval commando units"
     ],
-    "explanation": "Royal Australian Air Force, at Darwin 31 OCA Mitra Shakti-Sri Lanka, Maitree-Thailan, Oustlik-Uzbekistan and Surya Kirar-Nepal are the correct pairs. 320 \u00ab=~ Geospatial. LEMOA = logistics; COMCASA = communications; GSOMIA = information security 33\u00b0 \u00ab= Under the 1963 China-Pakistan boundary agreement 34 Hot Springs, Ladakh, 21 Oct 1989",
+    "explanation": "Royal Australian Air Force, at Darwin 31 OCA Mitra Shakti-Sri Lanka, Maitree-Thailan, Oustlik-Uzbekistan and Surya Kirar-Nepal are the correct pairs. 320 «=~ Geospatial. LEMOA = logistics; COMCASA = communications; GSOMIA = information security 33° «= Under the 1963 China-Pakistan boundary agreement 34 Hot Springs, Ladakh, 21 Oct 1989",
     "tip": "Royal Australian Air Force, at Darwin 31 OCA Mitra Shakti-Sri Lanka, Maitree-Thailan, Oustlik-Uzbekistan and Surya Kirar...",
     "difficulty": "beginner"
   },
@@ -2727,21 +2720,21 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-182",
     "categoryId": "current_affairs",
     "question": "The Ministry of Defence's allocation in Union Budget 2026-27 is about:",
-    "answer": "\u00a52.19 lakh er",
+    "answer": "₹2.19 lakh er",
     "options": [
       "86.81 lakh er",
-      "\u00a52.19 lakh er",
+      "₹2.19 lakh er",
       "87.85 lakh er",
       "25.94 lakh er"
     ],
-    "explanation": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 \u00a2 Prof Shafi Shaug received the Padma Shri in Literature & Education, reflecting his contribution to Kashmiri writing. 3 \u00b00A Social Work: reconnecting displaced Kashmiri Pandits (SRMA-Vivekananda Kendra, Nagdandi)",
-    "tip": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 \u00a2 Prof Shafi Shaug re...",
+    "explanation": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 ¢ Prof Shafi Shaug received the Padma Shri in Literature & Education, reflecting his contribution to Kashmiri writing. 3 °0A Social Work: reconnecting displaced Kashmiri Pandits (SRMA-Vivekananda Kendra, Nagdandi)",
+    "tip": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 ¢ Prof Shafi Shaug re...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-183",
     "categoryId": "current_affairs",
-    "question": "(FAA numerical) Defence exports rose from %23,622 cr (FY25) to \u00a338,424 cr (FY26). The growth is about:",
+    "question": "(FAA numerical) Defence exports rose from ₹23,622 cr (FY25) to £38,424 cr (FY26). The growth is about:",
     "answer": "38%",
     "options": [
       "38%",
@@ -2760,12 +2753,12 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "answer": "22.19 lakh er",
     "options": [
       "@1 27 lakh cr",
-      "%1.78 lakh cr",
+      "₹1.78 lakh cr",
       "22.19 lakh er",
       "$3.00 lakh or"
     ],
-    "explanation": "Khajur Singh Thakur\u2019s Dogri poetry collection Thakur Satsayie won the award.",
-    "tip": "Khajur Singh Thakur\u2019s Dogri poetry collection Thakur Satsayie won the award.",
+    "explanation": "Khajur Singh Thakur’s Dogri poetry collection Thakur Satsayie won the award.",
+    "tip": "Khajur Singh Thakur’s Dogri poetry collection Thakur Satsayie won the award.",
     "difficulty": "intermediate"
   },
   {
@@ -2801,7 +2794,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-187",
     "categoryId": "current_affairs",
-    "question": "\"Mission Divyastra\u201d (Mar 2024) refers to:",
+    "question": "\"Mission Divyastra” (Mar 2024) refers to:",
     "answer": "a laser weapon trial",
     "options": [
       "an Amy artillery battery",
@@ -2809,8 +2802,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "an anti-satellite test",
       "a laser weapon trial"
     ],
-    "explanation": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 \u00a2 Anant Nag received the Dadasaheb Phalke Award for 2024. The award year and presentation year ciffer. 10 0A Mammootty for Brammayugam and Kartik Aaryan for Chandu Chempion shared Best Actor",
-    "tip": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 \u00a2 Anant Nag received the Dadasaheb Phalke Awar...",
+    "explanation": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 ¢ Anant Nag received the Dadasaheb Phalke Award for 2024. The award year and presentation year ciffer. 10 0A Mammootty for Brammayugam and Kartik Aaryan for Chandu Chempion shared Best Actor",
+    "tip": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 ¢ Anant Nag received the Dadasaheb Phalke Awar...",
     "difficulty": "intermediate"
   },
   {
@@ -2824,23 +2817,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "a laser-based directed energy weapon",
       "MRSAM"
     ],
-    "explanation": "Maj Mukund Varadarajan, Ashoka Chakra (posthumous), killed in Shopian in 2014 12\u00b0\u00ab=8B The total was 131: five Padma Vibhushan, thirteen Padme Bhushan and 113 Padme Shri awards 205",
-    "tip": "Maj Mukund Varadarajan, Ashoka Chakra (posthumous), killed in Shopian in 2014 12\u00b0\u00ab=8B The total was 131: five Padma Vibh...",
+    "explanation": "Maj Mukund Varadarajan, Ashoka Chakra (posthumous), killed in Shopian in 2014 12°«=8B The total was 131: five Padma Vibhushan, thirteen Padme Bhushan and 113 Padme Shri awards 205",
+    "tip": "Maj Mukund Varadarajan, Ashoka Chakra (posthumous), killed in Shopian in 2014 12°«=8B The total was 131: five Padma Vibh...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-189",
     "categoryId": "current_affairs",
-    "question": "\"Sudarshan Chakra\u201d can refer to:",
-    "answer": "the national security-shield mission announced on 15 Aug 2025; (a) the IAF's name for the S-400. Which is/are correct? (a) 1 only",
+    "question": "The term 'Sudarshan Chakra' in Indian defence contexts refers to: 1. A comprehensive national air defence security initiative. 2. The Indian Air Force's operational designation for the S-400 Triumf air defence missile systems. Which of the statements is/are correct?",
+    "answer": "Both 1 and 2",
     "options": [
-      "the national security-shield mission announced on 15 Aug 2025; (a) the IAF's name for the S-400. Which is/are correct? (a) 1 only",
+      "1 only",
       "2 only",
       "Both 1 and 2",
-      "Neither"
+      "Neither 1 nor 2"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "The IAF christened its deployed S-400 Triumf missile squadrons 'Sudarshan Chakra', and the term also signifies integrated national air defence grid capabilities.",
+    "tip": "Sudarshan Chakra = IAF S-400 squadrons and national air defence mission.",
     "difficulty": "advanced"
   },
   {
@@ -2852,10 +2845,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "INS Arighaat",
       "INS Aridhaman",
       "INS Chakra",
-      "INS Vaghsheer 170 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Ecsence. iad"
+      "INS Vaghsheer"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: INS Arighaat. India's third SSBN, commissioned on 3 Apr 2026, is:... → INS Arighaat",
+    "tip": "India's third SSBN, commissioned on 3 Apr 2026, is:... → INS Arighaat",
     "difficulty": "intermediate"
   },
   {
@@ -2869,8 +2862,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "INS Vikramaditya",
       "INS Tamal"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: INS Tushil. Which ship (commissioned Jul 2025) is described as the India... → INS Tushil",
+    "tip": "Which ship (commissioned Jul 2025) is described as the India... → INS Tushil",
     "difficulty": "intermediate"
   },
   {
@@ -2884,8 +2877,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "aircraft carriers",
       "stealth frigates"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: destroyers. Project 17A relates to:... → destroyers",
+    "tip": "Project 17A relates to:... → destroyers",
     "difficulty": "beginner"
   },
   {
@@ -2899,8 +2892,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Port Blair",
       "Mumbai"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: Visakhapatnam. The International Fleet Review 2026 and MILAN 2026 were held... → Visakhapatnam",
+    "tip": "The International Fleet Review 2026 and MILAN 2026 were held... → Visakhapatnam",
     "difficulty": "intermediate"
   },
   {
@@ -2914,8 +2907,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Chandigarh",
       "Jodhpur"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: Ambala. The IAF retired its MiG-21 fleet on 26 Sep 2025 at... → Ambala",
+    "tip": "The IAF retired its MiG-21 fleet on 26 Sep 2025 at... → Ambala",
     "difficulty": "intermediate"
   },
   {
@@ -2929,8 +2922,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "the Coast Guard",
       "Amy Aviation"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: the IAF. The 26 Rafale-M jets ordered in 2025 are for:... → the IAF",
+    "tip": "The 26 Rafale-M jets ordered in 2025 are for:... → the IAF",
     "difficulty": "advanced"
   },
   {
@@ -2944,8 +2937,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Chaubatia",
       "Auli, Uttarakhand"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: Fort Wainwright, Alaska. Yudh Abhyas 2026 (22nd edition) was held at... → Fort Wainwright, Alaska",
+    "tip": "Yudh Abhyas 2026 (22nd edition) was held at... → Fort Wainwright, Alaska",
     "difficulty": "intermediate"
   },
   {
@@ -2959,8 +2952,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Japan",
       "France"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: USA. Exercise Pitch Black is hosted by:... → USA",
+    "tip": "Exercise Pitch Black is hosted by:... → USA",
     "difficulty": "intermediate"
   },
   {
@@ -2974,8 +2967,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Sri Lanka, Myanmar, Kazakhstan, Nepal",
       "Nepal, Thailand, Uzbekistan, Sri Lanka"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: Sri Lanka, Thailand, Uzbekistan, Nepal. Maich these exercises to their partner countries, in this or... → Sri Lanka, Thailand, Uzbekistan, Nepal",
+    "tip": "Maich these exercises to their partner countries, in this or... → Sri Lanka, Thailand, Uzbekistan, Nepal",
     "difficulty": "beginner"
   },
   {
@@ -2989,8 +2982,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "military information security",
       "geospatial cooperation"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: logistics support. BECA (2020), signed with the US, concerns:... → logistics support",
+    "tip": "BECA (2020), signed with the US, concerns:... → logistics support",
     "difficulty": "intermediate"
   },
   {
@@ -3004,8 +2997,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1965",
       "1963"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: 1948. Pakistan ceded the Shaksgam valley to China in... → 1948",
+    "tip": "Pakistan ceded the Shaksgam valley to China in... → 1948",
     "difficulty": "intermediate"
   },
   {
@@ -3019,8 +3012,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Daulat Beg Oldi",
       "Hot Springs, Ladakh"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: Galwan. Police Commemoration Day (21 Oct) honours CRPF personnel kil... → Galwan",
+    "tip": "Police Commemoration Day (21 Oct) honours CRPF personnel kil... → Galwan",
     "difficulty": "advanced"
   },
   {
@@ -3032,10 +3025,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Dogra ruler Gulab Singh",
       "the Afghan Durrani rulers",
       "Mughal emperor Shah Jahan",
-      "Ladakh's Namgyal dynasty 471 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "Ladakh's Namgyal dynasty"
     ],
-    "explanation": "Current Affairs 2026: Defence and Security.",
-    "tip": "Current Affairs 2026: Defence and Security.",
+    "explanation": "Correct answer is: Dogra ruler Gulab Singh. The Zorawar light tank is named after the general who conque... → Dogra ruler Gulab Singh",
+    "tip": "The Zorawar light tank is named after the general who conque... → Dogra ruler Gulab Singh",
     "difficulty": "intermediate"
   },
   {
@@ -3064,8 +3057,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Literature & Education",
       "Public Affairs"
     ],
-    "explanation": "Project 17A produces Nilgiri-class stealth \u2018rigates. Project 18B concems destroyers; Project 75 concerns conventional submarines. 262A Visakhapatnam hosted both events and is the headquarters of Eastem Naval Commend",
-    "tip": "Project 17A produces Nilgiri-class stealth \u2018rigates. Project 18B concems destroyers; Project 75 concerns conventional su...",
+    "explanation": "Project 17A produces Nilgiri-class stealth ‘rigates. Project 18B concems destroyers; Project 75 concerns conventional submarines. 262A Visakhapatnam hosted both events and is the headquarters of Eastem Naval Commend",
+    "tip": "Project 17A produces Nilgiri-class stealth ‘rigates. Project 18B concems destroyers; Project 75 concerns conventional su...",
     "difficulty": "beginner"
   },
   {
@@ -3077,10 +3070,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "social work reconnecting displaced Kashmiri Pandits",
       "Dogri theatre",
       "santoor music",
-      "papier-mach\u00e9 craft"
+      "papier-maché craft"
     ],
-    "explanation": "Chandigarh, after 62 years in service (inducted 1963) 28\u00b0 \u00ab=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
-    "tip": "Chandigarh, after 62 years in service (inducted 1963) 28\u00b0 \u00ab=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
+    "explanation": "Chandigarh, after 62 years in service (inducted 1963) 28° «=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
+    "tip": "Chandigarh, after 62 years in service (inducted 1963) 28° «=&B For INS Vikrant: 22 single-seat + 4 twin-seat",
     "difficulty": "intermediate"
   },
   {
@@ -3109,7 +3102,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Thakur Satsayie",
       "Jeete Jee Allahabad"
     ],
-    "explanation": "Royal Australian Air Force, at Darwin 31 OCA Mitra Shakti-Sri Lanka, Maitree-Thailan, Oustlik-Uzbekistan and Surya Kirar-Nepal are the correct pairs. 320 \u00ab=~ Geospatial. LEMOA = logistics; COMCASA = communications; GSOMIA = information security 33\u00b0 \u00ab= Under the 1963 China-Pakistan boundary agreement 34 Hot Springs, Ladakh, 21 Oct 1989",
+    "explanation": "Royal Australian Air Force, at Darwin 31 OCA Mitra Shakti-Sri Lanka, Maitree-Thailan, Oustlik-Uzbekistan and Surya Kirar-Nepal are the correct pairs. 320 «=~ Geospatial. LEMOA = logistics; COMCASA = communications; GSOMIA = information security 33° «= Under the 1963 China-Pakistan boundary agreement 34 Hot Springs, Ladakh, 21 Oct 1989",
     "tip": "Royal Australian Air Force, at Darwin 31 OCA Mitra Shakti-Sri Lanka, Maitree-Thailan, Oustlik-Uzbekistan and Surya Kirar...",
     "difficulty": "advanced"
   },
@@ -3139,8 +3132,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Amin Kamil",
       "Rahman Rahi"
     ],
-    "explanation": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 \u00a2 Prof Shafi Shaug received the Padma Shri in Literature & Education, reflecting his contribution to Kashmiri writing. 3 \u00b00A Social Work: reconnecting displaced Kashmiri Pandits (SRMA-Vivekananda Kendra, Nagdandi)",
-    "tip": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 \u00a2 Prof Shafi Shaug re...",
+    "explanation": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 ¢ Prof Shafi Shaug received the Padma Shri in Literature & Education, reflecting his contribution to Kashmiri writing. 3 °0A Social Work: reconnecting displaced Kashmiri Pandits (SRMA-Vivekananda Kendra, Nagdandi)",
+    "tip": "Dr Padma Gurmet is associated with Sowe-Rigpa, the Amchi or Tibetan system of mecicine in Ladakh 2 ¢ Prof Shafi Shaug re...",
     "difficulty": "intermediate"
   },
   {
@@ -3169,8 +3162,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Anant Nag",
       "Kamal Haasan"
     ],
-    "explanation": "Khajur Singh Thakur\u2019s Dogri poetry collection Thakur Satsayie won the award.",
-    "tip": "Khajur Singh Thakur\u2019s Dogri poetry collection Thakur Satsayie won the award.",
+    "explanation": "Khajur Singh Thakur’s Dogri poetry collection Thakur Satsayie won the award.",
+    "tip": "Khajur Singh Thakur’s Dogri poetry collection Thakur Satsayie won the award.",
     "difficulty": "intermediate"
   },
   {
@@ -3192,12 +3185,12 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-213",
     "categoryId": "current_affairs",
     "question": "Amaran (Best Direction, 72nd NFA) is a biopic of:",
-    "answer": "Lt Gen Hanut Singh 472 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie",
+    "answer": "Lt Gen Hanut Singh",
     "options": [
       "Capt Vikram Batra",
       "Maj Mukund Varadarajan",
       "Maj Somnath Sharma",
-      "Lt Gen Hanut Singh 472 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Lt Gen Hanut Singh"
     ],
     "explanation": "Rahman Rahi received the Jnanpith for 2004 and is its only KashmiriJanguage recipient",
     "tip": "Rahman Rahi received the Jnanpith for 2004 and is its only KashmiriJanguage recipient",
@@ -3214,23 +3207,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "132",
       "128"
     ],
-    "explanation": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 \u00a2 Anant Nag received the Dadasaheb Phalke Award for 2024. The award year and presentation year ciffer. 10 0A Mammootty for Brammayugam and Kartik Aaryan for Chandu Chempion shared Best Actor",
-    "tip": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 \u00a2 Anant Nag received the Dadasaheb Phalke Awar...",
+    "explanation": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 ¢ Anant Nag received the Dadasaheb Phalke Award for 2024. The award year and presentation year ciffer. 10 0A Mammootty for Brammayugam and Kartik Aaryan for Chandu Chempion shared Best Actor",
+    "tip": "Article 370 won Best Feature Film; Kelki 2898 AD wen Best Popular Film. 9 ¢ Anant Nag received the Dadasaheb Phalke Awar...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-215",
     "categoryId": "current_affairs",
-    "question": "Which of these received the Padma Vibhushan in 2026?",
-    "answer": "2 and 4 only",
+    "question": "Which of the following distinguished personalities were conferred the Padma Vibhushan in 2024/2026 honours?",
+    "answer": "1, 2, 3 and 4",
     "options": [
-      "K.T. Thomas (a) V.S. Achuthanandan (3) N. Rajam (4) Dharmendra (a) 1 and 3 only",
+      "1 and 3 only",
       "2 and 4 only",
-      "1, 2and 3 only",
-      "1,2,3and4"
+      "1, 2 and 3 only",
+      "1, 2, 3 and 4"
     ],
-    "explanation": "Maj Mukund Varadarajan, Ashoka Chakra (posthumous), killed in Shopian in 2014 12\u00b0\u00ab=8B The total was 131: five Padma Vibhushan, thirteen Padme Bhushan and 113 Padme Shri awards 205 ssence [AC clases redefined cee) All four named individuals were Padma Vibhushan recipients in 2026. 4\u00b0 C Shaurye Chakra, for Navika Sagar Parikrara I! t \u00a9 The 2024 batch had five recipients: Karpoori Thakur, L.K. Advani, P.V. Narasimha Rao, Chaudhary Charan Singh and M.S. Swaminathan.",
-    "tip": "Maj Mukund Varadarajan, Ashoka Chakra (posthumous), killed in Shopian in 2014 12\u00b0\u00ab=8B The total was 131: five Padma Vibh...",
+    "explanation": "All four named individuals received the prestigious Padma Vibhushan for their exceptional and distinguished service.",
+    "tip": "Padma Vibhushan is India’s second-highest civilian honour.",
     "difficulty": "intermediate"
   },
   {
@@ -3289,8 +3282,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Bharatiya Jnanpith, a private trust",
       "the KK. Birla Foundation"
     ],
-    "explanation": "Taiwan Travelogue by Y\u00e9ng Shuang-zi, transleted by Lin King, won the International Booker 2026 200A David Szalay won the Booker Prize 2025 for Flesh, an original English-language novel. 22. \u00ab=8B Jayant Vishnu Narlikar received Vigyan Ratna 2025 posthumously. 23\u00b0\u00ab=& No Major Dhyan Chand Khel Ratna was awarded in the final National Sports Awards 2025 list.",
-    "tip": "Taiwan Travelogue by Y\u00e9ng Shuang-zi, transleted by Lin King, won the International Booker 2026 200A David Szalay won the...",
+    "explanation": "Taiwan Travelogue by Yéng Shuang-zi, transleted by Lin King, won the International Booker 2026 200A David Szalay won the Booker Prize 2025 for Flesh, an original English-language novel. 22. «=8B Jayant Vishnu Narlikar received Vigyan Ratna 2025 posthumously. 23°«=& No Major Dhyan Chand Khel Ratna was awarded in the final National Sports Awards 2025 list.",
+    "tip": "Taiwan Travelogue by Yéng Shuang-zi, transleted by Lin King, won the International Booker 2026 200A David Szalay won the...",
     "difficulty": "advanced"
   },
   {
@@ -3304,8 +3297,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Tamil",
       "Urdu"
     ],
-    "explanation": "Football; part of the 1962 Asian Games gold-winning team 202\u00abA The Chemistry prize recognised the development of metal-organic frameworks 2 26\u00a2 Mokyr, Aghion and Howitt were recognised for work on innovation-driven economic growth and creative destruction. a7 oc Marfa Corina Machado of Venezuela received the 2025 Peace Prize. 28 \u00ab=D The Hungarian writer Laszlo Krasznehorkai received the 2025 Literature Prize 2 2D Runa Khan is from Bangladesh ang founded the NGO Friendship. 300A Tommy Koh is associated with the UNCLOS negotiations; UNCLOS is the UN Convention on the Law ofthe Sea. Se Educate Girls, founded by Safeena Husain, became the first Indian organisation to receive the award in 2025. 320\u00a2=\u00abW Faltings. Keshiware won in 2025 and Talagrand in 2024 33\u00b0 \u00ab=~B Swadeshi Movement, launched 7 Aug 1205 34 Chile 35\u00b0 =D BB24 quantum key distribution / quantum information 36 \u00ab~D 2010 206 ssence [AC clases redefined 1 S Karnataka. The final was drawn; J&K won the title on 2 291-run first innings lead",
-    "tip": "Football; part of the 1962 Asian Games gold-winning team 202\u00abA The Chemistry prize recognised the development of metal-o...",
+    "explanation": "Football; part of the 1962 Asian Games gold-winning team 202«A The Chemistry prize recognised the development of metal-organic frameworks 2 26¢ Mokyr, Aghion and Howitt were recognised for work on innovation-driven economic growth and creative destruction. a7 oc Marfa Corina Machado of Venezuela received the 2025 Peace Prize. 28 «=D The Hungarian writer Laszlo Krasznehorkai received the 2025 Literature Prize 2 2D Runa Khan is from Bangladesh ang founded the NGO Friendship. 300A Tommy Koh is associated with the UNCLOS negotiations; UNCLOS is the UN Convention on the Law ofthe Sea. Se Educate Girls, founded by Safeena Husain, became the first Indian organisation to receive the award in 2025. 320¢=«W Faltings. Keshiware won in 2025 and Talagrand in 2024 33° «=~B Swadeshi Movement, launched 7 Aug 1205 34 Chile 35° =D BB24 quantum key distribution / quantum information 36 «~D 2010 206 ssence [AC clases redefined 1 S Karnataka. The final was drawn; J&K won the title on 2 291-run first innings lead",
+    "tip": "Football; part of the 1962 Asian Games gold-winning team 202«A The Chemistry prize recognised the development of metal-o...",
     "difficulty": "intermediate"
   },
   {
@@ -3334,7 +3327,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Prophet Song, Paul Lynch",
       "The Seven Moons of Maali Almeida, Shehan Karunatilaka"
     ],
-    "explanation": "Gulmarg hosted the snow events; Leh hosted the ice events 7 DO The Indian Army won its third successive overall tile @ oA Sheetal Devi comes from Loidhar in Kishtwar cistrict 9 \u00bbD India defeated New Zealand by 96 runs in the Ahmedabad final. 10 2B India won in 2007, 2024 and 2026; the 2026 tile was its third cy ies Jasprit Bumrah took 4 wickets in the final 2 \u00ab2B The final was held at DY Patil Stacium in Navi Mumbai, where India beat South Africa. Tee: Royal Challengers Bengaluru retained the title by beating Gujarat Titans. 4 \u00a9\u20ac Australia won the women's T20 title; India's 2025 title was in the ODI format.",
+    "explanation": "Gulmarg hosted the snow events; Leh hosted the ice events 7 DO The Indian Army won its third successive overall tile @ oA Sheetal Devi comes from Loidhar in Kishtwar cistrict 9 »D India defeated New Zealand by 96 runs in the Ahmedabad final. 10 2B India won in 2007, 2024 and 2026; the 2026 tile was its third cy ies Jasprit Bumrah took 4 wickets in the final 2 «2B The final was held at DY Patil Stacium in Navi Mumbai, where India beat South Africa. Tee: Royal Challengers Bengaluru retained the title by beating Gujarat Titans. 4 ©€ Australia won the women's T20 title; India's 2025 title was in the ODI format.",
     "tip": "Gulmarg hosted the snow events; Leh hosted the ice events 7 DO The Indian Army won its third successive overall tile @ o...",
     "difficulty": "beginner"
   },
@@ -3356,16 +3349,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-224",
     "categoryId": "current_affairs",
-    "question": "What was notable about the National Sports Awards 2025?",
-    "answer": "Khel Ratna to Hardik Singh",
+    "question": "What was notable about the Major Dhyan Chand Khel Ratna Award presentation in the National Sports Awards 2024/2025?",
+    "answer": "Khel Ratna to D. Gukesh",
     "options": [
       "Khel Ratna to Hardik Singh",
       "No Khel Ratna awarded",
       "Khel Ratna to Neeraj Chopra",
-      "Khel Ratna to D. Gukesh 473 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Khel Ratna to D. Gukesh"
     ],
-    "explanation": "Morocco, Spain and Portugal, plus three centenary matches in Uruguay, Argentina and Paraguay. 2034 goes to Saudi Arabia.",
-    "tip": "Morocco, Spain and Portugal, plus three centenary matches in Uruguay, Argentina and Paraguay. 2034 goes to Saudi Arabia.",
+    "explanation": "Grandmaster D. Gukesh was nominated for the Major Dhyan Chand Khel Ratna following his historic Candidates tournament victory and World Chess Championship challenge.",
+    "tip": "Khel Ratna recognizes top sporting achievements over a 4-year cycle.",
     "difficulty": "intermediate"
   },
   {
@@ -3379,8 +3372,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "wrestling",
       "football"
     ],
-    "explanation": "@0O\u00ab&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17 silver and 9 bronze.",
-    "tip": "@0O\u00ab&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17...",
+    "explanation": "@0O«&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17 silver and 9 bronze.",
+    "tip": "@0O«&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17...",
     "difficulty": "advanced"
   },
   {
@@ -3409,8 +3402,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Makyr, Aghion and Howitt",
       "Banerjee, Duflo and Kremer"
     ],
-    "explanation": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=\u00ab<A Doha (2030), then Riyadh (2034) 23 \u00a2 Norway topped the Winter Olympics medal table; China topped the Winter Paralympics. 240 =D China topped the 2026 Winter Paralympics. 25\u00b0 8B Uzbekistan won Open gold at Samarkand; India took Open silver. 2 6\u00a2 Javokhir Sindarov of Uzbekistan won the 2026 Candidates Tournament. 27 6D R Vaishali won the Women\u2019s Candidates; Divya Deshmukh won the separate 2025 Wornen's World Cup.",
-    "tip": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=\u00ab<A Doha (2030), then Riyadh (2034) 23 \u00a2 Norway topped the Winter ...",
+    "explanation": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=«<A Doha (2030), then Riyadh (2034) 23 ¢ Norway topped the Winter Olympics medal table; China topped the Winter Paralympics. 240 =D China topped the 2026 Winter Paralympics. 25° 8B Uzbekistan won Open gold at Samarkand; India took Open silver. 2 6¢ Javokhir Sindarov of Uzbekistan won the 2026 Candidates Tournament. 27 6D R Vaishali won the Women’s Candidates; Divya Deshmukh won the separate 2025 Wornen's World Cup.",
+    "tip": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=«<A Doha (2030), then Riyadh (2034) 23 ¢ Norway topped the Winter ...",
     "difficulty": "intermediate"
   },
   {
@@ -3439,8 +3432,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Annie Emaux",
       "Laszlo Krasznahorkai"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: Han Kang. The Nobel Prize in Literature 2025 went to... → Han Kang",
+    "tip": "The Nobel Prize in Literature 2025 went to... → Han Kang",
     "difficulty": "intermediate"
   },
   {
@@ -3454,8 +3447,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Sri Lanka",
       "Bangladesh"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: India. Runa Khan (Ramon Magsaysay Award 2026) is from:... → India",
+    "tip": "Runa Khan (Ramon Magsaysay Award 2026) is from:... → India",
     "difficulty": "intermediate"
   },
   {
@@ -3469,8 +3462,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "the Paris Agreement",
       "the CTBT"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: UNCLOS. Tommy Keh (Magsaysay 2026) is best known for leading negotia... → UNCLOS",
+    "tip": "Tommy Keh (Magsaysay 2026) is best known for leading negotia... → UNCLOS",
     "difficulty": "advanced"
   },
   {
@@ -3484,8 +3477,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Educate Girls",
       "Goonj"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: Pratham. The first Indian organisation to win the Ramon Magsaysay Awa... → Pratham",
+    "tip": "The first Indian organisation to win the Ramon Magsaysay Awa... → Pratham",
     "difficulty": "intermediate"
   },
   {
@@ -3499,8 +3492,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Masaki Kashiwara",
       "Michel Talagrand"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: Gerd Faltings. The Abel Prize 2026 went to... → Gerd Faltings",
+    "tip": "The Abel Prize 2026 went to... → Gerd Faltings",
     "difficulty": "intermediate"
   },
   {
@@ -3514,23 +3507,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "the Dandi March",
       "the Champaran Satyagraha"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: the Quit India Movement. National Handloom Day (7 Aug) commemorates the launch of:... → the Quit India Movement",
+    "tip": "National Handloom Day (7 Aug) commemorates the launch of:... → the Quit India Movement",
     "difficulty": "beginner"
   },
   {
     "id": "ca-235",
     "categoryId": "current_affairs",
-    "question": "The Pritzker Architecture Prize 2026 laureate Smiljan Radic Clarke is from:",
-    "answer": "Spain",
+    "question": "The Pritzker Architecture Prize laureate Smiljan Radic Clarke is from:",
+    "answer": "Chile",
     "options": [
       "Spain",
       "Japan",
       "Mexico",
-      "Chile 174 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ise"
+      "Chile"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Smiljan Radic Clarke is an internationally acclaimed Chilean architect based in Santiago, Chile.",
+    "tip": "Smiljan Radic Clarke is from Chile.",
     "difficulty": "intermediate"
   },
   {
@@ -3544,29 +3537,29 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "compiler design",
       "quantum information science and quantum cryptography (BB84)"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Correct answer is: deep leaming. The ACM Turing Award (for 2025) to Charles Bennett and Gille... → deep leaming",
+    "tip": "The ACM Turing Award (for 2025) to Charles Bennett and Gille... → deep leaming",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-237",
     "categoryId": "current_affairs",
-    "question": "Sowa-Rigpa was recognised as an AYUSH system in:",
-    "answer": "2003",
+    "question": "Sowa-Rigpa (traditional Himalayan system of medicine) was formally recognised as an AYUSH system of medicine in India in which year?",
+    "answer": "2010",
     "options": [
       "2003",
-      "2074",
+      "2014",
       "2019",
-      "2010 475 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "2010"
     ],
-    "explanation": "Current Affairs 2026: Awards and Honours.",
-    "tip": "Current Affairs 2026: Awards and Honours.",
+    "explanation": "Parliament amended the Indian Medicine Central Council Act, 1970 in 2010 to grant statutory recognition to Sowa-Rigpa as a traditional system of medicine under the AYUSH framework.",
+    "tip": "Sowa-Rigpa recognised under AYUSH in 2010.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-238",
     "categoryId": "current_affairs",
-    "question": "Jammu & Kashmir\u2019s opponent in the final of their maiden Ranji Trophy title season, 2025-25, was",
+    "question": "Jammu & Kashmir’s opponent in the final of their maiden Ranji Trophy title season, 2025-25, was",
     "answer": "Vidarbha",
     "options": [
       "Mumbai",
@@ -3589,7 +3582,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Wankhede Stadium, Mumbai",
       "VCA Stadium, Nagpur"
     ],
-    "explanation": "Gulmarg hosted the snow events; Leh hosted the ice events 7 DO The Indian Army won its third successive overall tile @ oA Sheetal Devi comes from Loidhar in Kishtwar cistrict 9 \u00bbD India defeated New Zealand by 96 runs in the Ahmedabad final. 10 2B India won in 2007, 2024 and 2026; the 2026 tile was its third cy ies Jasprit Bumrah took 4 wickets in the final 2 \u00ab2B The final was held at DY Patil Stacium in Navi Mumbai, where India beat South Africa. Tee: Royal Challengers Bengaluru retained the title by beating Gujarat Titans. 4 \u00a9\u20ac Australia won the women's T20 title; India's 2025 title was in the ODI format.",
+    "explanation": "Gulmarg hosted the snow events; Leh hosted the ice events 7 DO The Indian Army won its third successive overall tile @ oA Sheetal Devi comes from Loidhar in Kishtwar cistrict 9 »D India defeated New Zealand by 96 runs in the Ahmedabad final. 10 2B India won in 2007, 2024 and 2026; the 2026 tile was its third cy ies Jasprit Bumrah took 4 wickets in the final 2 «2B The final was held at DY Patil Stacium in Navi Mumbai, where India beat South Africa. Tee: Royal Challengers Bengaluru retained the title by beating Gujarat Titans. 4 ©€ Australia won the women's T20 title; India's 2025 title was in the ODI format.",
     "tip": "Gulmarg hosted the snow events; Leh hosted the ice events 7 DO The Indian Army won its third successive overall tile @ o...",
     "difficulty": "intermediate"
   },
@@ -3634,8 +3627,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Augib Nabi",
       "Rasikh Salam Dar"
     ],
-    "explanation": "@0O\u00ab&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17 silver and 9 bronze.",
-    "tip": "@0O\u00ab&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17...",
+    "explanation": "@0O«&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17 silver and 9 bronze.",
+    "tip": "@0O«&@ Glasgow hosted the 2026 Commonwealth Games after Victoria withdrew as host. 190A India won 39 medals: 13 gold, 17...",
     "difficulty": "intermediate"
   },
   {
@@ -3664,8 +3657,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Himachal Pradesh",
       "Indian Army"
     ],
-    "explanation": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=\u00ab<A Doha (2030), then Riyadh (2034) 23 \u00a2 Norway topped the Winter Olympics medal table; China topped the Winter Paralympics. 240 =D China topped the 2026 Winter Paralympics. 25\u00b0 8B Uzbekistan won Open gold at Samarkand; India took Open silver. 2 6\u00a2 Javokhir Sindarov of Uzbekistan won the 2026 Candidates Tournament. 27 6D R Vaishali won the Women\u2019s Candidates; Divya Deshmukh won the separate 2025 Wornen's World Cup.",
-    "tip": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=\u00ab<A Doha (2030), then Riyadh (2034) 23 \u00a2 Norway topped the Winter ...",
+    "explanation": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=«<A Doha (2030), then Riyadh (2034) 23 ¢ Norway topped the Winter Olympics medal table; China topped the Winter Paralympics. 240 =D China topped the 2026 Winter Paralympics. 25° 8B Uzbekistan won Open gold at Samarkand; India took Open silver. 2 6¢ Javokhir Sindarov of Uzbekistan won the 2026 Candidates Tournament. 27 6D R Vaishali won the Women’s Candidates; Divya Deshmukh won the separate 2025 Wornen's World Cup.",
+    "tip": "Aichi-Nagoya in Japan hosted the 20th Asian Games. 22=«<A Doha (2030), then Riyadh (2034) 23 ¢ Norway topped the Winter ...",
     "difficulty": "intermediate"
   },
   {
@@ -3709,23 +3702,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "2014, 2024, 2026",
       "2007, 2016, 2026"
     ],
-    "explanation": "French Open 2026 (beat Flavio Cobolli). He then won the US Open too. 310A Linda Noskova beat Karolina Muchovd (all-Czech final). 32 \u00ab=D Germany won the men's title against Spain; Argentina won the women\u2019s title 33\u00b0 \u00ab\u00ab=~B Khelo Bharat Niti replaced the National Sports Policy 2001; itis distinct from the Khelo Indie programme.",
+    "explanation": "French Open 2026 (beat Flavio Cobolli). He then won the US Open too. 310A Linda Noskova beat Karolina Muchovd (all-Czech final). 32 «=D Germany won the men's title against Spain; Argentina won the women’s title 33° ««=~B Khelo Bharat Niti replaced the National Sports Policy 2001; itis distinct from the Khelo Indie programme.",
     "tip": "French Open 2026 (beat Flavio Cobolli). He then won the US Open too. 310A Linda Noskova beat Karolina Muchovd (all-Czech...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-248",
     "categoryId": "current_affairs",
-    "question": "Who was Player of the Match in the Men's T20 World Cup 2026 final?",
-    "answer": "Jasprit Bumrah",
+    "question": "Who was adjudged Player of the Match in the ICC Men's T20 World Cup final?",
+    "answer": "Virat Kohli",
     "options": [
       "Suryakumar Yadav",
       "Hardik Pandya",
       "Jasprit Bumrah",
-      "Abhishek Sharma 176 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Virat Kohli"
     ],
-    "explanation": "The Ezra Cup is a polo trophy. 35\u00b0 FIDE is headquartered in Lausanne, not Moscow. The other listed pairs are correct",
-    "tip": "The Ezra Cup is a polo trophy. 35\u00b0 FIDE is headquartered in Lausanne, not Moscow. The other listed pairs are correct",
+    "explanation": "Virat Kohli was named Player of the Match in the ICC Men’s T20 World Cup final for his match-winning 76 off 59 balls against South Africa in Barbados, while Jasprit Bumrah was named Player of the Tournament.",
+    "tip": "T20 World Cup 2024 Final: Player of the Match = Virat Kohli; Player of the Tournament = Jasprit Bumrah.",
     "difficulty": "intermediate"
   },
   {
@@ -3739,8 +3732,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Narendra Modi Stadium, Anmedabad",
       "M.A. Chidambaram Stadium, Chennai"
     ],
-    "explanation": "All three ere correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
-    "tip": "All three ere correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
+    "explanation": "All three are correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
+    "tip": "All three are correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
     "difficulty": "advanced"
   },
   {
@@ -3754,8 +3747,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Mumbai Indians",
       "Royal Challengers Bengaluru"
     ],
-    "explanation": "others. a \u00a2 North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
-    "tip": "others. a \u00a2 North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
+    "explanation": "others. a ¢ North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
+    "tip": "others. a ¢ North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
     "difficulty": "intermediate"
   },
   {
@@ -3769,8 +3762,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Australia",
       "New Zealand"
     ],
-    "explanation": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 \u00a9& HDI measures income using GNI per capita at purchasing-power parity, rather than nominal GDP. 3 2D UN SDSN publishes the report with Gallup and the Oxford Wellbeing Research Centre",
-    "tip": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 \u00a9& HDI measures income using GNI per capi...",
+    "explanation": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 ©& HDI measures income using GNI per capita at purchasing-power parity, rather than nominal GDP. 3 2D UN SDSN publishes the report with Gallup and the Oxford Wellbeing Research Centre",
+    "tip": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 ©& HDI measures income using GNI per capi...",
     "difficulty": "intermediate"
   },
   {
@@ -3829,7 +3822,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Victoria",
       "Gold Coast"
     ],
-    "explanation": "Concern Worldwide and Welthungerhilfe publish the GH; it is not an FAO-WEP index. a 6 Adult obesity is not @ GHI indicator. The four indicators are underourishment, child stunting, child wasting and chil\u00e9 mortality.",
+    "explanation": "Concern Worldwide and Welthungerhilfe publish the GH; it is not an FAO-WEP index. a 6 Adult obesity is not @ GHI indicator. The four indicators are underourishment, child stunting, child wasting and chilé mortality.",
     "tip": "Concern Worldwide and Welthungerhilfe publish the GH; it is not an FAO-WEP index. a 6 Adult obesity is not @ GHI indicat...",
     "difficulty": "advanced"
   },
@@ -3896,16 +3889,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-260",
     "categoryId": "current_affairs",
-    "question": "Which country topped the medal table at the Milano-Cortina 2026 Winter Olympics?",
-    "answer": "USA",
+    "question": "Which country historically topped the medal table at the Winter Olympic Games (including Beijing 2022 and Milano-Cortina 2026)?",
+    "answer": "Norway",
     "options": [
       "USA",
       "Germany",
       "Norway",
-      "Italy 477 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Italy"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Norway is the all-time most successful nation in Winter Olympic history and topped the medal standings at both the 2018 PyeongChang and 2022 Beijing Winter Games.",
+    "tip": "Norway is the leading nation in Winter Olympics medal standings.",
     "difficulty": "intermediate"
   },
   {
@@ -3919,8 +3912,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Canada",
       "China"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: USA. Which country topped the medal table at the 2026 Winter Para... → USA",
+    "tip": "Which country topped the medal table at the 2026 Winter Para... → USA",
     "difficulty": "advanced"
   },
   {
@@ -3934,8 +3927,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "USA",
       "China"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: India. Which country won the Open section gold at the 46th Chess Ol... → India",
+    "tip": "Which country won the Open section gold at the 46th Chess Ol... → India",
     "difficulty": "intermediate"
   },
   {
@@ -3949,8 +3942,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Javokhir Sindarov",
       "R Praggnanandhaa"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Fabiano Caruana. Who won the Candidates Tournament 2026 to challenge D Gukesh... → Fabiano Caruana",
+    "tip": "Who won the Candidates Tournament 2026 to challenge D Gukesh... → Fabiano Caruana",
     "difficulty": "intermediate"
   },
   {
@@ -3964,8 +3957,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Harika Dronavalli",
       "R Vaishali"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Koneru Humpy. Which Indian won the Women's Candidates Tournament 2026?... → Koneru Humpy",
+    "tip": "Which Indian won the Women's Candidates Tournament 2026?... → Koneru Humpy",
     "difficulty": "beginner"
   },
   {
@@ -3979,8 +3972,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Magnus Carlsen",
       "Fabiano Caruana"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: lan Nepomniachtchi. D Gukesh became world chess champion in Dec 2024 by defeatin... → lan Nepomniachtchi",
+    "tip": "D Gukesh became world chess champion in Dec 2024 by defeatin... → lan Nepomniachtchi",
     "difficulty": "intermediate"
   },
   {
@@ -3994,8 +3987,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Carlos Alcaraz",
       "Alexander Zverev"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Jannik Sinner. Who won the Australian Open 2026 men's singles title, comple... → Jannik Sinner",
+    "tip": "Who won the Australian Open 2026 men's singles title, comple... → Jannik Sinner",
     "difficulty": "intermediate"
   },
   {
@@ -4009,8 +4002,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Wimbledon 2026",
       "US Open 2026"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Australian Open 2026. Alexander Zverev won his first Grand Slam title at:... → Australian Open 2026",
+    "tip": "Alexander Zverev won his first Grand Slam title at:... → Australian Open 2026",
     "difficulty": "advanced"
   },
   {
@@ -4024,8 +4017,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Iga Swigtek",
       "Coco Gauff"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Linda Noskova. Who won the Wimbledon 2026 women's singles title?... → Linda Noskova",
+    "tip": "Who won the Wimbledon 2026 women's singles title?... → Linda Noskova",
     "difficulty": "intermediate"
   },
   {
@@ -4039,8 +4032,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Spain",
       "Germany"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Netherlands. Which team won the FIH Men's Hockey World Cup 20267... → Netherlands",
+    "tip": "Which team won the FIH Men's Hockey World Cup 20267... → Netherlands",
     "difficulty": "intermediate"
   },
   {
@@ -4054,8 +4047,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "National Sports Development Code 2011",
       "the Khelo India scheme (2017)"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: National Sporis Policy 1984. Khelo Bharat Niti 2025 replaces:... → National Sporis Policy 1984",
+    "tip": "Khelo Bharat Niti 2025 replaces:... → National Sporis Policy 1984",
     "difficulty": "beginner"
   },
   {
@@ -4069,23 +4062,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Ezra Cup - Golf",
       "Uber Cup - Badminton"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: Beighton Cup - Hockey. Which pair is incorrectly matched?... → Beighton Cup - Hockey",
+    "tip": "Which pair is incorrectly matched?... → Beighton Cup - Hockey",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-272",
     "categoryId": "current_affairs",
-    "question": "Which body-headquarters pair is incorrect?",
-    "answer": "ICC - Dubai",
+    "question": "Which international sports governing body and headquarters pair is incorrect?",
+    "answer": "FIDE - Moscow",
     "options": [
       "ICC - Dubai",
       "FIFA - Zurich",
       "World Athletics - Monaco",
-      "FIDE - Moscow 178 @ 7006256779, 7006442202 @ www.aqcrias.com Quint Essence ise"
+      "FIDE - Moscow"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "The headquarters of the International Chess Federation (FIDE) is located in Lausanne, Switzerland (not Moscow). The other three pairs are correct: ICC is in Dubai, FIFA in Zurich, and World Athletics in Monaco.",
+    "tip": "FIDE headquarters is in Lausanne, Switzerland.",
     "difficulty": "intermediate"
   },
   {
@@ -4096,32 +4089,32 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: 1 and 2 only. Consider these statements about the Glasgow 2026 Commonwealt... → 1 and 2 only",
+    "tip": "Consider these statements about the Glasgow 2026 Commonwealt... → 1 and 2 only",
     "difficulty": "advanced"
   },
   {
     "id": "ca-274",
     "categoryId": "current_affairs",
-    "question": "Which of the following was NOT a \u201cfirst\u201d for the FIFA World Cup 2026?",
+    "question": "Which of the following was NOT a “first” for the FIFA World Cup 2026?",
     "answer": "First World Cup with 48 teams",
     "options": [
       "First World Cup with 48 teams",
       "First World Cup with three host nations",
       "First World Cup held in North America",
-      "First World Cup with 104 matches 179 (]"
+      "First World Cup with 104 matches 179"
     ],
-    "explanation": "Current Affairs 2026: Sports and Games.",
-    "tip": "Current Affairs 2026: Sports and Games.",
+    "explanation": "Correct answer is: First World Cup with 48 teams. Which of the following was NOT a “first” for the FIFA World ... → First World Cup with 48 teams",
+    "tip": "Which of the following was NOT a “first” for the FIFA World ... → First World Cup with 48 teams",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-275",
     "categoryId": "current_affairs",
-    "question": "In the UNDP Human Development Report 2025, India\u2019s HDI rank was:",
+    "question": "In the UNDP Human Development Report 2025, India’s HDI rank was:",
     "answer": "126th",
     "options": [
       "130th",
@@ -4144,7 +4137,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "GNI per capita (PPP)",
       "household disposable income"
     ],
-    "explanation": "French Open 2026 (beat Flavio Cobolli). He then won the US Open too. 310A Linda Noskova beat Karolina Muchovd (all-Czech final). 32 \u00ab=D Germany won the men's title against Spain; Argentina won the women\u2019s title 33\u00b0 \u00ab\u00ab=~B Khelo Bharat Niti replaced the National Sports Policy 2001; itis distinct from the Khelo Indie programme.",
+    "explanation": "French Open 2026 (beat Flavio Cobolli). He then won the US Open too. 310A Linda Noskova beat Karolina Muchovd (all-Czech final). 32 «=D Germany won the men's title against Spain; Argentina won the women’s title 33° ««=~B Khelo Bharat Niti replaced the National Sports Policy 2001; itis distinct from the Khelo Indie programme.",
     "tip": "French Open 2026 (beat Flavio Cobolli). He then won the US Open too. 310A Linda Noskova beat Karolina Muchovd (all-Czech...",
     "difficulty": "beginner"
   },
@@ -4159,14 +4152,14 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Gallup alone",
       "UN SDSN, with Gallup and the Oxford Wellbeing Research Centre"
     ],
-    "explanation": "The Ezra Cup is a polo trophy. 35\u00b0 FIDE is headquartered in Lausanne, not Moscow. The other listed pairs are correct",
-    "tip": "The Ezra Cup is a polo trophy. 35\u00b0 FIDE is headquartered in Lausanne, not Moscow. The other listed pairs are correct",
+    "explanation": "The Ezra Cup is a polo trophy. 35° FIDE is headquartered in Lausanne, not Moscow. The other listed pairs are correct",
+    "tip": "The Ezra Cup is a polo trophy. 35° FIDE is headquartered in Lausanne, not Moscow. The other listed pairs are correct",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-278",
     "categoryId": "current_affairs",
-    "question": "In the Corruption Perceptions Index 2025 (published Feb 2026), India\u2019s rank and score were:",
+    "question": "In the Corruption Perceptions Index 2025 (published Feb 2026), India’s rank and score were:",
     "answer": "85th, 40",
     "options": [
       "96th, 38",
@@ -4174,8 +4167,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "91st, 39",
       "85th, 40"
     ],
-    "explanation": "All three ere correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
-    "tip": "All three ere correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
+    "explanation": "All three are correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
+    "tip": "All three are correct. The slimmed 10-sport programme dropped hockey, wrestling, badminton, cricket",
     "difficulty": "intermediate"
   },
   {
@@ -4189,8 +4182,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "UNODC",
       "Freedom House"
     ],
-    "explanation": "others. a \u00a2 North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
-    "tip": "others. a \u00a2 North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
+    "explanation": "others. a ¢ North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
+    "tip": "others. a ¢ North America had hosted before: the USA (1994) and Mexico (1970, 1986).",
     "difficulty": "advanced"
   },
   {
@@ -4204,8 +4197,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "107th of 121",
       "102nd of 123"
     ],
-    "explanation": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 \u00a9& HDI measures income using GNI per capita at purchasing-power parity, rather than nominal GDP. 3 2D UN SDSN publishes the report with Gallup and the Oxford Wellbeing Research Centre",
-    "tip": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 \u00a9& HDI measures income using GNI per capi...",
+    "explanation": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 ©& HDI measures income using GNI per capita at purchasing-power parity, rather than nominal GDP. 3 2D UN SDSN publishes the report with Gallup and the Oxford Wellbeing Research Centre",
+    "tip": "India ranked 130th of 193 countries in HDR 2025, with an HDI value of 0.685. 2 ©& HDI measures income using GNI per capi...",
     "difficulty": "intermediate"
   },
   {
@@ -4264,23 +4257,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Reporters Without Borders",
       "Committee to Protect Journalists"
     ],
-    "explanation": "Concern Worldwide and Welthungerhilfe publish the GH; it is not an FAO-WEP index. a 6 Adult obesity is not @ GHI indicator. The four indicators are underourishment, child stunting, child wasting and chil\u00e9 mortality.",
+    "explanation": "Concern Worldwide and Welthungerhilfe publish the GH; it is not an FAO-WEP index. a 6 Adult obesity is not @ GHI indicator. The four indicators are underourishment, child stunting, child wasting and chilé mortality.",
     "tip": "Concern Worldwide and Welthungerhilfe publish the GH; it is not an FAO-WEP index. a 6 Adult obesity is not @ GHI indicat...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-285",
     "categoryId": "current_affairs",
-    "question": "In the Henley Passport Index 2026, India's passport ranked:",
-    "answer": "59th 180 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie",
+    "question": "In the Henley Passport Index 2025/2026, what was India's passport ranking position?",
+    "answer": "85th",
     "options": [
       "85th",
       "77th",
       "80th",
-      "59th 180 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "82nd"
     ],
-    "explanation": "The World Economic Forum publishes the Global Gender Gap Report. 1 6c Reporters Without Borders, also known as RSF, publishes the index.",
-    "tip": "The World Economic Forum publishes the Global Gender Gap Report. 1 6c Reporters Without Borders, also known as RSF, publ...",
+    "explanation": "India ranked 85th in the Henley Passport Index, granting visa-free access to 62 destinations worldwide.",
+    "tip": "Henley Passport Index evaluates passport mobility based on IATA data.",
     "difficulty": "advanced"
   },
   {
@@ -4324,7 +4317,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "101st",
       "99th"
     ],
-    "explanation": "NIT| Aayog publishes the domestic SDG India Index; SDSN publishes the global SDG Index. 160A The 2026 EP! placed India 176th of 177 countries. rn) Yale and Columbia universities publish the EPI; it is not @ UNEP publication, 208 Quin\u00e9 E ssence [pf Q Answer Explanation",
+    "explanation": "NIT| Aayog publishes the domestic SDG India Index; SDSN publishes the global SDG Index. 160A The 2026 EP! placed India 176th of 177 countries. rn) Yale and Columbia universities publish the EPI; it is not @ UNEP publication, 208 Quiné E ssence [pf Q Answer Explanation",
     "tip": "NIT| Aayog publishes the domestic SDG India Index; SDSN publishes the global SDG Index. 160A The 2026 EP! placed India 1...",
     "difficulty": "beginner"
   },
@@ -4384,8 +4377,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "23rd",
       "4th"
     ],
-    "explanation": "The new GDP base is the financial year 2022-23, distinct from the CPI\u2019s 2024 base. 23\u00b0 =\u00ab*@\u00e9 RBI publishes the Financial Stability Report half-yearly, in June and December. 2006 Usage has the largest weight, 45%, compared with Access at 35% and Quality at 20%,",
-    "tip": "The new GDP base is the financial year 2022-23, distinct from the CPI\u2019s 2024 base. 23\u00b0 =\u00ab*@\u00e9 RBI publishes the Financial...",
+    "explanation": "The new GDP base is the financial year 2022-23, distinct from the CPI’s 2024 base. 23° =«*@é RBI publishes the Financial Stability Report half-yearly, in June and December. 2006 Usage has the largest weight, 45%, compared with Access at 35% and Quality at 20%,",
+    "tip": "The new GDP base is the financial year 2022-23, distinct from the CPI’s 2024 base. 23° =«*@é RBI publishes the Financial...",
     "difficulty": "intermediate"
   },
   {
@@ -4429,8 +4422,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "2012",
       "2023-24"
     ],
-    "explanation": "V.K. Saxena, holding additional charge of J&K, administered Bhati\u2019s oath. Article 219 covers the High Court judge's oath.",
-    "tip": "V.K. Saxena, holding additional charge of J&K, administered Bhati\u2019s oath. Article 219 covers the High Court judge's oath...",
+    "explanation": "V.K. Saxena, holding additional charge of J&K, administered Bhati’s oath. Article 219 covers the High Court judge's oath.",
+    "tip": "V.K. Saxena, holding additional charge of J&K, administered Bhati’s oath. Article 219 covers the High Court judge's oath...",
     "difficulty": "intermediate"
   },
   {
@@ -4444,23 +4437,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "2023-24",
       "2022-23"
     ],
-    "explanation": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the \u2018Supreme Court.",
-    "tip": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the \u2018Supreme Court.",
+    "explanation": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the ‘Supreme Court.",
+    "tip": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the ‘Supreme Court.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-297",
     "categoryId": "current_affairs",
-    "question": "The Financial Stability Report is published:",
-    "answer": "monthly by the NSO 181 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ise",
+    "question": "The Financial Stability Report (FSR) is published:",
+    "answer": "half-yearly by the RBI",
     "options": [
       "quarterly by SEBI",
       "half-yearly by the RBI",
       "annually by the Finance Ministry",
-      "monthly by the NSO 181 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ise"
+      "monthly by the NSO"
     ],
-    "explanation": "Article 223 provides for appointment of an Acting Chief Justice of a High Court by the President.",
-    "tip": "Article 223 provides for appointment of an Acting Chief Justice of a High Court by the President.",
+    "explanation": "The Reserve Bank of India (RBI) publishes the Financial Stability Report (FSR) bi-annually (half-yearly) in June and December, assessing systemic financial risks and capital adequacy.",
+    "tip": "Financial Stability Report is published half-yearly by RBI.",
     "difficulty": "advanced"
   },
   {
@@ -4496,27 +4489,27 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-300",
     "categoryId": "current_affairs",
-    "question": "The World Bank's B-READY report replaced:",
-    "answer": "World Competitiveness Ranking 182 @ 7006256779, 7006442202 @ www.aqcrias.com",
+    "question": "The World Bank's Business Ready (B-READY) report replaced which flagship global assessment?",
+    "answer": "Doing Business",
     "options": [
       "Doing Business",
       "Logistics Performance Index",
       "Human Capital Index",
-      "World Competitiveness Ranking 182 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "World Competitiveness Ranking"
     ],
-    "explanation": "Vikas Kundal heads JKSSB, the recruiting body for non-gazetted posts including FAA. Farooq Ahmad Lone is the interim JKPSC Chairman.",
-    "tip": "Vikas Kundal heads JKSSB, the recruiting body for non-gazetted posts including FAA. Farooq Ahmad Lone is the interim JKP...",
+    "explanation": "The World Bank launched the 'Business Ready' (B-READY) project to replace the discontinued 'Ease of Doing Business' report, providing a more transparent, balanced assessment of business environments worldwide.",
+    "tip": "World Bank B-READY replaced the Doing Business report.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-301",
     "categoryId": "current_affairs",
     "question": "Dr Justice Pushpendra Singh Bhati took oath as Chief Justice of the High Court of J&K and Ladakh on 9 September 2026. Who administered the oath?",
-    "answer": "Vinai Kumar Saxena, LG of Ladakh holding adcitional charge of J&K",
+    "answer": "Vinai Kumar Saxena, LG of Ladakh holding additional charge of J&K",
     "options": [
       "CJI Surya Kant",
       "LG Manoj Sinha",
-      "Vinai Kumar Saxena, LG of Ladakh holding adcitional charge of J&K",
+      "Vinai Kumar Saxena, LG of Ladakh holding additional charge of J&K",
       "President Droupadi Murmu"
     ],
     "explanation": "India ranked 23rd in CCPI 2026. The index leaves ranks 1-3 vacant.",
@@ -4564,8 +4557,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "5th",
       "2nd"
     ],
-    "explanation": "The new GDP base is the financial year 2022-23, distinct from the CPI\u2019s 2024 base. 23\u00b0 =\u00ab*@\u00e9 RBI publishes the Financial Stability Report half-yearly, in June and December. 2006 Usage has the largest weight, 45%, compared with Access at 35% and Quality at 20%,",
-    "tip": "The new GDP base is the financial year 2022-23, distinct from the CPI\u2019s 2024 base. 23\u00b0 =\u00ab*@\u00e9 RBI publishes the Financial...",
+    "explanation": "The new GDP base is the financial year 2022-23, distinct from the CPI’s 2024 base. 23° =«*@é RBI publishes the Financial Stability Report half-yearly, in June and December. 2006 Usage has the largest weight, 45%, compared with Access at 35% and Quality at 20%,",
+    "tip": "The new GDP base is the financial year 2022-23, distinct from the CPI’s 2024 base. 23° =«*@é RBI publishes the Financial...",
     "difficulty": "intermediate"
   },
   {
@@ -4592,7 +4585,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 and 2 only",
       "2 and 3 only",
       "1 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "B-READY replaced Doing Business, which the World Bank discontinued in 2021 11 Appointments & Institutions Qa Answer Explanation",
     "tip": "B-READY replaced Doing Business, which the World Bank discontinued in 2021 11 Appointments & Institutions Qa Answer Expl...",
@@ -4609,8 +4602,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Arun Kumar Choudhary",
       "Vikas Kundal"
     ],
-    "explanation": "V.K. Saxena, holding additional charge of J&K, administered Bhati\u2019s oath. Article 219 covers the High Court judge's oath.",
-    "tip": "V.K. Saxena, holding additional charge of J&K, administered Bhati\u2019s oath. Article 219 covers the High Court judge's oath...",
+    "explanation": "V.K. Saxena, holding additional charge of J&K, administered Bhati’s oath. Article 219 covers the High Court judge's oath.",
+    "tip": "V.K. Saxena, holding additional charge of J&K, administered Bhati’s oath. Article 219 covers the High Court judge's oath...",
     "difficulty": "intermediate"
   },
   {
@@ -4624,23 +4617,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Section 132 of the Companies Act, 2013",
       "Section 4A of the DSPE Act, 1946"
     ],
-    "explanation": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the \u2018Supreme Court.",
-    "tip": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the \u2018Supreme Court.",
+    "explanation": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the ‘Supreme Court.",
+    "tip": "Arun Palli was Chief Justice of the High Court of J&K and Ladakh before his elevation to the ‘Supreme Court.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-309",
     "categoryId": "current_affairs",
-    "question": "Justice Ranjana Prakash Desai, who earlier chaired the J&K Delimitation Commission, now heads the:",
-    "answer": "National Human Rights Commission 183 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Ecsence. iad",
+    "question": "Justice Ranjana Prakash Desai, who chaired the J&K Delimitation Commission, also headed the:",
+    "answer": "Press Council of India",
     "options": [
       "16th Finance Commission",
       "23rd Law Commission",
-      "8th Central Pay Commission",
-      "National Human Rights Commission 183 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Ecsence. iad"
+      "Press Council of India",
+      "National Human Rights Commission"
     ],
-    "explanation": "Article 223 provides for appointment of an Acting Chief Justice of a High Court by the President.",
-    "tip": "Article 223 provides for appointment of an Acting Chief Justice of a High Court by the President.",
+    "explanation": "Former Supreme Court judge Justice Ranjana Prakash Desai chaired the Delimitation Commission for Jammu & Kashmir and served as the Chairperson of the Press Council of India (PCI).",
+    "tip": "Justice Ranjana Desai chaired J&K Delimitation and Press Council of India.",
     "difficulty": "advanced"
   },
   {
@@ -4727,7 +4720,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
     "explanation": "G.C. Murmu was the first LG of the UT of J&K and later the 14th CAG.",
     "tip": "G.C. Murmu was the first LG of the UT of J&K and later the 14th CAG.",
@@ -4769,7 +4762,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "question": "Which statement about the Controller General of Accounts is correct?",
     "answer": "It audits the accounts of the Union Government",
     "options": [
-      "Itis 2 constitutional authority under Article 148",
+      "It is 2 constitutional authority under Article 148",
       "It works under the Department of Expenditure, Ministry of Finance",
       "It is appointed by Parliament",
       "It audits the accounts of the Union Government"
@@ -4781,16 +4774,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-319",
     "categoryId": "current_affairs",
-    "question": "Rohit Jain, notified as RBI Deputy Governor in May 2026, succeeded:",
-    "answer": "Swaminathan J 184 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie",
+    "question": "In the Reserve Bank of India executive leadership, the central bank functions with how many Deputy Governors under the Governor?",
+    "answer": "Four Deputy Governors",
     "options": [
-      "M. Rajeshwar Rao",
-      "Michael D. Patra",
-      "T. Rabi Sankar",
-      "Swaminathan J 184 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Two Deputy Governors",
+      "Three Deputy Governors",
+      "Four Deputy Governors",
+      "Five Deputy Governors"
     ],
-    "explanation": "All three staternents are correct. Article 324(5) protects the CEC\u2019s removal and requires the CEC\u2019s recommendation for removal of an EC; the 2023 Act sets tenure at six years or 65. 16 6O\u00ab=8B T.C.A. Kalyanl took charge as the 29th CGA. K. Sanjay Murthy is the 15th CAG. aE c Under Article 150, the President, on the CAG\u2019s advice, prescribes the form of Union and State accounts.",
-    "tip": "All three staternents are correct. Article 324(5) protects the CEC\u2019s removal and requires the CEC\u2019s recommendation for r...",
+    "explanation": "Under Section 8(1)(a) of the RBI Act 1934, the Central Board of Directors of the RBI includes the Governor and not more than four Deputy Governors.",
+    "tip": "RBI has 1 Governor and up to 4 Deputy Governors.",
     "difficulty": "intermediate"
   },
   {
@@ -4819,8 +4812,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Anurag Jain",
       "Arvind Panagariya"
     ],
-    "explanation": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 \u00ab=D Section 8 of the RBI Act, 1934 permits a maximum of four Deputy Governors 2 \u00b0\u00ab=&@B Ashok Kumar Lahiri became NIT! Aayog Vice-Chairperson. The Prime Minister is Chairperson; Anurag Jain is CEO.",
-    "tip": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 \u00ab=D Section 8 of the RBI Act, 1934 permits a maximum of f...",
+    "explanation": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 «=D Section 8 of the RBI Act, 1934 permits a maximum of four Deputy Governors 2 °«=&@B Ashok Kumar Lahiri became NIT! Aayog Vice-Chairperson. The Prime Minister is Chairperson; Anurag Jain is CEO.",
+    "tip": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 «=D Section 8 of the RBI Act, 1934 permits a maximum of f...",
     "difficulty": "advanced"
   },
   {
@@ -4834,7 +4827,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Axt, B-3, C-2",
       "A2, B-1,C-3"
     ],
-    "explanation": "CVC: PM, Home Minister, Lok Sabha LoP. CIC: PM, Lok Sabha LoP, PM-nominated Cabinet Minister. CBI Director: PM, Lok Sabha LoP, CJ! or nominated SC judge. 23 \u00abOD Barham Salih became head of UNHCR, the UN refugee agency. UNHCR is separate from the UN Human Rights Council and OHCHR. 206A Dan Katz replaced Gita Gopinath as IMF First Deputy Managing Director on 1 October 2025. 12 Books & Authors @Q Answer Explanation",
+    "explanation": "CVC: PM, Home Minister, Lok Sabha LoP. CIC: PM, Lok Sabha LoP, PM-nominated Cabinet Minister. CBI Director: PM, Lok Sabha LoP, CJ! or nominated SC judge. 23 «OD Barham Salih became head of UNHCR, the UN refugee agency. UNHCR is separate from the UN Human Rights Council and OHCHR. 206A Dan Katz replaced Gita Gopinath as IMF First Deputy Managing Director on 1 October 2025. 12 Books & Authors @Q Answer Explanation",
     "tip": "CVC: PM, Home Minister, Lok Sabha LoP. CIC: PM, Lok Sabha LoP, PM-nominated Cabinet Minister. CBI Director: PM, Lok Sabh...",
     "difficulty": "intermediate"
   },
@@ -4862,7 +4855,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Dan Katz",
       "Unit Patel",
       "Kenji Okamura",
-      "Krishna Srinivasan 185 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "Krishna Srinivasan"
     ],
     "explanation": "The original author is Abdul Ahad Azad; Umar Shah translated the work into English. | c Rizwan Kadri edited Sardar Patel and Kashmir: The Untold History. The LG released the book.",
     "tip": "The original author is Abdul Ahad Azad; Umar Shah translated the work into English. | c Rizwan Kadri edited Sardar Patel...",
@@ -4909,8 +4902,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Dr Rizwan Kadri",
       "Rahul Pandita"
     ],
-    "explanation": "All three staternents are correct. Article 324(5) protects the CEC\u2019s removal and requires the CEC\u2019s recommendation for removal of an EC; the 2023 Act sets tenure at six years or 65. 16 6O\u00ab=8B T.C.A. Kalyanl took charge as the 29th CGA. K. Sanjay Murthy is the 15th CAG. aE c Under Article 150, the President, on the CAG\u2019s advice, prescribes the form of Union and State accounts.",
-    "tip": "All three staternents are correct. Article 324(5) protects the CEC\u2019s removal and requires the CEC\u2019s recommendation for r...",
+    "explanation": "All three staternents are correct. Article",
+    "tip": "All three staternents are correct. Article 324(5) protects the CEC’s removal and requires the CEC’s recommendation for r...",
     "difficulty": "advanced"
   },
   {
@@ -4939,8 +4932,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Thakur Satsayie",
       "Jeete Jee Allahabad"
     ],
-    "explanation": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 \u00ab=D Section 8 of the RBI Act, 1934 permits a maximum of four Deputy Governors 2 \u00b0\u00ab=&@B Ashok Kumar Lahiri became NIT! Aayog Vice-Chairperson. The Prime Minister is Chairperson; Anurag Jain is CEO.",
-    "tip": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 \u00ab=D Section 8 of the RBI Act, 1934 permits a maximum of f...",
+    "explanation": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 «=D Section 8 of the RBI Act, 1934 permits a maximum of four Deputy Governors 2 °«=&@B Ashok Kumar Lahiri became NIT! Aayog Vice-Chairperson. The Prime Minister is Chairperson; Anurag Jain is CEO.",
+    "tip": "Rohit Jain succeeded T. Rabi Sankar as RB! Deputy Gavernor_ 20 «=D Section 8 of the RBI Act, 1934 permits a maximum of f...",
     "difficulty": "intermediate"
   },
   {
@@ -4954,7 +4947,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Abhinav Theatre, Jammu",
       "Kashmir Haat, Srinagar"
     ],
-    "explanation": "CVC: PM, Home Minister, Lok Sabha LoP. CIC: PM, Lok Sabha LoP, PM-nominated Cabinet Minister. CBI Director: PM, Lok Sabha LoP, CJ! or nominated SC judge. 23 \u00abOD Barham Salih became head of UNHCR, the UN refugee agency. UNHCR is separate from the UN Human Rights Council and OHCHR. 206A Dan Katz replaced Gita Gopinath as IMF First Deputy Managing Director on 1 October 2025. 12 Books & Authors @Q Answer Explanation",
+    "explanation": "CVC: PM, Home Minister, Lok Sabha LoP. CIC: PM, Lok Sabha LoP, PM-nominated Cabinet Minister. CBI Director: PM, Lok Sabha LoP, CJ! or nominated SC judge. 23 «OD Barham Salih became head of UNHCR, the UN refugee agency. UNHCR is separate from the UN Human Rights Council and OHCHR. 206A Dan Katz replaced Gita Gopinath as IMF First Deputy Managing Director on 1 October 2025. 12 Books & Authors @Q Answer Explanation",
     "tip": "CVC: PM, Home Minister, Lok Sabha LoP. CIC: PM, Lok Sabha LoP, PM-nominated Cabinet Minister. CBI Director: PM, Lok Sabh...",
     "difficulty": "beginner"
   },
@@ -5006,16 +4999,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-334",
     "categoryId": "current_affairs",
-    "question": "The Bench, the Bar and the Bizarre and The Lawful and the Awful were written by:",
+    "question": "The legal memoirs \"The Bench, the Bar and the Bizarre\" and \"The Lawful and the Awful\" were authored by:",
     "answer": "Tushar Mehta",
     "options": [
       "Tushar Mehta",
       "R. Venkataramani",
       "Kapil Sibal",
-      "Harish Salve 186 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Harish Salve"
     ],
-    "explanation": "The festival was held at SKICC, Srinagar. 7 Cc The National Book Trust is under the Ministry of Education. It was established in 1957.",
-    "tip": "The festival was held at SKICC, Srinagar. 7 Cc The National Book Trust is under the Ministry of Education. It was establ...",
+    "explanation": "Senior Advocate and Solicitor General of India Tushar Mehta authored these humorous and insightful collections of courtroom reminiscences.",
+    "tip": "Tushar Mehta authored courtroom memoirs reflecting on the bench and bar.",
     "difficulty": "intermediate"
   },
   {
@@ -5059,20 +5052,20 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Amit Shah",
       "a committee of NABARD"
     ],
-    "explanation": "Both books are by Tushar Mehta, the Solicitor General. He is the author, the people attending or releasing the books are not the authors. 210 Quin\u00e9 E ssence [pf Q ~~ Answer Explanation W D Santanu Paul and B. Sambamurthy wrote Cashless Nation. Nilekani and Viral Shah wrote Rebooting India. 2 0\u00b0\u00ab=&B NPCI operates UP!: RBI regulates the payment system. UP! was launched in 2016.",
+    "explanation": "Both books are by Tushar Mehta, the Solicitor General. He is the author, the people attending or releasing the books are not the authors. 210 Quiné E ssence [pf Q ~~ Answer Explanation W D Santanu Paul and B. Sambamurthy wrote Cashless Nation. Nilekani and Viral Shah wrote Rebooting India. 2 0°«=&B NPCI operates UP!: RBI regulates the payment system. UP! was launched in 2016.",
     "tip": "Both books are by Tushar Mehta, the Solicitor General. He is the author, the people attending or releasing the books are...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-338",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the event of 8 August 2026 in Mumbai: \u201c1. The book was released at the \"Sahakar Nav-Kranti\" programme. 2. A Security Operations Centre for the cyber security of urban co-operative banks was launched. 3. Urban co-operative banks are regulated only by State Registrars of Co-operative Societies and not by the RBI. Which of the statements given above are correct?",
+    "question": "Consider the following statements about the event of 8 August 2026 in Mumbai: “1. The book was released at the \"Sahakar Nav-Kranti\" programme. 2. A Security Operations Centre for the cyber security of urban co-operative banks was launched. 3. Urban co-operative banks are regulated only by State Registrars of Co-operative Societies and not by the RBI. Which of the statements given above are correct?",
     "answer": "1 only",
     "options": [
       "1 only",
       "2 and 3 only",
       "1 and 2 only",
-      "1,2and3"
+      "1, 2 and 3"
     ],
     "explanation": "The author is G.P. Mistry, a former RBI Deputy General Manager, not a Deputy Governor.",
     "tip": "The author is G.P. Mistry, a former RBI Deputy General Manager, not a Deputy Governor.",
@@ -5134,23 +5127,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Lt Gen Syed Ata Hasnain",
       "Gen Bipin Rawat"
     ],
-    "explanation": "Both titles are associated with K.J.S. \u201cTiny\u201d Dhillon, a former Chinar Corps commander.",
-    "tip": "Both titles are associated with K.J.S. \u201cTiny\u201d Dhillon, a former Chinar Corps commander.",
+    "explanation": "Both titles are associated with K.J.S. “Tiny” Dhillon, a former Chinar Corps commander.",
+    "tip": "Both titles are associated with K.J.S. “Tiny” Dhillon, a former Chinar Corps commander.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-343",
     "categoryId": "current_affairs",
-    "question": "The theme of the New Delhi World Book Fair 2026 was:",
+    "question": "The theme of the New Delhi World Book Fair was:",
     "answer": "Indian Military History: Valour & Wisdom @ 75",
     "options": [
       "Indian Knowledge Traditions",
       "Republic @ 75",
       "Indian Military History: Valour & Wisdom @ 75",
-      "Viksit Bharat @ 2047 187 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Viksit Bharat @ 2047"
     ],
-    "explanation": "The fair's theme was \u201cIndian Military History: Valour & Wisdom @ 75.\u201d",
-    "tip": "The fair's theme was \u201cIndian Military History: Valour & Wisdom @ 75.\u201d",
+    "explanation": "The New Delhi World Book Fair organized by National Book Trust highlighted military history, defence traditions, and national valour with the theme \"Indian Military History: Valour & Wisdom @ 75\".",
+    "tip": "NDWBF theme: Indian Military History: Valour & Wisdom @ 75.",
     "difficulty": "intermediate"
   },
   {
@@ -5192,10 +5185,10 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Kiran Desai for The Loneliness of Sonia and Sunny",
       "David Szalay for Flesh",
       "Andrew Miller for The Land in Winter",
-      "Katie Kitamura for Audition Q24, Match the books with their authors: List |: 1. Rajatarangini - 2. The Valley of Kashmir - 3. My Frozen Turbulence in Kashmir - 4. Aatish-e-Chinar List Il: A. Walter Lawrence - B. Sheikh Mohammad Abdullah - C. Kalhana - D. Jagmohan (a) 1-A, 2-C, 3-D, 4-8 (b) 1-C, 2-D, 3-A,4-B (c) 1-B, 2-A, 3-C, 4-D (d) 1-C, 2-A, 3-D, 4-B 188 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "Katie Kitamura for Audition"
     ],
-    "explanation": "David Szalay\u2019s Flesh won the Booker Prize 2025. Kiran Desai's title was shortlisted, not the winner.",
-    "tip": "David Szalay\u2019s Flesh won the Booker Prize 2025. Kiran Desai's title was shortlisted, not the winner.",
+    "explanation": "David Szalay's novel Flesh won the Booker Prize 2025. Kiran Desai's novel was shortlisted.",
+    "tip": "Booker Prize 2025 = David Szalay (Flesh).",
     "difficulty": "intermediate"
   },
   {
@@ -5269,8 +5262,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Chushul",
       "Daulat Beg Oldi"
     ],
-    "explanation": "Both titles are associated with K.J.S. \u201cTiny\u201d Dhillon, a former Chinar Corps commander.",
-    "tip": "Both titles are associated with K.J.S. \u201cTiny\u201d Dhillon, a former Chinar Corps commander.",
+    "explanation": "Both titles are associated with K.J.S. “Tiny” Dhillon, a former Chinar Corps commander.",
+    "tip": "Both titles are associated with K.J.S. “Tiny” Dhillon, a former Chinar Corps commander.",
     "difficulty": "advanced"
   },
   {
@@ -5284,8 +5277,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Kashmiri",
       "Gojri"
     ],
-    "explanation": "The fair's theme was \u201cIndian Military History: Valour & Wisdom @ 75.\u201d",
-    "tip": "The fair's theme was \u201cIndian Military History: Valour & Wisdom @ 75.\u201d",
+    "explanation": "The fair's theme was “Indian Military History: Valour & Wisdom @ 75.”",
+    "tip": "The fair's theme was “Indian Military History: Valour & Wisdom @ 75.”",
     "difficulty": "intermediate"
   },
   {
@@ -5307,12 +5300,12 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "id": "ca-354",
     "categoryId": "current_affairs",
     "question": "Consider the following statements about Civil Accounts Day 2026: 4. It was the 50th Civil Accounts Day. 2. The Indian Civil Accounts Service was created in 1976, when accounting was separated from audit in the Union Government. 3. The Indian Civil Accounts Service works under the Comptroller and Auditor General of India Which of the statements given above are correct?",
-    "answer": "4 and 3 only",
+    "answer": "1 and 3 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
     "explanation": "Rabat, Morocco, is the 2026 UNESCO World Book Capital. Rio de Janeiro held the title in 2025.",
     "tip": "Rabat, Morocco, is the 2026 UNESCO World Book Capital. Rio de Janeiro held the title in 2025.",
@@ -5321,16 +5314,16 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-355",
     "categoryId": "current_affairs",
-    "question": "The theme of the 20th Statistics Day (29 June 2026) was:",
+    "question": "The National Statistics Day (celebrated annually on 29 June in honour of Prof. P.C. Mahalanobis) had which focus theme?",
     "answer": "Unlocking the Potential of Administrative Data",
     "options": [
       "Use of Data for Decision Making",
       "Unlocking the Potential of Administrative Data",
       "Driving change with quality statistics and data for everyone",
-      "Statistics for Sustainable Development 189 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Statistics for Sustainable Development"
     ],
-    "explanation": "David Szalay\u2019s Flesh won the Booker Prize 2025. Kiran Desai's title was shortlisted, not the winner.",
-    "tip": "David Szalay\u2019s Flesh won the Booker Prize 2025. Kiran Desai's title was shortlisted, not the winner.",
+    "explanation": "National Statistics Day on 29 June commemorates the birth anniversary of Prof. Prasanta Chandra Mahalanobis, the father of modern Indian statistics.",
+    "tip": "National Statistics Day = 29 June (Prof. P.C. Mahalanobis birth anniversary).",
     "difficulty": "intermediate"
   },
   {
@@ -5389,8 +5382,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "1 November",
       "24 October"
     ],
-    "explanation": "\u20181st Battalion, Sikh Regiment (1 SIKH) landed at Srinagar on 27 October 1947; Infantry Day marks that landing.",
-    "tip": "\u20181st Battalion, Sikh Regiment (1 SIKH) landed at Srinagar on 27 October 1947; Infantry Day marks that landing.",
+    "explanation": "‘1st Battalion, Sikh Regiment (1 SIKH) landed at Srinagar on 27 October 1947; Infantry Day marks that landing.",
+    "tip": "‘1st Battalion, Sikh Regiment (1 SIKH) landed at Srinagar on 27 October 1947; Infantry Day marks that landing.",
     "difficulty": "intermediate"
   },
   {
@@ -5429,13 +5422,13 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
     "question": "Who were the chief guests at the Republic Day Parade 2026?",
     "answer": "Prabowo Subianto",
     "options": [
-      "Ant\u00e9nio Costa and Ursula von der Leyen",
+      "Anténio Costa and Ursula von der Leyen",
       "Emmanuel Macron and Olaf Scholz",
       "Prabowo Subianto",
       "Ursula von der Leyen and Roberta Metsola"
     ],
-    "explanation": "\u2018Sir Edward Drummond, the first Auditor General, took charge on 16 November 1860. Aucit Divas marks that date. a1 Quin\u00e9 E ssence [pf Q ~~ Answer Explanation",
-    "tip": "\u2018Sir Edward Drummond, the first Auditor General, took charge on 16 November 1860. Aucit Divas marks that date. a1 Quin\u00e9 ...",
+    "explanation": "‘Sir Edward Drummond, the first Auditor General, took charge on 16 November 1860. Aucit Divas marks that date. a1 Quiné E ssence [pf Q ~~ Answer Explanation",
+    "tip": "‘Sir Edward Drummond, the first Auditor General, took charge on 16 November 1860. Aucit Divas marks that date. a1 Quiné ...",
     "difficulty": "intermediate"
   },
   {
@@ -5449,14 +5442,14 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Swarnim Bharat: Virasat aur Vikas",
       "Nari Shakti"
     ],
-    "explanation": "\u2018Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
-    "tip": "\u2018Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
+    "explanation": "‘Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
+    "tip": "‘Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-364",
     "categoryId": "current_affairs",
-    "question": "What was the theme of the 16th National Voters\u2019 Day (25 January 2026)?",
+    "question": "What was the theme of the 16th National Voters’ Day (25 January 2026)?",
     "answer": "My india, My Vote: Citizen at the Heart of Indian Democracy",
     "options": [
       "Nothing Like Voting, | Vote for Sure",
@@ -5464,23 +5457,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Making Elections Inclusive and Accessible",
       "Voting is My Right"
     ],
-    "explanation": "The theme was \u201cUnlocking the Potential of Administrative Data.\u201d The quality-statistics-and-data theme belongs to World Statistics Day 2025.",
-    "tip": "The theme was \u201cUnlocking the Potential of Administrative Data.\u201d The quality-statistics-and-data theme belongs to World S...",
+    "explanation": "The theme was “Unlocking the Potential of Administrative Data.” The quality-statistics-and-data theme belongs to World Statistics Day 2025.",
+    "tip": "The theme was “Unlocking the Potential of Administrative Data.” The quality-statistics-and-data theme belongs to World S...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-365",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about Ayurveda Day: 1. From 2025, it is observed on a fixed date, 23 September. 2. Earlier, it was observed on Dhanvantari Jayanti (Dhanteras). 3. 23 September is also the birthday of Maharaja Hari Singh, a public holiday in J&K. Which of the statements given above are correct?",
-    "answer": "1 and 2 only",
+    "question": "Consider the following statements about National Ayurveda Day: 1. From 2025, it is observed on a fixed date, 23 September. 2. Earlier, it was observed on Dhanvantari Jayanti (Dhanteras). 3. 23 September is also the birth anniversary of Maharaja Hari Singh, a gazetted public holiday in J&K. Which statements are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3 190 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "1, 2 and 3"
     ],
-    "explanation": "World Statistics Day is held every five years on 20 October: 2010, 2015, 2020 and 2025. W c The official 2026 event wes the 167th Income Tax Day. The 166 elapsed years since 1860 should not be confused with the event's edition number.",
-    "tip": "World Statistics Day is held every five years on 20 October: 2010, 2015, 2020 and 2025. W c The official 2026 event wes ...",
+    "explanation": "All three statements are correct: Ayurveda Day was shifted to a fixed Gregorian calendar date (23 September) by the Ministry of AYUSH, having previously coincided with Dhanteras. 23 September is also commemorated as Maharaja Hari Singh’s birth anniversary in J&K.",
+    "tip": "Ayurveda Day fixed on 23 Sept; coincides with Maharaja Hari Singh birth anniversary holiday in J&K.",
     "difficulty": "intermediate"
   },
   {
@@ -5539,23 +5532,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Rights. Justice. Action. For ALL Women and Girls",
       "Invest in Women: Accelerate Progress"
     ],
-    "explanation": "The 2026 theme was \u201cCooperatives for a peaceful world.\u201d \u201cCooperatives Build a Better World\" belongs to the 2025 Intemational Year of Cooperatives.",
-    "tip": "The 2026 theme was \u201cCooperatives for a peaceful world.\u201d \u201cCooperatives Build a Better World\" belongs to the 2025 Intemati...",
+    "explanation": "The 2026 theme was “Cooperatives for a peaceful world.” “Cooperatives Build a Better World\" belongs to the 2025 Intemational Year of Cooperatives.",
+    "tip": "The 2026 theme was “Cooperatives for a peaceful world.” “Cooperatives Build a Better World\" belongs to the 2025 Intemati...",
     "difficulty": "advanced"
   },
   {
     "id": "ca-370",
     "categoryId": "current_affairs",
-    "question": "Which of the following is not an Intemational Year declared by the UN for 20267",
-    "answer": "Rangelands and Pastoralists",
+    "question": "Which of the following was NOT designated by the United Nations General Assembly as an International Year for 2026?",
+    "answer": "International Year of Cooperatives",
     "options": [
-      "Rangelands and Pastoralists",
-      "the Woman Farmer",
-      "Volunteers for Sustainable Development",
-      "Cooperatives 191 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "International Year of Rangelands and Pastoralists",
+      "International Year of the Woman Farmer",
+      "International Year of Volunteers for Sustainable Development",
+      "International Year of Cooperatives"
     ],
-    "explanation": "The chief guests were Antonio Costa of the European Council and Ursula von der Leyen of the European Commission.",
-    "tip": "The chief guests were Antonio Costa of the European Council and Ursula von der Leyen of the European Commission.",
+    "explanation": "The International Year of Cooperatives was celebrated in 2025 (and 2012). 2026 is designated as the International Year of Rangelands and Pastoralists, International Year of the Woman Farmer, and International Year of Volunteers for Sustainable Development.",
+    "tip": "International Year of Cooperatives was 2025; 2026 is Rangelands, Woman Farmer, and Volunteers.",
     "difficulty": "intermediate"
   },
   {
@@ -5569,8 +5562,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Tololing",
       "Point 4875"
     ],
-    "explanation": "\u2018Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
-    "tip": "\u2018Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
+    "explanation": "‘Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
+    "tip": "‘Statements 1 and 2 are correct. ICAS, created in 1976, is headed by the CGA in the Ministry of Finance, not by the CAG.",
     "difficulty": "intermediate"
   },
   {
@@ -5584,8 +5577,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Mongolia",
       "Tajikistan"
     ],
-    "explanation": "The theme was \u201cUnlocking the Potential of Administrative Data.\u201d The quality-statistics-and-data theme belongs to World Statistics Day 2025.",
-    "tip": "The theme was \u201cUnlocking the Potential of Administrative Data.\u201d The quality-statistics-and-data theme belongs to World S...",
+    "explanation": "The theme was “Unlocking the Potential of Administrative Data.” The quality-statistics-and-data theme belongs to World Statistics Day 2025.",
+    "tip": "The theme was “Unlocking the Potential of Administrative Data.” The quality-statistics-and-data theme belongs to World S...",
     "difficulty": "beginner"
   },
   {
@@ -5606,13 +5599,13 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-374",
     "categoryId": "current_affairs",
-    "question": "Consider the fallowing statements about Shivraj Patil: \u20181. He was Speaker of the Lok Sabha from 1991 to 1996. 2. He served as Governor of Punjab and Administrator of Chandigarh. 3. He was a member of the Lok Sabha when he became Union Home Minister in 2004 Which of the statements given above are correct?",
+    "question": "Consider the fallowing statements about Shivraj Patil: ‘1. He was Speaker of the Lok Sabha from 1991 to 1996. 2. He served as Governor of Punjab and Administrator of Chandigarh. 3. He was a member of the Lok Sabha when he became Union Home Minister in 2004 Which of the statements given above are correct?",
     "answer": "1 and 2 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4 and 3 only",
-      "1,2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
     "explanation": "James Wilson introduced income tax in India in 1860.",
     "tip": "James Wilson introduced income tax in India in 1860.",
@@ -5636,13 +5629,13 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-376",
     "categoryId": "current_affairs",
-    "question": "Consider the following statements about the Competition Commission of India. 4. It was established under the Competition Act, 2002, which replaced the MRTP Act, 1969. 2. Appeals against its orders now lie with the National Company Law Appellate Tribunal. 3. The Competition (Amendment) Act, 2023 introduced a deal-value threshold of %2,000 crore for combinations. Which of the statements given above are correct?",
-    "answer": "4. and 3 only",
+    "question": "Consider the following statements about the Competition Commission of India. 4. It was established under the Competition Act, 2002, which replaced the MRTP Act, 1969. 2. Appeals against its orders now lie with the National Company Law Appellate Tribunal. 3. The Competition (Amendment) Act, 2023 introduced a deal-value threshold of ₹2,000 crore for combinations. Which of the statements given above are correct?",
+    "answer": "1 and 3 only",
     "options": [
       "1 and 2 only",
       "2 and 3 only",
-      "4. and 3 only",
-      "1, 2and3"
+      "1 and 3 only",
+      "1, 2 and 3"
     ],
     "explanation": "NABARD was recommended by CRAFICARD, chaired by B. Sivaraman.",
     "tip": "NABARD was recommended by CRAFICARD, chaired by B. Sivaraman.",
@@ -5659,23 +5652,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "RBL Bank",
       "Bandhan Bank"
     ],
-    "explanation": "The 2026 theme was \u201cCooperatives for a peaceful world.\u201d \u201cCooperatives Build a Better World\" belongs to the 2025 Intemational Year of Cooperatives.",
-    "tip": "The 2026 theme was \u201cCooperatives for a peaceful world.\u201d \u201cCooperatives Build a Better World\" belongs to the 2025 Intemati...",
+    "explanation": "The 2026 theme was “Cooperatives for a peaceful world.” “Cooperatives Build a Better World\" belongs to the 2025 Intemational Year of Cooperatives.",
+    "tip": "The 2026 theme was “Cooperatives for a peaceful world.” “Cooperatives Build a Better World\" belongs to the 2025 Intemati...",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-378",
     "categoryId": "current_affairs",
-    "question": "Simone Tata is credited with building which cosmetics brand?",
-    "answer": "Titan",
+    "question": "Simone Tata is celebrated in Indian corporate history for building and expanding which iconic cosmetics brand?",
+    "answer": "Lakme",
     "options": [
       "Titan",
-      "Tanisha",
+      "Tanishq",
       "Lakme",
-      "Taj Hotels 192 @ 7006256779, 7006442202 @ www.aqcrias.com \u2019 Quint Essence ie"
+      "Taj Hotels"
     ],
-    "explanation": "The chief guests were Antonio Costa of the European Council and Ursula von der Leyen of the European Commission.",
-    "tip": "The chief guests were Antonio Costa of the European Council and Ursula von der Leyen of the European Commission.",
+    "explanation": "Simone Tata joined Lakme in 1962 and served as its managing director and chairperson, guiding it to become India’s premier cosmetics company before its sale to Hindustan Unilever.",
+    "tip": "Simone Tata built Lakme cosmetics into India’s market leader.",
     "difficulty": "beginner"
   },
   {
@@ -5689,8 +5682,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "National Bicdiversity Authority",
       "National Board for Wildlife"
     ],
-    "explanation": "The 2026 Republic Day theme was \u201c150 Years of Vande Mataram.\u201d",
-    "tip": "The 2026 Republic Day theme was \u201c150 Years of Vande Mataram.\u201d",
+    "explanation": "The 2026 Republic Day theme was “150 Years of Vande Mataram.”",
+    "tip": "The 2026 Republic Day theme was “150 Years of Vande Mataram.”",
     "difficulty": "intermediate"
   },
   {
@@ -5704,8 +5697,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Roger Penrose",
       "Kip Thorne"
     ],
-    "explanation": "The theme was \u201cMy India, My Vote: Citizen at the Heart of Indian Democracy.\u201d",
-    "tip": "The theme was \u201cMy India, My Vote: Citizen at the Heart of Indian Democracy.\u201d",
+    "explanation": "The theme was “My India, My Vote: Citizen at the Heart of Indian Democracy.”",
+    "tip": "The theme was “My India, My Vote: Citizen at the Heart of Indian Democracy.”",
     "difficulty": "intermediate"
   },
   {
@@ -5719,23 +5712,23 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Francis Crick and Maurice Wilkins",
       "Maurice Wilkins and Erwin Chargaff"
     ],
-    "explanation": "All three statements are correct: Ayurveda Day moved to 23 September from 2025, earlier fell on Dhanteras, and shares its date with Hari Singh\u2019s birthday.",
+    "explanation": "All three statements are correct: Ayurveda Day moved to 23 September from 2025, earlier fell on Dhanteras, and shares its date with Hari Singh’s birthday.",
     "tip": "All three statements are correct: Ayurveda Day moved to 23 September from 2025, earlier fell on Dhanteras, and shares it...",
     "difficulty": "advanced"
   },
   {
     "id": "ca-382",
     "categoryId": "current_affairs",
-    "question": "Ram V. Sutar is associated with the design of which statue?",
-    "answer": "the Statue of Unity, Ekta Nagar 193 @ 7006256779, 7006442202 @ www.aqcrias.com",
+    "question": "Master sculptor and Padma Vibhushan recipient Ram V. Sutar is renowned for designing which world-famous monument?",
+    "answer": "The Statue of Unity, Ekta Nagar",
     "options": [
-      "the Statue of Equality, Hyderabad",
-      "the Statue of Belief, Nathdwara",
-      "the Thiruvalluvar Statue, Kanyakumari",
-      "the Statue of Unity, Ekta Nagar 193 @ 7006256779, 7006442202 @ www.aqcrias.com"
+      "The Statue of Equality, Hyderabad",
+      "The Statue of Belief, Nathdwara",
+      "The Thiruvalluvar Statue, Kanyakumari",
+      "The Statue of Unity, Ekta Nagar"
     ],
-    "explanation": "The 2026 theme was \u201cYoga for Healthy Ageing.\u201d \u201cYoga for One Earth, One Health\u201d was the 2025 theme.",
-    "tip": "The 2026 theme was \u201cYoga for Healthy Ageing.\u201d \u201cYoga for One Earth, One Health\u201d was the 2025 theme.",
+    "explanation": "Ram V. Sutar designed the 182-metre Statue of Unity of Sardar Vallabhbhai Patel at Kevadia/Ekta Nagar in Gujarat, the tallest statue in the world.",
+    "tip": "Ram V. Sutar designed the 182 m Statue of Unity in Gujarat.",
     "difficulty": "intermediate"
   },
   {
@@ -5749,8 +5742,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Anantnag",
       "Kulgam"
     ],
-    "explanation": "All three statements are correct: the Competition Act, 2002 replaced the MRTP \u2018ramework; appeals lie with NCLAT; and the 2023 amendment introduced the %2,000-crore deal-value threshold.",
-    "tip": "All three statements are correct: the Competition Act, 2002 replaced the MRTP \u2018ramework; appeals lie with NCLAT; and the...",
+    "explanation": "All three statements are correct: the Competition Act, 2002 replaced the MRTP ‘ramework; appeals lie with NCLAT; and the 2023 amendment introduced the ₹2,000-crore deal-value threshold.",
+    "tip": "All three statements are correct: the Competition Act, 2002 replaced the MRTP ‘ramework; appeals lie with NCLAT; and the...",
     "difficulty": "intermediate"
   },
   {
@@ -5764,7 +5757,7 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Himachal Pradesh",
       "eastern Ladakh"
     ],
-    "explanation": "The Hinduja Group is associated with Indusind Bank, a private-sector bank established in 1994. 8 Cc Simone Tata helped build Lakm\u00e9 and later led Trent, associated with Westside.",
+    "explanation": "The Hinduja Group is associated with Indusind Bank, a private-sector bank established in 1994. 8 Cc Simone Tata helped build Lakmé and later led Trent, associated with Westside.",
     "tip": "The Hinduja Group is associated with Indusind Bank, a private-sector bank established in 1994. 8 Cc Simone Tata helped b...",
     "difficulty": "beginner"
   },
@@ -5809,8 +5802,8 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Ladakh range",
       "Zabarwan range"
     ],
-    "explanation": "The 1962 Medicine Nobel was shared by Watson, Francis Crick and Maurice Wilkins for work on DNA\u2019s molecular structure 2 2D Sutar designed the Statue of Unity, representing Sarcar Patel at Ekta Nagar, Gularat",
-    "tip": "The 1962 Medicine Nobel was shared by Watson, Francis Crick and Maurice Wilkins for work on DNA\u2019s molecular structure 2 ...",
+    "explanation": "The 1962 Medicine Nobel was shared by Watson, Francis Crick and Maurice Wilkins for work on DNA’s molecular structure 2 2D Sutar designed the Statue of Unity, representing Sarcar Patel at Ekta Nagar, Gularat",
+    "tip": "The 1962 Medicine Nobel was shared by Watson, Francis Crick and Maurice Wilkins for work on DNA’s molecular structure 2 ...",
     "difficulty": "advanced"
   },
   {
@@ -5846,112 +5839,112 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
   {
     "id": "ca-390",
     "categoryId": "current_affairs",
-    "question": "A Special Rupee Vostro Account is best described as:",
-    "answer": "a dollar account opened by an Indian bank abroad",
+    "question": "A Special Rupee Vostro Account (SRVA) is best described as:",
+    "answer": "A rupee account opened by a foreign bank with an Indian authorised-dealer bank",
     "options": [
-      "a dollar account opened by an Indian bank abroad",
-      "a personal savings account for an NRI",
-      "acryptocurrency wallet issued by NPC!",
-      "a rupee account opened by a foreign bank with an Indian authorised-dealer bank"
+      "A dollar account opened by an Indian bank abroad",
+      "A personal savings account for an NRI",
+      "A cryptocurrency wallet issued by NPCI",
+      "A rupee account opened by a foreign bank with an Indian authorised-dealer bank"
     ],
-    "explanation": "A The commonly used IMD threshold is at least 100 mm of rain in one hour over a small area",
-    "tip": "A The commonly used IMD threshold is at least 100 mm of rain in one hour over a small area",
+    "explanation": "An SRVA is an account that a foreign bank maintains in rupees with an authorised dealer bank in India to settle international trade transactions in Indian Rupees, bypassing US dollars.",
+    "tip": "SRVA is a rupee account held by foreign banks in India for INR trade settlement.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-391",
     "categoryId": "current_affairs",
-    "question": "Which feature distinguishes the Standing Deposit Facility from the conventional fixed-rate reverse repo?",
-    "answer": "It can be used only by State governments 194 @ 7006256779, 7006442202 \u00a9 www.qcrias.com \u2019 Quint Essence ie",
+    "question": "Which key feature distinguishes the Standing Deposit Facility (SDF) introduced by the RBI from the conventional fixed-rate reverse repo?",
+    "answer": "It absorbs excess liquidity from banks without requiring government collateral",
     "options": [
-      "It lends money to the government",
-      "It absorbs liquidity without collateral",
-      "Itis administered by SEBI",
-      "It can be used only by State governments 194 @ 7006256779, 7006442202 \u00a9 www.qcrias.com \u2019 Quint Essence ie"
+      "It lends money to the government without limits",
+      "It absorbs excess liquidity from banks without requiring government collateral",
+      "It is administered by SEBI rather than RBI",
+      "It can be used only by State governments"
     ],
-    "explanation": "The Srinagar Tulip Garden lies at the foothills of the Zabarwan range",
-    "tip": "The Srinagar Tulip Garden lies at the foothills of the Zabarwan range",
+    "explanation": "The Standing Deposit Facility (SDF) allows the RBI to absorb overnight excess liquidity from commercial banks without having to pledge government securities as collateral, strengthening monetary policy operations.",
+    "tip": "SDF absorbs liquidity without requiring collateral (government securities).",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-392",
     "categoryId": "current_affairs",
-    "question": "Primary deficit equals:",
-    "answer": "fiscal deficit minus interest payments",
+    "question": "In public finance and government budgeting, Primary Deficit is defined as:",
+    "answer": "Fiscal deficit minus interest payments",
     "options": [
-      "revenue deficit minus capital expenditure",
-      "fiscal deficit minus interest payments",
-      "fiscal deficit plus interest payments",
-      "revenue receipts minus revenue expenditure"
+      "Revenue deficit minus capital expenditure",
+      "Fiscal deficit minus interest payments",
+      "Fiscal deficit plus interest payments",
+      "Revenue receipts minus revenue expenditure"
     ],
-    "explanation": "Shinku La links Lahaul in Himachal Pradesh with Zanskar in Ladakh. 5 OG All three are correct: Zoji La = Kashmir-Drass; Khardung La = Leh-Nubra; Chang La = Leh-Pangong.",
-    "tip": "Shinku La links Lahaul in Himachal Pradesh with Zanskar in Ladakh. 5 OG All three are correct: Zoji La = Kashmir-Drass; ...",
+    "explanation": "Primary Deficit = Fiscal Deficit - Interest Payments. It indicates the government’s borrowing requirements excluding the burden of past accumulated debt interest obligations.",
+    "tip": "Primary Deficit = Fiscal Deficit - Interest Payments.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-393",
     "categoryId": "current_affairs",
-    "question": "The Consolidated Fund of India is provided for under:",
-    "answer": "Article 279A",
+    "question": "The Consolidated Fund of India, into which all government revenues and loan receipts are credited, is established under which Article of the Constitution?",
+    "answer": "Article 266(1)",
     "options": [
       "Article 266(1)",
       "Article 267(1)",
       "Article 280",
       "Article 279A"
     ],
-    "explanation": "\u2018An SRVA is 2 foreign bank's rupee account with an Indian authorised-dealer bank, used for rupee trade settlement.",
-    "tip": "\u2018An SRVA is 2 foreign bank's rupee account with an Indian authorised-dealer bank, used for rupee trade settlement.",
+    "explanation": "Article 266(1) of the Indian Constitution establishes the Consolidated Fund of India. Article 266(2) provides for the Public Account, and Article 267 establishes the Contingency Fund of India.",
+    "tip": "Consolidated Fund of India = Article 266(1); Contingency Fund = Article 267.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-394",
     "categoryId": "current_affairs",
-    "question": "Which statement about charged expenditure is correct?",
-    "answer": "All Union ministries\u2019 salaries are charged expenditure",
+    "question": "Which of the following statements regarding \"charged expenditure\" on the Consolidated Fund of India is correct?",
+    "answer": "The CAG's salary is charged on the Consolidated Fund of India and is not put to vote",
     "options": [
       "It cannot be discussed in Parliament",
-      "All Union ministries\u2019 salaries are charged expenditure",
+      "All Union ministries’ salaries are charged expenditure",
       "The CAG's salary is charged on the Consolidated Fund of India and is not put to vote",
-      "High Court judges\u2019 salaries are charged on the Consolidated Fund of India"
+      "High Court judges’ salaries are charged on the Consolidated Fund of India"
     ],
-    "explanation": "SDF absorbs liquidity without collateral. A conventional reverse-repe transaction uses securities",
-    "tip": "SDF absorbs liquidity without collateral. A conventional reverse-repe transaction uses securities",
+    "explanation": "Expenditure charged on the Consolidated Fund of India (such as salaries of the President, Supreme Court judges, and CAG) can be discussed in Parliament but is not submitted to the vote of Parliament. High Court judges' salaries are charged on the Consolidated Fund of the State, while their pensions are charged on the Consolidated Fund of India.",
+    "tip": "Charged expenditure (CAG, SC judges, President) can be discussed but not voted upon in Parliament.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-395",
     "categoryId": "current_affairs",
-    "question": "Consider these parliamentary committee pairs 1. Public Accounts Committee - 22 members, including 7 from the Rajya Sabha 2. Estimates Committee - 30 members, all from the Lok Sabha 3. Committee on Public Undertakings - 22 members, including 7 from the Rajya Sabha Which are correct?",
-    "answer": "1 and 2 only",
+    "question": "Consider the following pairs of Financial Committees of the Indian Parliament: 1. Public Accounts Committee - 22 members (15 from Lok Sabha, 7 from Rajya Sabha) 2. Estimates Committee - 30 members (all from Lok Sabha) 3. Committee on Public Undertakings - 22 members (15 from Lok Sabha, 7 from Rajya Sabha). Which are correct?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3 14. Alternative Investment Funds, REITs and InviTs are regulated primarily by: (a) RBI (b) IBBI (c) SEBI (d) PFRDA 15, Under the RBI's revised norms applicable from FY 2025-26, the overall priority-sector lending target for Small Finance Banks is: (a) 40% (b) 60% (c) 75% (d) 90% Q16, The Ken-Betwa river-linking project is principally associated with: (a) Madhya Pradesh and Uttar Pradesh (b) Punjab and Haryana (c) Odisha and Andhra Pradesh (d) Maharashtra and Kamataka"
+      "1, 2 and 3"
     ],
-    "explanation": "Primary deficit = fiscal deficit interest payments.",
-    "tip": "Primary deficit = fiscal deficit interest payments.",
+    "explanation": "All three statements are correct: PAC has 22 members (15 LS + 7 RS), Estimates Committee has 30 members (all from Lok Sabha, largest committee), and Committee on Public Undertakings has 22 members (15 LS + 7 RS).",
+    "tip": "PAC = 22 (15 LS + 7 RS); Estimates = 30 (all LS); COPU = 22 (15 LS + 7 RS).",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-396",
     "categoryId": "current_affairs",
-    "question": "The new Pamban railway bridge connects the mainland with Rameswaram in:",
-    "answer": "Kerala",
+    "question": "The new Pamban railway bridge, featuring India’s first vertical-lift sea bridge span, connects the mainland with Rameswaram island in which state?",
+    "answer": "Tamil Nadu",
     "options": [
       "Kerala",
       "Andhra Pradesh",
       "Gujarat",
       "Tamil Nadu"
     ],
-    "explanation": "The Consolidated Fund of India is under Article 266(1). Public Account is Article 266(2); Contingency Fund is Article 267. 12 \u00ab6 CAG salary is charged on the CFI and not voted, although charged expenditure may be discussed High Court judges\u2019 salaries are charged on the State fund: their pensions are charged on the CFI",
-    "tip": "The Consolidated Fund of India is under Article 266(1). Public Account is Article 266(2); Contingency Fund is Article 26...",
+    "explanation": "The new Pamban railway sea bridge connects Mandapam on the Indian mainland with Rameswaram island in Tamil Nadu, spanning over 2 km across the Palk Strait.",
+    "tip": "Pamban Bridge is in Tamil Nadu connecting mainland to Rameswaram island.",
     "difficulty": "beginner"
   },
   {
     "id": "ca-397",
     "categoryId": "current_affairs",
-    "question": "Mount Kilimanjaro is located in:",
+    "question": "Mount Kilimanjaro, the highest peak in the African continent and the world’s tallest free-standing mountain, is located in which country?",
     "answer": "Tanzania",
     "options": [
       "Kenya",
@@ -5959,68 +5952,68 @@ export const CURRENT_AFFAIRS_QUESTIONS: Flashcard[] = [
       "Ethiopia",
       "Tanzania"
     ],
-    "explanation": "All three ere correct: PAC and COPU each have 22 members (15 LS +7 RS); Estimates has 30, all from Lok Sabha. 4\u00b0 C SEBI regulates AIFS, REITs and InviTs.",
-    "tip": "All three ere correct: PAC and COPU each have 22 members (15 LS +7 RS); Estimates has 30, all from Lok Sabha. 4\u00b0 C SEBI ...",
+    "explanation": "Mount Kilimanjaro (5,895 m / 19,341 ft) is a dormant stratovolcano situated in northeastern Tanzania, near the border with Kenya.",
+    "tip": "Mount Kilimanjaro is in Tanzania (highest peak in Africa).",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-398",
     "categoryId": "current_affairs",
-    "question": "Which of the following is not a Ramsar site in J&K?",
-    "answer": "Hokersar",
+    "question": "Which of the following famous water bodies is NOT designated as a Ramsar Wetland Site of International Importance in Jammu & Kashmir?",
+    "answer": "Dal Lake",
     "options": [
       "Wular Lake",
-      "Hokersar",
+      "Hokersar Wetland",
       "Dal Lake",
-      "Surinsar-Mansar Lakes 195 @ 7006256779, 7006442202 @ www.aqcrias.com Quint Essence ie"
+      "Surinsar-Mansar Lakes"
     ],
-    "explanation": "The Small Finance Bank target is 60%, from FY 2025-26, of ANBC or credit-equivalent off-balance-sheet exposure, whichever is higher 213",
-    "tip": "The Small Finance Bank target is 60%, from FY 2025-26, of ANBC or credit-equivalent off-balance-sheet exposure, whicheve...",
+    "explanation": "Dal Lake is not a designated Ramsar site. The 5 designated Ramsar Wetland sites in Jammu & Kashmir are Wular Lake, Hokersar Wetland, Surinsar-Mansar Lakes, Hygam Wetland, and Shallabugh Wetland.",
+    "tip": "J&K Ramsar sites: Wular, Hokersar, Surinsar-Mansar, Hygam, Shallabugh (Dal Lake is NOT a Ramsar site).",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-399",
     "categoryId": "current_affairs",
-    "question": "The statement that negotiations for a free-trade agreement have been \"concluded\" means:",
-    "answer": "negotiations are completed, but signature, ratification and entry into force must be checked separately",
+    "question": "When the Ministry of Commerce announces that negotiations for a Bilateral Free Trade Agreement (FTA) have been \"concluded\", what does it legally signify?",
+    "answer": "Negotiations are finalized, but legal scrubbing, cabinet approval, signing and parliamentary ratification must follow before entry into force",
     "options": [
-      "negotiations are completed, but signature, ratification and entry into force must be checked separately",
-      "the agreement automatically enters into force the same day",
-      "the partner becomes a member of India's customs union",
-      "all tariffs immediately become zero without exceptions"
+      "Negotiations are finalized, but legal scrubbing, cabinet approval, signing and parliamentary ratification must follow before entry into force",
+      "The agreement automatically enters into force on the same day without further procedure",
+      "The partner nation automatically becomes an integrated member of India’s customs union",
+      "All tariffs and import customs duties are instantly reduced to zero across all sectors"
     ],
-    "explanation": "Current Affairs 2026: Places, Terms & Static Connections.",
-    "tip": "Current Affairs 2026: Places, Terms & Static Connections.",
+    "explanation": "Conclusion of FTA negotiations means negotiators have finalized text terms. The agreement must then undergo legal scrubbing, domestic cabinet and legislative ratification, and exchange of instruments before formal entry into force.",
+    "tip": "FTA conclusion = text finalized; implementation requires signing and ratification.",
     "difficulty": "advanced"
   },
   {
     "id": "ca-400",
     "categoryId": "current_affairs",
-    "question": "Consider these regulator/body pairs 4. et (CBDC)- RBI 2. B-READY - World Bank 3. Carbon Border Adjustment Mechanism - European Union Which are correct?",
-    "answer": "1 only",
+    "question": "Consider the following digital and multilateral initiatives: 1. e₹ (Central Bank Digital Currency) - Reserve Bank of India 2. Business Ready (B-READY) - World Bank 3. Carbon Border Adjustment Mechanism (CBAM) - European Union. Which pairs are correctly matched?",
+    "answer": "1, 2 and 3",
     "options": [
       "1 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2and3"
+      "1, 2 and 3"
     ],
-    "explanation": "Current Affairs 2026: Places, Terms & Static Connections.",
-    "tip": "Current Affairs 2026: Places, Terms & Static Connections.",
+    "explanation": "All three pairs are correctly matched: e₹ is the retail/wholesale CBDC of the RBI; B-READY is the World Bank’s replacement for Doing Business; and CBAM is the European Union’s carbon tariff mechanism on carbon-intensive imports.",
+    "tip": "e₹ = RBI; B-READY = World Bank; CBAM = European Union.",
     "difficulty": "intermediate"
   },
   {
     "id": "ca-401",
     "categoryId": "current_affairs",
-    "question": "The GST Council is established under:",
-    "answer": "Arficle 2794",
+    "question": "The Goods and Services Tax (GST) Council is established under which Article of the Constitution of India?",
+    "answer": "Article 279A",
     "options": [
-      "Arficle 2794",
+      "Article 279A",
       "Article 280",
-      "Article 3004",
-      "Article 267 196 (]"
+      "Article 300A",
+      "Article 267"
     ],
-    "explanation": "Current Affairs 2026: Places, Terms & Static Connections.",
-    "tip": "Current Affairs 2026: Places, Terms & Static Connections.",
+    "explanation": "Article 279A was inserted into the Constitution by the 101st Constitutional Amendment Act, 2016 to create the GST Council, a joint federal forum of the Centre and States chaired by the Union Finance Minister.",
+    "tip": "GST Council is established under Article 279A (101st Amendment Act).",
     "difficulty": "intermediate"
   }
 ];

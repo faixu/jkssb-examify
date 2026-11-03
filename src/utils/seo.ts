@@ -241,6 +241,13 @@ export const MODE_SEO_MAP: Record<Exclude<StudyMode, 'quiz'>, { path: string; le
     description:
       'Get instant step-by-step explanations for JKSSB Accountancy, Mathematics, Statistics & J&K GK questions. Ask your exam doubt free now!',
   },
+  current_affairs: {
+    path: '/current-affairs',
+    title: 'Chinar Current Affairs MCQ Bank | J&K, National & Global MCQs',
+    h1: 'Chinar Current Affairs 2-Tier MCQ Bank (J&K, India & World)',
+    description:
+      'Practice 2-tier filtered Current Affairs MCQs for JKSSB, JKPSC & UPSC covering J&K UT Schemes, Infrastructure, National Policies, ISRO, and Global Summits.',
+  },
 };
 
 export function resolveRouteFromLocation(pathname: string, search: string): { mode: StudyMode; category: CategoryId | 'all' } {
@@ -268,6 +275,9 @@ export function resolveRouteFromLocation(pathname: string, search: string): { mo
   }
   if (cleanPath === '/ai-mentor') {
     return { mode: 'chat', category: 'all' };
+  }
+  if (cleanPath === '/current-affairs') {
+    return { mode: 'current_affairs', category: 'current_affairs' };
   }
 
   // Match canonical top-level topic landing pages (/jkssb-general-knowledge-quiz, /jkssb-accountancy-mock-test, etc.)

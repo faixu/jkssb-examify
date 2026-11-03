@@ -49,7 +49,7 @@ export interface UserStats {
   categoryStats: Record<CategoryId, { reviewed: number; correct: number }>;
 }
 
-export type StudyMode = 'flip' | 'quiz' | 'mock' | 'speed' | 'stats' | 'decks' | 'drive' | 'chat';
+export type StudyMode = 'flip' | 'quiz' | 'mock' | 'speed' | 'stats' | 'decks' | 'drive' | 'chat' | 'current_affairs';
 
 export interface ChatMessage {
   id: string;

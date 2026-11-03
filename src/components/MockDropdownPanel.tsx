@@ -20,7 +20,7 @@ export const MockDropdownPanel: React.FC<MockDropdownPanelProps> = ({
 
   if (variant === 'mobile') {
     return (
-      <div className="lg:hidden pb-3 pt-1 border-t border-slate-800 animate-in fade-in slide-in-from-top-1">
+      <div className="pb-3 pt-1 border-t border-slate-800 animate-in fade-in slide-in-from-top-1">
         <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-700/80 space-y-2.5 shadow-xl">
           <div className="flex items-center justify-between">
             <span className="text-xs font-extrabold text-white flex items-center gap-1.5">
