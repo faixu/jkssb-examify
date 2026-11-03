@@ -234,7 +234,35 @@ export const QuizMode: React.FC<QuizModeProps> = ({
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 min-h-[640px]">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-5 min-h-[640px]">
+      {/* Official JKSSB Mock Test Portal Hero Banner (jkssbmocktests.in inspired layout) */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 border border-indigo-500/30 p-5 sm:p-6 text-white shadow-xl">
+        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-48 h-48 rounded-full bg-indigo-500/20 blur-2xl pointer-events-none" />
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+              <span>JKSSB Online Test Series &amp; Practice Portal</span>
+            </div>
+            <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white">
+              JKSSB FAA, Accounts Assistant &amp; Exam Mock Hub
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-200 max-w-xl leading-relaxed">
+              Practice 120-question timed mock tests with negative marking, subject-wise quizzes, and detailed explanations aligned with official J&amp;K recruitment syllabi.
+            </p>
+          </div>
+          {onNavigateToMock && (
+            <button
+              onClick={onNavigateToMock}
+              className="px-4 py-2.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-500/30 transition cursor-pointer flex items-center justify-center gap-2 shrink-0"
+            >
+              <ClipboardCheck className="w-4 h-4" />
+              <span>Launch 120Q Full Mock Test</span>
+            </button>
+          )}
+        </div>
+      </div>
+
       {/* Controls Bar: Clean Subject Selection & Session Size (Reserved min-height prevents CLS) */}
       <div className="mb-3 space-y-2 min-h-[96px]">
         {/* Clean Subject Selection Dropdown & Quick Access */}
@@ -479,46 +507,46 @@ export const QuizMode: React.FC<QuizModeProps> = ({
 
       {isQuizComplete ? (
         /* Quiz Complete Screen */
-        <div className="max-w-xl mx-auto bg-slate-900 border border-indigo-500/30 rounded-3xl p-6 sm:p-8 text-center shadow-2xl relative overflow-hidden">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/30">
+        <div className="max-w-xl mx-auto bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 text-center shadow-xl relative overflow-hidden">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/20">
             <Trophy className="w-8 h-8 text-slate-950" />
           </div>
 
-          <h2 className="text-2xl font-black text-white tracking-tight mb-1">
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight mb-1">
             Quiz Completed!
           </h2>
-          <p className="text-sm text-slate-400 mb-6">
+          <p className="text-sm text-slate-600 mb-6">
             Here is your performance breakdown for this round.
           </p>
 
           <div className="grid grid-cols-3 gap-3 mb-6">
-            <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-center">
-              <span className="text-xs text-slate-400 block mb-1">Total Score</span>
-              <span className="text-2xl font-black text-indigo-400">{score}</span>
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+              <span className="text-xs text-slate-600 block mb-1">Total Score</span>
+              <span className="text-2xl font-black text-indigo-600">{score}</span>
             </div>
-            <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-center">
-              <span className="text-xs text-slate-400 block mb-1">Accuracy</span>
-              <span className="text-2xl font-black text-emerald-400">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+              <span className="text-xs text-slate-600 block mb-1">Accuracy</span>
+              <span className="text-2xl font-black text-emerald-600">
                 {quizQuestions.length > 0 ? Math.round((correctCount / quizQuestions.length) * 100) : 0}%
               </span>
             </div>
-            <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-center">
-              <span className="text-xs text-slate-400 block mb-1">Max Combo</span>
-              <span className="text-2xl font-black text-amber-400">🔥 {highestCombo}x</span>
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+              <span className="text-xs text-slate-600 block mb-1">Max Combo</span>
+              <span className="text-2xl font-black text-amber-600">🔥 {highestCombo}x</span>
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 mb-6 flex items-center justify-between">
+          <div className="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 mb-6 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-indigo-400" />
-              <span className="text-xs text-indigo-200 font-medium">Daily Streak Active</span>
+              <Sparkles className="w-5 h-5 text-indigo-600" />
+              <span className="text-xs text-indigo-900 font-medium">Daily Streak Active</span>
             </div>
-            <span className="text-sm font-bold text-amber-400">🔥 {userStats.streak} Days</span>
+            <span className="text-sm font-bold text-amber-600">🔥 {userStats.streak} Days</span>
           </div>
 
           <button
             onClick={startNewQuiz}
-            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/35 transition cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
             <span>Play Next Round ({quizQuestions.length} Questions)</span>
@@ -528,13 +556,13 @@ export const QuizMode: React.FC<QuizModeProps> = ({
         /* Active Quiz Arena */
         <div className="space-y-2.5 sm:space-y-3">
           {/* Top Info Bar: Progress, Timer, Combo, Score */}
-          <div className="bg-slate-900/90 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 border border-slate-800 flex items-center justify-between gap-2 sm:gap-4 flex-wrap">
+          <div className="bg-white rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 border border-slate-200 shadow-sm flex items-center justify-between gap-2 sm:gap-4 flex-wrap">
             {/* Question Counter */}
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <div className="p-1 rounded-lg bg-indigo-500/10 text-indigo-400">
+              <div className="p-1 rounded-lg bg-indigo-50 text-indigo-600">
                 <Target className="w-3.5 h-3.5" />
               </div>
-              <span className="text-xs font-bold text-slate-300">
+              <span className="text-xs font-bold text-slate-800">
                 Q{currentIndex + 1} <span className="text-slate-500 font-normal">/ {quizQuestions.length}</span>
               </span>
             </div>
@@ -543,10 +571,10 @@ export const QuizMode: React.FC<QuizModeProps> = ({
             <div className="flex items-center gap-2">
               <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-bold font-mono transition-colors ${
                 timeLeft <= 5
-                  ? 'bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse'
-                  : 'bg-slate-800 text-slate-300 border border-slate-700'
+                  ? 'bg-rose-50 text-rose-600 border border-rose-200 animate-pulse'
+                  : 'bg-slate-100 text-slate-700 border border-slate-200'
               }`}>
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3 h-3 text-slate-500" />
                 <span>{timeLeft}s</span>
               </div>
             </div>
@@ -554,30 +582,30 @@ export const QuizMode: React.FC<QuizModeProps> = ({
             {/* Streak Combo */}
             <div className="flex items-center gap-2">
               {combo > 1 && (
-                <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30 text-[11px] font-bold animate-bounce">
-                  <Flame className="w-3 h-3 fill-amber-400" />
+                <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 text-[11px] font-bold animate-bounce">
+                  <Flame className="w-3 h-3 fill-amber-500 text-amber-500" />
                   <span>{combo}x</span>
                 </div>
               )}
-              <div className="flex items-center gap-1 text-xs font-extrabold text-indigo-400">
-                <Zap className="w-3.5 h-3.5 fill-indigo-400" />
+              <div className="flex items-center gap-1 text-xs font-extrabold text-indigo-600">
+                <Zap className="w-3.5 h-3.5 fill-indigo-600" />
                 <span>{score} pts</span>
               </div>
             </div>
           </div>
 
           {/* Question Box */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 sm:p-5 shadow-xl">
+          <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
             <div className="flex items-center justify-between mb-2 sm:mb-2.5">
-              <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+              <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
                 {CATEGORIES.find((c) => c.id === currentQuestion.categoryId)?.name}
               </span>
-              <span className="text-[10px] sm:text-[11px] text-slate-400 capitalize">
+              <span className="text-[10px] sm:text-[11px] text-slate-500 capitalize font-medium">
                 {currentQuestion.difficulty}
               </span>
             </div>
 
-            <h2 className="text-sm sm:text-lg font-bold text-white tracking-tight leading-snug mb-3 sm:mb-3.5">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-snug mb-3 sm:mb-3.5">
               {currentQuestion.question}
             </h2>
 
@@ -587,15 +615,15 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                 const isSelected = selectedOption === opt;
                 const isCorrect = opt === currentQuestion.answer;
 
-                let optionStyle = 'bg-slate-800/80 hover:bg-slate-800 text-slate-200 border-slate-750 hover:border-indigo-500/40';
+                let optionStyle = 'bg-white hover:bg-[#F1F5F9] text-[#1E293B] border-[#E2E8F0]';
 
                 if (isSubmitted) {
                   if (isCorrect) {
-                    optionStyle = 'bg-emerald-500/20 text-emerald-200 border-emerald-500 shadow-md shadow-emerald-500/20 font-bold';
+                    optionStyle = 'bg-[#ECFDF5] border-[#10B981] text-[#065F46] font-bold shadow-sm';
                   } else if (isSelected) {
-                    optionStyle = 'bg-rose-500/20 text-rose-200 border-rose-500 shadow-md shadow-rose-500/20 font-bold';
+                    optionStyle = 'bg-[#FEF2F2] border-[#EF4444] text-[#991B1B] font-bold shadow-sm';
                   } else {
-                    optionStyle = 'opacity-40 border-slate-800 text-slate-400';
+                    optionStyle = 'opacity-40 border-[#E2E8F0] text-slate-500 bg-white';
                   }
                 }
 
@@ -606,16 +634,16 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                     onClick={() => handleSubmitAnswer(opt)}
                     className={`px-3 py-2 sm:px-3.5 sm:py-2.5 min-h-[42px] rounded-xl border text-left text-xs sm:text-[13px] font-medium transition-all active:scale-98 cursor-pointer flex items-center gap-2.5 ${optionStyle}`}
                   >
-                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-700/60 flex items-center justify-center text-[11px] font-bold shrink-0 text-slate-300">
+                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-100 flex items-center justify-center text-[11px] font-bold shrink-0 text-slate-700">
                       {String.fromCharCode(65 + idx)}
                     </span>
                     <span className="leading-snug flex-1">{opt}</span>
 
                     {isSubmitted && isCorrect && (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 ml-auto" />
+                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0 ml-auto" />
                     )}
                     {isSubmitted && isSelected && !isCorrect && (
-                      <XCircle className="w-4 h-4 text-rose-400 shrink-0 ml-auto" />
+                      <XCircle className="w-4 h-4 text-[#EF4444] shrink-0 ml-auto" />
                     )}
                   </button>
                 );
@@ -624,18 +652,18 @@ export const QuizMode: React.FC<QuizModeProps> = ({
 
             {/* Post-submission explanation & Next Question */}
             {isSubmitted && (
-              <div className="mt-3 p-3 sm:p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-xs text-slate-300 animate-fade-in flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-                <div className="space-y-1 min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5 font-bold text-indigo-300 text-[11px] sm:text-xs">
-                    <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+              <div className="mt-3 p-3.5 sm:p-4 rounded-xl bg-[#EEF2FF] border border-[#C7D2FE] text-xs text-[#1E1B4B] animate-fade-in flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+                <div className="space-y-1.5 min-w-0 flex-1">
+                  <div className="flex items-center gap-1.5 font-bold text-[#312E81] text-[11px] sm:text-xs">
+                    <HelpCircle className="w-3.5 h-3.5 shrink-0 text-indigo-600" />
                     <span>Explanation & Context</span>
                   </div>
-                  <p className="leading-snug text-slate-200 text-[11px] sm:text-xs">
+                  <p className="leading-relaxed text-[#1E1B4B] text-[11px] sm:text-xs font-medium">
                     {currentQuestion.explanation}
                   </p>
                   {currentQuestion.tip && (
-                    <div className="text-[11px] text-amber-300/90 flex items-center gap-1 font-medium">
-                      <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
+                    <div className="text-[11px] text-amber-900 flex items-center gap-1 font-semibold bg-amber-50 p-1.5 rounded-lg border border-amber-200">
+                      <Sparkles className="w-3 h-3 text-amber-600 shrink-0" />
                       <span>Tip: {currentQuestion.tip}</span>
                     </div>
                   )}
@@ -644,7 +672,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                 <div className="flex justify-end shrink-0">
                   <button
                     onClick={handleNextQuestion}
-                    className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2 min-h-[38px] rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition cursor-pointer shadow-md shadow-indigo-600/30"
+                    className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-5 py-2.5 min-h-[40px] rounded-xl bg-[#4F46E5] hover:bg-[#4338CA] text-white font-bold text-xs transition cursor-pointer shadow-md shadow-indigo-500/20"
                   >
                     <span>{currentIndex + 1 < quizQuestions.length ? 'Next Question' : 'View Results'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />

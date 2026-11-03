@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect, Suspense, lazy } from 'react';
 import {
-  Zap,
   Volume2,
   VolumeX,
   Layers,
@@ -85,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full max-w-full overflow-x-clip border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full max-w-full overflow-x-clip border-b border-slate-200 bg-white/95 backdrop-blur-md">
       <div className="max-w-7xl w-full mx-auto px-3 sm:px-5 lg:px-6">
         <div className="flex items-center justify-between min-h-14 sm:h-16 gap-2 min-w-0 w-full">
           {/* Logo & Brand */}
@@ -93,23 +92,27 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => onSelectMode('quiz')}
             className="flex items-center gap-2 sm:gap-2.5 cursor-pointer select-none group min-w-0 shrink-0"
           >
-            <div className="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-pink-500 shadow-md shadow-indigo-500/25 group-hover:scale-105 transition-transform shrink-0">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white fill-white" />
+            <div className="relative flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <img
+                src="/assets/aistudio/logo_flashmind_77da4392.png"
+                alt="FlashMind Exam-Prep Logo"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-contain shadow-md shadow-indigo-500/20 ring-1 ring-slate-200"
+              />
               <span className="absolute -top-1 -right-1 flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-pink-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-500"></span>
               </span>
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-base sm:text-lg text-white tracking-tight leading-none">
-                  Flash<span className="text-indigo-400">Mind</span>
+                <span className="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight leading-none">
+                  Flash<span className="text-indigo-600">Mind</span>
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 whitespace-nowrap">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 whitespace-nowrap">
                   JKSSB PREP
                 </span>
               </div>
-              <p className="hidden sm:block text-[10px] text-slate-400 font-medium truncate">
+              <p className="hidden sm:block text-[10px] text-slate-600 font-medium truncate">
                 Revise Smarter. Retain Longer. Score Higher.
               </p>
             </div>
@@ -122,15 +125,15 @@ export const Header: React.FC<HeaderProps> = ({
             <div
               className={`hidden xl:flex items-center gap-1 px-2 py-1 rounded-lg text-[11px] font-medium whitespace-nowrap border ${
                 isOnline
-                  ? 'bg-slate-900 text-emerald-400 border-slate-800'
-                  : 'bg-amber-500/10 text-amber-300 border-amber-500/30'
+                  ? 'bg-slate-100 text-emerald-700 border-slate-200'
+                  : 'bg-amber-500/10 text-amber-800 border-amber-500/30'
               }`}
               title={isOnline ? 'Online (Ready to sync)' : 'Offline mode active'}
             >
               {isOnline ? (
-                <Wifi className="w-3 h-3 text-emerald-400 shrink-0" />
+                <Wifi className="w-3 h-3 text-emerald-600 shrink-0" />
               ) : (
-                <WifiOff className="w-3 h-3 text-amber-400 shrink-0" />
+                <WifiOff className="w-3 h-3 text-amber-600 shrink-0" />
               )}
               <span>{isOnline ? 'Ready' : 'Offline'}</span>
             </div>
@@ -138,11 +141,11 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Sound Toggle */}
             <button
               onClick={toggleSound}
-              className="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-white bg-slate-900 border border-slate-800 hover:bg-slate-800 transition cursor-pointer shrink-0"
+              className="p-1.5 sm:p-2 rounded-xl text-slate-700 bg-slate-100 border border-slate-200 hover:bg-slate-200 transition cursor-pointer shrink-0"
               title={soundOn ? 'Sound FX On (click to mute)' : 'Sound FX Muted'}
             >
               {soundOn ? (
-                <Volume2 className="w-4 h-4 text-indigo-400" />
+                <Volume2 className="w-4 h-4 text-indigo-600" />
               ) : (
                 <VolumeX className="w-4 h-4 text-slate-500" />
               )}
@@ -154,14 +157,14 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Navigation bar - stays in its dedicated row on all screen sizes */}
-        <div className="flex flex-wrap items-center py-1.5 gap-1 sm:gap-1.5 border-t border-slate-800/50 w-full">
+        <div className="flex flex-wrap items-center py-1.5 gap-1 sm:gap-1.5 border-t border-slate-200 w-full">
           {/* Quiz Game - 1st */}
           <button
             onClick={() => onSelectMode('quiz')}
             className={`flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
               currentMode === 'quiz'
                 ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white bg-slate-900/60'
+                : 'text-slate-700 hover:text-slate-900 bg-slate-100 border border-slate-200'
             }`}
           >
             <HelpCircle className="w-3.5 h-3.5 shrink-0" />
@@ -174,11 +177,11 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setIsMobileMockOpen((prev) => !prev)}
               className={`flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer border ${
                 currentMode === 'mock' || isMobileMockOpen
-                  ? 'bg-indigo-600 text-white border-indigo-400/50 shadow-sm'
-                  : 'text-emerald-300 bg-slate-900 border-emerald-500/30 hover:text-white'
+                  ? 'bg-indigo-600 text-white border-indigo-500/50 shadow-sm'
+                  : 'text-emerald-800 bg-slate-100 border-emerald-500/40 hover:text-emerald-950'
               }`}
             >
-              <ClipboardCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <ClipboardCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
               <span>Mock Test</span>
               <ChevronDown className={`w-3.5 h-3.5 shrink-0 transition-transform ${isMobileMockOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -190,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
               currentMode === 'flip'
                 ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white bg-slate-900/60'
+                : 'text-slate-700 hover:text-slate-900 bg-slate-100 border border-slate-200'
             }`}
           >
             <Layers className="w-3.5 h-3.5 shrink-0" />
@@ -202,10 +205,10 @@ export const Header: React.FC<HeaderProps> = ({
             className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer border ${
               currentMode === 'current_affairs'
                 ? 'bg-gradient-to-r from-amber-500 to-indigo-600 text-white border-amber-400 shadow-sm'
-                : 'text-amber-300 bg-amber-500/10 border-amber-500/30 hover:text-white'
+                : 'text-amber-800 bg-amber-500/10 border-amber-500/30 hover:text-amber-950'
             }`}
           >
-            <Globe className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <Globe className="w-3.5 h-3.5 text-amber-600 shrink-0" />
             <span>Current Affairs</span>
           </button>
 
@@ -214,10 +217,10 @@ export const Header: React.FC<HeaderProps> = ({
             className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
               currentMode === 'chat'
                 ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-sm'
-                : 'text-purple-300 hover:text-white bg-purple-950/40 border border-purple-500/30'
+                : 'text-purple-800 hover:text-purple-950 bg-purple-50 border border-purple-500/30'
             }`}
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
+            <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse shrink-0" />
             <span>AI Mentor</span>
           </button>
         </div>

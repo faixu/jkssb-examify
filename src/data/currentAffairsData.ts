@@ -1,5 +1,6 @@
 import { CurrentAffairsMCQ, CACategoryId, CA_TOPICS_BY_CATEGORY } from '../types/currentAffairs';
 import { CURRENT_AFFAIRS_QUESTIONS } from './questions/currentAffairs';
+import { JAN_TO_SEPT_2026_MCQS } from './janToSeptCurrentAffairs';
 
 export const CURATED_HIGH_YIELD_MCQS: CurrentAffairsMCQ[] = [
   // ==========================================
@@ -761,10 +762,12 @@ const MAPPED_CURRENT_AFFAIRS_BANK: CurrentAffairsMCQ[] = CURRENT_AFFAIRS_QUESTIO
   };
 });
 
-// Merged master bank containing both curated high-yield questions and the full 401-question JKSSB bank
+// Merged master bank containing curated high-yield questions, the Jan–Sept 2026 master PDF bank, and the full JKSSB bank
 export const CURRENT_AFFAIRS_MCQS: CurrentAffairsMCQ[] = [
   ...CURATED_HIGH_YIELD_MCQS,
+  ...JAN_TO_SEPT_2026_MCQS,
   ...MAPPED_CURRENT_AFFAIRS_BANK,
 ];
 
+export { JAN_TO_SEPT_2026_MCQS };
 export const SAMPLE_CURRENT_AFFAIRS_MCQS = CURRENT_AFFAIRS_MCQS;

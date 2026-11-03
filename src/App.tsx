@@ -10,6 +10,7 @@ import { Header } from './components/Header';
 import { QuizMode } from './components/QuizMode';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { TelegramButton } from './components/TelegramButton';
+import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
 import {
   Sparkles,
   ShieldCheck,
@@ -80,6 +81,7 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>(initialRoute.category);
   const [activeMockConfig, setActiveMockConfig] = useState<ActiveMockConfig | null>(null);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const [shouldRenderStudyGuide, setShouldRenderStudyGuide] = useState(false);
   const studyGuideSentinelRef = useRef<HTMLDivElement>(null);
@@ -224,7 +226,7 @@ export default function App() {
   const currentSEO = getCanonicalSEO(currentMode, selectedCategory);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-indigo-600 selection:text-white">
       {/* Sticky App Header */}
       <Header
         currentMode={currentMode}
@@ -351,7 +353,12 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950/80 py-6 pb-20 md:pb-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+          <div className="flex items-center gap-2.5 flex-wrap justify-center sm:justify-start">
+            <img
+              src="/assets/aistudio/logo_flashmind_77da4392.png"
+              alt="FlashMind Exam-Prep Logo"
+              className="w-5 h-5 sm:w-6 sm:h-6 rounded-md object-contain ring-1 ring-slate-800 shrink-0"
+            />
             <span className="font-bold text-slate-400">FlashMind JKSSB Quiz &amp; Mock Test Portal</span>
             <span className="text-slate-600">•</span>
             <span className="flex items-center gap-1 text-slate-400">
@@ -386,7 +393,7 @@ export default function App() {
             </span>
             {Object.values(TOPIC_SEO_MAP)
               .filter((t) => t.categoryId !== 'all')
-              .map((t, i, arr) => (
+              .map((t) => (
                 <span key={t.slug} className="flex items-center">
                   <a
                     href={t.path}
@@ -395,9 +402,15 @@ export default function App() {
                   >
                     {t.shortName} Quiz
                   </a>
-                  {i < arr.length - 1 && <span className="mx-1.5 text-slate-700">·</span>}
+                  <span className="mx-1.5 text-slate-700">·</span>
                 </span>
               ))}
+            <button
+              onClick={() => setIsPrivacyModalOpen(true)}
+              className="text-indigo-400 hover:text-indigo-300 font-semibold transition cursor-pointer underline underline-offset-2"
+            >
+              Privacy Policy
+            </button>
           </div>
         </div>
       </footer>
@@ -650,6 +663,9 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal isOpen={isPrivacyModalOpen} onClose={() => setIsPrivacyModalOpen(false)} />
     </div>
   );
 }

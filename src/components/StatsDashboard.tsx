@@ -43,11 +43,11 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
 
   // Rank title
   const rank = useMemo(() => {
-    if (userStats.xp >= 2000) return { title: 'Grandmaster Scholar', level: 5, color: 'text-amber-400', badge: 'bg-amber-500/10 border-amber-500/30' };
-    if (userStats.xp >= 1000) return { title: 'Master of Knowledge', level: 4, color: 'text-purple-400', badge: 'bg-purple-500/10 border-purple-500/30' };
-    if (userStats.xp >= 500) return { title: 'Senior Scholar', level: 3, color: 'text-indigo-400', badge: 'bg-indigo-500/10 border-indigo-500/30' };
-    if (userStats.xp >= 150) return { title: 'Apprentice Learner', level: 2, color: 'text-emerald-400', badge: 'bg-emerald-500/10 border-emerald-500/30' };
-    return { title: 'Novice Explorer', level: 1, color: 'text-slate-300', badge: 'bg-slate-800 border-slate-700' };
+    if (userStats.xp >= 2000) return { title: 'Grandmaster Scholar', level: 5, color: 'text-amber-700', badge: 'bg-amber-50 text-amber-800 border-amber-200' };
+    if (userStats.xp >= 1000) return { title: 'Master of Knowledge', level: 4, color: 'text-purple-700', badge: 'bg-purple-50 text-purple-800 border-purple-200' };
+    if (userStats.xp >= 500) return { title: 'Senior Scholar', level: 3, color: 'text-indigo-700', badge: 'bg-indigo-50 text-indigo-800 border-indigo-200' };
+    if (userStats.xp >= 150) return { title: 'Apprentice Learner', level: 2, color: 'text-emerald-700', badge: 'bg-emerald-50 text-emerald-800 border-emerald-200' };
+    return { title: 'Novice Explorer', level: 1, color: 'text-slate-700', badge: 'bg-slate-100 text-slate-800 border-slate-200' };
   }, [userStats.xp]);
 
   // Last 28 days for streak calendar heatmap
@@ -121,35 +121,35 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
       {/* Top Banner: Rank & Motivational Streak */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950/60 to-slate-900 border border-slate-800 p-6 sm:p-8 shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 border border-indigo-500/30 p-6 sm:p-8 text-white shadow-xl">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider border ${rank.badge} ${rank.color}`}>
+              <span className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider border bg-white/10 text-amber-300 border-white/20`}>
                 Rank Level {rank.level}: {rank.title}
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              Learning Mastery & Daily Streaks
+              Learning Mastery &amp; Daily Streaks
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
+            <p className="text-xs sm:text-sm text-slate-200 max-w-xl">
               Consistent daily recall drives lifelong memory retention. Keep your daily streak active to unlock higher mastery.
             </p>
           </div>
 
           {/* Daily Streak Highlight Pill */}
-          <div className="flex items-center gap-4 bg-slate-900/90 border border-amber-500/30 p-4 rounded-2xl shadow-lg shrink-0">
+          <div className="flex items-center gap-4 bg-slate-900/90 border border-amber-500/40 p-4 rounded-2xl shadow-lg shrink-0">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center shadow-md shadow-amber-500/30">
               <Flame className="w-7 h-7 text-slate-950 fill-slate-950 animate-pulse" />
             </div>
             <div>
-              <span className="text-xs font-semibold text-slate-400 block">Daily Streak</span>
+              <span className="text-xs font-semibold text-slate-300 block">Daily Streak</span>
               <span className="text-2xl font-black text-amber-400 leading-none">
                 {userStats.streak} {userStats.streak === 1 ? 'Day' : 'Days'}
               </span>
-              <span className="text-[11px] text-slate-500 block mt-0.5">
+              <span className="text-[11px] text-slate-400 block mt-0.5">
                 Record: {userStats.longestStreak} days
               </span>
             </div>
@@ -159,67 +159,67 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
 
       {/* 4 Stat Metric Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
-        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Total XP</span>
-            <div className="p-1.5 sm:p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
-              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-indigo-400" />
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-600">Total XP</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-indigo-50 text-indigo-600">
+              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-indigo-600" />
             </div>
           </div>
-          <span className="text-xl sm:text-2xl font-black text-white">{userStats.xp}</span>
-          <span className="text-[10px] sm:text-[11px] text-indigo-400/80 block mt-1">+10 to +20 per review</span>
+          <span className="text-xl sm:text-2xl font-black text-slate-900">{userStats.xp}</span>
+          <span className="text-[10px] sm:text-[11px] text-indigo-600 block mt-1">+10 to +20 per review</span>
         </div>
 
-        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Overall Accuracy</span>
-            <div className="p-1.5 sm:p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-600">Overall Accuracy</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-emerald-50 text-emerald-600">
               <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </div>
-          <span className="text-xl sm:text-2xl font-black text-emerald-400">{overallAccuracy}%</span>
-          <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-1">{userStats.totalCorrect} / {userStats.totalCardsReviewed} correct</span>
+          <span className="text-xl sm:text-2xl font-black text-emerald-600">{overallAccuracy}%</span>
+          <span className="text-[10px] sm:text-[11px] text-slate-600 block mt-1">{userStats.totalCorrect} / {userStats.totalCardsReviewed} correct</span>
         </div>
 
-        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Cards Mastered</span>
-            <div className="p-1.5 sm:p-2 rounded-xl bg-purple-500/10 text-purple-400">
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-600">Cards Mastered</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-purple-50 text-purple-600">
               <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </div>
-          <span className="text-xl sm:text-2xl font-black text-purple-400">{masteredCount}</span>
-          <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-1">{totalCardsCount} total in decks</span>
+          <span className="text-xl sm:text-2xl font-black text-purple-600">{masteredCount}</span>
+          <span className="text-[10px] sm:text-[11px] text-slate-600 block mt-1">{totalCardsCount} total in decks</span>
         </div>
 
-        <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Active Study Days</span>
-            <div className="p-1.5 sm:p-2 rounded-xl bg-amber-500/10 text-amber-400">
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-600">Active Study Days</span>
+            <div className="p-1.5 sm:p-2 rounded-xl bg-amber-50 text-amber-600">
               <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </div>
-          <span className="text-xl sm:text-2xl font-black text-amber-400">{userStats.activeDays?.length || 0}</span>
-          <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-1">Days with practice</span>
+          <span className="text-xl sm:text-2xl font-black text-amber-600">{userStats.activeDays?.length || 0}</span>
+          <span className="text-[10px] sm:text-[11px] text-slate-600 block mt-1">Days with practice</span>
         </div>
       </div>
 
       {/* Daily Streak Activity Heatmap (Last 28 Days) */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-indigo-400" />
+            <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-indigo-600" />
               <span>Study Streak Heatmap (Last 4 Weeks)</span>
             </h3>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-600">
               Each square represents a day. Light up green by answering at least 1 card daily.
             </p>
           </div>
-          <div className="flex items-center gap-2 text-xs text-slate-400">
-            <span className="w-3 h-3 rounded bg-slate-800 border border-slate-700" />
+          <div className="flex items-center gap-2 text-xs text-slate-600">
+            <span className="w-3 h-3 rounded bg-slate-100 border border-slate-200" />
             <span>Missed</span>
-            <span className="w-3 h-3 rounded bg-emerald-500 shadow-sm shadow-emerald-500/50" />
+            <span className="w-3 h-3 rounded bg-emerald-500 shadow-sm" />
             <span>Studied</span>
           </div>
         </div>
@@ -231,22 +231,22 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
               key={idx}
               className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl border text-center transition-all ${
                 d.active
-                  ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300 shadow-sm shadow-emerald-500/10'
-                  : 'bg-slate-800/40 border-slate-800 text-slate-500'
-              } ${d.isToday ? 'ring-2 ring-indigo-500' : ''}`}
+                  ? 'bg-emerald-50 border-emerald-300 text-emerald-800 shadow-sm'
+                  : 'bg-slate-50 border-slate-200 text-slate-500'
+              } ${d.isToday ? 'ring-2 ring-indigo-600' : ''}`}
               title={`${d.label}: ${d.active ? 'Studied!' : 'No practice recorded'}`}
             >
               <span className="block text-[9px] sm:text-[10px] font-semibold uppercase opacity-75">
                 {d.label.split(' ')[0]}
               </span>
-              <span className="block text-[11px] sm:text-sm font-extrabold text-white mt-0.5">
+              <span className="block text-[11px] sm:text-sm font-extrabold text-slate-900 mt-0.5">
                 {d.label.split(' ')[1]}
               </span>
               <div className="mt-0.5 sm:mt-1 flex justify-center">
                 {d.active ? (
-                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-500" />
                 ) : (
-                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-slate-700" />
+                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-slate-300" />
                 )}
               </div>
             </div>
@@ -255,21 +255,21 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
       </div>
 
       {/* Category Accuracy & Breakdown */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-indigo-400" />
-              <span>Category Accuracy & Mastery</span>
+            <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-indigo-600" />
+              <span>Category Accuracy &amp; Mastery</span>
             </h3>
-            <p className="text-xs text-slate-400">
-              Track your performance across all 8 disciplines to identify focus areas.
+            <p className="text-xs text-slate-600">
+              Track your performance across all disciplines to identify focus areas.
             </p>
           </div>
 
           {strongestCat && (
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-300">
-              <Award className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-800">
+              <Award className="w-3.5 h-3.5 text-emerald-600" />
               <span>Strongest: {strongestCat.cat.name} ({Math.round(strongestCat.acc)}%)</span>
             </div>
           )}
@@ -284,25 +284,25 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
             return (
               <div
                 key={cat.id}
-                className="p-4 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition"
+                className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 transition"
               >
-                <div className="flex items-center justify-between text-xs font-bold text-white mb-2">
+                <div className="flex items-center justify-between text-xs font-bold text-slate-900 mb-2">
                   <div className="flex items-center gap-2">
                     <span className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${cat.color}`} />
                     <span>{cat.name}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-slate-400 font-normal text-[11px]">
+                    <span className="text-slate-600 font-normal text-[11px]">
                       {stats.reviewed} reviewed
                     </span>
-                    <span className={accuracy >= 80 ? 'text-emerald-400' : accuracy >= 50 ? 'text-amber-400' : 'text-slate-400'}>
+                    <span className={accuracy >= 80 ? 'text-emerald-700 font-bold' : accuracy >= 50 ? 'text-amber-700 font-bold' : 'text-slate-700 font-bold'}>
                       {accuracy}%
                     </span>
                   </div>
                 </div>
 
                 {/* Progress bar */}
-                <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
                   <div
                     className={`h-full rounded-full bg-gradient-to-r ${cat.color} transition-all duration-500`}
                     style={{ width: `${accuracy}%` }}
@@ -315,13 +315,13 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
       </div>
 
       {/* Offline Data Backup & Restore */}
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 className="text-sm font-bold text-white flex items-center gap-2">
-            <Download className="w-4 h-4 text-indigo-400" />
-            <span>Offline Data Backup & Restore</span>
+          <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <Download className="w-4 h-4 text-indigo-600" />
+            <span>Offline Data Backup &amp; Restore</span>
           </h4>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-600 mt-0.5">
             Save your streaks, custom cards, and mastery history locally to JSON, or migrate across devices.
           </p>
         </div>
@@ -330,23 +330,23 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({
           {onNavigateToDrive && (
             <button
               onClick={onNavigateToDrive}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition cursor-pointer"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition cursor-pointer"
             >
-              <Cloud className="w-3.5 h-3.5" />
+              <Cloud className="w-3.5 h-3.5 text-emerald-600" />
               <span>Google Drive Cloud Sync</span>
             </button>
           )}
 
           <button
             onClick={handleExport}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-3.5 h-3.5 text-slate-500" />
             <span>Export Backup</span>
           </button>
 
-          <label className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-indigo-300 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 transition cursor-pointer">
-            <Upload className="w-3.5 h-3.5" />
+          <label className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-indigo-800 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 transition cursor-pointer">
+            <Upload className="w-3.5 h-3.5 text-indigo-600" />
             <span>Restore JSON</span>
             <input
               type="file"

@@ -41,6 +41,9 @@ export const CurrentAffairsSection: React.FC = () => {
   // Selected Exam Tag filter ('all' or specific tag like 'JKSSB', 'UPSC', 'SSC')
   const [selectedExamTag, setSelectedExamTag] = useState<string>('all');
 
+  // Selected Edition filter ('all' | 'jan_to_sept_2026' | 'high_yield')
+  const [selectedEdition, setSelectedEdition] = useState<'all' | 'jan_to_sept_2026' | 'high_yield'>('all');
+
   // Loading state simulation when switching tier 1 or tier 2
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -89,6 +92,7 @@ export const CurrentAffairsSection: React.FC = () => {
     setIsLoading(true);
     setSelectedCategory('jammu_kashmir');
     setSelectedTopic('all');
+    setSelectedEdition('all');
     setSearchQuery('');
     setSelectedExamTag('all');
     setShowOnlyBookmarked(false);
@@ -106,7 +110,15 @@ export const CurrentAffairsSection: React.FC = () => {
       // 2. Topic filter
       if (selectedTopic !== 'all' && mcq.topic !== selectedTopic) return false;
 
-      // 3. Search query filter
+      // 3. Edition filter
+      if (selectedEdition === 'jan_to_sept_2026' && !mcq.id.startsWith('ca-2026-pdf-')) {
+        return false;
+      }
+      if (selectedEdition === 'high_yield' && !mcq.id.startsWith('ca-jk-') && !mcq.id.startsWith('ca-nat-') && !mcq.id.startsWith('ca-intl-')) {
+        return false;
+      }
+
+      // 4. Search query filter
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
         const matchesQuestion = mcq.question.toLowerCase().includes(query);
@@ -118,19 +130,19 @@ export const CurrentAffairsSection: React.FC = () => {
         }
       }
 
-      // 4. Exam tag filter
+      // 5. Exam tag filter
       if (selectedExamTag !== 'all' && !mcq.examTags.includes(selectedExamTag)) {
         return false;
       }
 
-      // 5. Bookmarked filter
+      // 6. Bookmarked filter
       if (showOnlyBookmarked && !bookmarkedIds.has(mcq.id)) {
         return false;
       }
 
       return true;
     });
-  }, [selectedCategory, selectedTopic, searchQuery, selectedExamTag, showOnlyBookmarked, bookmarkedIds]);
+  }, [selectedCategory, selectedTopic, selectedEdition, searchQuery, selectedExamTag, showOnlyBookmarked, bookmarkedIds]);
 
   // Handle Option Click
   const handleSelectOption = (mcqId: string, optionIndex: number) => {
@@ -241,7 +253,7 @@ export const CurrentAffairsSection: React.FC = () => {
             <span>Multi-Tier Category &amp; Topic Filter</span>
           </div>
 
-          {(selectedTopic !== 'all' || searchQuery || selectedExamTag !== 'all' || showOnlyBookmarked) && (
+          {(selectedTopic !== 'all' || selectedEdition !== 'all' || searchQuery || selectedExamTag !== 'all' || showOnlyBookmarked) && (
             <button
               onClick={handleResetFilters}
               className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-indigo-400 transition cursor-pointer font-medium"
@@ -251,6 +263,42 @@ export const CurrentAffairsSection: React.FC = () => {
               <span>Reset Filters</span>
             </button>
           )}
+        </div>
+
+        {/* Question Edition Filter Bar */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+          <span className="text-slate-400 font-medium shrink-0">Collection:</span>
+          <button
+            onClick={() => setSelectedEdition('all')}
+            className={`px-3 py-1.5 rounded-lg font-semibold whitespace-nowrap transition cursor-pointer border ${
+              selectedEdition === 'all'
+                ? 'bg-indigo-600/30 text-indigo-300 border-indigo-500/50'
+                : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white'
+            }`}
+          >
+            All Questions (Master Bank)
+          </button>
+          <button
+            onClick={() => setSelectedEdition('jan_to_sept_2026')}
+            className={`px-3 py-1.5 rounded-lg font-semibold whitespace-nowrap transition cursor-pointer border flex items-center gap-1.5 ${
+              selectedEdition === 'jan_to_sept_2026'
+                ? 'bg-gradient-to-r from-amber-500/25 to-indigo-500/25 text-amber-300 border-amber-500/60 shadow-sm'
+                : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-amber-300'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <span>Jan – Sept 2026 Special (167 MCQs)</span>
+          </button>
+          <button
+            onClick={() => setSelectedEdition('high_yield')}
+            className={`px-3 py-1.5 rounded-lg font-semibold whitespace-nowrap transition cursor-pointer border ${
+              selectedEdition === 'high_yield'
+                ? 'bg-sky-600/30 text-sky-300 border-sky-500/50'
+                : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white'
+            }`}
+          >
+            High-Yield Focus
+          </button>
         </div>
 
         {/* 2-Tier Dropdown Grid */}

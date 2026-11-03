@@ -26,6 +26,12 @@ export default defineConfig(() => {
           scope: '/',
           icons: [
             {
+              src: '/assets/aistudio/logo_flashmind_77da4392.png',
+              sizes: '1024x1024',
+              type: 'image/png',
+              purpose: 'any',
+            },
+            {
               src: '/pwa-192x192.png',
               sizes: '192x192',
               type: 'image/png',
