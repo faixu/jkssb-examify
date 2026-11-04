@@ -22,6 +22,8 @@ import { TelegramButton } from './components/TelegramButton';
 import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
 import { TermsAndConditionsModal } from './components/TermsAndConditionsModal';
 import { ContactUsModal } from './components/ContactUsModal';
+import { NegativeMarkingCalculator } from './components/NegativeMarkingCalculator';
+import { TypingSpeedTest } from './components/TypingSpeedTest';
 import {
   Sparkles,
   ShieldCheck,
@@ -59,6 +61,26 @@ export default function App() {
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      return localStorage.getItem('flashmind_theme') === 'dark';
+    } catch {
+      return false;
+    }
+  });
+
+  const handleToggleDarkMode = useCallback(() => {
+    setIsDarkMode((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('flashmind_theme', next ? 'dark' : 'light');
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  }, []);
 
   const refreshAllData = useCallback(() => {
     setCards(getAllCards());
@@ -174,7 +196,11 @@ export default function App() {
   const currentSEO = getCanonicalSEO(currentMode, selectedCategory);
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-indigo-600 selection:text-white">
+    <div
+      className={`min-h-screen flex flex-col selection:bg-indigo-600 selection:text-white transition-colors ${
+        isDarkMode ? 'bg-slate-950 text-slate-100' : 'bg-[#F8FAFC] text-slate-900'
+      }`}
+    >
       {/* Sticky App Header */}
       <Header
         currentMode={currentMode}
@@ -187,12 +213,18 @@ export default function App() {
         onSelectMockTest={handleSelectMockTest}
         streak={userStats.streak}
         xp={userStats.xp}
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={handleToggleDarkMode}
       />
 
       {/* Semantic Breadcrumb Navigation Bar with Schema.org Microdata */}
       <nav
         aria-label="Breadcrumb"
-        className="w-full bg-slate-100/90 border-b border-slate-200/80 text-xs text-slate-600"
+        className={`w-full border-b text-xs transition-colors ${
+          isDarkMode
+            ? 'bg-slate-900/90 border-slate-800 text-slate-400'
+            : 'bg-slate-100/90 border-slate-200/80 text-slate-600'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-6 py-2 flex items-center justify-between gap-2 overflow-x-auto whitespace-nowrap">
           <ol
@@ -210,7 +242,7 @@ export default function App() {
                 itemProp="item"
                 href="/"
                 onClick={(e) => handleTopicLinkClick(e, 'all')}
-                className="inline-flex items-center gap-1 text-slate-600 hover:text-indigo-600 font-medium transition"
+                className="inline-flex items-center gap-1 hover:text-indigo-500 font-medium transition"
               >
                 <Home className="w-3.5 h-3.5 text-slate-500" />
                 <span itemProp="name">Home</span>
@@ -233,7 +265,7 @@ export default function App() {
                   e.preventDefault();
                   setCurrentMode(currentMode);
                 }}
-                className="text-slate-700 hover:text-indigo-600 font-medium transition"
+                className="hover:text-indigo-500 font-medium transition"
               >
                 <span itemProp="name">
                   {currentMode === 'quiz'
@@ -252,6 +284,10 @@ export default function App() {
                     ? 'Question Bank Decks'
                     : currentMode === 'drive'
                     ? 'Cloud Backup & Sync'
+                    : currentMode === 'calculator'
+                    ? 'JKSSB -0.25 Cutoff Calculator'
+                    : currentMode === 'typing'
+                    ? '35 WPM Junior Assistant Typing Test'
                     : 'AI Doubt Solver'}
                 </span>
               </a>
@@ -266,7 +302,7 @@ export default function App() {
                   itemScope
                   itemType="https://schema.org/ListItem"
                   aria-current="page"
-                  className="font-semibold text-indigo-700"
+                  className="font-semibold text-indigo-500"
                 >
                   <span itemProp="name">
                     {TOPIC_SEO_MAP[selectedCategory]?.shortName || 'All Subjects'}
@@ -280,14 +316,14 @@ export default function App() {
           <div className="hidden md:flex items-center gap-3 text-[11px] text-slate-500">
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="hover:text-slate-900 transition cursor-pointer"
+              className="hover:text-indigo-500 transition cursor-pointer"
             >
               Help &amp; Support
             </button>
             <span aria-hidden="true">·</span>
             <a
               href="mailto:flust786@gmail.com"
-              className="hover:text-indigo-600 transition font-medium"
+              className="hover:text-indigo-500 transition font-medium"
             >
               flust786@gmail.com
             </a>
@@ -304,10 +340,15 @@ export default function App() {
             onUpdateStats={handleUpdateStats}
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
+            isDarkMode={isDarkMode}
             onNavigateToMock={() => {
               setActiveMockConfig(null);
               setCurrentMode('mock');
             }}
+            onNavigateToSpeed={() => setCurrentMode('speed')}
+            onNavigateToDrive={() => setCurrentMode('drive')}
+            onNavigateToCalculator={() => setCurrentMode('calculator')}
+            onNavigateToTyping={() => setCurrentMode('typing')}
           />
         )}
 
@@ -372,6 +413,21 @@ export default function App() {
 
         {currentMode === 'current_affairs' && (
           <CurrentAffairsSection />
+        )}
+
+        {currentMode === 'calculator' && (
+          <NegativeMarkingCalculator
+            isDarkMode={isDarkMode}
+            onNavigateToMock={() => {
+              setActiveMockConfig(null);
+              setCurrentMode('mock');
+            }}
+            onNavigateToQuiz={() => setCurrentMode('quiz')}
+          />
+        )}
+
+        {currentMode === 'typing' && (
+          <TypingSpeedTest isDarkMode={isDarkMode} />
         )}
 
         {/* On-Page Structured Study Guide, Syllabus, Sample Answer Key & Share/Embed Widget */}
@@ -484,6 +540,28 @@ export default function App() {
                     className="hover:text-white transition cursor-pointer text-left"
                   >
                     60-Second Speed Rush Mode
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCurrentMode('calculator');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-sky-400 text-sky-300/90 font-medium transition cursor-pointer text-left"
+                  >
+                    JKSSB -0.25 Negative Marking &amp; Cutoff Calculator
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCurrentMode('typing');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-teal-400 text-teal-300/90 font-medium transition cursor-pointer text-left"
+                  >
+                    Junior Assistant 35 WPM Typing Speed Test
                   </button>
                 </li>
                 <li>

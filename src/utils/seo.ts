@@ -248,6 +248,20 @@ export const MODE_SEO_MAP: Record<Exclude<StudyMode, 'quiz'>, { path: string; le
     description:
       'Practice 2-tier filtered Current Affairs MCQs for JKSSB, JKPSC & UPSC covering J&K UT Schemes, Infrastructure, National Policies, ISRO, and Global Summits.',
   },
+  calculator: {
+    path: '/jkssb-negative-marking-calculator',
+    title: 'JKSSB Negative Marking & Cutoff Calculator (-0.25 Marks) | FlashMind',
+    h1: 'JKSSB Negative Marking (-0.25) & Category Cutoff Calculator',
+    description:
+      'Calculate your exact JKSSB net score, -0.25 negative marking deduction, accuracy percentage, and category-wise safe cutoff for FAA, Patwari, JKPSI & Naib Tehsildar.',
+  },
+  typing: {
+    path: '/jkssb-typing-test',
+    title: 'JKSSB Junior Assistant Typing Speed Test (35 WPM • 90% Accuracy)',
+    h1: 'JKSSB Junior Assistant Official Typing Speed Test (35 WPM Qualifier)',
+    description:
+      'Practice official JKSSB Junior Assistant typing test passages with live WPM, 90% accuracy check, backspace counter, and 35 WPM qualification scorecard.',
+  },
 };
 
 export function resolveRouteFromLocation(pathname: string, search: string): { mode: StudyMode; category: CategoryId | 'all' } {
@@ -278,6 +292,12 @@ export function resolveRouteFromLocation(pathname: string, search: string): { mo
   }
   if (cleanPath === '/current-affairs') {
     return { mode: 'current_affairs', category: 'current_affairs' };
+  }
+  if (cleanPath === '/jkssb-negative-marking-calculator' || cleanPath === '/calculator') {
+    return { mode: 'calculator', category: 'all' };
+  }
+  if (cleanPath === '/jkssb-typing-test' || cleanPath === '/typing-test') {
+    return { mode: 'typing', category: 'all' };
   }
 
   // Match canonical top-level topic landing pages (/jkssb-general-knowledge-quiz, /jkssb-accountancy-mock-test, etc.)
