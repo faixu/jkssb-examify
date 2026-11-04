@@ -450,11 +450,12 @@ export const QuizMode: React.FC<QuizModeProps> = ({
             >
               All ({totalDisplayCount})
             </button>
-            {(['cs', 'general', 'grammar', 'accounting', 'math'] as CategoryId[]).map((catId) => {
+            {(['cs', 'general', 'history', 'accounting', 'grammar', 'math'] as CategoryId[]).map((catId) => {
               const cat = CATEGORIES.find((c) => c.id === catId);
               if (!cat) return null;
               const isSelected = selectedCategory === cat.id;
               const count = getCategoryDisplayCount(cat.id);
+              const shortLabel = cat.id === 'history' ? 'J&K History' : cat.name.split(' ')[0];
               return (
                 <button
                   key={cat.id}
@@ -466,7 +467,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                       : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
                   }`}
                 >
-                  <span>{cat.name.split(' ')[0]}</span>
+                  <span>{shortLabel}</span>
                   <span className="text-[10px] opacity-70 font-mono tabular-nums">({count})</span>
                 </button>
               );

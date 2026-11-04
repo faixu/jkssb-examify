@@ -1,6 +1,12 @@
 import { Flashcard } from '../../types';
+import { JK_HISTORY_PDF_150_QUESTIONS_HISTORY } from './jkHistoryPdfQuestions';
+import { JK_GK_100_PDF_QUESTIONS_HISTORY } from './jkGk100PdfQuestions';
+import { FREEDOM_TIMELINE_PDF_QUESTIONS_HISTORY } from './freedomTimelineQuestions';
 
 export const HISTORY_QUESTIONS: Flashcard[] = [
+  ...FREEDOM_TIMELINE_PDF_QUESTIONS_HISTORY,
+  ...JK_GK_100_PDF_QUESTIONS_HISTORY,
+  ...JK_HISTORY_PDF_150_QUESTIONS_HISTORY,
   {
     "id": "hist-1",
     "categoryId": "history",

@@ -1,10 +1,765 @@
 import { Flashcard } from "../../types";
 
 /**
- * 25 CVP Analysis Practice Problems & Formulas
- * Directly transcribed from CVP Analysis Practice Workbook PDF
+ * 50 Comprehensive Cost-Volume-Profit (CVP) Analysis MCQs (Theory & Numericals)
+ * + 25 CVP Analysis Practice Workbook Problems
+ * Integrated into Accountancy & Book Keeping section
  */
+export const CVP_ANALYSIS_50_MCQS: Flashcard[] = [
+  {
+    id: "cvp-50-1",
+    categoryId: "accounting",
+    question: "Which of the following is the fundamental formula for calculating the Break-Even Point (in units)?",
+    answer: "Fixed Costs ÷ Contribution Margin per Unit",
+    options: [
+      "Fixed Costs ÷ Total Sales",
+      "Fixed Costs ÷ Contribution Margin per Unit",
+      "Variable Costs ÷ Contribution Margin per Unit",
+      "Total Costs ÷ Profit"
+    ],
+    explanation: "Break-Even Point (in units) is calculated by dividing Total Fixed Costs by the Contribution Margin per Unit (Selling Price per unit minus Variable Cost per unit).",
+    tip: "BEP (Units) = Fixed Costs ÷ Unit Contribution Margin.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-2",
+    categoryId: "accounting",
+    question: "Contribution margin is defined as:",
+    answer: "Sales revenue minus variable costs",
+    options: [
+      "Sales revenue minus fixed costs",
+      "Sales revenue minus total costs",
+      "Sales revenue minus variable costs",
+      "Fixed costs minus variable costs"
+    ],
+    explanation: "Contribution margin is the amount remaining from sales revenue after all variable expenses have been deducted, which contributes toward covering fixed costs and generating net profit.",
+    tip: "Contribution = Sales - Variable Costs.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-3",
+    categoryId: "accounting",
+    question: "If selling price is Rs. 50, variable cost is Rs. 30, and fixed costs are Rs. 100,000, what is the break-even point in units?",
+    answer: "5,000 units",
+    options: [
+      "2,000 units",
+      "3,333 units",
+      "5,000 units",
+      "10,000 units"
+    ],
+    explanation: "Unit Contribution Margin = Rs. 50 - Rs. 30 = Rs. 20. Break-Even Point (units) = Rs. 100,000 ÷ Rs. 20 = 5,000 units.",
+    tip: "100,000 ÷ (50 - 30) = 5,000 units.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-4",
+    categoryId: "accounting",
+    question: "The Profit/Volume (P/V) ratio indicates the relationship between:",
+    answer: "Contribution and Sales",
+    options: [
+      "Contribution and Sales",
+      "Profit and Fixed Costs",
+      "Sales and Variable Costs",
+      "Fixed Costs and Contribution"
+    ],
+    explanation: "The Profit/Volume (P/V) ratio, also called the Contribution Margin Ratio, expresses the relationship between Total Contribution and Total Sales revenue: (Contribution ÷ Sales) × 100.",
+    tip: "P/V Ratio = (Contribution ÷ Sales) × 100.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-5",
+    categoryId: "accounting",
+    question: "If the P/V ratio is 40% and sales are Rs. 500,000, what is the total contribution?",
+    answer: "Rs. 200,000",
+    options: [
+      "Rs. 100,000",
+      "Rs. 200,000",
+      "Rs. 300,000",
+      "Rs. 500,000"
+    ],
+    explanation: "Total Contribution = Sales × P/V Ratio = Rs. 500,000 × 0.40 = Rs. 200,000.",
+    tip: "Contribution = Sales × P/V Ratio.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-6",
+    categoryId: "accounting",
+    question: "Margin of Safety is best described as:",
+    answer: "The difference between actual sales and break-even sales",
+    options: [
+      "The difference between actual sales and break-even sales",
+      "The difference between total sales and total costs",
+      "The difference between fixed costs and variable costs",
+      "The ratio of fixed costs to contribution margin"
+    ],
+    explanation: "Margin of Safety is the excess of actual or budgeted sales over the break-even sales volume, indicating the amount by which sales can drop before losses are incurred.",
+    tip: "Margin of Safety = Actual Sales - Break-Even Sales.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-7",
+    categoryId: "accounting",
+    question: "A company has actual sales of Rs. 800,000 and its break-even sales are Rs. 500,000. What is the Margin of Safety?",
+    answer: "Rs. 300,000",
+    options: [
+      "Rs. 300,000",
+      "Rs. 500,000",
+      "Rs. 1,300,000",
+      "37.5%"
+    ],
+    explanation: "Margin of Safety = Actual Sales - Break-Even Sales = Rs. 800,000 - Rs. 500,000 = Rs. 300,000.",
+    tip: "800,000 - 500,000 = Rs. 300,000.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-8",
+    categoryId: "accounting",
+    question: "What happens to the break-even point if fixed costs increase, assuming all other factors remain constant?",
+    answer: "It increases",
+    options: [
+      "It decreases",
+      "It remains the same",
+      "It increases",
+      "It becomes negative"
+    ],
+    explanation: "Since Break-Even Point = Fixed Costs ÷ Contribution Margin per unit, an increase in fixed costs directly increases the number of units or revenue required to break even.",
+    tip: "Higher Fixed Costs = Higher Break-Even Point.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-9",
+    categoryId: "accounting",
+    question: "If a firm's Margin of Safety is 20% and its actual sales are 50,000 units, what are the break-even sales in units?",
+    answer: "40,000 units",
+    options: [
+      "10,000 units",
+      "40,000 units",
+      "50,000 units",
+      "60,000 units"
+    ],
+    explanation: "Margin of Safety in units = 20% of 50,000 = 10,000 units. Break-Even Sales = Actual Sales - Margin of Safety = 50,000 - 10,000 = 40,000 units.",
+    tip: "50,000 × (1 - 0.20) = 40,000 units.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-10",
+    categoryId: "accounting",
+    question: "At the break-even point, which of the following is true?",
+    answer: "Total Contribution = Fixed Costs",
+    options: [
+      "Total Revenue = Variable Costs",
+      "Total Contribution = Fixed Costs",
+      "Total Profit = Margin of Safety",
+      "Fixed Costs = Variable Costs"
+    ],
+    explanation: "At the break-even point, net profit is zero, which means Total Contribution (Sales - Variable Costs) exactly equals Total Fixed Costs.",
+    tip: "At BEP: Profit = 0 and Total Contribution = Total Fixed Costs.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-11",
+    categoryId: "accounting",
+    question: "A firm desires a target profit of Rs. 50,000. Fixed costs are Rs. 150,000 and unit contribution margin is Rs. 20. How many units must be sold?",
+    answer: "10,000 units",
+    options: [
+      "7,500 units",
+      "10,000 units",
+      "12,500 units",
+      "15,000 units"
+    ],
+    explanation: "Required Sales (in units) = (Fixed Costs + Target Profit) ÷ Unit Contribution Margin = (150,000 + 50,000) ÷ 20 = 200,000 ÷ 20 = 10,000 units.",
+    tip: "(150,000 + 50,000) ÷ 20 = 10,000 units.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-12",
+    categoryId: "accounting",
+    question: "Which of the following is NOT an assumption of CVP analysis?",
+    answer: "Sales mix changes continuously",
+    options: [
+      "Costs can be accurately classified into fixed and variable",
+      "Selling price per unit remains constant",
+      "Sales mix changes continuously",
+      "Volume is the only factor affecting costs"
+    ],
+    explanation: "CVP analysis assumes that in a multi-product firm, the sales mix remains constant over the relevant range. A continuously changing sales mix violates standard CVP assumptions.",
+    tip: "CVP assumes constant selling price, constant unit variable cost, and constant sales mix.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-13",
+    categoryId: "accounting",
+    question: "In Year 1, a company's sales were Rs. 100,000 and profit was Rs. 10,000. In Year 2, sales increased to Rs. 150,000 and profit increased to Rs. 25,000. What is the P/V ratio?",
+    answer: "30%",
+    options: [
+      "20%",
+      "25%",
+      "30%",
+      "40%"
+    ],
+    explanation: "P/V Ratio = (Change in Profit ÷ Change in Sales) × 100 = [(25,000 - 10,000) ÷ (150,000 - 100,000)] × 100 = (15,000 ÷ 50,000) × 100 = 30%.",
+    tip: "P/V Ratio = (Δ Profit ÷ Δ Sales) × 100.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-14",
+    categoryId: "accounting",
+    question: "Using the data from Question 13 (P/V Ratio = 30%, Year 1 Sales = 100,000, Profit = 10,000), what are the total fixed costs?",
+    answer: "Rs. 20,000",
+    options: [
+      "Rs. 20,000",
+      "Rs. 30,000",
+      "Rs. 40,000",
+      "Rs. 50,000"
+    ],
+    explanation: "Contribution = 100,000 × 0.30 = Rs. 30,000. Fixed Costs = Contribution - Profit = 30,000 - 10,000 = Rs. 20,000.",
+    tip: "Fixed Costs = (Sales × P/V Ratio) - Profit.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-15",
+    categoryId: "accounting",
+    question: "The angle of incidence in a break-even chart represents:",
+    answer: "The rate at which profits are earned after break-even",
+    options: [
+      "The rate of fixed cost absorption",
+      "The rate at which profits are earned after break-even",
+      "The proportion of variable costs to fixed costs",
+      "The ratio of debt to equity"
+    ],
+    explanation: "The angle of incidence is the angle formed by the intersection of the total sales line and the total cost line at the break-even point. A wider angle indicates a higher rate of profit generation once fixed costs are covered.",
+    tip: "Large angle of incidence = High rate of profit after break-even.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-16",
+    categoryId: "accounting",
+    question: "If a product's selling price is Rs. 200, P/V ratio is 25%, what is its variable cost per unit?",
+    answer: "Rs. 150",
+    options: [
+      "Rs. 50",
+      "Rs. 100",
+      "Rs. 150",
+      "Rs. 175"
+    ],
+    explanation: "Contribution per unit = Rs. 200 × 25% = Rs. 50. Variable Cost per unit = Selling Price - Contribution = 200 - 50 = Rs. 150.",
+    tip: "Variable Cost = Selling Price × (1 - P/V Ratio).",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-17",
+    categoryId: "accounting",
+    question: "Operating leverage measures:",
+    answer: "How sensitive profit is to a change in sales volume",
+    options: [
+      "How sensitive profit is to a change in sales volume",
+      "How debt affects net income",
+      "The ratio of fixed assets to current assets",
+      "The time taken to break even"
+    ],
+    explanation: "Operating leverage measures the sensitivity of operating income (EBIT) to changes in sales volume due to the presence of fixed operating costs.",
+    tip: "Operating leverage links sales volume changes to operating profit changes.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-18",
+    categoryId: "accounting",
+    question: "Total contribution is Rs. 300,000 and net operating income is Rs. 100,000. What is the Degree of Operating Leverage (DOL)?",
+    answer: "3.0",
+    options: [
+      "0.33",
+      "1.5",
+      "2.0",
+      "3.0"
+    ],
+    explanation: "DOL = Contribution ÷ Net Operating Income = 300,000 ÷ 100,000 = 3.0.",
+    tip: "DOL = Total Contribution ÷ Operating Profit (EBIT).",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-19",
+    categoryId: "accounting",
+    question: "If Degree of Operating Leverage is 4, a 10% increase in sales will result in what percentage increase in net income?",
+    answer: "40%",
+    options: [
+      "10%",
+      "20%",
+      "40%",
+      "400%"
+    ],
+    explanation: "Percentage change in Net Operating Income = DOL × Percentage change in Sales = 4 × 10% = 40%.",
+    tip: "% Δ Profit = DOL × % Δ Sales.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-20",
+    categoryId: "accounting",
+    question: "Which of the following correctly expresses Net Profit in terms of Margin of Safety and P/V Ratio?",
+    answer: "Margin of Safety × P/V Ratio",
+    options: [
+      "Margin of Safety ÷ P/V Ratio",
+      "Margin of Safety × P/V Ratio",
+      "Margin of Safety - Fixed Costs",
+      "Break-Even Sales × P/V Ratio"
+    ],
+    explanation: "Since all fixed costs are already recovered at the break-even point, any contribution earned on sales above break-even (Margin of Safety) goes directly toward Net Profit: Profit = Margin of Safety × P/V Ratio.",
+    tip: "Profit = Margin of Safety × P/V Ratio.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-21",
+    categoryId: "accounting",
+    question: "A decrease in the selling price per unit will:",
+    answer: "Increase the break-even point",
+    options: [
+      "Increase the P/V ratio",
+      "Decrease the break-even point",
+      "Increase the break-even point",
+      "Have no effect on the margin of safety"
+    ],
+    explanation: "A lower selling price per unit reduces the contribution margin per unit, requiring more units to be sold to cover fixed costs, thereby increasing the break-even point.",
+    tip: "Lower selling price -> Lower unit contribution -> Higher BEP.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-22",
+    categoryId: "accounting",
+    question: "If fixed costs are Rs. 120,000, variable costs are 60% of sales, what is the break-even revenue?",
+    answer: "Rs. 300,000",
+    options: [
+      "Rs. 200,000",
+      "Rs. 300,000",
+      "Rs. 400,000",
+      "Rs. 600,000"
+    ],
+    explanation: "P/V Ratio = 100% - 60% = 40%. Break-Even Revenue = Fixed Costs ÷ P/V Ratio = 120,000 ÷ 0.40 = Rs. 300,000.",
+    tip: "P/V Ratio = 40%. BEP = 120,000 ÷ 0.40 = Rs. 300,000.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-23",
+    categoryId: "accounting",
+    question: "In a multi-product firm, the break-even point is calculated using:",
+    answer: "Weighted average contribution margin",
+    options: [
+      "Highest contribution margin",
+      "Lowest contribution margin",
+      "Weighted average contribution margin",
+      "Simple average contribution margin"
+    ],
+    explanation: "When a company sells multiple products, the composite break-even point is determined by dividing total fixed costs by the weighted average contribution margin based on the sales mix.",
+    tip: "Multi-product BEP uses Weighted Average Contribution Margin.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-24",
+    categoryId: "accounting",
+    question: "What is the margin of safety if profit is Rs. 40,000 and the P/V ratio is 20%?",
+    answer: "Rs. 200,000",
+    options: [
+      "Rs. 8,000",
+      "Rs. 50,000",
+      "Rs. 160,000",
+      "Rs. 200,000"
+    ],
+    explanation: "Margin of Safety = Profit ÷ P/V Ratio = 40,000 ÷ 0.20 = Rs. 200,000.",
+    tip: "MOS = Profit ÷ P/V Ratio.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-25",
+    categoryId: "accounting",
+    question: "Which cost changes proportionately with the level of activity?",
+    answer: "Variable Cost",
+    options: [
+      "Fixed Cost",
+      "Variable Cost",
+      "Step Cost",
+      "Sunk Cost"
+    ],
+    explanation: "Total variable cost changes in direct proportion to changes in production or sales volume, whereas variable cost per unit remains constant.",
+    tip: "Total variable cost varies directly with activity volume.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-26",
+    categoryId: "accounting",
+    question: "If the Margin of Safety is high, it indicates that:",
+    answer: "The company has a strong cushion against falling sales",
+    options: [
+      "The company is at a high risk of incurring losses",
+      "A small drop in sales will lead to massive losses",
+      "The company has a strong cushion against falling sales",
+      "Fixed costs are extremely high"
+    ],
+    explanation: "A high Margin of Safety means actual sales are well above the break-even threshold, giving the firm a strong buffer against a downturn in sales before incurring losses.",
+    tip: "High Margin of Safety = Strong buffer against sales drop.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-27",
+    categoryId: "accounting",
+    question: "Selling Price: Rs. 100. Variable Cost: Rs. 40. Fixed Cost: Rs. 180,000. Tax Rate: 40%. Calculate the units required for an after-tax profit of Rs. 60,000.",
+    answer: "4,667 units",
+    options: [
+      "4,000 units",
+      "4,667 units",
+      "5,000 units",
+      "6,000 units"
+    ],
+    explanation: "Pre-Tax Target Profit = After-Tax Profit ÷ (1 - Tax Rate) = 60,000 ÷ (1 - 0.40) = Rs. 100,000. Unit Contribution Margin = 100 - 40 = Rs. 60. Units Required = (180,000 + 100,000) ÷ 60 = 280,000 ÷ 60 = 4,667 units.",
+    tip: "Convert after-tax profit to pre-tax profit first: 60,000 ÷ 0.60 = 100,000.",
+    difficulty: "advanced"
+  },
+  {
+    id: "cvp-50-28",
+    categoryId: "accounting",
+    question: "Which of the following formulas correctly calculates the Profit/Volume (P/V) ratio?",
+    answer: "(Contribution ÷ Sales) × 100",
+    options: [
+      "(Sales - Fixed Costs) ÷ Sales",
+      "(Contribution ÷ Sales) × 100",
+      "(Fixed Costs ÷ Contribution) × 100",
+      "(Profit ÷ Variable Costs) × 100"
+    ],
+    explanation: "The P/V Ratio is calculated as (Contribution ÷ Sales) × 100, or [(Sales - Variable Costs) ÷ Sales] × 100.",
+    tip: "P/V Ratio = (Contribution ÷ Sales) × 100.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-29",
+    categoryId: "accounting",
+    question: "An increase in fixed costs will cause the Margin of Safety to (assuming sales remain constant):",
+    answer: "Decrease",
+    options: [
+      "Increase",
+      "Decrease",
+      "Remain unchanged",
+      "Cannot be determined"
+    ],
+    explanation: "An increase in fixed costs raises the break-even sales point. When actual sales remain constant and break-even sales rise, the Margin of Safety (Actual Sales - Break-Even Sales) decreases.",
+    tip: "Higher Fixed Costs -> Higher BEP -> Lower Margin of Safety.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-30",
+    categoryId: "accounting",
+    question: "A company sells 10,000 units at Rs. 50 each. Variable costs are Rs. 30 per unit, and fixed costs are Rs. 150,000. What is the net profit?",
+    answer: "Rs. 50,000",
+    options: [
+      "Rs. 50,000",
+      "Rs. 100,000",
+      "Rs. 150,000",
+      "Rs. 200,000"
+    ],
+    explanation: "Contribution = 10,000 × (50 - 30) = 10,000 × 20 = Rs. 200,000. Net Profit = Contribution - Fixed Costs = 200,000 - 150,000 = Rs. 50,000.",
+    tip: "Profit = Total Contribution - Fixed Costs.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-31",
+    categoryId: "accounting",
+    question: "What is the indifference point in CVP analysis?",
+    answer: "The sales volume where profits of two alternatives are equal",
+    options: [
+      "The point where total sales equal total costs",
+      "The sales volume where profits of two alternatives are equal",
+      "The point where margin of safety is zero",
+      "The volume where fixed costs equal variable costs"
+    ],
+    explanation: "The cost or profit indifference point is the level of activity (units or sales) at which two alternative cost structures or machines yield the exact same total cost or operating profit.",
+    tip: "Indifference Point = Volume where two options give equal cost/profit.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-32",
+    categoryId: "accounting",
+    question: "Option A has Fixed Cost Rs. 50,000 & Variable Cost Rs. 10. Option B has Fixed Cost Rs. 80,000 & Variable Cost Rs. 5. What is the indifference point?",
+    answer: "6,000 units",
+    options: [
+      "3,000 units",
+      "4,000 units",
+      "5,000 units",
+      "6,000 units"
+    ],
+    explanation: "Indifference Point = Difference in Fixed Costs ÷ Difference in Variable Cost per unit = (80,000 - 50,000) ÷ (10 - 5) = 30,000 ÷ 5 = 6,000 units.",
+    tip: "(80,000 - 50,000) ÷ (10 - 5) = 6,000 units.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-33",
+    categoryId: "accounting",
+    question: "If variable cost as a percentage of sales increases, the break-even point will:",
+    answer: "Increase",
+    options: [
+      "Decrease",
+      "Increase",
+      "Stay the same",
+      "Become zero"
+    ],
+    explanation: "If the variable cost ratio increases, the P/V ratio (100% - Variable Cost %) decreases. A lower P/V ratio increases the break-even point (Fixed Costs ÷ P/V Ratio).",
+    tip: "Higher Variable Cost % -> Lower P/V Ratio -> Higher BEP.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-34",
+    categoryId: "accounting",
+    question: "The sum of the Variable Cost Ratio and the Profit/Volume (P/V) Ratio is always equal to:",
+    answer: "100% (or 1)",
+    options: [
+      "50% (or 0.5)",
+      "100% (or 1)",
+      "Margin of Safety Ratio",
+      "Break-Even Ratio"
+    ],
+    explanation: "Since Sales = Variable Costs + Contribution, dividing both sides by Sales shows that Variable Cost Ratio + P/V Ratio = 1 (or 100%).",
+    tip: "P/V Ratio + Variable Cost Ratio = 100%.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-35",
+    categoryId: "accounting",
+    question: "Cost-Volume-Profit analysis is a technique primarily useful for:",
+    answer: "Short-term profit planning and decision making",
+    options: [
+      "Long-term strategic planning",
+      "Short-term profit planning and decision making",
+      "Valuing inventory on the balance sheet",
+      "Determining depreciation methods"
+    ],
+    explanation: "CVP analysis assumes fixed costs remain constant and cost behavior is linear within a relevant range, making it primarily a tool for short-term profit planning and operational decisions.",
+    tip: "CVP is a short-run managerial decision-making tool.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-36",
+    categoryId: "accounting",
+    question: "Actual Sales Rs. 1,000,000. Margin of Safety is 40%. P/V ratio is 25%. What is the Profit?",
+    answer: "Rs. 100,000",
+    options: [
+      "Rs. 100,000",
+      "Rs. 150,000",
+      "Rs. 200,000",
+      "Rs. 400,000"
+    ],
+    explanation: "Margin of Safety (in Rs.) = Rs. 1,000,000 × 40% = Rs. 400,000. Profit = Margin of Safety × P/V Ratio = Rs. 400,000 × 25% = Rs. 100,000.",
+    tip: "MOS = 400,000; Profit = 400,000 × 25% = Rs. 100,000.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-37",
+    categoryId: "accounting",
+    question: "If fixed costs decrease by 10% and unit selling price increases by 10%, what will happen to the break-even point?",
+    answer: "It will definitely decrease",
+    options: [
+      "It will definitely increase",
+      "It will definitely decrease",
+      "It will remain unchanged",
+      "It depends on variable costs"
+    ],
+    explanation: "Decreasing fixed costs lowers the numerator of the BEP formula, while increasing unit selling price increases the denominator (unit contribution margin). Both changes work in the same direction to definitely reduce the break-even point.",
+    tip: "Lower FC + Higher SP = Definitely lower Break-Even Point.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-38",
+    categoryId: "accounting",
+    question: "Contribution margin can also be calculated as:",
+    answer: "Fixed Costs + Net Profit",
+    options: [
+      "Fixed Costs + Net Profit",
+      "Fixed Costs - Net Profit",
+      "Variable Costs + Net Profit",
+      "Sales - Fixed Costs"
+    ],
+    explanation: "Since Contribution - Fixed Costs = Net Profit, rearranging the equation gives Contribution = Fixed Costs + Net Profit (or Fixed Costs - Net Loss).",
+    tip: "Contribution = Sales - Variable Costs = Fixed Costs + Profit.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-39",
+    categoryId: "accounting",
+    question: "A company sells Product A (CM = Rs. 10) and Product B (CM = Rs. 15) in a 2:3 ratio. What is the weighted average contribution margin?",
+    answer: "Rs. 13.00",
+    options: [
+      "Rs. 12.00",
+      "Rs. 12.50",
+      "Rs. 13.00",
+      "Rs. 14.50"
+    ],
+    explanation: "Weighted Average Contribution Margin = (10 × 2/5) + (15 × 3/5) = 4 + 9 = Rs. 13.00.",
+    tip: "(10 × 0.4) + (15 × 0.6) = 4 + 9 = Rs. 13.00.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-40",
+    categoryId: "accounting",
+    question: "In a graphical representation of CVP analysis, the break-even point is where:",
+    answer: "The total revenue line intersects the total cost line",
+    options: [
+      "The fixed cost line intersects the variable cost line",
+      "The total revenue line intersects the total cost line",
+      "The profit line intersects the fixed cost line",
+      "The contribution margin line intersects the vertical axis"
+    ],
+    explanation: "On a traditional break-even chart, the break-even point is located at the intersection of the Total Revenue (Sales) line and the Total Cost line.",
+    tip: "BEP on chart = Intersection of Total Revenue line and Total Cost line.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-41",
+    categoryId: "accounting",
+    question: "On a break-even chart, the vertical distance between the total sales line and the total cost line to the right of the break-even point represents:",
+    answer: "Net Profit",
+    options: [
+      "Fixed Costs",
+      "Margin of Safety in units",
+      "Net Profit",
+      "Variable Costs"
+    ],
+    explanation: "To the right of the break-even point, the total sales line lies above the total cost line; the vertical gap between them at any volume measures Net Profit.",
+    tip: "Vertical gap past BEP = Profit; Horizontal gap past BEP = Margin of Safety.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-42",
+    categoryId: "accounting",
+    question: "A factory produces 5,000 units. Fixed costs are Rs. 100,000, variable costs are Rs. 150,000, and profit is Rs. 50,000. What is the selling price per unit?",
+    answer: "Rs. 60",
+    options: [
+      "Rs. 40",
+      "Rs. 50",
+      "Rs. 60",
+      "Rs. 70"
+    ],
+    explanation: "Total Revenue = Fixed Costs + Variable Costs + Profit = 100,000 + 150,000 + 50,000 = Rs. 300,000. Selling Price per unit = 300,000 ÷ 5,000 = Rs. 60.",
+    tip: "Total Sales = FC + VC + Profit = 300,000; SP = 300,000 ÷ 5,000 = Rs. 60.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-43",
+    categoryId: "accounting",
+    question: "Which of the following describes \"Target Costing\" in relation to CVP?",
+    answer: "Setting costs based on a desired profit and a competitive selling price",
+    options: [
+      "Setting costs based on a desired profit and a competitive selling price",
+      "Determining profit after actual costs are calculated",
+      "Increasing selling price to cover all fixed costs",
+      "Ignoring variable costs to hit a target"
+    ],
+    explanation: "Target Costing starts with a market-determined competitive selling price and subtracts the desired profit margin to establish the maximum allowable target cost.",
+    tip: "Target Cost = Competitive Market Price - Desired Profit Margin.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-44",
+    categoryId: "accounting",
+    question: "A company desires to reduce its break-even point. It should:",
+    answer: "Increase selling price",
+    options: [
+      "Increase fixed costs",
+      "Decrease selling price",
+      "Increase variable cost per unit",
+      "Increase selling price"
+    ],
+    explanation: "Increasing the selling price per unit increases the contribution margin per unit, which reduces the number of units needed to cover fixed costs (lowering the break-even point).",
+    tip: "To lower BEP: reduce fixed costs, reduce unit variable cost, or increase selling price.",
+    difficulty: "beginner"
+  },
+  {
+    id: "cvp-50-45",
+    categoryId: "accounting",
+    question: "If the P/V ratio is 20% and fixed costs are Rs. 40,000, what sales volume is required to earn a profit of Rs. 20,000?",
+    answer: "Rs. 300,000",
+    options: [
+      "Rs. 100,000",
+      "Rs. 200,000",
+      "Rs. 300,000",
+      "Rs. 400,000"
+    ],
+    explanation: "Required Sales Revenue = (Fixed Costs + Target Profit) ÷ P/V Ratio = (40,000 + 20,000) ÷ 0.20 = 60,000 ÷ 0.20 = Rs. 300,000.",
+    tip: "Required Sales = (40,000 + 20,000) ÷ 0.20 = Rs. 300,000.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-46",
+    categoryId: "accounting",
+    question: "The cash break-even point is calculated by:",
+    answer: "Subtracting non-cash expenses (like depreciation) from total fixed costs, then dividing by unit contribution",
+    options: [
+      "Subtracting non-cash expenses (like depreciation) from total fixed costs, then dividing by unit contribution",
+      "Adding non-cash expenses to total variable costs",
+      "Ignoring all fixed costs",
+      "Subtracting current liabilities from fixed costs"
+    ],
+    explanation: "Cash Break-Even Point shows the sales volume needed to cover immediate cash fixed commitments: (Total Fixed Costs - Non-Cash Fixed Costs like Depreciation) ÷ Contribution Margin per Unit.",
+    tip: "Cash BEP = Cash Fixed Costs ÷ Unit Contribution Margin.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-47",
+    categoryId: "accounting",
+    question: "A company with high operating leverage:",
+    answer: "Has high fixed costs and low variable costs",
+    options: [
+      "Has high variable costs and low fixed costs",
+      "Has high fixed costs and low variable costs",
+      "Is less risky during an economic downturn",
+      "Cannot calculate a break-even point"
+    ],
+    explanation: "Firms with automated operations or high fixed costs relative to variable costs have high operating leverage, making their profits highly sensitive to changes in sales volume.",
+    tip: "High Operating Leverage = High Fixed Costs & Low Variable Costs.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-48",
+    categoryId: "accounting",
+    question: "In CVP analysis, the Shut-Down Point is calculated by dividing:",
+    answer: "Avoidable Fixed Costs by Contribution Margin per Unit (or P/V Ratio)",
+    options: [
+      "Total Fixed Costs by Total Variable Costs",
+      "Avoidable Fixed Costs by Contribution Margin per Unit (or P/V Ratio)",
+      "Sunk Costs by Contribution Margin per Unit",
+      "Unavoidable Fixed Costs by Selling Price"
+    ],
+    explanation: "The shut-down point indicates the minimum sales volume below which a firm is better off temporarily closing operations, calculated as Avoidable Fixed Costs ÷ Unit Contribution Margin.",
+    tip: "Shut-Down Point = Avoidable Fixed Costs ÷ Unit Contribution Margin.",
+    difficulty: "advanced"
+  },
+  {
+    id: "cvp-50-49",
+    categoryId: "accounting",
+    question: "Sales = Rs. 200,000. Profit = Rs. 20,000. Variable Costs = Rs. 140,000. What is the Margin of Safety?",
+    answer: "Rs. 66,667",
+    options: [
+      "Rs. 33,333",
+      "Rs. 66,667",
+      "Rs. 100,000",
+      "Rs. 133,333"
+    ],
+    explanation: "Contribution = 200,000 - 140,000 = Rs. 60,000. P/V Ratio = 60,000 ÷ 200,000 = 30%. Margin of Safety = Profit ÷ P/V Ratio = 20,000 ÷ 0.30 = Rs. 66,666.67 (Rs. 66,667).",
+    tip: "Contribution = 60,000; P/V = 30%; MOS = 20,000 ÷ 0.30 = Rs. 66,667.",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cvp-50-50",
+    categoryId: "accounting",
+    question: "An underlying limitation of CVP analysis is that it assumes:",
+    answer: "Technology and production efficiency remain constant",
+    options: [
+      "Inventories change drastically from period to period",
+      "Technology and production efficiency remain constant",
+      "Costs cannot be separated into fixed and variable",
+      "Prices change with the volume of production"
+    ],
+    explanation: "A key limitation of traditional CVP analysis is its static assumption that technology, production methods, efficiency, and price levels remain unchanged throughout the period.",
+    tip: "CVP assumes constant technology, efficiency, and zero inventory changes.",
+    difficulty: "intermediate"
+  }
+];
+
 export const CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS: Flashcard[] = [
+  ...CVP_ANALYSIS_50_MCQS,
   {
     "id": "cvp-p1-1",
     "categoryId": "accounting",
@@ -46,7 +801,7 @@ export const CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS: Flashcard[] = [
       "6,000 units",
       "7,500 units"
     ],
-    "explanation": "Unit Contribution Margin = Rs. 100 - 60 = Rs. 40. Total Fixed Costs = Rs. 1,50,000. Required Units = (1,50,000 + 50,000) ÷ 40 = 2,00,000 ÷ 40 = 5,00,000 units.",
+    "explanation": "Unit Contribution Margin = Rs. 100 - 60 = Rs. 40. Total Fixed Costs = Rs. 1,50,000. Required Units = (1,50,000 + 50,000) ÷ 40 = 2,00,000 ÷ 40 = 5,000 units.",
     "tip": "Required Units = (1,50,000 + 50,000) ÷ 40 = 5,000 units.",
     "difficulty": "intermediate"
   },

@@ -1,16 +1,16 @@
 import { CategoryId, CategoryMeta, Flashcard } from '../types';
 
 export const CATEGORY_QUESTION_COUNTS: Record<CategoryId | 'all', number> = {
-  all: 6820,
-  general: 816,
-  accounting: 705,
+  all: 7476,
+  general: 1227,
+  accounting: 755,
   grammar: 1054,
   statistics: 518,
   math: 570,
   economics: 610,
   science: 510,
   cs: 1136,
-  history: 500,
+  history: 796,
   current_affairs: 401,
 };
 
@@ -21,7 +21,7 @@ export const CATEGORIES: CategoryMeta[] = [
     marks: 30,
     syllabusRef: 'Section I - 30 Marks',
     description:
-      'Current events & Central Government Schemes, Indian freedom struggle, rivers & lakes, climate & crops, demography, environment & biodiversity, J&K UT history, geography, economy, culture, tourism, and J&K Reorganisation Act 2019.',
+      'Physical & Political Divisions of the World & India, Indian Physiography, Current events & Central Government Schemes, Indian freedom struggle, rivers & lakes, climate & crops, demography, environment & biodiversity, J&K UT history, geography, economy, culture, tourism, and J&K Reorganisation Act 2019.',
     color: 'from-amber-500 to-orange-700',
     borderColor: 'border-amber-500',
     bgLight: 'bg-amber-500/10 text-amber-400',
@@ -121,16 +121,16 @@ export const CATEGORIES: CategoryMeta[] = [
   },
   {
     id: 'history',
-    name: 'Modern History (Bonus)',
-    marks: 10,
-    syllabusRef: 'Freedom Movement & World History',
+    name: 'Jammu & Kashmir & Modern History',
+    marks: 15,
+    syllabusRef: 'J&K Ancient, Medieval, Dogra & Modern History',
     description:
-      'Indian freedom struggle, major world revolutions, treaties, the Cold War, and international milestones.',
+      'Ancient Kashmir (Satisar, Nilamata Purana, Kalhana’s Rajatarangini, Karkota & Utpala dynasties), Medieval Kashmir (Shah Mir, Zain-ul-Abidin, Chaks, Mughals, Afghans, Sikhs), Modern Dogra Rule (Treaty of Amritsar, Gulab Singh to Hari Singh, Quit Kashmir, Accession, Article 370), and Indian Freedom Struggle.',
     color: 'from-yellow-600 to-amber-800',
     borderColor: 'border-amber-600',
     bgLight: 'bg-amber-600/10 text-amber-300',
     iconName: 'Landmark',
-    badge: 'Bonus',
+    badge: '650 Qs',
   },
   {
     id: 'current_affairs',

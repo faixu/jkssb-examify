@@ -304,5 +304,387 @@ export const FREEDOM_TIMELINE_PDF_QUESTIONS: Flashcard[] = [
     "explanation": "On January 26, 1950, India transitioned to a Sovereign Republic, replacing the Government of India Act 1935 with its new Constitution. Dr. Rajendra Prasad was sworn in as the first President of India.",
     "tip": "Jan 26, 1950: Republic Day; Dr. Rajendra Prasad became the first President of India.",
     "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-21",
+    "categoryId": "general",
+    "question": "In the chronology of the Indian Freedom Struggle (1857–1950), the period from 1857 to 1900 is characterized as:",
+    "answer": "The Awakening",
+    "options": [
+      "The Awakening",
+      "Radicalism and the Return of Gandhi",
+      "The Era of Mass Movements",
+      "The Final Push"
+    ],
+    "explanation": "The period 1857–1900 is termed 'The Awakening', encompassing the First War of Independence (1857), the Government of India Act (1858), and the formation of the Indian National Congress (1885).",
+    "tip": "1857–1900 = The Awakening.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-22",
+    "categoryId": "general",
+    "question": "Where did the First War of Independence (Sepoy Mutiny) of 1857 begin before spreading across Northern and Central India?",
+    "answer": "Meerut",
+    "options": [
+      "Meerut",
+      "Amritsar",
+      "Dhaka",
+      "Lahore"
+    ],
+    "explanation": "The First War of Independence (1857) started in Meerut and spread across Northern and Central India as the first major organized resistance against British East India Company rule.",
+    "tip": "1857 Sepoy Mutiny started in Meerut.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-23",
+    "categoryId": "general",
+    "question": "Which year marked the end of East India Company rule and the beginning of the British Raj under the direct control of the British Crown?",
+    "answer": "1858",
+    "options": [
+      "1857",
+      "1858",
+      "1885",
+      "1905"
+    ],
+    "explanation": "Under the Government of India Act of 1858, the British Crown took direct control of India from the East India Company, marking the beginning of the British Raj.",
+    "tip": "1858 = Government of India Act / Start of British Raj.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-24",
+    "categoryId": "general",
+    "question": "In which year was the Indian National Congress (INC) founded by Allan Octavian Hume to provide a platform for educated Indians to seek political representation and civil rights?",
+    "answer": "1885",
+    "options": [
+      "1858",
+      "1885",
+      "1905",
+      "1906"
+    ],
+    "explanation": "Founded in 1885 by Allan Octavian Hume, the INC provided an organized national platform for educated Indians to seek political representation and civil rights.",
+    "tip": "1885 = Formation of Indian National Congress (INC).",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-25",
+    "categoryId": "general",
+    "question": "In the Indian Freedom Struggle timeline, the period from 1905 to 1918 is known as:",
+    "answer": "Radicalism and the Return of Gandhi",
+    "options": [
+      "The Awakening",
+      "Radicalism and the Return of Gandhi",
+      "The Era of Mass Movements",
+      "Building the Republic"
+    ],
+    "explanation": "The phase 1905–1918 is known as 'Radicalism and the Return of Gandhi', covering the 1905 Partition of Bengal & Swadeshi Movement, 1906 Muslim League formation, 1915 Return of Gandhi, and 1916 Lucknow Pact.",
+    "tip": "1905–1918 = Radicalism and the Return of Gandhi.",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "timeline-pdf-26",
+    "categoryId": "general",
+    "question": "Lord Curzon's 1905 decision to partition Bengal on communal lines directly sparked which movement that promoted Indian-made goods?",
+    "answer": "Swadeshi Movement",
+    "options": [
+      "Swadeshi Movement",
+      "Non-Cooperation Movement",
+      "Civil Disobedience Movement",
+      "Quit India Movement"
+    ],
+    "explanation": "In 1905, Lord Curzon's decision to partition Bengal on communal lines sparked massive protests and the Swadeshi movement, which promoted Indian-made goods and boycotted British imports.",
+    "tip": "1905 Partition of Bengal -> Swadeshi Movement.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-27",
+    "categoryId": "general",
+    "question": "In which year was the All India Muslim League established in Dhaka to safeguard the rights of Muslims in India and voice their political aspirations?",
+    "answer": "1906",
+    "options": [
+      "1905",
+      "1906",
+      "1915",
+      "1916"
+    ],
+    "explanation": "The All India Muslim League was established in Dhaka in 1906 to safeguard the rights of Muslims in India and voice their political aspirations.",
+    "tip": "1906 = Formation of the All India Muslim League in Dhaka.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-28",
+    "categoryId": "general",
+    "question": "When Mahatma Gandhi returned to India from South Africa in 1915, which philosophy meaning 'truth-force' and non-violent resistance did he bring to the forefront?",
+    "answer": "Satyagraha",
+    "options": [
+      "Satyagraha",
+      "Swadeshi",
+      "Purna Swaraj",
+      "Inquilab"
+    ],
+    "explanation": "In 1915, Mahatma Gandhi returned from South Africa, bringing his philosophy of Satyagraha (truth-force) and non-violent resistance to the forefront of the Indian nationalist movement.",
+    "tip": "1915 = Return of Gandhi & philosophy of Satyagraha (truth-force).",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-29",
+    "categoryId": "general",
+    "question": "In which year was the historic Lucknow Pact signed between the Indian National Congress and the Muslim League to work together for constitutional reforms?",
+    "answer": "1916",
+    "options": [
+      "1906",
+      "1915",
+      "1916",
+      "1919"
+    ],
+    "explanation": "The Lucknow Pact was signed in 1916 as a historic agreement between the Indian National Congress and the Muslim League to work together for constitutional reforms.",
+    "tip": "1916 = Lucknow Pact.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-30",
+    "categoryId": "general",
+    "question": "In the chronology of the Indian Freedom Struggle, the period from 1919 to 1939 is categorized as:",
+    "answer": "The Era of Mass Movements",
+    "options": [
+      "The Awakening",
+      "Radicalism and the Return of Gandhi",
+      "The Era of Mass Movements",
+      "The Final Push"
+    ],
+    "explanation": "The period 1919–1939 is titled 'The Era of Mass Movements', spanning Rowlatt Act & Jallianwala Bagh (1919), Non-Cooperation (1920), Chauri Chaura (1922), Simon Commission protests (1928), Salt Satyagraha (1930), and the Government of India Act (1935).",
+    "tip": "1919–1939 = The Era of Mass Movements.",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "timeline-pdf-31",
+    "categoryId": "general",
+    "question": "In 1919, British troops fired on a peaceful gathering in Amritsar in an atrocity that followed which repressive legislation?",
+    "answer": "Rowlatt Act",
+    "options": [
+      "Rowlatt Act",
+      "Government of India Act 1858",
+      "Government of India Act 1935",
+      "Vernacular Press Act"
+    ],
+    "explanation": "In 1919, the Jallianwala Bagh Massacre in Amritsar followed the repressive Rowlatt Act and became a major turning point in the freedom struggle.",
+    "tip": "1919 = Rowlatt Act & Jallianwala Bagh Massacre in Amritsar.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-32",
+    "categoryId": "general",
+    "question": "In 1920, Mahatma Gandhi launched the Non-Cooperation Movement to demand Purna Swaraj (self-rule), during which millions of Indians boycotted:",
+    "answer": "British institutions, titles, and goods",
+    "options": [
+      "British institutions, titles, and goods",
+      "All provincial elections under the 1935 Act",
+      "Salt production along the Dandi coast",
+      "The Constituent Assembly deliberations"
+    ],
+    "explanation": "Launched in 1920 by Mahatma Gandhi to demand Swaraj (self-rule), the Non-Cooperation Movement saw millions boycott British institutions, titles, and foreign goods.",
+    "tip": "1920 Non-Cooperation Movement = Boycott of British institutions, titles, and goods.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-33",
+    "categoryId": "general",
+    "question": "Why did Mahatma Gandhi suspend the Non-Cooperation Movement in 1922?",
+    "answer": "Following violence in the Chauri Chaura incident, emphasizing that non-violence was paramount",
+    "options": [
+      "Following violence in the Chauri Chaura incident, emphasizing that non-violence was paramount",
+      "Due to the arrival of the all-British Simon Commission",
+      "Because the British passed the Government of India Act 1935",
+      "Following the signing of the Lucknow Pact"
+    ],
+    "explanation": "In 1922, following violence in Chauri Chaura, Mahatma Gandhi suspended the Non-Cooperation Movement, emphasizing that non-violence was paramount.",
+    "tip": "1922 = Chauri Chaura incident -> Suspension of Non-Cooperation Movement.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-34",
+    "categoryId": "general",
+    "question": "In 1928, massive protests with the slogan 'Simon Go Back' took place against the Simon Commission because:",
+    "answer": "It was an all-British commission sent to propose constitutional reforms",
+    "options": [
+      "It was an all-British commission sent to propose constitutional reforms",
+      "It imposed a new tax on salt production",
+      "It partitioned Bengal on communal lines",
+      "It abolished the Indian National Congress"
+    ],
+    "explanation": "In 1928, massive protests with the slogan 'Simon Go Back' erupted across India against the all-British Simon Commission sent to propose constitutional reforms.",
+    "tip": "1928 = 'Simon Go Back' protests against the all-British commission.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-35",
+    "categoryId": "general",
+    "question": "How long was Mahatma Gandhi's 1930 Salt Satyagraha (Dandi March) to produce salt in defiance of the British salt tax?",
+    "answer": "240 miles",
+    "options": [
+      "120 miles",
+      "240 miles",
+      "360 miles",
+      "500 miles"
+    ],
+    "explanation": "In 1930, Mahatma Gandhi undertook a 240-mile march to Dandi to produce salt in defiance of the British salt tax, sparking the Civil Disobedience Movement.",
+    "tip": "1930 Salt Satyagraha (Dandi March) = 240-mile march.",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "timeline-pdf-36",
+    "categoryId": "general",
+    "question": "Which 1935 legislation introduced provincial autonomy and provided for a federation of India?",
+    "answer": "Government of India Act 1935",
+    "options": [
+      "Government of India Act 1858",
+      "Rowlatt Act 1919",
+      "Government of India Act 1935",
+      "Indian Independence Act 1947"
+    ],
+    "explanation": "The Government of India Act of 1935 introduced provincial autonomy and provided for an All-India Federation, though it was largely criticized by Indian leaders.",
+    "tip": "1935 Act = Provincial autonomy & Federation of India.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-37",
+    "categoryId": "general",
+    "question": "In the Indian Freedom Struggle timeline (1857–1950), the period from 1940 to 1947 is referred to as:",
+    "answer": "The Final Push",
+    "options": [
+      "The Awakening",
+      "The Era of Mass Movements",
+      "The Final Push",
+      "Building the Republic"
+    ],
+    "explanation": "The period 1940–1947 is titled 'The Final Push', covering the Lahore Resolution (1940), Quit India Movement (1942), Indian National Army (1943), and Independence & Partition (Aug 15, 1947).",
+    "tip": "1940–1947 = The Final Push.",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "timeline-pdf-38",
+    "categoryId": "general",
+    "question": "Which 1940 milestone saw the Muslim League formally raise the demand for a separate nation, Pakistan?",
+    "answer": "Lahore Resolution",
+    "options": [
+      "Lucknow Pact",
+      "Lahore Resolution",
+      " Poona Pact",
+      "Simla Agreement"
+    ],
+    "explanation": "In 1940, through the Lahore Resolution, the All India Muslim League formally raised the demand for a separate nation, Pakistan.",
+    "tip": "1940 = Lahore Resolution.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-39",
+    "categoryId": "general",
+    "question": "In which year did Mahatma Gandhi launch the Quit India Movement with the call 'Do or Die', leading to the arrest of almost the entire INC leadership?",
+    "answer": "1942",
+    "options": [
+      "1940",
+      "1942",
+      "1943",
+      "1947"
+    ],
+    "explanation": "In 1942, Mahatma Gandhi called on the British to 'Quit India' and urged Indians to 'Do or Die', resulting in the immediate arrest of almost the entire INC leadership.",
+    "tip": "1942 = Quit India Movement ('Do or Die').",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-40",
+    "categoryId": "general",
+    "question": "In 1943, Subhash Chandra Bose led which force (also known as Azad Hind Fauj) to liberate India from British rule with help from the Axis powers during WWII?",
+    "answer": "Indian National Army (INA)",
+    "options": [
+      "Indian National Army (INA)",
+      "Hindustan Socialist Republican Association",
+      "Ghadar Party Militia",
+      "Royal Indian Navy Mutineers"
+    ],
+    "explanation": "In 1943, Subhash Chandra Bose led the Indian National Army (Azad Hind Fauj) to liberate India from British rule with support from the Axis powers during World War II.",
+    "tip": "1943 = Indian National Army (Azad Hind Fauj) led by Subhash Chandra Bose.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-41",
+    "categoryId": "general",
+    "question": "In the chronology of 1857–1950, the period from 1948 to 1950 is titled:",
+    "answer": "Building the Republic",
+    "options": [
+      "The Awakening",
+      "The Era of Mass Movements",
+      "The Final Push",
+      "Building the Republic"
+    ],
+    "explanation": "The period 1948–1950 is titled 'Building the Republic', covering the Integration of Princely States (1948), Adoption of the Constitution (Nov 26, 1949), and India Becoming a Republic (Jan 26, 1950).",
+    "tip": "1948–1950 = Building the Republic.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-42",
+    "categoryId": "general",
+    "question": "In 1948, Sardar Vallabhbhai Patel spearheaded the integration of how many princely states into the Indian Union?",
+    "answer": "Over 560 princely states",
+    "options": [
+      "Around 150 princely states",
+      "Around 250 princely states",
+      "Over 560 princely states",
+      "Over 900 princely states"
+    ],
+    "explanation": "In 1948, Sardar Vallabhbhai Patel spearheaded the historic integration of over 560 princely states into the Indian Union.",
+    "tip": "1948 = Integration of over 560 princely states by Sardar Vallabhbhai Patel.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-43",
+    "categoryId": "general",
+    "question": "How long did the Constituent Assembly of India deliberate before adopting the Constitution on November 26, 1949?",
+    "answer": "Nearly three years",
+    "options": [
+      "Six months",
+      "One year",
+      "Nearly three years",
+      "Seven years"
+    ],
+    "explanation": "On November 26, 1949, the Constituent Assembly of India adopted the Constitution, the result of nearly three years (2 years, 11 months, and 18 days) of deliberation.",
+    "tip": "Nov 26, 1949 = Adoption of the Constitution after nearly three years of deliberation.",
+    "difficulty": "beginner"
+  },
+  {
+    "id": "timeline-pdf-44",
+    "categoryId": "general",
+    "question": "Arrange the following events of the Indian Freedom Struggle in correct chronological order:\n1. Lucknow Pact\n2. Partition of Bengal & Swadeshi Movement\n3. Chauri Chaura Incident\n4. Salt Satyagraha (Dandi March)",
+    "answer": "2 – 1 – 3 – 4",
+    "options": [
+      "1 – 2 – 3 – 4",
+      "2 – 1 – 3 – 4",
+      "2 – 3 – 1 – 4",
+      "1 – 3 – 2 – 4"
+    ],
+    "explanation": "Chronological order: Partition of Bengal & Swadeshi Movement (1905) -> Lucknow Pact (1916) -> Chauri Chaura Incident (1922) -> Salt Satyagraha / Dandi March (1930).",
+    "tip": "1905 (Bengal Partition) -> 1916 (Lucknow Pact) -> 1922 (Chauri Chaura) -> 1930 (Dandi March).",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "timeline-pdf-45",
+    "categoryId": "general",
+    "question": "Arrange the following final-phase milestones in correct chronological order:\n1. Indian National Army (Azad Hind Fauj) under Subhash Chandra Bose\n2. Lahore Resolution\n3. Adoption of the Indian Constitution\n4. Quit India Movement",
+    "answer": "2 – 4 – 1 – 3",
+    "options": [
+      "2 – 4 – 1 – 3",
+      "4 – 2 – 1 – 3",
+      "2 – 1 – 4 – 3",
+      "1 – 2 – 4 – 3"
+    ],
+    "explanation": "Chronological order: Lahore Resolution (1940) -> Quit India Movement (1942) -> Indian National Army / Azad Hind Fauj (1943) -> Adoption of the Constitution (Nov 26, 1949).",
+    "tip": "1940 (Lahore Resolution) -> 1942 (Quit India) -> 1943 (INA) -> 1949 (Constitution Adopted).",
+    "difficulty": "intermediate"
   }
 ];
+
+export const FREEDOM_TIMELINE_PDF_QUESTIONS_HISTORY: Flashcard[] = FREEDOM_TIMELINE_PDF_QUESTIONS.map((q) => ({
+  ...q,
+  id: `${q.id}-hist`,
+  categoryId: 'history'
+}));
+
