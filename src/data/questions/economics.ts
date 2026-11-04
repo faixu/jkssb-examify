@@ -1,7 +1,11 @@
 import { Flashcard } from '../../types';
 import { ECONOMICS_PDF_100_QUESTIONS } from './economicsPdfQuestions';
+import { ECONOMICS_DEMAND_PRODUCTION_PDF_QUESTIONS } from './economicsDemandProductionPdfQuestions';
+import { ECONOMICS_MARKET_MACRO_PDF_QUESTIONS } from './economicsMarketMacroPdfQuestions';
 
 export const ECONOMICS_QUESTIONS: Flashcard[] = [
+  ...ECONOMICS_DEMAND_PRODUCTION_PDF_QUESTIONS,
+  ...ECONOMICS_MARKET_MACRO_PDF_QUESTIONS,
   ...ECONOMICS_PDF_100_QUESTIONS,
   {
     "id": "econ-1",

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { CategoryId, Flashcard, StudyMode, UserStats, CardProgress, ActiveMockConfig } from './types';
 import { getAllCards, loadCardsForCategory, loadUserStats, loadCardProgress } from './utils/storage';
 import {
@@ -8,9 +8,20 @@ import {
 } from './utils/seo';
 import { Header } from './components/Header';
 import { QuizMode } from './components/QuizMode';
+import { StudyFlipMode } from './components/StudyFlipMode';
+import { MockTestMode } from './components/MockTestMode';
+import { SpeedRushMode } from './components/SpeedRushMode';
+import { StatsDashboard } from './components/StatsDashboard';
+import { DeckManager } from './components/DeckManager';
+import { GoogleDriveSync } from './components/GoogleDriveSync';
+import { GeminiChatbot } from './components/GeminiChatbot';
+import { CurrentAffairsSection } from './components/CurrentAffairsSection';
+import { SEOStudyGuide } from './components/SEOStudyGuide';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { TelegramButton } from './components/TelegramButton';
 import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
+import { TermsAndConditionsModal } from './components/TermsAndConditionsModal';
+import { ContactUsModal } from './components/ContactUsModal';
 import {
   Sparkles,
   ShieldCheck,
@@ -24,48 +35,11 @@ import {
   MoreHorizontal,
   X,
   Globe,
+  Mail,
+  Phone,
+  ChevronRight,
+  Home,
 } from 'lucide-react';
-
-// Code-split secondary mode views and below-the-fold study guide so initial index-*.js bundle stays ultra-compact
-const StudyFlipMode = lazy(() =>
-  import('./components/StudyFlipMode').then((m) => ({ default: m.StudyFlipMode }))
-);
-const MockTestMode = lazy(() =>
-  import('./components/MockTestMode').then((m) => ({ default: m.MockTestMode }))
-);
-const SpeedRushMode = lazy(() =>
-  import('./components/SpeedRushMode').then((m) => ({ default: m.SpeedRushMode }))
-);
-const StatsDashboard = lazy(() =>
-  import('./components/StatsDashboard').then((m) => ({ default: m.StatsDashboard }))
-);
-const DeckManager = lazy(() =>
-  import('./components/DeckManager').then((m) => ({ default: m.DeckManager }))
-);
-const GoogleDriveSync = lazy(() =>
-  import('./components/GoogleDriveSync').then((m) => ({ default: m.GoogleDriveSync }))
-);
-const GeminiChatbot = lazy(() =>
-  import('./components/GeminiChatbot').then((m) => ({ default: m.GeminiChatbot }))
-);
-const CurrentAffairsSection = lazy(() =>
-  import('./components/CurrentAffairsSection').then((m) => ({ default: m.CurrentAffairsSection }))
-);
-const SEOStudyGuide = lazy(() =>
-  import('./components/SEOStudyGuide').then((m) => ({ default: m.SEOStudyGuide }))
-);
-
-function ModeSkeleton() {
-  return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-[720px]">
-      <div className="mb-6 space-y-3 min-h-[104px]">
-        <div className="h-14 w-full sm:w-[340px] rounded-2xl bg-slate-900/90 border border-slate-800 animate-pulse" />
-        <div className="h-10 w-full rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse" />
-      </div>
-      <div className="w-full min-h-[480px] rounded-3xl bg-slate-900/80 border border-slate-800 p-6 animate-pulse" />
-    </div>
-  );
-}
 
 export default function App() {
   const initialRoute =
@@ -82,9 +56,9 @@ export default function App() {
   const [activeMockConfig, setActiveMockConfig] = useState<ActiveMockConfig | null>(null);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
-  const [shouldRenderStudyGuide, setShouldRenderStudyGuide] = useState(false);
-  const studyGuideSentinelRef = useRef<HTMLDivElement>(null);
 
   const refreshAllData = useCallback(() => {
     setCards(getAllCards());
@@ -107,32 +81,6 @@ export default function App() {
       window.removeEventListener('touchstart', markInteracted);
     };
   }, [hasUserInteracted]);
-
-  // Mount below-the-fold SEOStudyGuide chunk only when scrolled near viewport or on user interaction
-  useEffect(() => {
-    if (shouldRenderStudyGuide) return;
-    const onScrollOrInteract = () => setShouldRenderStudyGuide(true);
-    window.addEventListener('scroll', onScrollOrInteract, { passive: true, once: true });
-
-    let observer: IntersectionObserver | null = null;
-    if (typeof IntersectionObserver !== 'undefined' && studyGuideSentinelRef.current) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((e) => e.isIntersecting)) {
-            setShouldRenderStudyGuide(true);
-            observer?.disconnect();
-          }
-        },
-        { rootMargin: '250px' }
-      );
-      observer.observe(studyGuideSentinelRef.current);
-    }
-
-    return () => {
-      window.removeEventListener('scroll', onScrollOrInteract);
-      observer?.disconnect();
-    };
-  }, [shouldRenderStudyGuide]);
 
   // Dynamically load only the active category's question chunk after user interaction or explicit category change
   useEffect(() => {
@@ -241,7 +189,111 @@ export default function App() {
         xp={userStats.xp}
       />
 
+      {/* Semantic Breadcrumb Navigation Bar with Schema.org Microdata */}
+      <nav
+        aria-label="Breadcrumb"
+        className="w-full bg-slate-100/90 border-b border-slate-200/80 text-xs text-slate-600"
+      >
+        <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-6 py-2 flex items-center justify-between gap-2 overflow-x-auto whitespace-nowrap">
+          <ol
+            itemScope
+            itemType="https://schema.org/BreadcrumbList"
+            className="flex items-center gap-1.5 text-[11px] sm:text-xs"
+          >
+            <li
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ListItem"
+              className="flex items-center gap-1"
+            >
+              <a
+                itemProp="item"
+                href="/"
+                onClick={(e) => handleTopicLinkClick(e, 'all')}
+                className="inline-flex items-center gap-1 text-slate-600 hover:text-indigo-600 font-medium transition"
+              >
+                <Home className="w-3.5 h-3.5 text-slate-500" />
+                <span itemProp="name">Home</span>
+              </a>
+              <meta itemProp="position" content="1" />
+            </li>
 
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" aria-hidden="true" />
+
+            <li
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ListItem"
+              className="flex items-center gap-1"
+            >
+              <a
+                itemProp="item"
+                href={currentMode === 'mock' ? '/jkssb-faa-mock-test' : '/'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentMode(currentMode);
+                }}
+                className="text-slate-700 hover:text-indigo-600 font-medium transition"
+              >
+                <span itemProp="name">
+                  {currentMode === 'quiz'
+                    ? 'Interactive MCQ Quiz'
+                    : currentMode === 'mock'
+                    ? '120Q Full-Length Mock Tests'
+                    : currentMode === 'flip'
+                    ? 'Active Recall Flashcards'
+                    : currentMode === 'speed'
+                    ? '60s Speed Rush'
+                    : currentMode === 'current_affairs'
+                    ? 'Chinar Current Affairs'
+                    : currentMode === 'stats'
+                    ? 'Progress & Analytics'
+                    : currentMode === 'decks'
+                    ? 'Question Bank Decks'
+                    : currentMode === 'drive'
+                    ? 'Cloud Backup & Sync'
+                    : 'AI Doubt Solver'}
+                </span>
+              </a>
+              <meta itemProp="position" content="2" />
+            </li>
+
+            {(currentMode === 'quiz' || currentMode === 'flip') && (
+              <>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" aria-hidden="true" />
+                <li
+                  itemProp="itemListElement"
+                  itemScope
+                  itemType="https://schema.org/ListItem"
+                  aria-current="page"
+                  className="font-semibold text-indigo-700"
+                >
+                  <span itemProp="name">
+                    {TOPIC_SEO_MAP[selectedCategory]?.shortName || 'All Subjects'}
+                  </span>
+                  <meta itemProp="position" content="3" />
+                </li>
+              </>
+            )}
+          </ol>
+
+          <div className="hidden md:flex items-center gap-3 text-[11px] text-slate-500">
+            <button
+              onClick={() => setIsContactModalOpen(true)}
+              className="hover:text-slate-900 transition cursor-pointer"
+            >
+              Help &amp; Support
+            </button>
+            <span aria-hidden="true">·</span>
+            <a
+              href="mailto:flust786@gmail.com"
+              className="hover:text-indigo-600 transition font-medium"
+            >
+              flust786@gmail.com
+            </a>
+          </div>
+        </div>
+      </nav>
 
       {/* Main Content Area */}
       <main className="flex-1 w-full pb-12">
@@ -259,88 +311,78 @@ export default function App() {
           />
         )}
 
-        {currentMode !== 'quiz' && (
-          <Suspense fallback={<ModeSkeleton />}>
-            {currentMode === 'flip' && (
-              <StudyFlipMode
-                cards={cards}
-                userStats={userStats}
-                onUpdateStats={handleUpdateStats}
-                selectedCategory={selectedCategory}
-                onSelectCategory={setSelectedCategory}
-              />
-            )}
-
-            {currentMode === 'mock' && (
-              <MockTestMode
-                cards={cards}
-                userStats={userStats}
-                onUpdateStats={handleUpdateStats}
-                activeMockConfig={activeMockConfig}
-                onClearActiveMockConfig={() => setActiveMockConfig(null)}
-              />
-            )}
-
-            {currentMode === 'speed' && (
-              <SpeedRushMode
-                cards={cards}
-                userStats={userStats}
-                onUpdateStats={handleUpdateStats}
-              />
-            )}
-
-            {currentMode === 'stats' && (
-              <StatsDashboard
-                userStats={userStats}
-                cardProgress={cardProgress}
-                totalCardsCount={cards.length}
-                onRefreshData={refreshAllData}
-                onNavigateToDrive={() => setCurrentMode('drive')}
-              />
-            )}
-
-            {currentMode === 'decks' && (
-              <DeckManager
-                cards={cards}
-                onRefreshCards={refreshAllData}
-                onNavigateToDrive={() => setCurrentMode('drive')}
-              />
-            )}
-
-            {currentMode === 'drive' && (
-              <GoogleDriveSync
-                cards={cards}
-                onRefreshAllData={refreshAllData}
-              />
-            )}
-
-            {currentMode === 'chat' && (
-              <GeminiChatbot
-                onNavigateToMode={(mode) => setCurrentMode(mode as StudyMode)}
-              />
-            )}
-
-            {currentMode === 'current_affairs' && (
-              <CurrentAffairsSection />
-            )}
-          </Suspense>
+        {currentMode === 'flip' && (
+          <StudyFlipMode
+            cards={cards}
+            userStats={userStats}
+            onUpdateStats={handleUpdateStats}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
         )}
 
-        {/* Lazy-loaded On-Page Structured Study Guide, Syllabus, Sample Answer Key & Share/Embed Widget */}
-        <div ref={studyGuideSentinelRef} className="w-full">
-          {shouldRenderStudyGuide ? (
-            <Suspense fallback={<div className="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 min-h-[420px]" />}>
-              <SEOStudyGuide
-                currentMode={currentMode}
-                selectedCategory={selectedCategory}
-                currentSEO={currentSEO}
-                onTopicLinkClick={handleTopicLinkClick}
-                onMockLinkClick={handleMockLinkClick}
-              />
-            </Suspense>
-          ) : (
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 min-h-[420px]" />
-          )}
+        {currentMode === 'mock' && (
+          <MockTestMode
+            cards={cards}
+            userStats={userStats}
+            onUpdateStats={handleUpdateStats}
+            activeMockConfig={activeMockConfig}
+            onClearActiveMockConfig={() => setActiveMockConfig(null)}
+          />
+        )}
+
+        {currentMode === 'speed' && (
+          <SpeedRushMode
+            cards={cards}
+            userStats={userStats}
+            onUpdateStats={handleUpdateStats}
+          />
+        )}
+
+        {currentMode === 'stats' && (
+          <StatsDashboard
+            userStats={userStats}
+            cardProgress={cardProgress}
+            totalCardsCount={cards.length}
+            onRefreshData={refreshAllData}
+            onNavigateToDrive={() => setCurrentMode('drive')}
+          />
+        )}
+
+        {currentMode === 'decks' && (
+          <DeckManager
+            cards={cards}
+            onRefreshCards={refreshAllData}
+            onNavigateToDrive={() => setCurrentMode('drive')}
+          />
+        )}
+
+        {currentMode === 'drive' && (
+          <GoogleDriveSync
+            cards={cards}
+            onRefreshAllData={refreshAllData}
+          />
+        )}
+
+        {currentMode === 'chat' && (
+          <GeminiChatbot
+            onNavigateToMode={(mode) => setCurrentMode(mode as StudyMode)}
+          />
+        )}
+
+        {currentMode === 'current_affairs' && (
+          <CurrentAffairsSection />
+        )}
+
+        {/* On-Page Structured Study Guide, Syllabus, Sample Answer Key & Share/Embed Widget */}
+        <div className="w-full">
+          <SEOStudyGuide
+            currentMode={currentMode}
+            selectedCategory={selectedCategory}
+            currentSEO={currentSEO}
+            onTopicLinkClick={handleTopicLinkClick}
+            onMockLinkClick={handleMockLinkClick}
+          />
         </div>
       </main>
 
@@ -350,67 +392,211 @@ export default function App() {
       {/* Join Telegram Channel Floating Button on Below Right Corner */}
       <TelegramButton />
 
-      {/* Footer */}
-      <footer className="border-t border-slate-900 bg-slate-950/80 py-6 pb-20 md:pb-6 text-center text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5 flex-wrap justify-center sm:justify-start">
-            <img
-              src="/assets/aistudio/logo_flashmind_77da4392.png"
-              alt="FlashMind Exam-Prep Logo"
-              className="w-5 h-5 sm:w-6 sm:h-6 rounded-md object-contain ring-1 ring-slate-800 shrink-0"
-            />
-            <span className="font-bold text-slate-400">FlashMind JKSSB Quiz &amp; Mock Test Portal</span>
-            <span className="text-slate-600">•</span>
-            <span className="flex items-center gap-1 text-slate-400">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              Offline PWA Enabled
-            </span>
-            <span className="text-slate-600">•</span>
-            <a
-              href="https://t.me/flshmnd"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-sky-400 hover:text-sky-300 font-semibold transition"
-              title="Join our official Telegram Channel @flshmnd"
-            >
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-              </svg>
-              <span>Telegram @flshmnd</span>
-            </a>
+      {/* 4-Column Semantic Footer Blueprint */}
+      <footer className="border-t border-slate-800 bg-slate-950 text-slate-400 pt-12 pb-24 md:pb-10 text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800/80">
+            {/* Column 1: About & Direct Contact */}
+            <div className="space-y-3.5">
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/assets/aistudio/logo_flashmind_77da4392.png"
+                  alt="FlashMind Exam-Prep Logo"
+                  className="w-7 h-7 rounded-lg object-contain ring-1 ring-slate-800 shrink-0"
+                />
+                <span className="font-bold text-sm text-white tracking-tight">
+                  FlashMind JKSSB Portal
+                </span>
+              </div>
+              <p className="text-slate-400 leading-relaxed text-xs">
+                Comprehensive exam-preparation platform featuring 7,750+ syllabus-aligned MCQs, full-length 120Q OMR mock tests, active recall flashcards, and detailed explanations for JKSSB, JKPSC, and competitive aspirants.
+              </p>
+              <div className="space-y-1.5 pt-1 text-slate-300">
+                <a
+                  href="mailto:flust786@gmail.com"
+                  className="flex items-center gap-2 hover:text-indigo-400 transition"
+                >
+                  <Mail className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                  <span>flust786@gmail.com</span>
+                </a>
+                <a
+                  href="tel:+916006580370"
+                  className="flex items-center gap-2 hover:text-emerald-400 transition"
+                >
+                  <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>+91 6006580370</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Column 2: Quick Links & Study Modes */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                Quick Links &amp; Study Modes
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    onClick={(e) => handleTopicLinkClick(e, 'all')}
+                    className="hover:text-white transition cursor-pointer"
+                  >
+                    Interactive MCQ Practice Quiz
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/jkssb-faa-mock-test"
+                    onClick={handleMockLinkClick}
+                    className="hover:text-emerald-400 text-emerald-300/90 font-medium transition cursor-pointer"
+                  >
+                    JKSSB 120Q Full-Length Mock Test
+                  </a>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCurrentMode('flip');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-white transition cursor-pointer text-left"
+                  >
+                    Spaced-Repetition Flashcards
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCurrentMode('current_affairs');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-white transition cursor-pointer text-left"
+                  >
+                    Chinar Current Affairs (J&amp;K &amp; National)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCurrentMode('speed');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-white transition cursor-pointer text-left"
+                  >
+                    60-Second Speed Rush Mode
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCurrentMode('stats');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-white transition cursor-pointer text-left"
+                  >
+                    Performance Analytics &amp; Mastery
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Core Subject Categories */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                Core Subject Categories
+              </h3>
+              <ul className="grid grid-cols-1 gap-1.5">
+                {Object.values(TOPIC_SEO_MAP)
+                  .filter((t) => t.categoryId !== 'all')
+                  .map((t) => (
+                    <li key={t.slug}>
+                      <a
+                        href={t.path}
+                        onClick={(e) => handleTopicLinkClick(e, t.categoryId)}
+                        className="hover:text-indigo-400 transition cursor-pointer"
+                      >
+                        {t.shortName} MCQs
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Legal, Policies & Community */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                Legal, Policies &amp; Support
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    onClick={() => setIsPrivacyModalOpen(true)}
+                    className="text-slate-300 hover:text-indigo-400 font-medium transition cursor-pointer text-left"
+                  >
+                    Privacy Policy (AdSense &amp; Cookies)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setIsTermsModalOpen(true)}
+                    className="text-slate-300 hover:text-amber-400 font-medium transition cursor-pointer text-left"
+                  >
+                    Terms &amp; Conditions (Terms of Service)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="text-slate-300 hover:text-emerald-400 font-medium transition cursor-pointer text-left"
+                  >
+                    Contact Us &amp; Support Desk
+                  </button>
+                </li>
+                <li className="pt-1">
+                  <a
+                    href="https://t.me/flshmnd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold transition"
+                  >
+                    <span>Official Telegram: @flshmnd</span>
+                  </a>
+                </li>
+                <li className="flex items-center gap-1.5 text-slate-400 pt-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Offline-First PWA Ready</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 flex-wrap justify-center text-[11px] text-slate-400">
-            <span className="flex items-center">
-              <a
-                href="/jkssb-faa-mock-test"
-                onClick={handleMockLinkClick}
-                className="hover:text-emerald-400 text-emerald-300/90 font-semibold transition cursor-pointer"
+          {/* Bottom Copyright & Compliance Bar */}
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+            <p>
+              &copy; {new Date().getFullYear()} FlashMind &ndash; JKSSB Mock Test &amp; MCQ Quiz Portal. All rights reserved.
+            </p>
+            <div className="flex items-center gap-3 flex-wrap justify-center">
+              <button
+                onClick={() => setIsPrivacyModalOpen(true)}
+                className="hover:text-slate-300 transition cursor-pointer"
               >
-                JKSSB FAA Mock Test
-              </a>
-              <span className="mx-1.5 text-slate-700">·</span>
-            </span>
-            {Object.values(TOPIC_SEO_MAP)
-              .filter((t) => t.categoryId !== 'all')
-              .map((t) => (
-                <span key={t.slug} className="flex items-center">
-                  <a
-                    href={t.path}
-                    onClick={(e) => handleTopicLinkClick(e, t.categoryId)}
-                    className="hover:text-indigo-400 transition cursor-pointer"
-                  >
-                    {t.shortName} Quiz
-                  </a>
-                  <span className="mx-1.5 text-slate-700">·</span>
-                </span>
-              ))}
-            <button
-              onClick={() => setIsPrivacyModalOpen(true)}
-              className="text-indigo-400 hover:text-indigo-300 font-semibold transition cursor-pointer underline underline-offset-2"
-            >
-              Privacy Policy
-            </button>
+                Privacy Policy
+              </button>
+              <span aria-hidden="true">·</span>
+              <button
+                onClick={() => setIsTermsModalOpen(true)}
+                className="hover:text-slate-300 transition cursor-pointer"
+              >
+                Terms of Service
+              </button>
+              <span aria-hidden="true">·</span>
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="hover:text-slate-300 transition cursor-pointer"
+              >
+                Contact Support
+              </button>
+            </div>
           </div>
         </div>
       </footer>
@@ -664,8 +850,10 @@ export default function App() {
         </div>
       )}
 
-      {/* Privacy Policy Modal */}
+      {/* Privacy Policy, Terms and Conditions & Contact Us Modals */}
       <PrivacyPolicyModal isOpen={isPrivacyModalOpen} onClose={() => setIsPrivacyModalOpen(false)} />
+      <TermsAndConditionsModal isOpen={isTermsModalOpen} onClose={() => setIsTermsModalOpen(false)} />
+      <ContactUsModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </div>
   );
 }

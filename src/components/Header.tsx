@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Volume2,
   VolumeX,
@@ -15,10 +15,7 @@ import { StudyMode, ActiveMockConfig } from '../types';
 import { PWAInstallButton } from './PWAInstallButton';
 import { getSoundEnabled, setSoundEnabled } from '../utils/audio';
 import { useOnlineStatus } from '../hooks/useOnlineStatus';
-
-const MockDropdownPanel = lazy(() =>
-  import('./MockDropdownPanel').then((m) => ({ default: m.MockDropdownPanel }))
-);
+import { MockDropdownPanel } from './MockDropdownPanel';
 
 interface HeaderProps {
   currentMode: StudyMode;
@@ -227,14 +224,12 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Mock Test Selection Drawer/Accordion */}
         {isMobileMockOpen && (
-          <Suspense fallback={null}>
-            <MockDropdownPanel
-              variant="mobile"
-              onStartFullMock={handleStartFullMock}
-              onStartSectionMock={handleStartSectionMock}
-              onGoToMockHub={handleGoToMockHub}
-            />
-          </Suspense>
+          <MockDropdownPanel
+            variant="mobile"
+            onStartFullMock={handleStartFullMock}
+            onStartSectionMock={handleStartSectionMock}
+            onGoToMockHub={handleGoToMockHub}
+          />
         )}
       </div>
     </header>

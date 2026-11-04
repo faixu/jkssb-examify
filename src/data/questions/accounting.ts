@@ -3,8 +3,10 @@ import { COST_ACCOUNTING_PDF_50_QUESTIONS } from './costAccountingPdfQuestions';
 import { COSTING_METHODS_PDF_50_QUESTIONS } from './costingMethodsPdfQuestions';
 import { CVP_ANALYSIS_PDF_PRACTICE_QUESTIONS } from './cvpAnalysisPdfQuestions';
 import { FINANCIAL_AUDITING_PDF_50_QUESTIONS } from './financialAuditingPdfQuestions';
+import { INTERNAL_CONTROL_AUDIT_PDF_50_QUESTIONS } from './internalControlAuditPdfQuestions';
 
 export const ACCOUNTING_QUESTIONS: Flashcard[] = [
+  ...INTERNAL_CONTROL_AUDIT_PDF_50_QUESTIONS,
   ...FINANCIAL_AUDITING_PDF_50_QUESTIONS,
   ...COST_ACCOUNTING_PDF_50_QUESTIONS,
   ...COSTING_METHODS_PDF_50_QUESTIONS,

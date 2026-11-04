@@ -1,13 +1,13 @@
 import { CategoryId, CategoryMeta, Flashcard } from '../types';
 
 export const CATEGORY_QUESTION_COUNTS: Record<CategoryId | 'all', number> = {
-  all: 7476,
+  all: 7756,
   general: 1227,
-  accounting: 755,
+  accounting: 805,
   grammar: 1054,
   statistics: 518,
   math: 570,
-  economics: 610,
+  economics: 840,
   science: 510,
   cs: 1136,
   history: 796,
@@ -34,7 +34,7 @@ export const CATEGORIES: CategoryMeta[] = [
     marks: 30,
     syllabusRef: 'Section II - 30 Marks',
     description:
-      'Introduction to accounting terms, accounting equation & journal, voucher approach, BRS, partnership accounts, ledger accounts, cash book, financial audit, double entry, trial balance, trading & P&L accounts, balance sheet, social accounting & audit, single entry, PFMS, Indian financial management system, taxation (direct & GST), and budgetary control & cost accounting.',
+      'Introduction to accounting terms, accounting equation & journal, voucher approach, BRS, partnership accounts, ledger accounts, cash book, financial audit, internal control, internal check & internal audit (Companies Act Sec 138, SA 610, COSO), double entry, trial balance, trading & P&L accounts, balance sheet, social accounting & audit, single entry, PFMS, Indian financial management system, taxation (direct & GST), and budgetary control & cost accounting.',
     color: 'from-emerald-500 to-teal-700',
     borderColor: 'border-emerald-500',
     bgLight: 'bg-emerald-500/10 text-emerald-400',
